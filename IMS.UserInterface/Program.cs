@@ -1,22 +1,52 @@
-﻿using System;
+﻿using IMS.DataAccess;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace IMS.UserInterface
 {
-    static class Program
+    public static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
+        public static IServiceProvider ServiceProvider { get; set; }
+
+        static void ConfigureServices()
+        {
+            var services = new ServiceCollection();
+            services.AddTransient<FormLogin>();
+            services.AddTransient<ISqlDataAccess, SqlDataAccess>();
+            services.AddTransient<IFormLoginSql, FormLoginSql>();
+
+
+            //Reading appsettings to get the configuration file
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json");
+
+            IConfiguration config = builder.Build();
+            services.AddSingleton(config);
+
+
+            var ServiceProvider = services.BuildServiceProvider();
+            var FormLogin = ServiceProvider.GetService<FormLogin>();
+            Application.Run(FormLogin);
+        }
+
+
+
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLogin());
+            ConfigureServices();
+            //Application.Run(new FormLogin());
         }
     }
 }

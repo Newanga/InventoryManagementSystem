@@ -15,12 +15,12 @@ namespace IMS.UserInterface
 {
     public partial class FormLogin : Form
     {
-        private readonly FormLoginSql _db;
+        private readonly IFormLoginSql _db;
 
-        public FormLogin()
+        public FormLogin(IFormLoginSql db)
         {
             InitializeComponent();
-            _db = new FormLoginSql();
+            this._db = db;
         }
 
         #region UX Improvement Events
@@ -125,6 +125,7 @@ namespace IMS.UserInterface
             data.Username = txtBxUsername.Text;
             data.Password = txtBxPassword.Text;
 
+            //data validation
             if (_db.GetUserLogedIn(data) != null)
             {
                 MessageBox.Show("It is workign");
