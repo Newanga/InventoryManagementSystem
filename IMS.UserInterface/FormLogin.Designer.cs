@@ -31,6 +31,7 @@ namespace IMS.UserInterface
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.panelLeft = new System.Windows.Forms.Panel();
             this.picBxLeftPanel = new System.Windows.Forms.PictureBox();
             this.picBxBtnClose = new System.Windows.Forms.PictureBox();
@@ -39,6 +40,7 @@ namespace IMS.UserInterface
             this.txtBxPassword = new System.Windows.Forms.TextBox();
             this.linkLblForgot = new System.Windows.Forms.LinkLabel();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.lblLoginForm = new System.Windows.Forms.Label();
             this.panelLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBxLeftPanel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBxBtnClose)).BeginInit();
@@ -58,17 +60,18 @@ namespace IMS.UserInterface
             // 
             // picBxLeftPanel
             // 
-            this.picBxLeftPanel.Image = global::IMS.UserInterface.Properties.Resources.LoginScreen;
-            this.picBxLeftPanel.Location = new System.Drawing.Point(31, 35);
+            this.picBxLeftPanel.Image = ((System.Drawing.Image)(resources.GetObject("picBxLeftPanel.Image")));
+            this.picBxLeftPanel.Location = new System.Drawing.Point(31, 12);
             this.picBxLeftPanel.Name = "picBxLeftPanel";
-            this.picBxLeftPanel.Size = new System.Drawing.Size(263, 274);
+            this.picBxLeftPanel.Size = new System.Drawing.Size(260, 277);
             this.picBxLeftPanel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBxLeftPanel.TabIndex = 0;
             this.picBxLeftPanel.TabStop = false;
+            this.picBxLeftPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PicBxLeftPanel_MouseDown);
             // 
             // picBxBtnClose
             // 
-            this.picBxBtnClose.Image = global::IMS.UserInterface.Properties.Resources.LoginClose;
+            this.picBxBtnClose.Image = ((System.Drawing.Image)(resources.GetObject("picBxBtnClose.Image")));
             this.picBxBtnClose.Location = new System.Drawing.Point(818, -1);
             this.picBxBtnClose.Name = "picBxBtnClose";
             this.picBxBtnClose.Size = new System.Drawing.Size(25, 25);
@@ -79,7 +82,7 @@ namespace IMS.UserInterface
             // 
             // picBxBtnMinimize
             // 
-            this.picBxBtnMinimize.Image = global::IMS.UserInterface.Properties.Resources.LoginMinimize;
+            this.picBxBtnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("picBxBtnMinimize.Image")));
             this.picBxBtnMinimize.Location = new System.Drawing.Point(787, -1);
             this.picBxBtnMinimize.Name = "picBxBtnMinimize";
             this.picBxBtnMinimize.Size = new System.Drawing.Size(25, 25);
@@ -148,12 +151,26 @@ namespace IMS.UserInterface
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
+            // lblLoginForm
+            // 
+            this.lblLoginForm.AutoSize = true;
+            this.lblLoginForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoginForm.ForeColor = System.Drawing.Color.Gray;
+            this.lblLoginForm.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblLoginForm.Location = new System.Drawing.Point(547, 9);
+            this.lblLoginForm.Name = "lblLoginForm";
+            this.lblLoginForm.Size = new System.Drawing.Size(101, 39);
+            this.lblLoginForm.TabIndex = 6;
+            this.lblLoginForm.Text = "Login";
+            this.lblLoginForm.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(844, 313);
+            this.Controls.Add(this.lblLoginForm);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.linkLblForgot);
             this.Controls.Add(this.txtBxPassword);
@@ -186,5 +203,6 @@ namespace IMS.UserInterface
         private System.Windows.Forms.TextBox txtBxPassword;
         private System.Windows.Forms.LinkLabel linkLblForgot;
         private System.Windows.Forms.Button btnLogin;
+        private Label lblLoginForm;
     }
 }

@@ -110,5 +110,11 @@ namespace IMS.UserInterface
             SendMessage(this.Handle, 0x112, 0xf012, 0);
 
         }
+
+        private void PicBxLeftPanel_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
     }
 }
