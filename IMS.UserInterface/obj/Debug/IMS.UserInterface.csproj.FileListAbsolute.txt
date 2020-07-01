@@ -1,7 +1,6 @@
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\obj\Debug\IMS.UserInterface.Properties.Resources.resources
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\obj\Debug\IMS.UserInterface.csproj.GenerateResource.cache
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\obj\Debug\IMS.UserInterface.csproj.CoreCompileInputs.cache
-C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\obj\Debug\IMS.UserInterface.csprojAssemblyReference.cache
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\bin\Debug\IMS.UserInterface.exe.config
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\bin\Debug\IMS.UserInterface.exe
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\bin\Debug\IMS.UserInterface.pdb
