@@ -33,8 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resources\App.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\AppIcon.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -70,6 +72,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="App.config" />
+    <None Include="appsettings.json" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -81,10 +85,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\App.ico" />
+    <None Include="Resources\AppIcon.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BackupRestore.png" />
@@ -126,9 +127,6 @@
     <None Include="Resources\Minimize.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\MinimizeClose.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Orders.png" />
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +140,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\LoginMinimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IMS.Core\IMS.Core.csproj">
+      <Project>{d8d1f0b9-587e-45d5-9921-005d41f0363b}</Project>
+      <Name>IMS.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IMS.DataAccess\IMS.DataAccess.csproj">
+      <Project>{2b6b7cb5-c381-4afa-b206-01d56d6395ac}</Project>
+      <Name>IMS.DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

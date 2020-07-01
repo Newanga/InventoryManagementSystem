@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace IMS.UserInterface
@@ -56,7 +57,7 @@ namespace IMS.UserInterface
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Size = new System.Drawing.Size(325, 313);
             this.panelLeft.TabIndex = 0;
-            this.panelLeft.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelLeft_MouseDown_1);
+            this.panelLeft.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelLeft_MouseDown);
             // 
             // picBxLeftPanel
             // 

@@ -44,6 +44,7 @@
     <Compile Include="Enums\AccountState.cs" />
     <Compile Include="Enums\RoleState.cs" />
     <Compile Include="Models\AccountModel.cs" />
+    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

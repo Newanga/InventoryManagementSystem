@@ -1,6 +1,12 @@
-C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\bin\Debug\IMS.DataAccess.dll
-C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\bin\Debug\IMS.DataAccess.pdb
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\obj\Debug\IMS.DataAccess.csprojAssemblyReference.cache
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\obj\Debug\IMS.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\bin\Debug\IMS.DataAccess.dll
+C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\bin\Debug\IMS.DataAccess.pdb
+C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\bin\Debug\Dapper.dll
+C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\bin\Debug\IMS.Core.dll
+C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\bin\Debug\IMS.Core.pdb
+C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\bin\Debug\Dapper.xml
+C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\obj\Debug\IMS.DataAccess.csproj.CopyComplete
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\obj\Debug\IMS.DataAccess.dll
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\obj\Debug\IMS.DataAccess.pdb
+C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\bin\Debug\IMS.DataAccess.dll.config

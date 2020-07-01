@@ -1,4 +1,6 @@
-﻿using System;
+﻿using IMS.Core.Models;
+using IMS.DataAccess;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,21 +15,16 @@ namespace IMS.UserInterface
 {
     public partial class FormLogin : Form
     {
-
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
-
+        private readonly FormLoginSql _db;
 
         public FormLogin()
         {
             InitializeComponent();
+            _db = new FormLoginSql();
         }
 
+        #region UX Improvement Events
 
-        // UX Improvement Events
         private void TxtBxPassword_Leave(object sender, EventArgs e)
         {
             if (txtBxPassword.Text == "")
@@ -70,10 +67,11 @@ namespace IMS.UserInterface
 
             }
         }
+        #endregion
 
 
+        #region Onclick Events
 
-        //Onclick Events
         private void PicBxBtnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -88,15 +86,16 @@ namespace IMS.UserInterface
         {
             MessageBox.Show("Please contact Admin to reset your login Details!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
-        private void BtnLogin_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+        #endregion
 
 
+        #region Events to move the borderless winform
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
 
-        //Events to move the borderless winform
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+
         private void FormLogin_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
@@ -104,7 +103,7 @@ namespace IMS.UserInterface
 
         }
 
-        private void PanelLeft_MouseDown_1(object sender, MouseEventArgs e)
+        private void PanelLeft_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
@@ -116,5 +115,21 @@ namespace IMS.UserInterface
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        #endregion
+
+        //Data Access
+        private void BtnLogin_Click(object sender, EventArgs e)
+        {
+            LoginModel data = new LoginModel();
+            data.Username = txtBxUsername.Text;
+            data.Password = txtBxPassword.Text;
+
+            if (_db.GetUserLogedIn(data) != null)
+            {
+                MessageBox.Show("It is workign");
+            }
+        }
+
     }
 }

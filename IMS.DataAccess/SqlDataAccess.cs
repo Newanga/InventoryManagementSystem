@@ -1,28 +1,35 @@
 ﻿using Dapper;
-using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
+
 
 namespace IMS.DataAccess
 {
     public class SqlDataAccess
     {
-        public List<T> LoadData<T, U>(string sqlStatement, U parameters, string connectionString)
+        //Get the connection string from appsettings
+        private static string GetConnectionString()
         {
-            using (IDbConnection connection = new SqlConnection(connectionString))
+            var connectionString = "Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = IMSDatabase; Integrated Security = True;";
+            return connectionString;
+        }
+
+
+        public List<T> LoadData<T, U>(string sqlStatement, U parameters)
+        {
+            using (IDbConnection connection = new SqlConnection(GetConnectionString()))
             {
                 List<T> rows = connection.Query<T>(sqlStatement, parameters).ToList();
                 return rows;
             }
         }
 
-        public void SaveData<T>(string sqlStatement, T parameters, string connectionString)
+        public void SaveData<T>(string sqlStatement, T parameters)
         {
-            using (IDbConnection connection = new SqlConnection(connectionString))
+            using (IDbConnection connection = new SqlConnection(GetConnectionString()))
             {
                 connection.Execute(sqlStatement, parameters);
             }
