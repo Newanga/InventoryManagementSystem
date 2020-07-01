@@ -1,0 +1,6 @@
+C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\bin\Debug\IMS.DataAccess.dll
+C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\bin\Debug\IMS.DataAccess.pdb
+C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\obj\Debug\IMS.DataAccess.csprojAssemblyReference.cache
+C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\obj\Debug\IMS.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\obj\Debug\IMS.DataAccess.dll
+C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\obj\Debug\IMS.DataAccess.pdb
