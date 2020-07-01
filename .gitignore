@@ -3,3 +3,5 @@
 ################################################################################
 
 /IMSDatabase/IMSDatabase.dbmdl
+/IMSDatabase/IMSDatabase.jfm
+/IMS.DataAccess/obj/Debug/IMS.DataAccess.csprojAssemblyReference.cache

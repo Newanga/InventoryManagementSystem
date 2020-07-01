@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[AccountState]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [State] NCHAR(10) NOT NULL
+)
