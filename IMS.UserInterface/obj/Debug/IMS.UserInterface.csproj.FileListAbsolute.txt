@@ -56,3 +56,5 @@ C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\bin\Debug\S
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\bin\Debug\System.Text.Json.xml
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\bin\Debug\System.ValueTuple.xml
+C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\bin\Debug\appsettings.json
+C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\bin\Debug\System.ComponentModel.Annotations.dll

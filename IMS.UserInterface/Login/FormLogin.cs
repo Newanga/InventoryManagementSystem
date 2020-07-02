@@ -1,5 +1,6 @@
 ﻿using IMS.Core.Models;
 using IMS.DataAccess;
+using IMS.UserInterface.Login;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -121,15 +122,22 @@ namespace IMS.UserInterface
         //Data Access
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            LoginModel data = new LoginModel();
-            data.Username = txtBxUsername.Text;
-            data.Password = txtBxPassword.Text;
 
-            //data validation
-            if (_db.GetUserLogedIn(data) != null)
+            LoginModel data = new LoginModel { Username = txtBxUsername.Text, Password = txtBxPassword.Text };
+            bool validData = InputLoginDetailsValidator.Validate(data);
+
+
+            AccountModel userAccount=new AccountModel();
+            if (validData)
             {
-                MessageBox.Show("It is workign");
+                userAccount = _db.ValidateAccount(data);  
             }
+
+            if (userAccount == null)
+            {
+                MessageBox.Show("Invalid Username or Password.", "Invalid Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
     }

@@ -4,6 +4,6 @@ namespace IMS.DataAccess
 {
     public interface IFormLoginSql
     {
-        AccountModel GetUserLogedIn(LoginModel login);
+        AccountModel ValidateAccount(LoginModel login);
     }
 }

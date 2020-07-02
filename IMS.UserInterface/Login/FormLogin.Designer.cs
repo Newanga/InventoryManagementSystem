@@ -98,9 +98,10 @@ namespace IMS.UserInterface
             this.txtBxUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBxUsername.ForeColor = System.Drawing.Color.Gray;
-            this.txtBxUsername.Location = new System.Drawing.Point(388, 90);
+            this.txtBxUsername.Location = new System.Drawing.Point(388, 81);
+            this.txtBxUsername.MaxLength = 15;
             this.txtBxUsername.Name = "txtBxUsername";
-            this.txtBxUsername.Size = new System.Drawing.Size(439, 19);
+            this.txtBxUsername.Size = new System.Drawing.Size(423, 19);
             this.txtBxUsername.TabIndex = 1;
             this.txtBxUsername.Text = "UserName";
             this.txtBxUsername.Enter += new System.EventHandler(this.TxtBxUsername_Enter);
@@ -112,9 +113,10 @@ namespace IMS.UserInterface
             this.txtBxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBxPassword.ForeColor = System.Drawing.Color.Gray;
-            this.txtBxPassword.Location = new System.Drawing.Point(388, 148);
+            this.txtBxPassword.Location = new System.Drawing.Point(388, 133);
+            this.txtBxPassword.MaxLength = 15;
             this.txtBxPassword.Name = "txtBxPassword";
-            this.txtBxPassword.Size = new System.Drawing.Size(439, 19);
+            this.txtBxPassword.Size = new System.Drawing.Size(423, 19);
             this.txtBxPassword.TabIndex = 2;
             this.txtBxPassword.Text = "Password";
             this.txtBxPassword.Enter += new System.EventHandler(this.TxtBxPassword_Enter);
