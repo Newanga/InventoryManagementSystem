@@ -61,3 +61,4 @@ C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\obj\Debug\I
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\obj\Debug\IMS.UserInterface.pdb
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\bin\Debug\IMS.Common.dll
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\bin\Debug\IMS.Common.pdb
+C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\obj\Debug\IMS.UserInterface.FormMainWindow.resources

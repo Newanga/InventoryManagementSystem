@@ -22,6 +22,7 @@ namespace IMS.UserInterface
             var services = new ServiceCollection();
             services.AddSingleton<FormLogin>();
             services.AddSingleton<FormSplashScreen>();
+            services.AddSingleton<FormMainWindow>();
             services.AddTransient<ISqlDataAccess, SqlDataAccess>();
             services.AddTransient<IFormLoginSql, FormLoginSql>();
 

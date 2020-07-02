@@ -8,7 +8,7 @@ namespace IMS.Core.Models
 {
     public class CurrentUserDetails
     {
-        public  int Id { get; set; }
+        public  int CurrentAccountId { get; set; }
 
         public  string EmailAddress { get; set; }
         public  string FirstName { get; set; }

@@ -44,7 +44,7 @@ namespace IMS.DataAccess
 
         public void CacheActiveUserDetails(string userName)
         {
-            string sql = @"select e.Id,a.EmailAddress,e.FirstName,a.RoleId
+            string sql = @"select a.Id as CurrentAccountId,a.EmailAddress,e.FirstName,a.RoleId
                         from dbo.employee as e
                         inner join dbo.Account as a
                         on e.AccountId=a.Id
@@ -53,7 +53,7 @@ namespace IMS.DataAccess
             CurrentUserDetails details = _db.LoadData<CurrentUserDetails, dynamic>(sql, new { Username = userName }).First();
 
 
-            Cache.CurrentAccountId = details.Id;
+            Cache.CurrentAccountId = details.CurrentAccountId;
             Cache.EmailAddress = details.EmailAddress;
             Cache.FirstName = details.FirstName;
             Cache.RoleId = details.RoleId;
