@@ -18,7 +18,7 @@ namespace IMS.DataAccess
         }
 
 
-        public AccountModel ValidateAccount(LoginModel login)
+        public bool ValidateAccount(LoginModel login)
         {
 
             string sql = @" Select *
@@ -33,7 +33,10 @@ namespace IMS.DataAccess
 
             account = _db.LoadData<AccountModel, dynamic>(sql, new { Username = login.Username, Password = login.Password }).FirstOrDefault();
 
-            return account;
+            if (account != null)
+                return true;
+            else 
+                return false;
         }
 
 

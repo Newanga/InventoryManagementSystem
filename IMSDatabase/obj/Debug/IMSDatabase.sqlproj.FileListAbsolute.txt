@@ -1,9 +1,9 @@
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMSDatabase\bin\Debug\IMSDatabase.dacpac
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMSDatabase\bin\Debug\IMSDatabase.dll
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMSDatabase\bin\Debug\IMSDatabase.pdb
-C:\Users\Newanga\Desktop\InventoryManagementSystem\IMSDatabase\obj\Debug\IMSDatabase.dll
-C:\Users\Newanga\Desktop\InventoryManagementSystem\IMSDatabase\obj\Debug\IMSDatabase.pdb
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMSDatabase\obj\Debug\Model.xml
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMSDatabase\obj\Debug\refactor.xml
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMSDatabase\obj\Debug\postdeploy.sql
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMSDatabase\obj\Debug\predeploy.sql
+C:\Users\Newanga\Desktop\InventoryManagementSystem\IMSDatabase\obj\Debug\IMSDatabase.dll
+C:\Users\Newanga\Desktop\InventoryManagementSystem\IMSDatabase\obj\Debug\IMSDatabase.pdb
