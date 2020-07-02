@@ -16,8 +16,8 @@ namespace IMS.UserInterface
 {
     public partial class FormLogin : Form
     {
-        private readonly IFormLoginSql _db;
 
+        private readonly IFormLoginSql _db;
         public FormLogin(IFormLoginSql db)
         {
             InitializeComponent();
@@ -116,8 +116,24 @@ namespace IMS.UserInterface
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
         #endregion
+
+
+        #region Minimize borderless winform from taskbar
+        const int Minimize = 0x20000;
+        const int doubleClick = 0x8;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.Style |= Minimize;
+                cp.ClassStyle |= doubleClick;
+                return cp;
+            }
+        }
+        #endregion
+
 
         //Data Access
         private void BtnLogin_Click(object sender, EventArgs e)
@@ -136,6 +152,10 @@ namespace IMS.UserInterface
             if (userAccount == null)
             {
                 MessageBox.Show("Invalid Username or Password.", "Invalid Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+
             }
 
         }
