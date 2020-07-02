@@ -1,4 +1,5 @@
 ﻿using IMS.DataAccess;
+using IMS.UserInterface.SplashScreen;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -14,15 +15,15 @@ namespace IMS.UserInterface
 {
     public static class Program
     {
-        public static IServiceProvider ServiceProvider { get; set; }
+        public static ServiceProvider ServiceProvider;
 
         static void ConfigureServices()
         {
             var services = new ServiceCollection();
-            services.AddTransient<FormLogin>();
+            services.AddSingleton<FormLogin>();
+            services.AddSingleton<FormSplashScreen>();
             services.AddTransient<ISqlDataAccess, SqlDataAccess>();
             services.AddTransient<IFormLoginSql, FormLoginSql>();
-
 
             //Reading appsettings to get the configuration file
             var builder = new ConfigurationBuilder()
@@ -30,10 +31,11 @@ namespace IMS.UserInterface
                 .AddJsonFile("appsettings.json");
 
             IConfiguration config = builder.Build();
+
+
             services.AddSingleton(config);
 
-
-            var ServiceProvider = services.BuildServiceProvider();
+            ServiceProvider = services.BuildServiceProvider();
             var FormLogin = ServiceProvider.GetService<FormLogin>();
             Application.Run(FormLogin);
         }

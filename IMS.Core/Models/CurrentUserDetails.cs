@@ -8,11 +8,11 @@ namespace IMS.Core.Models
 {
     public class CurrentUserDetails
     {
-        public static int UserId { get; set; }
+        public  int Id { get; set; }
 
-        public static string EmailAddress { get; set; }
-        public static string FirstName { get; set; }
+        public  string EmailAddress { get; set; }
+        public  string FirstName { get; set; }
 
-        public static int RoleId { get; set; }
+        public  int RoleId { get; set; }
     }
 }

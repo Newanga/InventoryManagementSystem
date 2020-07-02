@@ -22,3 +22,5 @@ C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\obj\Debug\IMS.
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\obj\Debug\IMS.DataAccess.csproj.CopyComplete
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\obj\Debug\IMS.DataAccess.dll
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\obj\Debug\IMS.DataAccess.pdb
+C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\bin\Debug\IMS.Common.dll
+C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\bin\Debug\IMS.Common.pdb

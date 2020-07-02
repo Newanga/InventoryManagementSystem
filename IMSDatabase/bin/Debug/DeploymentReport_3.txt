@@ -1,0 +1,21 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[Account] (Table)
+       [dbo].[AccountState] (Table)
+       [dbo].[Employee] (Table)
+       [dbo].[Roles] (Table)
+       [dbo].[FK_Account_AccountState] (Foreign Key)
+       [dbo].[FK_Account_Role] (Foreign Key)
+       [dbo].[FK_Employee_Account] (Foreign Key)
+
+** Supporting actions

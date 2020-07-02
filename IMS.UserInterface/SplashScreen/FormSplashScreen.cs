@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IMS.Common.Cache;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace IMS.UserInterface.SplashScreen
         public FormSplashScreen()
         {
             InitializeComponent();
+            lblActiveUserFirstName.Text = Cache.FirstName;
         }
     }
 }

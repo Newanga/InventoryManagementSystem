@@ -17,12 +17,6 @@ namespace IMS.DataAccess
             this._config = config;
         }
 
-        //Get the connection string from appsettings
-        //private static string GetConnectionString()
-        //{
-        //    var connectionString = "Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = IMSDatabase; Integrated Security = True;";
-        //    return connectionString;
-        //}
 
 
         public List<T> LoadData<T, U>(string sqlStatement, U parameters)

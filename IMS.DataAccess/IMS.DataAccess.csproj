@@ -78,6 +78,10 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\IMS.Common\IMS.Common.csproj">
+      <Project>{482091cc-e985-43a6-ad5b-ff2fafebb3ae}</Project>
+      <Name>IMS.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IMS.Core\IMS.Core.csproj">
       <Project>{d8d1f0b9-587e-45d5-9921-005d41f0363b}</Project>
       <Name>IMS.Core</Name>

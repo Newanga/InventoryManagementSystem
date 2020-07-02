@@ -1,6 +1,7 @@
 ﻿using IMS.Core.Models;
 using IMS.DataAccess;
 using IMS.UserInterface.Login;
+using IMS.UserInterface.SplashScreen;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +12,8 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Extensions.DependencyInjection;
+using IMS.Common.Cache;
 
 namespace IMS.UserInterface
 {
@@ -142,23 +145,26 @@ namespace IMS.UserInterface
             LoginModel data = new LoginModel { Username = txtBxUsername.Text, Password = txtBxPassword.Text };
             bool validData = InputLoginDetailsValidator.Validate(data);
 
-
-            AccountModel userAccount=new AccountModel();
             if (validData)
             {
-                userAccount = _db.ValidateAccount(data);  
-            }
+                bool validAccount = _db.ValidateAccount(data);
 
-            if (userAccount == null)
-            {
-                MessageBox.Show("Invalid Username or Password.", "Invalid Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
+                if (!validAccount)
+                {
+                    MessageBox.Show("Invalid Username or Password.", "Invalid Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    _db.CacheActiveUserDetails(data.Username);
+                    var splash = Program.ServiceProvider.GetService<FormSplashScreen>();
+                    this.Hide();
+                    splash.Show();
 
+                }
             }
 
         }
 
+       
     }
 }

@@ -1,7 +1,9 @@
-﻿using IMS.Core.Models;
+﻿using IMS.Common.Cache;
+using IMS.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,6 +39,25 @@ namespace IMS.DataAccess
                 return true;
             else 
                 return false;
+        }
+
+
+        public void CacheActiveUserDetails(string userName)
+        {
+            string sql = @"select e.Id,a.EmailAddress,e.FirstName,a.RoleId
+                        from dbo.employee as e
+                        inner join dbo.Account as a
+                        on e.AccountId=a.Id
+                        where a.Username=@UserName";
+
+            CurrentUserDetails details = _db.LoadData<CurrentUserDetails, dynamic>(sql, new { Username = userName }).First();
+
+
+            Cache.CurrentAccountId = details.Id;
+            Cache.EmailAddress = details.EmailAddress;
+            Cache.FirstName = details.FirstName;
+            Cache.RoleId = details.RoleId;
+
         }
 
 
