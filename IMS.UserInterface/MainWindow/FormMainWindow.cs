@@ -78,7 +78,7 @@ namespace IMS.UserInterface
             {
                 currentChildForm.Close();
             }
-
+          
             //set new childform properties to fit the window
             currentChildForm = childForm;
             childForm.TopLevel = false;
@@ -92,7 +92,7 @@ namespace IMS.UserInterface
 
         private void BtnDashboard_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void BtnSuppliers_Click(object sender, EventArgs e)

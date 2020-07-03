@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace IMS.UserInterface.Login
 {
-    public static class InputLoginDetailsValidator
+    public static class LoginInputDataValidator
     {
         public static bool Validate(LoginModel data)
         {

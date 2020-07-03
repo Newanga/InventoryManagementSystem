@@ -143,7 +143,7 @@ namespace IMS.UserInterface
         {
 
             LoginModel data = new LoginModel { Username = txtBxUsername.Text, Password = txtBxPassword.Text };
-            bool validData = InputLoginDetailsValidator.Validate(data);
+            bool validData = LoginInputDataValidator.Validate(data);
 
             if (validData)
             {

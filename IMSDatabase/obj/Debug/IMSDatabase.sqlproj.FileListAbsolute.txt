@@ -7,3 +7,4 @@ C:\Users\Newanga\Desktop\InventoryManagementSystem\IMSDatabase\obj\Debug\Model.x
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMSDatabase\obj\Debug\refactor.xml
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMSDatabase\obj\Debug\postdeploy.sql
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMSDatabase\obj\Debug\predeploy.sql
+C:\Users\Newanga\Desktop\InventoryManagementSystem\IMSDatabase\obj\Debug\IMSDatabase.sqlprojAssemblyReference.cache
