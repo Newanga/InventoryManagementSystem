@@ -116,10 +116,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormMainWindow.cs">
+    <Compile Include="Category\FormCategory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMainWindow.designer.cs">
+    <Compile Include="Category\FormCategory.Designer.cs">
+      <DependentUpon>FormCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow\FormMainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow\FormMainWindow.designer.cs">
       <DependentUpon>FormMainWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Login\FormLogin.cs">
@@ -137,7 +143,10 @@
     <Compile Include="SplashScreen\FormSplashScreen.Designer.cs">
       <DependentUpon>FormSplashScreen.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormMainWindow.resx">
+    <EmbeddedResource Include="Category\FormCategory.resx">
+      <DependentUpon>FormCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow\FormMainWindow.resx">
       <DependentUpon>FormMainWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\FormLogin.resx">

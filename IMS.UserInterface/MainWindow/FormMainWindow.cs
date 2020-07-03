@@ -132,5 +132,21 @@ namespace IMS.UserInterface
         {
 
         }
+
+
+        #region Minimize borderless winform from taskbar
+        const int Minimize = 0x20000;
+        const int doubleClick = 0x8;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.Style |= Minimize;
+                cp.ClassStyle |= doubleClick;
+                return cp;
+            }
+        }
+        #endregion
     }
 }
