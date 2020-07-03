@@ -6,6 +6,6 @@ namespace IMS.DataAccess
     {
         bool ValidateAccount(LoginModel login);
 
-        void CacheActiveUserDetails(string userName);
+        void CacheCurrentUserDetails(string userName);
     }
 }

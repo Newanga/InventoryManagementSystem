@@ -36,11 +36,12 @@
             this.txtBxCategoryId = new System.Windows.Forms.TextBox();
             this.txtBxCategoryName = new System.Windows.Forms.TextBox();
             this.txtBxCategoryDescription = new System.Windows.Forms.TextBox();
-            this.btncategoryCreate = new System.Windows.Forms.Button();
+            this.btnCategoryCreate = new System.Windows.Forms.Button();
             this.dGVCategory = new System.Windows.Forms.DataGridView();
             this.CategoryId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CategoryDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCategoryUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGVCategory)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,15 +104,14 @@
             this.txtBxCategoryDescription.Size = new System.Drawing.Size(100, 20);
             this.txtBxCategoryDescription.TabIndex = 2;
             // 
-            // btncategoryCreate
+            // btnCategoryCreate
             // 
-            this.btncategoryCreate.Location = new System.Drawing.Point(947, 37);
-            this.btncategoryCreate.Name = "btncategoryCreate";
-            this.btncategoryCreate.Size = new System.Drawing.Size(75, 23);
-            this.btncategoryCreate.TabIndex = 3;
-            this.btncategoryCreate.Text = "Create";
-            this.btncategoryCreate.UseVisualStyleBackColor = true;
-            this.btncategoryCreate.Click += new System.EventHandler(this.btncategoryCreate_Click);
+            this.btnCategoryCreate.Location = new System.Drawing.Point(947, 37);
+            this.btnCategoryCreate.Name = "btnCategoryCreate";
+            this.btnCategoryCreate.Size = new System.Drawing.Size(75, 23);
+            this.btnCategoryCreate.TabIndex = 3;
+            this.btnCategoryCreate.Text = "Create";
+            this.btnCategoryCreate.UseVisualStyleBackColor = true;
             // 
             // dGVCategory
             // 
@@ -122,7 +122,7 @@
             this.CategoryDescription});
             this.dGVCategory.Location = new System.Drawing.Point(62, 147);
             this.dGVCategory.Name = "dGVCategory";
-            this.dGVCategory.Size = new System.Drawing.Size(536, 297);
+            this.dGVCategory.Size = new System.Drawing.Size(582, 297);
             this.dGVCategory.TabIndex = 4;
             // 
             // CategoryId
@@ -148,6 +148,15 @@
             this.CategoryDescription.HeaderText = "CategoryDescription";
             this.CategoryDescription.Name = "CategoryDescription";
             // 
+            // btnCategoryUpdate
+            // 
+            this.btnCategoryUpdate.Location = new System.Drawing.Point(947, 66);
+            this.btnCategoryUpdate.Name = "btnCategoryUpdate";
+            this.btnCategoryUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnCategoryUpdate.TabIndex = 3;
+            this.btnCategoryUpdate.Text = "Update";
+            this.btnCategoryUpdate.UseVisualStyleBackColor = true;
+            // 
             // FormCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -155,7 +164,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1034, 484);
             this.Controls.Add(this.dGVCategory);
-            this.Controls.Add(this.btncategoryCreate);
+            this.Controls.Add(this.btnCategoryUpdate);
+            this.Controls.Add(this.btnCategoryCreate);
             this.Controls.Add(this.txtBxCategoryDescription);
             this.Controls.Add(this.txtBxCategoryName);
             this.Controls.Add(this.txtBxCategoryId);
@@ -183,10 +193,11 @@
         private System.Windows.Forms.TextBox txtBxCategoryId;
         private System.Windows.Forms.TextBox txtBxCategoryName;
         private System.Windows.Forms.TextBox txtBxCategoryDescription;
-        private System.Windows.Forms.Button btncategoryCreate;
+        private System.Windows.Forms.Button btnCategoryCreate;
         private System.Windows.Forms.DataGridView dGVCategory;
         private System.Windows.Forms.DataGridViewTextBoxColumn CategoryId;
         private System.Windows.Forms.DataGridViewTextBoxColumn CategoryName;
         private System.Windows.Forms.DataGridViewTextBoxColumn CategoryDescription;
+        private System.Windows.Forms.Button btnCategoryUpdate;
     }
 }

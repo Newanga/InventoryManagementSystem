@@ -1,5 +1,6 @@
 ﻿using IMS.Common.Cache;
 using IMS.Core.Enums;
+using IMS.UserInterface.Category;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +11,8 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Extensions.DependencyInjection;
+using IMS.DataAccess.FormCategoryData;
 
 namespace IMS.UserInterface
 {
@@ -65,7 +68,7 @@ namespace IMS.UserInterface
         }
         #endregion
 
-        #region EVents related to SubFroms
+        #region Events related to ChildForms
         private Form currentChildForm;
 
         private void OpenChildForm(Form childForm)
@@ -75,8 +78,9 @@ namespace IMS.UserInterface
             {
                 currentChildForm.Close();
             }
+
+            //set new childform properties to fit the window
             currentChildForm = childForm;
-            //End
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
@@ -88,7 +92,7 @@ namespace IMS.UserInterface
 
         private void BtnDashboard_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void BtnSuppliers_Click(object sender, EventArgs e)
@@ -103,6 +107,7 @@ namespace IMS.UserInterface
 
         private void BtnCategories_Click(object sender, EventArgs e)
         {
+            OpenChildForm(Program.ServiceProvider.GetService<FormCategory>());
         }
 
         private void BtnEmployees_Click(object sender, EventArgs e)

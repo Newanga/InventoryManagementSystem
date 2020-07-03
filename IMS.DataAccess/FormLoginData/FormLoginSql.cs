@@ -31,9 +31,9 @@ namespace IMS.DataAccess
                             AND Username = @Username 
                             AND Password = @Password ";
 
-            AccountModel account = new AccountModel();
 
-            account = _db.LoadData<AccountModel, dynamic>(sql, new { Username = login.Username, Password = login.Password }).FirstOrDefault();
+
+            AccountModel account = _db.LoadData<AccountModel, dynamic>(sql, new { Username = login.Username, Password = login.Password }).FirstOrDefault();
 
             if (account != null)
                 return true;
@@ -42,7 +42,7 @@ namespace IMS.DataAccess
         }
 
 
-        public void CacheActiveUserDetails(string userName)
+        public void CacheCurrentUserDetails(string userName)
         {
             string sql = @"select a.Id as CurrentAccountId,a.EmailAddress,e.FirstName,a.RoleId
                         from dbo.employee as e

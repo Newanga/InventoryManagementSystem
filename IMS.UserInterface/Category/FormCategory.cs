@@ -20,12 +20,14 @@ namespace IMS.UserInterface.Category
         public FormCategory(IFormCategorySql db)
         {
             InitializeComponent();
-            _db = db;         
+            _db = db;
+            PopulateDatagrid();
         }
 
-        private void btncategoryCreate_Click(object sender, EventArgs e)
+
+        private void PopulateDatagrid()
         {
-            categories = _db.GetAllCategoriesFromDatabase();
+            dGVCategory.DataSource = _db.GetAllCategoriesFromDatabase();
         }
     }
 }
