@@ -155,7 +155,7 @@ namespace IMS.UserInterface
                 }
                 else
                 {
-                    _db.CacheActiveUserDetails(data.Username);
+                    _db.CacheCurrentUserDetails(data.Username);
                     var splash = Program.ServiceProvider.GetService<FormMainWindow>();
                     this.Hide();
                     splash.Show();

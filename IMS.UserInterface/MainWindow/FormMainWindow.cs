@@ -15,17 +15,6 @@ namespace IMS.UserInterface
 {
     public partial class FormMainWindow : Form
     {
-        private Form currentChildForm;
-
-
-
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
-
 
         public FormMainWindow()
         {
@@ -36,13 +25,7 @@ namespace IMS.UserInterface
             lblEmail.Text = Cache.EmailAddress;
         }
 
-        private void BtnMenuSlider_Click(object sender, EventArgs e)
-        {
-            panelVerticalMenu.Width = 70;
-            btnMenuExpander.Visible = true;
-            BtnMenuSlider.Visible = false;
-        }
-
+        #region UI/UX Improvemnet Events
         private void BtnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -67,13 +50,6 @@ namespace IMS.UserInterface
             btnMaximizer.Visible = true;
         }
 
-        private void PanelTitleBar_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-
-        }
-
         private void BtnMenuExpander_Click(object sender, EventArgs e)
         {
             panelVerticalMenu.Width = 250;
@@ -81,9 +57,20 @@ namespace IMS.UserInterface
             btnMenuExpander.Visible = false;
         }
 
+        private void BtnMenuSlider_Click(object sender, EventArgs e)
+        {
+            panelVerticalMenu.Width = 70;
+            btnMenuExpander.Visible = true;
+            BtnMenuSlider.Visible = false;
+        }
+        #endregion
+
+        #region EVents related to SubFroms
+        private Form currentChildForm;
+
         private void OpenChildForm(Form childForm)
         {
-            //open only form
+            //Close any active child forms
             if (currentChildForm != null)
             {
                 currentChildForm.Close();
@@ -115,7 +102,7 @@ namespace IMS.UserInterface
         }
 
         private void BtnCategories_Click(object sender, EventArgs e)
-        { 
+        {
         }
 
         private void BtnEmployees_Click(object sender, EventArgs e)
@@ -132,9 +119,9 @@ namespace IMS.UserInterface
         {
 
         }
+        #endregion
 
-
-        #region Minimize borderless winform from taskbar
+        #region Minimize and Maximize borderless winform from taskbar
         const int Minimize = 0x20000;
         const int doubleClick = 0x8;
         protected override CreateParams CreateParams
@@ -146,6 +133,22 @@ namespace IMS.UserInterface
                 cp.ClassStyle |= doubleClick;
                 return cp;
             }
+        }
+        #endregion
+
+        #region Events to move bordleress winform
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private void PanelTitleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+
         }
         #endregion
     }

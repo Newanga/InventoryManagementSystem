@@ -1,4 +1,6 @@
-﻿using System;
+﻿using IMS.Core.Models;
+using IMS.DataAccess.FormCategoryData;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,18 @@ namespace IMS.UserInterface.Category
 {
     public partial class FormCategory : Form
     {
-        public FormCategory()
+        private readonly IFormCategorySql _db;
+        List<CategoryModel> categories = new List<CategoryModel>();
+
+        public FormCategory(IFormCategorySql db)
         {
             InitializeComponent();
+            _db = db;         
+        }
+
+        private void btncategoryCreate_Click(object sender, EventArgs e)
+        {
+            categories = _db.GetAllCategoriesFromDatabase();
         }
     }
 }

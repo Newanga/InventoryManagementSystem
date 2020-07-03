@@ -1,4 +1,6 @@
 ﻿using IMS.DataAccess;
+using IMS.DataAccess.FormCategoryData;
+using IMS.UserInterface.Category;
 using IMS.UserInterface.SplashScreen;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,8 +25,10 @@ namespace IMS.UserInterface
             services.AddSingleton<FormLogin>();
             services.AddSingleton<FormSplashScreen>();
             services.AddSingleton<FormMainWindow>();
+            services.AddSingleton<FormCategory>();
             services.AddTransient<ISqlDataAccess, SqlDataAccess>();
             services.AddTransient<IFormLoginSql, FormLoginSql>();
+            services.AddTransient<IFormCategorySql, FormCategorySql>();
 
             //Reading appsettings to get the configuration file
             var builder = new ConfigurationBuilder()
@@ -37,9 +41,13 @@ namespace IMS.UserInterface
             services.AddSingleton(config);
 
             ServiceProvider = services.BuildServiceProvider();
-            var FormLogin = ServiceProvider.GetService<FormLogin>();
-            Application.Run(FormLogin);
+
+            //var FormLogin = ServiceProvider.GetService<FormLogin>();
+            //Application.Run(FormLogin);
+            var Form = ServiceProvider.GetService<FormCategory>();
+            Application.Run(Form);
         }
+
 
 
 

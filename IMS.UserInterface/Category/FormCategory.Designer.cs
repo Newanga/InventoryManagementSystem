@@ -111,6 +111,7 @@
             this.btncategoryCreate.TabIndex = 3;
             this.btncategoryCreate.Text = "Create";
             this.btncategoryCreate.UseVisualStyleBackColor = true;
+            this.btncategoryCreate.Click += new System.EventHandler(this.btncategoryCreate_Click);
             // 
             // dGVCategory
             // 
