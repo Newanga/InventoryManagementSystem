@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IMS.Core.Enums
 {
-    public enum RoleState
+    public enum Roles
     {
         Admin=1,
         StoreManager=2,

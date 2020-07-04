@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace IMS.Core.Models
 {
-    public class SupplierModel
+    public class NewSupplierModel
     {
-        public int Id { get; set; }
-
         public string Name { get; set; }
 
         public string Description { get; set; }
@@ -18,6 +16,6 @@ namespace IMS.Core.Models
 
         public string Address { get; set; }
 
-        public int SupplierStateId { get; set; }
+        public int StateId { get; set; }
     }
 }

@@ -22,7 +22,7 @@ namespace IMS.Core.Models
 
         public int CategoryId { get; set; }
 
-        public int StatusId { get; set; }
+        public int StateId { get; set; }
 
 
     }
