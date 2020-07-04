@@ -159,7 +159,7 @@
             this.btnBackUpReset.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnBackUpReset.Size = new System.Drawing.Size(250, 40);
             this.btnBackUpReset.TabIndex = 3;
-            this.btnBackUpReset.Text = "Backup / Reset";
+            this.btnBackUpReset.Text = " Backup / Reset";
             this.btnBackUpReset.UseVisualStyleBackColor = true;
             this.btnBackUpReset.Click += new System.EventHandler(this.BtnEmployees_Click);
             // 
@@ -178,7 +178,8 @@
             this.btnEmployees.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnEmployees.Size = new System.Drawing.Size(250, 40);
             this.btnEmployees.TabIndex = 3;
-            this.btnEmployees.Text = "Employees";
+            this.btnEmployees.Text = "                Employees";
+            this.btnEmployees.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEmployees.UseVisualStyleBackColor = true;
             this.btnEmployees.Click += new System.EventHandler(this.BtnEmployees_Click);
             // 
@@ -270,7 +271,8 @@
             this.brnOrders.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.brnOrders.Size = new System.Drawing.Size(250, 40);
             this.brnOrders.TabIndex = 2;
-            this.brnOrders.Text = "Orders";
+            this.brnOrders.Text = "                Orders";
+            this.brnOrders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.brnOrders.UseVisualStyleBackColor = true;
             this.brnOrders.Click += new System.EventHandler(this.BtnOrders_Click);
             // 
@@ -289,7 +291,8 @@
             this.btnInventory.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnInventory.Size = new System.Drawing.Size(250, 40);
             this.btnInventory.TabIndex = 2;
-            this.btnInventory.Text = "Inventory";
+            this.btnInventory.Text = "                Inventory";
+            this.btnInventory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInventory.UseVisualStyleBackColor = true;
             this.btnInventory.Click += new System.EventHandler(this.BtnInventory_Click);
             // 
@@ -308,7 +311,8 @@
             this.btnDashboard.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnDashboard.Size = new System.Drawing.Size(250, 40);
             this.btnDashboard.TabIndex = 2;
-            this.btnDashboard.Text = "Dashboard";
+            this.btnDashboard.Text = "                DashBoard";
+            this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDashboard.UseVisualStyleBackColor = true;
             this.btnDashboard.Click += new System.EventHandler(this.BtnDashboard_Click);
             // 
@@ -325,9 +329,10 @@
             this.btnCategories.Location = new System.Drawing.Point(3, 357);
             this.btnCategories.Name = "btnCategories";
             this.btnCategories.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnCategories.Size = new System.Drawing.Size(250, 40);
+            this.btnCategories.Size = new System.Drawing.Size(247, 40);
             this.btnCategories.TabIndex = 3;
-            this.btnCategories.Text = "Categories";
+            this.btnCategories.Text = "               Categories";
+            this.btnCategories.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCategories.UseVisualStyleBackColor = true;
             this.btnCategories.Click += new System.EventHandler(this.BtnCategories_Click);
             // 
@@ -347,7 +352,8 @@
             this.btnSuppliers.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnSuppliers.Size = new System.Drawing.Size(250, 40);
             this.btnSuppliers.TabIndex = 2;
-            this.btnSuppliers.Text = "Suppliers";
+            this.btnSuppliers.Text = "                Suppliers";
+            this.btnSuppliers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSuppliers.UseVisualStyleBackColor = true;
             this.btnSuppliers.Click += new System.EventHandler(this.BtnSuppliers_Click);
             // 
@@ -366,7 +372,8 @@
             this.btnProducts.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnProducts.Size = new System.Drawing.Size(250, 40);
             this.btnProducts.TabIndex = 2;
-            this.btnProducts.Text = "Products";
+            this.btnProducts.Text = "                Products";
+            this.btnProducts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProducts.UseVisualStyleBackColor = true;
             this.btnProducts.Click += new System.EventHandler(this.BtnProducts_Click);
             // 
