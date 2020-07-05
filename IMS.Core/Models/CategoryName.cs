@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IMS.Core.Enums
+namespace IMS.Core.Models
 {
-    public enum ProductState
+    public class CategoryName
     {
-        Available=1,
-        OutOfStock=2,
-        Discontinued=3
+        public string Name { get; set; }
     }
 }

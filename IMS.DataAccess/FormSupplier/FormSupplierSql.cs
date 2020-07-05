@@ -18,14 +18,14 @@ namespace IMS.DataAccess.FormSupplier
             _db = db;
         }
 
-        public List<SupplierVM> GetAllSuppliersFromDatabase()
+        public List<SupplierDataGridVM> GetAllSuppliersFromDatabase()
         {
             string sql = @"select s.Id,s.Name,s.Description,s.PhoneNumber,s.Address,ss.State
                             from dbo.supplier as s
                             inner join dbo.SupplierState as ss
                             on s.SupplierStateId=ss.Id;";
 
-            List<SupplierVM> suppliers = _db.LoadData<SupplierVM, dynamic>(sql, new { });
+            List<SupplierDataGridVM> suppliers = _db.LoadData<SupplierDataGridVM, dynamic>(sql, new { });
 
             return suppliers;
         }

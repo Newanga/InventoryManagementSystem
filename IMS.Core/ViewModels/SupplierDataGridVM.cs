@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IMS.Core.ViewModels
 {
-    public class SupplierVM
+    public class SupplierDataGridVM
     {
         public int Id { get; set; }
 

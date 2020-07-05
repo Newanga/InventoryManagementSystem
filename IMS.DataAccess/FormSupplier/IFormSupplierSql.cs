@@ -8,7 +8,7 @@ namespace IMS.DataAccess.FormSupplier
     {
         void CreateNewSupplier(SupplierNewModel supplier);
 
-        List<SupplierVM> GetAllSuppliersFromDatabase();
+        List<SupplierDataGridVM> GetAllSuppliersFromDatabase();
 
         void UpdateExistingSupplier(SupplierFullModel supplier);
     }

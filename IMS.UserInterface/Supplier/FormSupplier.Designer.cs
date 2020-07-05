@@ -31,6 +31,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dGVSupplier = new System.Windows.Forms.DataGridView();
+            this.SupplierId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SupplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SupplierDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SupplierPhoneNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SupplierAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SupplierState = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblFormHeading = new System.Windows.Forms.Label();
             this.txtBxSupplierId = new System.Windows.Forms.TextBox();
             this.lblSupplierId = new System.Windows.Forms.Label();
@@ -50,12 +56,6 @@
             this.btnSupplierReset = new System.Windows.Forms.Button();
             this.txtBxSupplierDescription = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.SupplierId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SupplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SupplierDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SupplierPhoneNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SupplierAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SupplierState = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dGVSupplier)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,6 +79,48 @@
             this.dGVSupplier.Size = new System.Drawing.Size(978, 218);
             this.dGVSupplier.TabIndex = 17;
             this.dGVSupplier.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVSupplier_CellDoubleClick);
+            // 
+            // SupplierId
+            // 
+            this.SupplierId.DataPropertyName = "Id";
+            this.SupplierId.HeaderText = "Id";
+            this.SupplierId.Name = "SupplierId";
+            this.SupplierId.ReadOnly = true;
+            // 
+            // SupplierName
+            // 
+            this.SupplierName.DataPropertyName = "Name";
+            this.SupplierName.HeaderText = "Name";
+            this.SupplierName.Name = "SupplierName";
+            this.SupplierName.ReadOnly = true;
+            // 
+            // SupplierDescription
+            // 
+            this.SupplierDescription.DataPropertyName = "Description";
+            this.SupplierDescription.HeaderText = "Description";
+            this.SupplierDescription.Name = "SupplierDescription";
+            this.SupplierDescription.ReadOnly = true;
+            // 
+            // SupplierPhoneNo
+            // 
+            this.SupplierPhoneNo.DataPropertyName = "PhoneNumber";
+            this.SupplierPhoneNo.HeaderText = "PhoneNo";
+            this.SupplierPhoneNo.Name = "SupplierPhoneNo";
+            this.SupplierPhoneNo.ReadOnly = true;
+            // 
+            // SupplierAddress
+            // 
+            this.SupplierAddress.DataPropertyName = "Address";
+            this.SupplierAddress.HeaderText = "Address";
+            this.SupplierAddress.Name = "SupplierAddress";
+            this.SupplierAddress.ReadOnly = true;
+            // 
+            // SupplierState
+            // 
+            this.SupplierState.DataPropertyName = "State";
+            this.SupplierState.HeaderText = "State";
+            this.SupplierState.Name = "SupplierState";
+            this.SupplierState.ReadOnly = true;
             // 
             // lblFormHeading
             // 
@@ -181,6 +223,7 @@
             // 
             // combobxSupplierState
             // 
+            this.combobxSupplierState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combobxSupplierState.Enabled = false;
             this.combobxSupplierState.FormattingEnabled = true;
             this.combobxSupplierState.Location = new System.Drawing.Point(523, 138);
@@ -255,48 +298,6 @@
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // SupplierId
-            // 
-            this.SupplierId.DataPropertyName = "Id";
-            this.SupplierId.HeaderText = "Id";
-            this.SupplierId.Name = "SupplierId";
-            this.SupplierId.ReadOnly = true;
-            // 
-            // SupplierName
-            // 
-            this.SupplierName.DataPropertyName = "Name";
-            this.SupplierName.HeaderText = "Name";
-            this.SupplierName.Name = "SupplierName";
-            this.SupplierName.ReadOnly = true;
-            // 
-            // SupplierDescription
-            // 
-            this.SupplierDescription.DataPropertyName = "Description";
-            this.SupplierDescription.HeaderText = "Description";
-            this.SupplierDescription.Name = "SupplierDescription";
-            this.SupplierDescription.ReadOnly = true;
-            // 
-            // SupplierPhoneNo
-            // 
-            this.SupplierPhoneNo.DataPropertyName = "PhoneNumber";
-            this.SupplierPhoneNo.HeaderText = "PhoneNo";
-            this.SupplierPhoneNo.Name = "SupplierPhoneNo";
-            this.SupplierPhoneNo.ReadOnly = true;
-            // 
-            // SupplierAddress
-            // 
-            this.SupplierAddress.DataPropertyName = "Address";
-            this.SupplierAddress.HeaderText = "Address";
-            this.SupplierAddress.Name = "SupplierAddress";
-            this.SupplierAddress.ReadOnly = true;
-            // 
-            // SupplierState
-            // 
-            this.SupplierState.DataPropertyName = "State";
-            this.SupplierState.HeaderText = "State";
-            this.SupplierState.Name = "SupplierState";
-            this.SupplierState.ReadOnly = true;
             // 
             // FormSupplier
             // 
