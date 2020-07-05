@@ -1,4 +1,6 @@
-﻿using System;
+﻿using IMS.Core.ViewModels;
+using IMS.DataAccess.FormProduct;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,20 @@ namespace IMS.UserInterface.Product
 {
     public partial class FormProduct : Form
     {
-        public FormProduct()
+        private readonly IFormProductSql _db;
+
+        public FormProduct(IFormProductSql db)
         {
             InitializeComponent();
+            _db = db;
+            PopulateProducts();
         }
+
+        public void PopulateProducts()
+        {
+           dGVProducts.DataSource = _db.GetAllProductsFromDatabase();
+        }
+
+   
     }
 }

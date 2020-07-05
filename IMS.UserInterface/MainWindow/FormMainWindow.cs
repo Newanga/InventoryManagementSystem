@@ -14,6 +14,7 @@ using System.Windows.Forms;
 using Microsoft.Extensions.DependencyInjection;
 using IMS.DataAccess.FormCategoryData;
 using IMS.UserInterface.Supplier;
+using IMS.UserInterface.Product;
 
 namespace IMS.UserInterface
 {
@@ -103,7 +104,7 @@ namespace IMS.UserInterface
 
         private void BtnProducts_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(Program.ServiceProvider.GetService<FormProduct>());
         }
 
         private void BtnCategories_Click(object sender, EventArgs e)

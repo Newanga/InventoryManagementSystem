@@ -14,6 +14,8 @@ using System.Runtime.Serialization;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using IMS.DataAccess.FormSupplier;
+using IMS.UserInterface.Product;
+using IMS.DataAccess.FormProduct;
 
 namespace IMS.UserInterface
 {
@@ -30,11 +32,13 @@ namespace IMS.UserInterface
 
             services.AddSingleton<FormCategory>();
             services.AddSingleton<FormSupplier>();
+            services.AddSingleton<FormProduct>();
 
             services.AddTransient<ISqlDataAccess, SqlDataAccess>();
             services.AddTransient<IFormLoginSql, FormLoginSql>();
             services.AddTransient<IFormCategorySql, FormCategorySql>();
             services.AddTransient<IFormSupplierSql, FormSupplierSql>();
+            services.AddTransient<IFormProductSql, FormProductSql>();
 
             //Reading appsettings to get the configuration file
             var builder = new ConfigurationBuilder()

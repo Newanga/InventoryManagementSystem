@@ -56,6 +56,7 @@
     <Compile Include="Models\ProductFullModel.cs" />
     <Compile Include="Models\SupplierFullModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ProductVM.cs" />
     <Compile Include="ViewModels\SupplierVM.cs" />
   </ItemGroup>
   <ItemGroup />
