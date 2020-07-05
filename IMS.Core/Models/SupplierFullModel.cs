@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IMS.Core.Models
 {
-    public class ProductModel
+    public class SupplierFullModel
     {
         public int Id { get; set; }
 
@@ -14,16 +14,10 @@ namespace IMS.Core.Models
 
         public string Description { get; set; }
 
-        public double Price { get; set; }
+        public string PhoneNumber { get; set; }
 
-        public int Warrenty { get; set; }
+        public string Address { get; set; }
 
-        public int SellerId { get; set; }
-
-        public int CategoryId { get; set; }
-
-        public int StateId { get; set; }
-
-
+        public int SupplierStateId { get; set; }
     }
 }

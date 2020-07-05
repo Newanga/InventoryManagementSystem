@@ -69,6 +69,8 @@
     <Compile Include="FormCategoryData\IFormCategorySql.cs" />
     <Compile Include="FormLoginData\FormLoginSql.cs" />
     <Compile Include="FormLoginData\IFormLoginSql.cs" />
+    <Compile Include="FormSupplier\FormSupplierSql.cs" />
+    <Compile Include="FormSupplier\IFormSupplierSql.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Database\SqlDataAccess.cs" />
   </ItemGroup>

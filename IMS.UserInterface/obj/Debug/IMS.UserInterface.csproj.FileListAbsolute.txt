@@ -2,6 +2,7 @@ C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\bin\Debug\a
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\bin\Debug\IMS.UserInterface.exe.config
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\bin\Debug\IMS.UserInterface.exe
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\bin\Debug\IMS.UserInterface.pdb
+C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\bin\Debug\IMS.Common.dll
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\bin\Debug\IMS.Core.dll
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\bin\Debug\IMS.DataAccess.dll
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
@@ -26,6 +27,7 @@ C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\bin\Debug\S
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\bin\Debug\System.Threading.Tasks.Extensions.dll
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\bin\Debug\System.ValueTuple.dll
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\bin\Debug\Dapper.dll
+C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\bin\Debug\IMS.Common.pdb
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\bin\Debug\IMS.Core.pdb
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\bin\Debug\IMS.DataAccess.pdb
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\bin\Debug\IMS.DataAccess.dll.config
@@ -51,7 +53,11 @@ C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\bin\Debug\S
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\bin\Debug\System.ValueTuple.xml
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\bin\Debug\Dapper.xml
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\obj\Debug\IMS.UserInterface.csprojAssemblyReference.cache
+C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\obj\Debug\IMS.UserInterface.Category.FormCategory.resources
+C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\obj\Debug\IMS.UserInterface.Supplier.FormSupplier.resources
+C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\obj\Debug\IMS.UserInterface.FormMainWindow.resources
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\obj\Debug\IMS.UserInterface.FormLogin.resources
+C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\obj\Debug\IMS.UserInterface.Product.FormProduct.resources
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\obj\Debug\IMS.UserInterface.Properties.Resources.resources
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\obj\Debug\IMS.UserInterface.SplashScreen.FormSplashScreen.resources
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\obj\Debug\IMS.UserInterface.csproj.GenerateResource.cache
@@ -59,7 +65,3 @@ C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\obj\Debug\I
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\obj\Debug\IMS.UserInterface.csproj.CopyComplete
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\obj\Debug\IMS.UserInterface.exe
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\obj\Debug\IMS.UserInterface.pdb
-C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\bin\Debug\IMS.Common.dll
-C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\bin\Debug\IMS.Common.pdb
-C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\obj\Debug\IMS.UserInterface.FormMainWindow.resources
-C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\obj\Debug\IMS.UserInterface.Category.FormCategory.resources

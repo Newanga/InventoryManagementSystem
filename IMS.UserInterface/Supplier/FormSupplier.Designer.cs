@@ -29,13 +29,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dGVSupplier = new System.Windows.Forms.DataGridView();
             this.lblFormHeading = new System.Windows.Forms.Label();
             this.txtBxSupplierId = new System.Windows.Forms.TextBox();
             this.lblSupplierId = new System.Windows.Forms.Label();
             this.txtBxSupplierName = new System.Windows.Forms.TextBox();
             this.lblSupplierName = new System.Windows.Forms.Label();
-            this.txtBxSupplierDescription = new System.Windows.Forms.TextBox();
             this.lblSupplierDescription = new System.Windows.Forms.Label();
             this.txtBxSupplierphoneNo = new System.Windows.Forms.TextBox();
             this.lblSupplierPhoneNo = new System.Windows.Forms.Label();
@@ -48,6 +48,8 @@
             this.btnSupplierExistingUpdate = new System.Windows.Forms.Button();
             this.btnSupplierNewUpdate = new System.Windows.Forms.Button();
             this.btnSupplierReset = new System.Windows.Forms.Button();
+            this.txtBxSupplierDescription = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.SupplierId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SupplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SupplierDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -92,6 +94,7 @@
             // 
             // txtBxSupplierId
             // 
+            this.txtBxSupplierId.Enabled = false;
             this.txtBxSupplierId.Location = new System.Drawing.Point(151, 58);
             this.txtBxSupplierId.Name = "txtBxSupplierId";
             this.txtBxSupplierId.Size = new System.Drawing.Size(199, 20);
@@ -108,10 +111,12 @@
             // 
             // txtBxSupplierName
             // 
+            this.txtBxSupplierName.BackColor = System.Drawing.SystemColors.Window;
+            this.txtBxSupplierName.Enabled = false;
             this.txtBxSupplierName.Location = new System.Drawing.Point(151, 93);
             this.txtBxSupplierName.Name = "txtBxSupplierName";
             this.txtBxSupplierName.Size = new System.Drawing.Size(199, 20);
-            this.txtBxSupplierName.TabIndex = 18;
+            this.txtBxSupplierName.TabIndex = 25;
             // 
             // lblSupplierName
             // 
@@ -121,13 +126,6 @@
             this.lblSupplierName.Size = new System.Drawing.Size(76, 13);
             this.lblSupplierName.TabIndex = 19;
             this.lblSupplierName.Text = "Supplier Name";
-            // 
-            // txtBxSupplierDescription
-            // 
-            this.txtBxSupplierDescription.Location = new System.Drawing.Point(151, 140);
-            this.txtBxSupplierDescription.Name = "txtBxSupplierDescription";
-            this.txtBxSupplierDescription.Size = new System.Drawing.Size(199, 20);
-            this.txtBxSupplierDescription.TabIndex = 18;
             // 
             // lblSupplierDescription
             // 
@@ -140,6 +138,7 @@
             // 
             // txtBxSupplierphoneNo
             // 
+            this.txtBxSupplierphoneNo.Enabled = false;
             this.txtBxSupplierphoneNo.Location = new System.Drawing.Point(523, 61);
             this.txtBxSupplierphoneNo.Name = "txtBxSupplierphoneNo";
             this.txtBxSupplierphoneNo.Size = new System.Drawing.Size(199, 20);
@@ -156,6 +155,7 @@
             // 
             // txtBxSupplierAddress
             // 
+            this.txtBxSupplierAddress.Enabled = false;
             this.txtBxSupplierAddress.Location = new System.Drawing.Point(523, 96);
             this.txtBxSupplierAddress.Name = "txtBxSupplierAddress";
             this.txtBxSupplierAddress.Size = new System.Drawing.Size(199, 20);
@@ -181,6 +181,7 @@
             // 
             // combobxSupplierState
             // 
+            this.combobxSupplierState.Enabled = false;
             this.combobxSupplierState.FormattingEnabled = true;
             this.combobxSupplierState.Location = new System.Drawing.Point(523, 138);
             this.combobxSupplierState.Name = "combobxSupplierState";
@@ -200,39 +201,60 @@
             // btnSupplierEdit
             // 
             this.btnSupplierEdit.AccessibleRole = System.Windows.Forms.AccessibleRole.OutlineButton;
+            this.btnSupplierEdit.Enabled = false;
             this.btnSupplierEdit.Location = new System.Drawing.Point(891, 86);
             this.btnSupplierEdit.Name = "btnSupplierEdit";
             this.btnSupplierEdit.Size = new System.Drawing.Size(75, 23);
             this.btnSupplierEdit.TabIndex = 21;
             this.btnSupplierEdit.Text = "Edit";
             this.btnSupplierEdit.UseVisualStyleBackColor = true;
+            this.btnSupplierEdit.Click += new System.EventHandler(this.btnSupplierEdit_Click);
             // 
             // btnSupplierExistingUpdate
             // 
+            this.btnSupplierExistingUpdate.Enabled = false;
             this.btnSupplierExistingUpdate.Location = new System.Drawing.Point(771, 120);
             this.btnSupplierExistingUpdate.Name = "btnSupplierExistingUpdate";
             this.btnSupplierExistingUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnSupplierExistingUpdate.TabIndex = 21;
             this.btnSupplierExistingUpdate.Text = "Update";
             this.btnSupplierExistingUpdate.UseVisualStyleBackColor = true;
+            this.btnSupplierExistingUpdate.Click += new System.EventHandler(this.btnSupplierExistingUpdate_Click);
             // 
             // btnSupplierNewUpdate
             // 
+            this.btnSupplierNewUpdate.Enabled = false;
             this.btnSupplierNewUpdate.Location = new System.Drawing.Point(753, 163);
             this.btnSupplierNewUpdate.Name = "btnSupplierNewUpdate";
             this.btnSupplierNewUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnSupplierNewUpdate.TabIndex = 21;
             this.btnSupplierNewUpdate.Text = "Update";
             this.btnSupplierNewUpdate.UseVisualStyleBackColor = true;
+            this.btnSupplierNewUpdate.Click += new System.EventHandler(this.btnSupplierNewUpdate_Click);
             // 
             // btnSupplierReset
             // 
+            this.btnSupplierReset.Enabled = false;
             this.btnSupplierReset.Location = new System.Drawing.Point(902, 163);
             this.btnSupplierReset.Name = "btnSupplierReset";
             this.btnSupplierReset.Size = new System.Drawing.Size(75, 23);
             this.btnSupplierReset.TabIndex = 21;
             this.btnSupplierReset.Text = "Reset";
             this.btnSupplierReset.UseVisualStyleBackColor = true;
+            this.btnSupplierReset.Click += new System.EventHandler(this.btnSupplierReset_Click);
+            // 
+            // txtBxSupplierDescription
+            // 
+            this.txtBxSupplierDescription.Enabled = false;
+            this.txtBxSupplierDescription.Location = new System.Drawing.Point(154, 138);
+            this.txtBxSupplierDescription.Name = "txtBxSupplierDescription";
+            this.txtBxSupplierDescription.Size = new System.Drawing.Size(196, 20);
+            this.txtBxSupplierDescription.TabIndex = 22;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // SupplierId
             // 
@@ -271,7 +293,7 @@
             // 
             // SupplierState
             // 
-            this.SupplierState.DataPropertyName = "SupplierStateId";
+            this.SupplierState.DataPropertyName = "State";
             this.SupplierState.HeaderText = "State";
             this.SupplierState.Name = "SupplierState";
             this.SupplierState.ReadOnly = true;
@@ -281,6 +303,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1034, 484);
+            this.Controls.Add(this.txtBxSupplierDescription);
             this.Controls.Add(this.btnSupplierReset);
             this.Controls.Add(this.btnSupplierNewUpdate);
             this.Controls.Add(this.btnSupplierExistingUpdate);
@@ -289,7 +312,6 @@
             this.Controls.Add(this.combobxSupplierState);
             this.Controls.Add(this.lblSupplierState);
             this.Controls.Add(this.lblSupplierDescription);
-            this.Controls.Add(this.txtBxSupplierDescription);
             this.Controls.Add(this.lblSupplierAddress);
             this.Controls.Add(this.lblSupplierName);
             this.Controls.Add(this.txtBxSupplierAddress);
@@ -316,7 +338,6 @@
         private System.Windows.Forms.Label lblSupplierId;
         private System.Windows.Forms.TextBox txtBxSupplierName;
         private System.Windows.Forms.Label lblSupplierName;
-        private System.Windows.Forms.TextBox txtBxSupplierDescription;
         private System.Windows.Forms.Label lblSupplierDescription;
         private System.Windows.Forms.TextBox txtBxSupplierphoneNo;
         private System.Windows.Forms.Label lblSupplierPhoneNo;
@@ -329,6 +350,8 @@
         private System.Windows.Forms.Button btnSupplierExistingUpdate;
         private System.Windows.Forms.Button btnSupplierNewUpdate;
         private System.Windows.Forms.Button btnSupplierReset;
+        private System.Windows.Forms.TextBox txtBxSupplierDescription;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.DataGridViewTextBoxColumn SupplierId;
         private System.Windows.Forms.DataGridViewTextBoxColumn SupplierName;
         private System.Windows.Forms.DataGridViewTextBoxColumn SupplierDescription;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IMS.Core.Models
 {
-    public class NewCategoryModel
+    public class CategoryNewModel
     {
         public string Name { get; set; }
 

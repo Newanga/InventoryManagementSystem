@@ -2,6 +2,7 @@ C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\bin\Debug\IMS.
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\bin\Debug\IMS.DataAccess.dll
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\bin\Debug\IMS.DataAccess.pdb
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\bin\Debug\Dapper.dll
+C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\bin\Debug\IMS.Common.dll
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\bin\Debug\IMS.Core.dll
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\bin\Debug\Microsoft.Extensions.Primitives.dll
@@ -9,6 +10,7 @@ C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\bin\Debug\Syst
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\bin\Debug\System.Memory.dll
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\bin\Debug\IMS.Common.pdb
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\bin\Debug\IMS.Core.pdb
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\bin\Debug\Dapper.xml
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
@@ -22,5 +24,3 @@ C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\obj\Debug\IMS.
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\obj\Debug\IMS.DataAccess.csproj.CopyComplete
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\obj\Debug\IMS.DataAccess.dll
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\obj\Debug\IMS.DataAccess.pdb
-C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\bin\Debug\IMS.Common.dll
-C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.DataAccess\bin\Debug\IMS.Common.pdb

@@ -42,18 +42,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\AccountState.cs" />
-    <Compile Include="Enums\RoleState.cs" />
-    <Compile Include="Models\AccountModel.cs" />
-    <Compile Include="Models\CategoryModel.cs" />
+    <Compile Include="Enums\ProductState.cs" />
+    <Compile Include="Enums\Roles.cs" />
+    <Compile Include="Enums\SupplierState.cs" />
+    <Compile Include="Models\AccountFullModel.cs" />
+    <Compile Include="Models\CategoryFullModel.cs" />
     <Compile Include="Models\CurrentUserDetails.cs" />
     <Compile Include="Models\EmployeeModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
-    <Compile Include="Models\NewCategoryModel.cs" />
+    <Compile Include="Models\CategoryNewModel.cs" />
+    <Compile Include="Models\SupplierNewModel.cs" />
     <Compile Include="Models\PersonModel.cs" />
+    <Compile Include="Models\ProductFullModel.cs" />
+    <Compile Include="Models\SupplierFullModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\SupplierVM.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

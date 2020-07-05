@@ -1,6 +1,7 @@
 ﻿using IMS.DataAccess;
 using IMS.DataAccess.FormCategoryData;
 using IMS.UserInterface.Category;
+using IMS.UserInterface.Supplier;
 using IMS.UserInterface.SplashScreen;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,6 +13,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IMS.DataAccess.FormSupplier;
 
 namespace IMS.UserInterface
 {
@@ -27,10 +29,12 @@ namespace IMS.UserInterface
             services.AddSingleton<FormMainWindow>();
 
             services.AddSingleton<FormCategory>();
+            services.AddSingleton<FormSupplier>();
 
             services.AddTransient<ISqlDataAccess, SqlDataAccess>();
             services.AddTransient<IFormLoginSql, FormLoginSql>();
             services.AddTransient<IFormCategorySql, FormCategorySql>();
+            services.AddTransient<IFormSupplierSql, FormSupplierSql>();
 
             //Reading appsettings to get the configuration file
             var builder = new ConfigurationBuilder()
@@ -46,7 +50,7 @@ namespace IMS.UserInterface
 
             //var FormLogin = ServiceProvider.GetService<FormLogin>();
             //Application.Run(FormLogin);
-            var Form = ServiceProvider.GetService<FormLogin>();
+            var Form = ServiceProvider.GetService<FormMainWindow>();
             Application.Run(Form);
         }
 

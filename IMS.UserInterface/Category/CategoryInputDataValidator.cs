@@ -10,7 +10,7 @@ namespace IMS.UserInterface.Category
 {
     public static class CategoryInputDataValidator
     {
-        public static bool ValidateAdd(NewCategoryModel data)
+        public static bool ValidateAdd(CategoryNewModel data)
         {
             if(!NullOrWhiteSpace(data))
             {
@@ -22,7 +22,7 @@ namespace IMS.UserInterface.Category
             }
         }
 
-        public static bool NullOrWhiteSpace(NewCategoryModel data)
+        public static bool NullOrWhiteSpace(CategoryNewModel data)
         {
             if (string.IsNullOrWhiteSpace(data.Name) && string.IsNullOrWhiteSpace(data.Description))
             {
@@ -47,7 +47,7 @@ namespace IMS.UserInterface.Category
 
 
 
-        public static bool ValidateUpdate(CategoryModel data)
+        public static bool ValidateUpdate(CategoryFullModel data)
         {
             if (!NullOrWhiteSpace(data))
             {
@@ -59,7 +59,7 @@ namespace IMS.UserInterface.Category
             }
         }
 
-        public static bool NullOrWhiteSpace(CategoryModel data)
+        public static bool NullOrWhiteSpace(CategoryFullModel data)
         {
             if (string.IsNullOrWhiteSpace(data.Name) && string.IsNullOrWhiteSpace(data.Description))
             {

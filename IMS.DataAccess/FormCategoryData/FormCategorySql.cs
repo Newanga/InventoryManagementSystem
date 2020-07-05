@@ -16,23 +16,23 @@ namespace IMS.DataAccess.FormCategoryData
             _db = db;
         }
 
-        public List<CategoryModel> GetAllCategoriesFromDatabase()
+        public List<CategoryFullModel> GetAllCategoriesFromDatabase()
         {
             string sql = "select * from dbo.category;";
 
-            List<CategoryModel> categories = _db.LoadData<CategoryModel, dynamic>(sql, new { });
+            List<CategoryFullModel> categories = _db.LoadData<CategoryFullModel, dynamic>(sql, new { });
 
             return categories;
         }
 
-        public void CreateNewCategory(NewCategoryModel Category)
+        public void CreateNewCategory(CategoryNewModel Category)
         {
             string sql = "Insert into dbo.category (Name,Description) values (@Name,@Description);";
 
             _db.SaveData(sql, Category);
         }
 
-        public void UpdateExistingCategory(CategoryModel Category)
+        public void UpdateExistingCategory(CategoryFullModel Category)
         {
             string sql = "Update dbo.category Set Name=@Name,Description=@Description where Id=@Id";
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IMS.Core.Models
 {
-    public  class AccountModel
+    public  class AccountFullModel
     {
         public int Id { get; set; }
 

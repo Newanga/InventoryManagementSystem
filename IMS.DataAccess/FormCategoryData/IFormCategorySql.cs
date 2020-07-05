@@ -5,9 +5,9 @@ namespace IMS.DataAccess.FormCategoryData
 {
     public interface IFormCategorySql
     {
-        List<CategoryModel> GetAllCategoriesFromDatabase();
+        List<CategoryFullModel> GetAllCategoriesFromDatabase();
 
-        void UpdateExistingCategory(CategoryModel Category);
-        void CreateNewCategory(NewCategoryModel Category);
+        void UpdateExistingCategory(CategoryFullModel Category);
+        void CreateNewCategory(CategoryNewModel Category);
     }
 }

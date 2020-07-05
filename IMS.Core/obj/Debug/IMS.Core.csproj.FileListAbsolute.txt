@@ -1,6 +1,6 @@
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.Core\bin\Debug\IMS.Core.dll
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.Core\bin\Debug\IMS.Core.pdb
+C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.Core\obj\Debug\IMS.Core.csprojAssemblyReference.cache
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.Core\obj\Debug\IMS.Core.csproj.CoreCompileInputs.cache
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.Core\obj\Debug\IMS.Core.dll
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.Core\obj\Debug\IMS.Core.pdb
-C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.Core\obj\Debug\IMS.Core.csprojAssemblyReference.cache

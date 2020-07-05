@@ -51,9 +51,10 @@
             // lblFormHeading
             // 
             this.lblFormHeading.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.lblFormHeading.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblFormHeading.AutoSize = true;
             this.lblFormHeading.ForeColor = System.Drawing.Color.Black;
-            this.lblFormHeading.Location = new System.Drawing.Point(59, 37);
+            this.lblFormHeading.Location = new System.Drawing.Point(435, 25);
             this.lblFormHeading.Name = "lblFormHeading";
             this.lblFormHeading.Size = new System.Drawing.Size(49, 13);
             this.lblFormHeading.TabIndex = 0;
@@ -61,84 +62,73 @@
             // 
             // lblCategoryId
             // 
-            this.lblCategoryId.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCategoryId.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCategoryId.AutoSize = true;
-            this.lblCategoryId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoryId.Location = new System.Drawing.Point(732, 147);
+            this.lblCategoryId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoryId.Location = new System.Drawing.Point(40, 118);
             this.lblCategoryId.Name = "lblCategoryId";
-            this.lblCategoryId.Size = new System.Drawing.Size(91, 20);
+            this.lblCategoryId.Size = new System.Drawing.Size(83, 18);
             this.lblCategoryId.TabIndex = 1;
             this.lblCategoryId.Text = "Category Id";
             // 
             // lblCategoryName
             // 
-            this.lblCategoryName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCategoryName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCategoryName.AutoSize = true;
-            this.lblCategoryName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoryName.Location = new System.Drawing.Point(732, 218);
+            this.lblCategoryName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoryName.Location = new System.Drawing.Point(40, 169);
             this.lblCategoryName.Name = "lblCategoryName";
-            this.lblCategoryName.Size = new System.Drawing.Size(119, 20);
+            this.lblCategoryName.Size = new System.Drawing.Size(112, 18);
             this.lblCategoryName.TabIndex = 1;
             this.lblCategoryName.Text = "Category Name";
             // 
             // lblCategoryDescription
             // 
-            this.lblCategoryDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCategoryDescription.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCategoryDescription.AutoSize = true;
-            this.lblCategoryDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoryDescription.Location = new System.Drawing.Point(732, 294);
+            this.lblCategoryDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoryDescription.Location = new System.Drawing.Point(412, 115);
             this.lblCategoryDescription.Name = "lblCategoryDescription";
-            this.lblCategoryDescription.Size = new System.Drawing.Size(157, 20);
+            this.lblCategoryDescription.Size = new System.Drawing.Size(134, 16);
             this.lblCategoryDescription.TabIndex = 1;
             this.lblCategoryDescription.Text = "Category Description";
             // 
             // txtBxCategoryId
             // 
-            this.txtBxCategoryId.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBxCategoryId.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBxCategoryId.Enabled = false;
-            this.txtBxCategoryId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBxCategoryId.Location = new System.Drawing.Point(736, 180);
+            this.txtBxCategoryId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBxCategoryId.Location = new System.Drawing.Point(172, 115);
             this.txtBxCategoryId.Name = "txtBxCategoryId";
-            this.txtBxCategoryId.Size = new System.Drawing.Size(231, 26);
+            this.txtBxCategoryId.Size = new System.Drawing.Size(231, 24);
             this.txtBxCategoryId.TabIndex = 2;
             // 
             // txtBxCategoryName
             // 
-            this.txtBxCategoryName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBxCategoryName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBxCategoryName.Enabled = false;
-            this.txtBxCategoryName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBxCategoryName.Location = new System.Drawing.Point(736, 252);
+            this.txtBxCategoryName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBxCategoryName.Location = new System.Drawing.Point(172, 169);
             this.txtBxCategoryName.Name = "txtBxCategoryName";
-            this.txtBxCategoryName.Size = new System.Drawing.Size(230, 26);
+            this.txtBxCategoryName.Size = new System.Drawing.Size(230, 24);
             this.txtBxCategoryName.TabIndex = 2;
             // 
             // txtBxCategoryDescription
             // 
-            this.txtBxCategoryDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBxCategoryDescription.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBxCategoryDescription.Enabled = false;
-            this.txtBxCategoryDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBxCategoryDescription.Location = new System.Drawing.Point(736, 331);
+            this.txtBxCategoryDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBxCategoryDescription.Location = new System.Drawing.Point(552, 118);
+            this.txtBxCategoryDescription.Multiline = true;
             this.txtBxCategoryDescription.Name = "txtBxCategoryDescription";
-            this.txtBxCategoryDescription.Size = new System.Drawing.Size(231, 26);
+            this.txtBxCategoryDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtBxCategoryDescription.Size = new System.Drawing.Size(319, 75);
             this.txtBxCategoryDescription.TabIndex = 2;
             // 
             // btnCategoryAdd
             // 
-            this.btnCategoryAdd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCategoryAdd.Location = new System.Drawing.Point(736, 72);
+            this.btnCategoryAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCategoryAdd.Location = new System.Drawing.Point(891, 25);
             this.btnCategoryAdd.Name = "btnCategoryAdd";
             this.btnCategoryAdd.Size = new System.Drawing.Size(131, 23);
             this.btnCategoryAdd.TabIndex = 3;
@@ -149,14 +139,17 @@
             // dGVCategory
             // 
             this.dGVCategory.AllowUserToDeleteRows = false;
+            this.dGVCategory.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dGVCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CategoryId,
             this.CategoryName,
             this.CategoryDescription});
-            this.dGVCategory.Location = new System.Drawing.Point(62, 147);
+            this.dGVCategory.Location = new System.Drawing.Point(43, 231);
             this.dGVCategory.Name = "dGVCategory";
-            this.dGVCategory.Size = new System.Drawing.Size(582, 297);
+            this.dGVCategory.ReadOnly = true;
+            this.dGVCategory.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.dGVCategory.Size = new System.Drawing.Size(978, 218);
             this.dGVCategory.TabIndex = 4;
             this.dGVCategory.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVCategory_CellDoubleClick);
             // 
@@ -166,6 +159,7 @@
             this.CategoryId.DataPropertyName = "Id";
             this.CategoryId.HeaderText = "CategoryId";
             this.CategoryId.Name = "CategoryId";
+            this.CategoryId.ReadOnly = true;
             this.CategoryId.Width = 83;
             // 
             // CategoryName
@@ -174,6 +168,7 @@
             this.CategoryName.DataPropertyName = "Name";
             this.CategoryName.HeaderText = "CategoryName";
             this.CategoryName.Name = "CategoryName";
+            this.CategoryName.ReadOnly = true;
             this.CategoryName.Width = 102;
             // 
             // CategoryDescription
@@ -182,13 +177,13 @@
             this.CategoryDescription.DataPropertyName = "Description";
             this.CategoryDescription.HeaderText = "CategoryDescription";
             this.CategoryDescription.Name = "CategoryDescription";
+            this.CategoryDescription.ReadOnly = true;
             // 
             // btnCategoryNewUpdate
             // 
-            this.btnCategoryNewUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCategoryNewUpdate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCategoryNewUpdate.Enabled = false;
-            this.btnCategoryNewUpdate.Location = new System.Drawing.Point(736, 411);
+            this.btnCategoryNewUpdate.Location = new System.Drawing.Point(893, 154);
             this.btnCategoryNewUpdate.Name = "btnCategoryNewUpdate";
             this.btnCategoryNewUpdate.Size = new System.Drawing.Size(130, 23);
             this.btnCategoryNewUpdate.TabIndex = 3;
@@ -198,10 +193,9 @@
             // 
             // btnCategoryReset
             // 
-            this.btnCategoryReset.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCategoryReset.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCategoryReset.Enabled = false;
-            this.btnCategoryReset.Location = new System.Drawing.Point(892, 411);
+            this.btnCategoryReset.Location = new System.Drawing.Point(891, 183);
             this.btnCategoryReset.Name = "btnCategoryReset";
             this.btnCategoryReset.Size = new System.Drawing.Size(130, 23);
             this.btnCategoryReset.TabIndex = 3;
@@ -211,10 +205,9 @@
             // 
             // btnCategoryEdit
             // 
-            this.btnCategoryEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCategoryEdit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCategoryEdit.Enabled = false;
-            this.btnCategoryEdit.Location = new System.Drawing.Point(892, 72);
+            this.btnCategoryEdit.Location = new System.Drawing.Point(893, 91);
             this.btnCategoryEdit.Name = "btnCategoryEdit";
             this.btnCategoryEdit.Size = new System.Drawing.Size(130, 23);
             this.btnCategoryEdit.TabIndex = 3;
@@ -224,10 +217,9 @@
             // 
             // btnCategoryExistingUpdate
             // 
-            this.btnCategoryExistingUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCategoryExistingUpdate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCategoryExistingUpdate.Enabled = false;
-            this.btnCategoryExistingUpdate.Location = new System.Drawing.Point(736, 411);
+            this.btnCategoryExistingUpdate.Location = new System.Drawing.Point(893, 133);
             this.btnCategoryExistingUpdate.Name = "btnCategoryExistingUpdate";
             this.btnCategoryExistingUpdate.Size = new System.Drawing.Size(130, 23);
             this.btnCategoryExistingUpdate.TabIndex = 3;

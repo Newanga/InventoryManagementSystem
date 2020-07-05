@@ -33,7 +33,7 @@ namespace IMS.DataAccess
 
 
 
-            AccountModel account = _db.LoadData<AccountModel, dynamic>(sql, new { Username = login.Username, Password = login.Password }).FirstOrDefault();
+            AccountFullModel account = _db.LoadData<AccountFullModel, dynamic>(sql, new { Username = login.Username, Password = login.Password }).FirstOrDefault();
 
             if (account != null)
                 return true;

@@ -21,4 +21,67 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="AccountStateId" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="63b39e53-6208-4d25-aafa-4815039e4bda" ChangeDateTime="07/04/2020 05:39:43">
+    <Property Name="ElementName" Value="[dbo].[Product].[Status]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Product]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="StatusId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="8090890e-220a-4067-89e8-d938f3c85974" ChangeDateTime="07/04/2020 05:43:48">
+    <Property Name="ElementName" Value="[dbo].[Product].[SellerId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Product]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SupplierId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="dce20fb1-76eb-45b5-b652-f678810157e4" ChangeDateTime="07/04/2020 05:44:05">
+    <Property Name="ElementName" Value="[dbo].[Supplier].[Name\]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Supplier]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Name" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="3eeb16e9-60bf-4edc-b5d9-615bd8da630b" ChangeDateTime="07/04/2020 05:51:30">
+    <Property Name="ElementName" Value="[dbo].[Supplier].[Status]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Supplier]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="StatusId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="460e7d4d-45c8-4531-a9cb-b529ffa5c4dd" ChangeDateTime="07/04/2020 05:55:46">
+    <Property Name="ElementName" Value="[dbo].[Product].[StatusId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Product]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ProductStateId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="0705d74a-0470-422c-9774-e9dc096fba4a" ChangeDateTime="07/04/2020 05:56:49">
+    <Property Name="ElementName" Value="[dbo].[ProductState].[Status]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ProductState]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="State" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d9c9ce4c-4248-4180-b91f-320e3658d1f6" ChangeDateTime="07/04/2020 05:57:15">
+    <Property Name="ElementName" Value="[dbo].[SupplierStatus].[Status]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[SupplierStatus]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="State" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="abdfe8d9-b09e-4b31-82bd-ef62c1007112" ChangeDateTime="07/04/2020 05:57:28">
+    <Property Name="ElementName" Value="[dbo].[Supplier].[StatusId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Supplier]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SupplierStateId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ba9b6a82-636f-405d-a181-473d5c502f8a" ChangeDateTime="07/04/2020 10:32:00">
+    <Property Name="ElementName" Value="[dbo].[Supplier].[Addresss]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Supplier]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Address" />
+  </Operation>
 </Operations>

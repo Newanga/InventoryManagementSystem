@@ -21,9 +21,6 @@ namespace IMS.UserInterface.Category
         {
             InitializeComponent();
             _db = db;
-            txtBxCategoryId.BorderStyle = BorderStyle.None;
-            txtBxCategoryName.BorderStyle = BorderStyle.None;
-            txtBxCategoryDescription.BorderStyle = BorderStyle.None;
             PopulateDatagrid();
         }
 
@@ -53,8 +50,13 @@ namespace IMS.UserInterface.Category
         private void btnCategoryReset_Click(object sender, EventArgs e)
         {
             txtBxCategoryId.BorderStyle = BorderStyle.None;
+            txtBxCategoryId.BorderStyle = BorderStyle.Fixed3D;
+
             txtBxCategoryName.BorderStyle = BorderStyle.None;
+            txtBxCategoryName.BorderStyle = BorderStyle.Fixed3D;
+
             txtBxCategoryDescription.BorderStyle = BorderStyle.None;
+            txtBxCategoryDescription.BorderStyle = BorderStyle.Fixed3D;
 
             txtBxCategoryId.Text = string.Empty;
             txtBxCategoryName.Text = string.Empty;
@@ -77,7 +79,12 @@ namespace IMS.UserInterface.Category
 
         private void btnCategoryNewUpdate_Click(object sender, EventArgs e)
         {
-            NewCategoryModel data = new NewCategoryModel { Name = txtBxCategoryName.Text, Description = txtBxCategoryDescription.Text };
+            CategoryNewModel data = new CategoryNewModel 
+            { 
+                Name = txtBxCategoryName.Text,
+                Description = txtBxCategoryDescription.Text
+            };
+
             bool validData = CategoryInputDataValidator.ValidateAdd(data);
 
             if(validData)
@@ -99,8 +106,13 @@ namespace IMS.UserInterface.Category
                 txtBxCategoryDescription.Text = dgvRow.Cells[2].Value.ToString();
             }
             txtBxCategoryId.BorderStyle = BorderStyle.None;
+            txtBxCategoryId.BorderStyle = BorderStyle.Fixed3D;
+
             txtBxCategoryName.BorderStyle = BorderStyle.None;
+            txtBxCategoryName.BorderStyle = BorderStyle.Fixed3D;
+
             txtBxCategoryDescription.BorderStyle = BorderStyle.None;
+            txtBxCategoryDescription.BorderStyle = BorderStyle.Fixed3D;
 
             btnCategoryAdd.Enabled = false;
             btnCategoryEdit.Enabled = true;
@@ -109,7 +121,7 @@ namespace IMS.UserInterface.Category
 
         private void btnCategoryExistingUpdate_Click(object sender, EventArgs e)
         {
-            CategoryModel data = new CategoryModel { Id =int.Parse(txtBxCategoryId.Text),Name = txtBxCategoryName.Text, Description = txtBxCategoryDescription.Text };
+            CategoryFullModel data = new CategoryFullModel { Id =int.Parse(txtBxCategoryId.Text),Name = txtBxCategoryName.Text, Description = txtBxCategoryDescription.Text };
             bool validData = CategoryInputDataValidator.ValidateUpdate(data);
 
             if (validData)
@@ -130,9 +142,6 @@ namespace IMS.UserInterface.Category
             txtBxCategoryName.Enabled = true;
             txtBxCategoryDescription.Enabled = true;
 
-            txtBxCategoryId.BorderStyle = BorderStyle.Fixed3D;
-            txtBxCategoryName.BorderStyle = BorderStyle.Fixed3D;
-            txtBxCategoryDescription.BorderStyle = BorderStyle.Fixed3D;
 
             btnCategoryNewUpdate.Visible = false;
             btnCategoryExistingUpdate.Visible = true;

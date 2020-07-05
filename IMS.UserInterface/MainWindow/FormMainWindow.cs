@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Extensions.DependencyInjection;
 using IMS.DataAccess.FormCategoryData;
+using IMS.UserInterface.Supplier;
 
 namespace IMS.UserInterface
 {
@@ -23,7 +24,7 @@ namespace IMS.UserInterface
         {
             InitializeComponent();
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-            lblRole.Text = ((RoleState)Cache.RoleId).ToString();
+            lblRole.Text = ((Roles)Cache.RoleId).ToString();
             lblFirstName.Text = Cache.FirstName;
             lblEmail.Text = Cache.EmailAddress;
         }
@@ -97,7 +98,7 @@ namespace IMS.UserInterface
 
         private void BtnSuppliers_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(Program.ServiceProvider.GetService<FormSupplier>());
         }
 
         private void BtnProducts_Click(object sender, EventArgs e)
