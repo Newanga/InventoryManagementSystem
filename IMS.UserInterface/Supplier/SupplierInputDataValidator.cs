@@ -10,7 +10,7 @@ namespace IMS.UserInterface.Supplier
 {
     public static class SupplierInputDataValidator
     {
-        public static bool ValidateAdd(SupplierNewModel data)
+        public static bool ValidateAdd(SupplierModel data)
         {
             if (!NullOrWhiteSpace(data))
             {
@@ -22,7 +22,7 @@ namespace IMS.UserInterface.Supplier
             }
         }
 
-        public static bool NullOrWhiteSpace(SupplierNewModel data)
+        public static bool NullOrWhiteSpace(SupplierModel data)
         {
             if (
                 string.IsNullOrWhiteSpace(data.Name) ||

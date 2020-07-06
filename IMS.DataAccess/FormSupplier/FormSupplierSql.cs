@@ -30,7 +30,7 @@ namespace IMS.DataAccess.FormSupplier
             return suppliers;
         }
 
-        public void CreateNewSupplier(SupplierNewModel supplier)
+        public void CreateNewSupplier(SupplierModel supplier)
         {
             string sql = "Insert into dbo.Supplier (Name,Description,PhoneNumber,Address,SupplierStateId) values (@Name,@Description,@PhoneNumber,@Address,@SupplierStateId);";
 

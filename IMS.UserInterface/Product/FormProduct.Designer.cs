@@ -39,7 +39,7 @@
             this.txtBxProductId = new System.Windows.Forms.TextBox();
             this.txtBxPurchasePrice = new System.Windows.Forms.TextBox();
             this.txtBxProductName = new System.Windows.Forms.TextBox();
-            this.txtBxlblProductWarrenty = new System.Windows.Forms.TextBox();
+            this.txtBxProductWarrenty = new System.Windows.Forms.TextBox();
             this.txtBxProductDescription = new System.Windows.Forms.TextBox();
             this.comboBxProductState = new System.Windows.Forms.ComboBox();
             this.comboBxlProductSupplier = new System.Windows.Forms.ComboBox();
@@ -53,6 +53,11 @@
             this.ProductSupplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductCategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductState = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnProductAdd = new System.Windows.Forms.Button();
+            this.btnProductEdit = new System.Windows.Forms.Button();
+            this.btnProductNewUpdate = new System.Windows.Forms.Button();
+            this.btnProductExistingUpdate = new System.Windows.Forms.Button();
+            this.btnProductReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGVProducts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,6 +135,7 @@
             // 
             // txtBxProductId
             // 
+            this.txtBxProductId.Enabled = false;
             this.txtBxProductId.Location = new System.Drawing.Point(170, 29);
             this.txtBxProductId.Name = "txtBxProductId";
             this.txtBxProductId.Size = new System.Drawing.Size(151, 20);
@@ -137,27 +143,33 @@
             // 
             // txtBxPurchasePrice
             // 
+            this.txtBxPurchasePrice.Enabled = false;
             this.txtBxPurchasePrice.Location = new System.Drawing.Point(667, 88);
             this.txtBxPurchasePrice.Name = "txtBxPurchasePrice";
             this.txtBxPurchasePrice.Size = new System.Drawing.Size(151, 20);
             this.txtBxPurchasePrice.TabIndex = 1;
+            this.txtBxPurchasePrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBxPurchasePrice_KeyPress);
             // 
             // txtBxProductName
             // 
+            this.txtBxProductName.Enabled = false;
             this.txtBxProductName.Location = new System.Drawing.Point(170, 119);
             this.txtBxProductName.Name = "txtBxProductName";
             this.txtBxProductName.Size = new System.Drawing.Size(151, 20);
             this.txtBxProductName.TabIndex = 1;
             // 
-            // txtBxlblProductWarrenty
+            // txtBxProductWarrenty
             // 
-            this.txtBxlblProductWarrenty.Location = new System.Drawing.Point(667, 22);
-            this.txtBxlblProductWarrenty.Name = "txtBxlblProductWarrenty";
-            this.txtBxlblProductWarrenty.Size = new System.Drawing.Size(151, 20);
-            this.txtBxlblProductWarrenty.TabIndex = 1;
+            this.txtBxProductWarrenty.Enabled = false;
+            this.txtBxProductWarrenty.Location = new System.Drawing.Point(667, 22);
+            this.txtBxProductWarrenty.Name = "txtBxProductWarrenty";
+            this.txtBxProductWarrenty.Size = new System.Drawing.Size(151, 20);
+            this.txtBxProductWarrenty.TabIndex = 1;
+            this.txtBxProductWarrenty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBxProductWarrenty_KeyPress);
             // 
             // txtBxProductDescription
             // 
+            this.txtBxProductDescription.Enabled = false;
             this.txtBxProductDescription.Location = new System.Drawing.Point(667, 116);
             this.txtBxProductDescription.Name = "txtBxProductDescription";
             this.txtBxProductDescription.Size = new System.Drawing.Size(151, 20);
@@ -165,6 +177,8 @@
             // 
             // comboBxProductState
             // 
+            this.comboBxProductState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBxProductState.Enabled = false;
             this.comboBxProductState.FormattingEnabled = true;
             this.comboBxProductState.Location = new System.Drawing.Point(667, 55);
             this.comboBxProductState.Name = "comboBxProductState";
@@ -173,6 +187,8 @@
             // 
             // comboBxlProductSupplier
             // 
+            this.comboBxlProductSupplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBxlProductSupplier.Enabled = false;
             this.comboBxlProductSupplier.FormattingEnabled = true;
             this.comboBxlProductSupplier.Location = new System.Drawing.Point(170, 60);
             this.comboBxlProductSupplier.Name = "comboBxlProductSupplier";
@@ -181,6 +197,8 @@
             // 
             // comboBxlblProductCategory
             // 
+            this.comboBxlblProductCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBxlblProductCategory.Enabled = false;
             this.comboBxlblProductCategory.FormattingEnabled = true;
             this.comboBxlblProductCategory.Location = new System.Drawing.Point(170, 88);
             this.comboBxlblProductCategory.Name = "comboBxlblProductCategory";
@@ -199,10 +217,11 @@
             this.ProductSupplierName,
             this.ProductCategoryName,
             this.ProductState});
-            this.dGVProducts.Location = new System.Drawing.Point(60, 295);
+            this.dGVProducts.Location = new System.Drawing.Point(76, 282);
             this.dGVProducts.Name = "dGVProducts";
             this.dGVProducts.Size = new System.Drawing.Size(920, 150);
             this.dGVProducts.TabIndex = 3;
+            this.dGVProducts.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVProducts_CellDoubleClick);
             // 
             // ProductId
             // 
@@ -260,11 +279,66 @@
             this.ProductState.HeaderText = "State";
             this.ProductState.Name = "ProductState";
             // 
+            // btnProductAdd
+            // 
+            this.btnProductAdd.Location = new System.Drawing.Point(888, 25);
+            this.btnProductAdd.Name = "btnProductAdd";
+            this.btnProductAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnProductAdd.TabIndex = 4;
+            this.btnProductAdd.Text = "Create";
+            this.btnProductAdd.UseVisualStyleBackColor = true;
+            this.btnProductAdd.Click += new System.EventHandler(this.btnProductAdd_Click);
+            // 
+            // btnProductEdit
+            // 
+            this.btnProductEdit.Location = new System.Drawing.Point(888, 81);
+            this.btnProductEdit.Name = "btnProductEdit";
+            this.btnProductEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnProductEdit.TabIndex = 4;
+            this.btnProductEdit.Text = "Edit";
+            this.btnProductEdit.UseVisualStyleBackColor = true;
+            this.btnProductEdit.Click += new System.EventHandler(this.btnProductEdit_Click);
+            // 
+            // btnProductNewUpdate
+            // 
+            this.btnProductNewUpdate.Location = new System.Drawing.Point(635, 160);
+            this.btnProductNewUpdate.Name = "btnProductNewUpdate";
+            this.btnProductNewUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnProductNewUpdate.TabIndex = 4;
+            this.btnProductNewUpdate.Text = "Update";
+            this.btnProductNewUpdate.UseVisualStyleBackColor = true;
+            this.btnProductNewUpdate.Click += new System.EventHandler(this.btnProductNewUpdate_Click);
+            // 
+            // btnProductExistingUpdate
+            // 
+            this.btnProductExistingUpdate.Location = new System.Drawing.Point(752, 181);
+            this.btnProductExistingUpdate.Name = "btnProductExistingUpdate";
+            this.btnProductExistingUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnProductExistingUpdate.TabIndex = 4;
+            this.btnProductExistingUpdate.Text = "Update";
+            this.btnProductExistingUpdate.UseVisualStyleBackColor = true;
+            this.btnProductExistingUpdate.Click += new System.EventHandler(this.btnProductExistingUpdate_Click);
+            // 
+            // btnProductReset
+            // 
+            this.btnProductReset.Location = new System.Drawing.Point(921, 181);
+            this.btnProductReset.Name = "btnProductReset";
+            this.btnProductReset.Size = new System.Drawing.Size(75, 23);
+            this.btnProductReset.TabIndex = 4;
+            this.btnProductReset.Text = "Reset";
+            this.btnProductReset.UseVisualStyleBackColor = true;
+            this.btnProductReset.Click += new System.EventHandler(this.btnProductReset_Click);
+            // 
             // FormProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1034, 484);
+            this.Controls.Add(this.btnProductReset);
+            this.Controls.Add(this.btnProductExistingUpdate);
+            this.Controls.Add(this.btnProductNewUpdate);
+            this.Controls.Add(this.btnProductEdit);
+            this.Controls.Add(this.btnProductAdd);
             this.Controls.Add(this.dGVProducts);
             this.Controls.Add(this.comboBxlblProductCategory);
             this.Controls.Add(this.comboBxlProductSupplier);
@@ -272,7 +346,7 @@
             this.Controls.Add(this.txtBxProductDescription);
             this.Controls.Add(this.txtBxProductName);
             this.Controls.Add(this.txtBxPurchasePrice);
-            this.Controls.Add(this.txtBxlblProductWarrenty);
+            this.Controls.Add(this.txtBxProductWarrenty);
             this.Controls.Add(this.txtBxProductId);
             this.Controls.Add(this.lblProductCategory);
             this.Controls.Add(this.lblProductSupplier);
@@ -282,7 +356,7 @@
             this.Controls.Add(this.lblProductName);
             this.Controls.Add(this.lblPurchasePrice);
             this.Controls.Add(this.lblProductId);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormProduct";
             this.Text = "FormProduct";
             ((System.ComponentModel.ISupportInitialize)(this.dGVProducts)).EndInit();
@@ -304,7 +378,7 @@
         private System.Windows.Forms.TextBox txtBxProductId;
         private System.Windows.Forms.TextBox txtBxPurchasePrice;
         private System.Windows.Forms.TextBox txtBxProductName;
-        private System.Windows.Forms.TextBox txtBxlblProductWarrenty;
+        private System.Windows.Forms.TextBox txtBxProductWarrenty;
         private System.Windows.Forms.TextBox txtBxProductDescription;
         private System.Windows.Forms.ComboBox comboBxProductState;
         private System.Windows.Forms.ComboBox comboBxlProductSupplier;
@@ -318,5 +392,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductSupplierName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductCategoryName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductState;
+        private System.Windows.Forms.Button btnProductAdd;
+        private System.Windows.Forms.Button btnProductEdit;
+        private System.Windows.Forms.Button btnProductNewUpdate;
+        private System.Windows.Forms.Button btnProductExistingUpdate;
+        private System.Windows.Forms.Button btnProductReset;
     }
 }

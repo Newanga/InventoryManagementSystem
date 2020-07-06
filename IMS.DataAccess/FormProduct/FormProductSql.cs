@@ -1,4 +1,5 @@
-﻿using IMS.Core.ViewModels;
+﻿using IMS.Core.Models;
+using IMS.Core.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace IMS.DataAccess.FormProduct
             _db = db;
         }
 
-        public List<ProductVM> GetAllProductsFromDatabase()
+        public List<ProductDataGridVM> GetAllProductsFromDatabase()
         {
             string sql = @"select p.Id,p.Name,p.Description,p.Price,p.Warrenty,s.Name as SupplierName,c.Name as CategoryName,ps.State as ProductState
                             from dbo.Product as p
@@ -27,10 +28,49 @@ namespace IMS.DataAccess.FormProduct
                             inner join dbo.ProductState as ps
                             on p.ProductStateId=ps.Id;";
 
-            List<ProductVM> products = _db.LoadData<ProductVM, dynamic>(sql, new { });
+            List<ProductDataGridVM> products = _db.LoadData<ProductDataGridVM, dynamic>(sql, new { });
 
             return products;
+        }
+
+        public ProductFormDropDownsVM GetAllDropDownValues()
+        {
+            ProductFormDropDownsVM data = new ProductFormDropDownsVM();
+
+           //populate the category list of the above model
+            string categorySql = @"Select Name from dbo.Category;";
+            data.Categories = _db.LoadData<CategoryName, dynamic>(categorySql, new { });
+
+            string productSql = @"Select Name from dbo.Supplier;";
+            data.Suppliers = _db.LoadData<SupplierName, dynamic>(productSql, new { });
+
+            return data;
 
         }
+
+        public void CreateNewProduct(ProductNewModel data)
+        {
+            string sql = "Insert into dbo.Product (Name,Description,Price,Warrenty,SupplierId,CategoryId,ProductStateId) values (@Name,@Description,@Price,@Warrenty,@SupplierId,@CategoryId,@ProductStateId);";
+
+            _db.SaveData(sql, data);
+        }
+
+        public void UpdateExistingProduct(ProductFullModel data)
+        {
+            string sql =@"Update dbo.Product set
+                            Name=@Name,
+                            Description=@Description,
+                            Price=@Price,
+                            Warrenty=@Warrenty,
+                            SupplierId=@SupplierId,
+                            CategoryId=@CategoryId,
+                            ProductStateId=@ProductStateId 
+                            where Id=@Id;";
+
+            _db.SaveData(sql, data);
+        }
+
+
+
     }
 }

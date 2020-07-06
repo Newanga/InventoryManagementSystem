@@ -54,7 +54,7 @@ namespace IMS.UserInterface
 
             //var FormLogin = ServiceProvider.GetService<FormLogin>();
             //Application.Run(FormLogin);
-            var Form = ServiceProvider.GetService<FormMainWindow>();
+            var Form = ServiceProvider.GetService<FormProduct>();
             Application.Run(Form);
         }
 

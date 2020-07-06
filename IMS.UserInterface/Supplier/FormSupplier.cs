@@ -125,7 +125,7 @@ namespace IMS.UserInterface.Supplier
 
         private void btnSupplierNewUpdate_Click(object sender, EventArgs e)
         {
-            SupplierNewModel data = new SupplierNewModel
+            SupplierModel data = new SupplierModel
             {
 
                 Name = txtBxSupplierName.Text,
@@ -181,7 +181,7 @@ namespace IMS.UserInterface.Supplier
             {
                 _db.UpdateExistingSupplier(data);
                 dGVSupplier.DataSource = _db.GetAllSuppliersFromDatabase();
-                MessageBox.Show("Category Updated Successfully", "Operation Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Supplier Updated Successfully", "Operation Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnSupplierReset_Click(null, RoutedEventArgs.Empty);
             }
         }

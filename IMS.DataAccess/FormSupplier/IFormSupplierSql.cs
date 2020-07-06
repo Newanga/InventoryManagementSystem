@@ -6,7 +6,7 @@ namespace IMS.DataAccess.FormSupplier
 {
     public interface IFormSupplierSql
     {
-        void CreateNewSupplier(SupplierNewModel supplier);
+        void CreateNewSupplier(SupplierModel supplier);
 
         List<SupplierDataGridVM> GetAllSuppliersFromDatabase();
 

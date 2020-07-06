@@ -47,17 +47,21 @@
     <Compile Include="Enums\SupplierState.cs" />
     <Compile Include="Models\AccountFullModel.cs" />
     <Compile Include="Models\CategoryFullModel.cs" />
+    <Compile Include="Models\CategoryName.cs" />
     <Compile Include="Models\CurrentUserDetails.cs" />
     <Compile Include="Models\EmployeeModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\CategoryNewModel.cs" />
+    <Compile Include="Models\ProductNewModel.cs" />
+    <Compile Include="Models\SupplierName.cs" />
     <Compile Include="Models\SupplierNewModel.cs" />
     <Compile Include="Models\PersonModel.cs" />
     <Compile Include="Models\ProductFullModel.cs" />
     <Compile Include="Models\SupplierFullModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\ProductVM.cs" />
-    <Compile Include="ViewModels\SupplierVM.cs" />
+    <Compile Include="ViewModels\ProductDataGridVM.cs" />
+    <Compile Include="ViewModels\ProductFormDropDownsVM.cs" />
+    <Compile Include="ViewModels\SupplierDataGridVM.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

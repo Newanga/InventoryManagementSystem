@@ -124,6 +124,7 @@
     <Compile Include="Category\FormCategory.Designer.cs">
       <DependentUpon>FormCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Product\ProductInputDataValidator.cs" />
     <Compile Include="Supplier\FormSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
