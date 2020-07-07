@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IMS.Core.Models
 {
-    public class EmployeeModel:PersonModel
+    public class EmployeeFullModel:PersonModel
     {
         public int EmployeeId { get; set; }
 

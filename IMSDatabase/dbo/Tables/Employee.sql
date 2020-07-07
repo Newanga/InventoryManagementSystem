@@ -1,8 +1,8 @@
 ﻿CREATE TABLE [dbo].[Employee]
 (
 	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
-    [FirstName] NVARCHAR(50) NOT NULL, 
-    [LastName] NVARCHAR(50) NOT NULL, 
+    [FirstName] NVARCHAR(100) NOT NULL, 
+    [LastName] NVARCHAR(100) NOT NULL, 
     [DateOfBirth] DATE NOT NULL, 
     [Address] NVARCHAR(250) NOT NULL, 
     [JoinedDate] DATE NOT NULL, 

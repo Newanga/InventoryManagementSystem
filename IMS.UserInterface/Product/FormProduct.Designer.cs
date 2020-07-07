@@ -219,6 +219,7 @@
             this.ProductState});
             this.dGVProducts.Location = new System.Drawing.Point(76, 282);
             this.dGVProducts.Name = "dGVProducts";
+            this.dGVProducts.ReadOnly = true;
             this.dGVProducts.Size = new System.Drawing.Size(920, 150);
             this.dGVProducts.TabIndex = 3;
             this.dGVProducts.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVProducts_CellDoubleClick);
@@ -291,6 +292,7 @@
             // 
             // btnProductEdit
             // 
+            this.btnProductEdit.Enabled = false;
             this.btnProductEdit.Location = new System.Drawing.Point(888, 81);
             this.btnProductEdit.Name = "btnProductEdit";
             this.btnProductEdit.Size = new System.Drawing.Size(75, 23);
@@ -301,7 +303,7 @@
             // 
             // btnProductNewUpdate
             // 
-            this.btnProductNewUpdate.Location = new System.Drawing.Point(635, 160);
+            this.btnProductNewUpdate.Location = new System.Drawing.Point(752, 181);
             this.btnProductNewUpdate.Name = "btnProductNewUpdate";
             this.btnProductNewUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnProductNewUpdate.TabIndex = 4;
@@ -356,7 +358,7 @@
             this.Controls.Add(this.lblProductName);
             this.Controls.Add(this.lblPurchasePrice);
             this.Controls.Add(this.lblProductId);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormProduct";
             this.Text = "FormProduct";
             ((System.ComponentModel.ISupportInitialize)(this.dGVProducts)).EndInit();

@@ -1,8 +1,8 @@
 ﻿CREATE TABLE [dbo].[Product]
 (
 	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
-    [Name] NVARCHAR(50) NOT NULL, 
-    [Description] NVARCHAR(250) NOT NULL, 
+    [Name] NVARCHAR(500) NOT NULL, 
+    [Description] NVARCHAR(2000) NOT NULL, 
     [Price] MONEY NOT NULL, 
     [Warrenty] INT NOT NULL, 
     [SupplierId] INT NOT NULL, 

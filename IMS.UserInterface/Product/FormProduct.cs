@@ -52,6 +52,13 @@ namespace IMS.UserInterface.Product
 
         private void btnProductAdd_Click(object sender, EventArgs e)
         {
+            if(data.Suppliers.Count<1)
+            {
+                MessageBox.Show("Please Add suppliers to Database before adding a product.", "Supplier unavailable", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnProductReset_Click(null, RoutedEventArgs.Empty);
+                return;
+            }
+
             PopulateComboBoxes();
 
             btnProductAdd.Enabled = false;

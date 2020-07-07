@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[Account]
 (
 	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
-    [EmailAddress] NVARCHAR(50) NOT NULL, 
+    [EmailAddress] NVARCHAR(300) NOT NULL, 
     [Username] NVARCHAR(50) NOT NULL, 
     [Password] NVARCHAR(50) NOT NULL, 
     [AccountStateId] INT NOT NULL, 
