@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,6 +18,10 @@ namespace IMS.UserInterface.Employees
                 return false;
             }
             else if (!CheckDateValidity(data))
+            {
+                return false;
+            }
+            else if (!CheckAccountDetailsValidity(data))
             {
                 return false;
             }
@@ -62,17 +67,17 @@ namespace IMS.UserInterface.Employees
                 MessageBox.Show("Please select Start Date of Employee.", "Missing Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return true;
             }
-            else if(string.IsNullOrWhiteSpace(data.Employee.Address))
+            else if (string.IsNullOrWhiteSpace(data.Employee.Address))
             {
                 MessageBox.Show("Please enter Employee Address.", "Missing Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return true;
             }
-            else if(string.IsNullOrWhiteSpace(data.Account.EmailAddress))
+            else if (string.IsNullOrWhiteSpace(data.Account.EmailAddress))
             {
                 MessageBox.Show("Please enter Employee EmailAddress.", "Missing Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return true;
             }
-            else if(string.IsNullOrWhiteSpace(data.Account.Username))
+            else if (string.IsNullOrWhiteSpace(data.Account.Username))
             {
                 MessageBox.Show("Please enter Employee Username.", "Missing Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return true;
@@ -105,12 +110,13 @@ namespace IMS.UserInterface.Employees
                 MessageBox.Show("Please select Start Date of Employee.", "Missing Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return true;
             }
-            else if (data.Employee.DateOfBirth > (DateTime.Now.AddYears(-18)))
+            //check for age valididty of 18
+            else if (data.Employee.DateOfBirth < (DateTime.Now.AddYears(-18)))
             {
                 MessageBox.Show("Select a valid Date of birth of employee.", "Invalid Date Of Birth", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return true;
             }
-            else if(data.Employee.StartDate>DateTime.Now.Date)
+            else if (data.Employee.StartDate > DateTime.Now.Date)
             {
                 MessageBox.Show("Select a start date which is today or before.", "Invalid StartDate", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return true;
@@ -121,6 +127,48 @@ namespace IMS.UserInterface.Employees
             }
         }
 
+        public static bool CheckAccountDetailsValidity(AllEmployeeDetailsModel data)
+        {
+            if(string.IsNullOrWhiteSpace(data.Account.Username) && string.IsNullOrWhiteSpace(data.Account.Password) && string.IsNullOrWhiteSpace(data.Account.EmailAddress))
+            {
+                MessageBox.Show("Please enter a Username and Password and a email for new Employee.", "Missing Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(data.Account.EmailAddress))
+            {
+                MessageBox.Show("Please enter Email Address of new Employee.", "Missing Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(data.Account.Username))
+            {
+                MessageBox.Show("Please enter a Username for new Employee.", "Missing Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(data.Account.Username))
+            {
+                MessageBox.Show("Please enter a Password  for new Employee.", "Missing Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if(Regex.IsMatch(data.Account.EmailAddress, @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"))
+            {
+                MessageBox.Show("Please enter a valid Email for new Employee.", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (data.Account.Username.Length<6)
+            {
+                MessageBox.Show("Username should be greater than 6 characters.", "Invalid Username", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (data.Account.Password.Length < 6)
+            {
+                MessageBox.Show("Password should be greater than 6 characters.", "Invalid Username", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
 
 
     }
