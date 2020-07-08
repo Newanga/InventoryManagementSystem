@@ -16,6 +16,10 @@ namespace IMS.UserInterface.Employees
             {
                 return false;
             }
+            else if (!CheckDateValidity(data))
+            {
+                return false;
+            }
             else
             {
                 return true;
@@ -50,12 +54,12 @@ namespace IMS.UserInterface.Employees
             }
             else if (data.Employee.DateOfBirth == null)
             {
-                MessageBox.Show("Please enter Employee Date of Birth.", "Missing Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please select Date of Birth of Employee.", "Missing Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return true;
             }
             else if (data.Employee.StartDate == null)
             {
-                MessageBox.Show("Please enter Employee Start Date.", "Missing Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please select Start Date of Employee.", "Missing Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return true;
             }
             else if(string.IsNullOrWhiteSpace(data.Employee.Address))
@@ -76,6 +80,39 @@ namespace IMS.UserInterface.Employees
             else if (string.IsNullOrWhiteSpace(data.Account.Password))
             {
                 MessageBox.Show("Please enter Employee Password.", "Missing Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public static bool CheckDateValidity(AllEmployeeDetailsModel data)
+        {
+            if (data.Employee.DateOfBirth == null && data.Employee.StartDate == null)
+            {
+                MessageBox.Show("Please select Date of Birth and start date of Employee.", "Missing Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+            else if (data.Employee.DateOfBirth == null)
+            {
+                MessageBox.Show("Please select Date of Birth of Employee.", "Missing Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+            else if (data.Employee.StartDate == null)
+            {
+                MessageBox.Show("Please select Start Date of Employee.", "Missing Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+            else if (data.Employee.DateOfBirth > (DateTime.Now.AddYears(-18)))
+            {
+                MessageBox.Show("Select a valid Date of birth of employee.", "Invalid Date Of Birth", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+            else if(data.Employee.StartDate>DateTime.Now.Date)
+            {
+                MessageBox.Show("Select a start date which is today or before.", "Invalid StartDate", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return true;
             }
             else
