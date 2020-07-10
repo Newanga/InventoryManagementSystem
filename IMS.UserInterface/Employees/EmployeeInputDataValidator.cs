@@ -60,32 +60,32 @@ namespace IMS.UserInterface.Employees
             else if (data.Employee.DateOfBirth == null)
             {
                 MessageBox.Show("Please select Date of Birth of Employee.", "Missing Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return true;
+                return false;
             }
             else if (data.Employee.StartDate == null)
             {
                 MessageBox.Show("Please select Start Date of Employee.", "Missing Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return true;
+                return false;
             }
             else if (string.IsNullOrWhiteSpace(data.Employee.Address))
             {
                 MessageBox.Show("Please enter Employee Address.", "Missing Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return true;
+                return false;
             }
             else if (string.IsNullOrWhiteSpace(data.Account.EmailAddress))
             {
                 MessageBox.Show("Please enter Employee EmailAddress.", "Missing Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return true;
+                return false;
             }
             else if (string.IsNullOrWhiteSpace(data.Account.Username))
             {
                 MessageBox.Show("Please enter Employee Username.", "Missing Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return true;
+                return false;
             }
             else if (string.IsNullOrWhiteSpace(data.Account.Password))
             {
                 MessageBox.Show("Please enter Employee Password.", "Missing Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return true;
+                return false;
             }
             else
             {
@@ -98,28 +98,28 @@ namespace IMS.UserInterface.Employees
             if (data.Employee.DateOfBirth == null && data.Employee.StartDate == null)
             {
                 MessageBox.Show("Please select Date of Birth and start date of Employee.", "Missing Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return true;
+                return false;
             }
             else if (data.Employee.DateOfBirth == null)
             {
                 MessageBox.Show("Please select Date of Birth of Employee.", "Missing Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return true;
+                return false;
             }
             else if (data.Employee.StartDate == null)
             {
                 MessageBox.Show("Please select Start Date of Employee.", "Missing Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return true;
+                return false;
             }
             //check for age valididty of 18
-            else if (data.Employee.DateOfBirth < (DateTime.Now.AddYears(-18)))
+            else if (data.Employee.DateOfBirth > (DateTime.Now.AddYears(-18)))
             {
                 MessageBox.Show("Select a valid Date of birth of employee.", "Invalid Date Of Birth", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return true;
+                return false;
             }
             else if (data.Employee.StartDate > DateTime.Now.Date)
             {
                 MessageBox.Show("Select a start date which is today or before.", "Invalid StartDate", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return true;
+                return false;
             }
             else
             {
@@ -149,7 +149,7 @@ namespace IMS.UserInterface.Employees
                 MessageBox.Show("Please enter a Password  for new Employee.", "Missing Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            else if(Regex.IsMatch(data.Account.EmailAddress, @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"))
+            else if(!Regex.IsMatch(data.Account.EmailAddress, @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"))
             {
                 MessageBox.Show("Please enter a valid Email for new Employee.", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;

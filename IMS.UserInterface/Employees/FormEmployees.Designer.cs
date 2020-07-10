@@ -95,6 +95,7 @@
             // 
             // txtBxFirstName
             // 
+            this.txtBxFirstName.Enabled = false;
             this.txtBxFirstName.Location = new System.Drawing.Point(193, 88);
             this.txtBxFirstName.Name = "txtBxFirstName";
             this.txtBxFirstName.Size = new System.Drawing.Size(100, 20);
@@ -120,6 +121,7 @@
             // 
             // txtBxLastName
             // 
+            this.txtBxLastName.Enabled = false;
             this.txtBxLastName.Location = new System.Drawing.Point(193, 117);
             this.txtBxLastName.Name = "txtBxLastName";
             this.txtBxLastName.Size = new System.Drawing.Size(100, 20);
@@ -137,6 +139,7 @@
             // dTPDOB
             // 
             this.dTPDOB.CustomFormat = " ";
+            this.dTPDOB.Enabled = false;
             this.dTPDOB.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dTPDOB.Location = new System.Drawing.Point(414, 57);
             this.dTPDOB.MaxDate = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
@@ -159,6 +162,7 @@
             // 
             // txtBxAdress
             // 
+            this.txtBxAdress.Enabled = false;
             this.txtBxAdress.Location = new System.Drawing.Point(414, 148);
             this.txtBxAdress.Name = "txtBxAdress";
             this.txtBxAdress.Size = new System.Drawing.Size(141, 20);
@@ -177,6 +181,7 @@
             // 
             this.dTPStartDate.Checked = false;
             this.dTPStartDate.CustomFormat = " ";
+            this.dTPStartDate.Enabled = false;
             this.dTPStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dTPStartDate.Location = new System.Drawing.Point(414, 94);
             this.dTPStartDate.MaxDate = new System.DateTime(2025, 12, 31, 0, 0, 0, 0);
@@ -216,6 +221,7 @@
             // 
             // txtBxEmailAddress
             // 
+            this.txtBxEmailAddress.Enabled = false;
             this.txtBxEmailAddress.Location = new System.Drawing.Point(193, 144);
             this.txtBxEmailAddress.Name = "txtBxEmailAddress";
             this.txtBxEmailAddress.Size = new System.Drawing.Size(100, 20);
@@ -232,6 +238,7 @@
             // 
             // txtBxUsername
             // 
+            this.txtBxUsername.Enabled = false;
             this.txtBxUsername.Location = new System.Drawing.Point(693, 82);
             this.txtBxUsername.Name = "txtBxUsername";
             this.txtBxUsername.Size = new System.Drawing.Size(156, 20);
@@ -248,6 +255,7 @@
             // 
             // txtBxPassword
             // 
+            this.txtBxPassword.Enabled = false;
             this.txtBxPassword.Location = new System.Drawing.Point(693, 109);
             this.txtBxPassword.Name = "txtBxPassword";
             this.txtBxPassword.Size = new System.Drawing.Size(156, 20);
@@ -273,6 +281,7 @@
             // 
             // comboBxAccountState
             // 
+            this.comboBxAccountState.Enabled = false;
             this.comboBxAccountState.FormattingEnabled = true;
             this.comboBxAccountState.Location = new System.Drawing.Point(693, 172);
             this.comboBxAccountState.Name = "comboBxAccountState";
@@ -281,6 +290,7 @@
             // 
             // comboBxRole
             // 
+            this.comboBxRole.Enabled = false;
             this.comboBxRole.FormattingEnabled = true;
             this.comboBxRole.Location = new System.Drawing.Point(693, 138);
             this.comboBxRole.Name = "comboBxRole";
@@ -410,6 +420,7 @@
             this.btnEmployeesNewUpdate.TabIndex = 5;
             this.btnEmployeesNewUpdate.Text = "Update";
             this.btnEmployeesNewUpdate.UseVisualStyleBackColor = true;
+            this.btnEmployeesNewUpdate.Click += new System.EventHandler(this.btnEmployeesNewUpdate_Click);
             // 
             // btnEmployeesReset
             // 
@@ -432,6 +443,7 @@
             // dTPLeaveDate
             // 
             this.dTPLeaveDate.CustomFormat = " ";
+            this.dTPLeaveDate.Enabled = false;
             this.dTPLeaveDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dTPLeaveDate.Location = new System.Drawing.Point(414, 122);
             this.dTPLeaveDate.MaxDate = new System.DateTime(2025, 12, 31, 0, 0, 0, 0);

@@ -1,4 +1,6 @@
-﻿using IMS.Core.Models;
+﻿using IMS.Core.Enums;
+using IMS.Core.Models;
+using IMS.DataAccess.FormEmployee;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,12 +16,48 @@ namespace IMS.UserInterface.Employees
 {
     public partial class FormEmployees : Form
     {
-        public  FormEmployees()
+        private readonly IFormEmployeeSql _db;
+
+        public FormEmployees(IFormEmployeeSql db)
         {
-             InitializeComponent();
+            InitializeComponent();
+            _db = db;
         }
 
         private void btnEmployeesAdd_Click(object sender, EventArgs e)
+        {
+            PopulateComboBoxes();
+
+            btnEmployeesAdd.Enabled = false;
+
+            btnEmployeesReset.Enabled = true;
+            txtBxFirstName.Enabled = true;
+            txtBxLastName.Enabled = true;
+            txtBxEmailAddress.Enabled = true;
+            txtBxAdress.Enabled = true;
+            txtBxUsername.Enabled = true;
+            txtBxPassword.Enabled = true;
+
+            dTPDOB.Enabled = true;
+            dTPStartDate.Enabled = true;
+            dTPLeaveDate.Enabled = true;
+
+            comboBxRole.Enabled = true;
+            comboBxAccountState.Enabled = true;
+
+            btnEmployeesExistingUpdate.Visible = false;
+            btnEmployeesNewUpdate.Visible = true;
+            btnEmployeesNewUpdate.Enabled = true;
+
+        }
+
+        private void PopulateComboBoxes()
+        {
+            comboBxRole.DataSource = Enum.GetValues(typeof(Roles));
+            comboBxAccountState.DataSource = Enum.GetValues(typeof(AccountState));
+        }
+
+        private void btnEmployeesNewUpdate_Click(object sender, EventArgs e)
         {
             AllEmployeeDetailsModel data = new AllEmployeeDetailsModel
             {
@@ -36,14 +74,22 @@ namespace IMS.UserInterface.Employees
                     FirstName = txtBxFirstName.Text,
                     LastName = txtBxLastName.Text,
                     Address = txtBxAdress.Text,
-                    DateOfBirth = (dTPDOB.CustomFormat==" ") ? (DateTime?)null : dTPDOB.Value.Date,
+                    DateOfBirth = (dTPDOB.CustomFormat == " ") ? (DateTime?)null : dTPDOB.Value.Date,
                     StartDate = (dTPStartDate.CustomFormat == " ") ? (DateTime?)null : dTPStartDate.Value.Date,
                     LeaveDate = (dTPLeaveDate.CustomFormat == " ") ? (DateTime?)null : dTPLeaveDate.Value.Date
                 }
             };
 
+            bool validData = EmployeeInputDataValidator.ValidateAdd(data);
 
+            if (validData)
+            {
+                _db.CreateNewEmployee(data);
+            }
+
+  
         }
+
 
 
 
@@ -53,12 +99,12 @@ namespace IMS.UserInterface.Employees
         #region UI/UX Improvements
         private void dTPDOB_ValueChanged(object sender, EventArgs e)
         {
-            dTPDOB.CustomFormat = "dd-mm-yyyy";
+            dTPDOB.CustomFormat = "dd-MM-yyyy";
         }
 
         private void dTPDOB_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode==Keys.Back || e.KeyCode == Keys.Delete || e.KeyCode == Keys.Escape)
+            if (e.KeyCode == Keys.Back || e.KeyCode == Keys.Delete || e.KeyCode == Keys.Escape)
             {
                 dTPDOB.CustomFormat = " ";
             }
@@ -75,12 +121,12 @@ namespace IMS.UserInterface.Employees
 
         private void dTPStartDate_ValueChanged(object sender, EventArgs e)
         {
-            dTPStartDate.CustomFormat = "dd-mm-yyyy";
+            dTPStartDate.CustomFormat = "dd-MM-yyyy";
         }
 
         private void dTPLeaveDate_ValueChanged(object sender, EventArgs e)
         {
-            dTPLeaveDate.CustomFormat = "dd-mm-yyyy";
+            dTPLeaveDate.CustomFormat = "dd-MM-yyyy";
         }
 
         private void dTPLeaveDate_KeyDown(object sender, KeyEventArgs e)
@@ -93,5 +139,7 @@ namespace IMS.UserInterface.Employees
         }
 
         #endregion
+
+
     }
 }
