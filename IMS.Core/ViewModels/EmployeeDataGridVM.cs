@@ -20,7 +20,9 @@ namespace IMS.Core.ViewModels
         //EmployeeModel Properties
         public int EmployeeId { get; set; }
 
-        public DateTime JoinedDate { get; set; }
+        public DateTime StartDate { get; set; }
+
+        public DateTime LeaveDate { get; set; }
 
         //AccountModel Properties
         public int AccountId { get; set; }
@@ -30,8 +32,8 @@ namespace IMS.Core.ViewModels
 
         public string Password { get; set; }
 
-        public int AccountStateId { get; set; }
+        public string AccountState { get; set; }
 
-        public int RoleId { get; set; }
+        public string Role { get; set; }
     }
 }

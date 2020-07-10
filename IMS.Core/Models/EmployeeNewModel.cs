@@ -8,6 +8,9 @@ namespace IMS.Core.Models
 {
     public class EmployeeNewModel:PersonModel
     {
-        public DateTime JoinedDate { get; set; }
+        public DateTime? StartDate { get; set; }
+
+        public DateTime? LeaveDate { get; set; }
+        public int AccountId { get; set; }
     }
 }

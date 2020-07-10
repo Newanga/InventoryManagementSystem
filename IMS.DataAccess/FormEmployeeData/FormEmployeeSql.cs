@@ -1,4 +1,5 @@
 ﻿using IMS.Core.Models;
+using IMS.Core.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,6 +44,27 @@ namespace IMS.DataAccess.FormEmployee
                              LeaveDate = data.Employee.LeaveDate
                          });
 
+
+        }
+
+
+        public List<EmployeeDataGridVM> GetAllEmployeesFromDatabase()
+        {
+            string sql = @"select e.Id as EmployeeId,e.FirstName,e.LastName,
+                            e.DateOfBirth,e.Address,e.StartDate,e.LeaveDate,
+                            a.Id as AccountId,a.EmailAddress,a.Username,
+                            a.Password,ast.State as AccountState,r.Name as Role
+                            from dbo.Employee as e
+                            inner join dbo.Account as a
+                            on e.AccountId=a.Id
+                            inner join dbo.AccountState as ast
+                            on a.AccountStateId=ast.Id
+                            inner join dbo.Roles as r
+                            on a.RoleId=r.Id;";
+
+            return _db.LoadData<EmployeeDataGridVM, dynamic>(sql,new { });
+
+            
 
         }
     }

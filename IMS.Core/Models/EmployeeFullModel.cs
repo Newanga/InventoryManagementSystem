@@ -10,7 +10,9 @@ namespace IMS.Core.Models
     {
         public int EmployeeId { get; set; }
 
-        public DateTime JoinedDate { get; set; }
+        public DateTime StartDate { get; set; }
+
+        public DateTime LeaveDate { get; set; }
 
         public int AccountId { get; set; }
 
