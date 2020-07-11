@@ -62,8 +62,8 @@ namespace IMS.UserInterface.Product
             PopulateComboBoxes();
 
             btnProductAdd.Enabled = false;
-
             btnProductReset.Enabled = true;
+
             txtBxProductName.Enabled = true;
             txtBxPurchasePrice.Enabled = true;
             txtBxProductDescription.Enabled = true;
@@ -171,6 +171,7 @@ namespace IMS.UserInterface.Product
         {
             btnProductAdd.Enabled = false;
             btnProductReset.Enabled = true;
+            btnProductEdit.Enabled = false;
 
             txtBxProductName.Enabled = true;
             txtBxProductDescription.Enabled = true;
@@ -211,35 +212,6 @@ namespace IMS.UserInterface.Product
             }
         }
 
-        private void txtBxProductWarrenty_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {          
-                MessageBox.Show("Please enter only numbers.", "Invalid Character", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                e.Handled = true;
-            }
-        }
-
-        private void txtBxPurchasePrice_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == '.' && txtBxPurchasePrice.Text.Contains("."))
-            {
-                MessageBox.Show("Invalid Number", "Invalid Entry", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                e.Handled = true;
-
-            }
-            else if (e.KeyChar == '.' && txtBxPurchasePrice.Text.Length == 0)
-            {
-                MessageBox.Show("Price should be greater than 1.", "Invalid Price", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                e.Handled = true;
-            }
-            else if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
-            {
-                MessageBox.Show("Please enter only numbers.", "Invalid Character", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                e.Handled = true;
-            }
-        }
-
         private void btnProductExistingUpdate_Click(object sender, EventArgs e)
         {
 
@@ -263,6 +235,36 @@ namespace IMS.UserInterface.Product
                 dGVProducts.DataSource = _db.GetAllProductsFromDatabase();
                 MessageBox.Show("Product Updated Successfully!", "Operation Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnProductReset_Click(null, RoutedEventArgs.Empty);
+            }
+        }
+
+
+        private void txtBxProductWarrenty_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                MessageBox.Show("Please enter only numbers.", "Invalid Character", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Handled = true;
+            }
+        }
+
+        private void txtBxPurchasePrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '.' && txtBxPurchasePrice.Text.Contains("."))
+            {
+                MessageBox.Show("Invalid Number", "Invalid Entry", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Handled = true;
+
+            }
+            else if (e.KeyChar == '.' && txtBxPurchasePrice.Text.Length == 0)
+            {
+                MessageBox.Show("Price should be greater than 1.", "Invalid Price", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Handled = true;
+            }
+            else if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                MessageBox.Show("Please enter only numbers.", "Invalid Character", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Handled = true;
             }
         }
     }

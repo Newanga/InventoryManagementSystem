@@ -150,6 +150,7 @@ namespace IMS.UserInterface.Supplier
         {
             btnSupplierAdd.Enabled = false;
             btnSupplierReset.Enabled = true;
+            btnSupplierEdit.Enabled = false;
 
             txtBxSupplierName.Enabled = true;
             txtBxSupplierDescription.Enabled = true;
