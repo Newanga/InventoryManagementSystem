@@ -65,3 +65,4 @@ C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\obj\Debug\I
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\obj\Debug\IMS.UserInterface.csproj.CopyComplete
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\obj\Debug\IMS.UserInterface.exe
 C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\obj\Debug\IMS.UserInterface.pdb
+C:\Users\Newanga\Desktop\InventoryManagementSystem\IMS.UserInterface\obj\Debug\IMS.UserInterface.Employees.FormEmployees.resources

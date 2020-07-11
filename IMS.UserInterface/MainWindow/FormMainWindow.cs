@@ -15,6 +15,7 @@ using Microsoft.Extensions.DependencyInjection;
 using IMS.DataAccess.FormCategoryData;
 using IMS.UserInterface.Supplier;
 using IMS.UserInterface.Product;
+using IMS.UserInterface.Employees;
 
 namespace IMS.UserInterface
 {
@@ -114,7 +115,7 @@ namespace IMS.UserInterface
 
         private void BtnEmployees_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(Program.ServiceProvider.GetService<FormEmployees>());
         }
 
         private void BtnOrders_Click(object sender, EventArgs e)

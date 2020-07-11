@@ -124,6 +124,13 @@
     <Compile Include="Category\FormCategory.Designer.cs">
       <DependentUpon>FormCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Employees\EmployeeInputDataValidator.cs" />
+    <Compile Include="Employees\FormEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employees\FormEmployees.Designer.cs">
+      <DependentUpon>FormEmployees.cs</DependentUpon>
+    </Compile>
     <Compile Include="Product\ProductInputDataValidator.cs" />
     <Compile Include="Supplier\FormSupplier.cs">
       <SubType>Form</SubType>
@@ -161,6 +168,9 @@
     <Compile Include="Supplier\SupplierInputDataValidator.cs" />
     <EmbeddedResource Include="Category\FormCategory.resx">
       <DependentUpon>FormCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employees\FormEmployees.resx">
+      <DependentUpon>FormEmployees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Supplier\FormSupplier.resx">
       <DependentUpon>FormSupplier.cs</DependentUpon>

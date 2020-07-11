@@ -47,11 +47,14 @@
     <Compile Include="Enums\SupplierState.cs" />
     <Compile Include="Models\AccountFullModel.cs" />
     <Compile Include="Models\AccountNewModel.cs" />
+    <Compile Include="Models\EmployeeDetailsNewModel.cs" />
     <Compile Include="Models\CategoryFullModel.cs" />
     <Compile Include="Models\CategoryName.cs" />
     <Compile Include="Models\CurrentUserDetails.cs" />
+    <Compile Include="Models\EmployeeDetailsUpdateModel.cs" />
     <Compile Include="Models\EmployeeFullModel.cs" />
     <Compile Include="Models\EmployeeNewModel.cs" />
+    <Compile Include="Models\IdLookUpModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\CategoryNewModel.cs" />
     <Compile Include="Models\ProductNewModel.cs" />
@@ -66,6 +69,5 @@
     <Compile Include="ViewModels\ProductFormDropDownsVM.cs" />
     <Compile Include="ViewModels\SupplierDataGridVM.cs" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

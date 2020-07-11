@@ -18,7 +18,7 @@ namespace IMS.DataAccess.FormEmployee
             _db = db;
         }
 
-        public void CreateNewEmployee(AllEmployeeDetailsModel data)
+        public void CreateNewEmployee(EmployeeDetailsNewModel data)
         {
             string sql = @"Insert into dbo.Account (EmailAddress,Username,Password,AccountStateId,RoleId)
                           values (@EmailAddress,@Username,@Password,@AccountStateId,@RoleId);";
@@ -77,6 +77,45 @@ namespace IMS.DataAccess.FormEmployee
 
             
 
+        }
+
+        public void UpdateExistingEmployee(EmployeeDetailsUpdateModel data)
+        {
+            string sql = @"Update dbo.Employee Set 
+                            FirstName=@FirstName, LastName=@LastName,
+                            DateOfBirth=@DateOfBirth, Address=@Address,
+                            StartDate=@StartDate, LeaveDate=@LeaveDate, AccountId=@AccountId 
+                            where Id=@Id;";
+
+            _db.SaveData(sql, new {
+                FirstName = data.Employee.FirstName,
+                LastName=data.Employee.LastName,
+                DateOfBirth=data.Employee.DateOfBirth,
+                Address=data.Employee.Address,
+                StartDate=data.Employee.StartDate,
+                LeaveDate=data.Employee.LeaveDate,
+                AccountId=data.Employee.AccountId,
+                Id=data.Employee.EmployeeId
+            
+            });
+
+            sql = @"Update dbo.Account set 
+                            EmailAddress=@EmailAddress,
+                            Username=@Username,
+                            Password=@Password,
+                            AccountStateId=@AccountStateId,
+                            RoleId=@RoleId
+                            where Id=@Id;";
+
+            _db.SaveData(sql, new
+            {
+                EmailAddress=data.Account.EmailAddress,
+                Username=data.Account.Username,
+                Password=data.Account.Password,
+                AccountStateId=data.Account.Id,
+                RoleId=data.Account.RoleId,
+                Id=data.Account.Id
+            });
         }
     }
 }

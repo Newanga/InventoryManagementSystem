@@ -11,6 +11,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
 
 namespace IMS.UserInterface.Employees
@@ -42,7 +43,7 @@ namespace IMS.UserInterface.Employees
 
             dTPDOB.Enabled = true;
             dTPStartDate.Enabled = true;
-            dTPLeaveDate.Enabled = true;
+            dTPLeaveDate.Enabled = false;
 
             comboBxRole.Enabled = true;
             comboBxAccountState.Enabled = true;
@@ -61,7 +62,7 @@ namespace IMS.UserInterface.Employees
 
         private void btnEmployeesNewUpdate_Click(object sender, EventArgs e)
         {
-            AllEmployeeDetailsModel data = new AllEmployeeDetailsModel
+            EmployeeDetailsNewModel data = new EmployeeDetailsNewModel
             {
                 Account = new AccountNewModel
                 {
@@ -97,6 +98,7 @@ namespace IMS.UserInterface.Employees
         }
 
         #region UI/UX Improvements
+
         private void dTPDOB_ValueChanged(object sender, EventArgs e)
         {
             dTPDOB.CustomFormat = "dd-MM-yyyy";
@@ -266,6 +268,70 @@ namespace IMS.UserInterface.Employees
             btnEmployeesEdit.Enabled = false;
 
             btnEmployeesReset.Enabled = false;
+
+        }
+
+        private void btnEmployeesExistingUpdate_Click(object sender, EventArgs e)
+        {
+            EmployeeDetailsUpdateModel data = new EmployeeDetailsUpdateModel
+            {
+                Account = new AccountFullModel
+                {
+                    Id=int.Parse(txtBxAccountId.Text),
+                    EmailAddress = txtBxEmailAddress.Text,
+                    Username = txtBxUsername.Text,
+                    Password = txtBxPassword.Text,
+                    AccountStateId = comboBxAccountState.SelectedIndex + 1,
+                    RoleId = comboBxRole.SelectedIndex + 1
+                },
+                Employee = new EmployeeFullModel
+                {
+                    FirstName = txtBxFirstName.Text,
+                    LastName = txtBxLastName.Text,
+                    Address = txtBxAdress.Text,
+                    DateOfBirth = (dTPDOB.CustomFormat == " ") ? (DateTime?)null : dTPDOB.Value.Date,
+                    StartDate = (dTPStartDate.CustomFormat == " ") ? (DateTime?)null : dTPStartDate.Value.Date,
+                    LeaveDate = (dTPLeaveDate.CustomFormat == " ") ? (DateTime?)null : dTPLeaveDate.Value.Date
+                }
+            };
+
+            bool validData = EmployeeInputDataValidator.ValidateUpdate(data);
+
+            if(validData)
+            {
+                _db.UpdateExistingEmployee(data);
+                dGVEmployees.DataSource = _db.GetAllEmployeesFromDatabase();
+                MessageBox.Show("Employee Updated Successfully", "Operation Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnEmployeesReset_Click(null, RoutedEventArgs.Empty);
+            }
+
+
+        }
+
+        private void btnEmployeesEdit_Click(object sender, EventArgs e)
+        {
+            btnEmployeesAdd.Enabled = false;
+            btnEmployeesReset.Enabled = true;
+            btnEmployeesEdit.Enabled = false;
+
+            txtBxFirstName.Enabled = true;
+            txtBxLastName.Enabled = true;
+            txtBxEmailAddress.Enabled = true;
+            txtBxAdress.Enabled = true;
+            txtBxUsername.Enabled = true;
+            txtBxPassword.Enabled = true;
+
+            dTPDOB.Enabled = true;
+            dTPStartDate.Enabled = true;
+            dTPLeaveDate.Enabled = true;
+
+            comboBxRole.Enabled = true;
+            comboBxAccountState.Enabled = true;
+
+            btnEmployeesExistingUpdate.Visible = true;
+            btnEmployeesExistingUpdate.Enabled = true;
+            btnEmployeesNewUpdate.Visible = false;
+            btnEmployeesNewUpdate.Enabled = false;
 
         }
     }

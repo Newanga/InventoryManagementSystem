@@ -432,6 +432,7 @@
             this.btnEmployeesEdit.TabIndex = 5;
             this.btnEmployeesEdit.Text = "Edit";
             this.btnEmployeesEdit.UseVisualStyleBackColor = true;
+            this.btnEmployeesEdit.Click += new System.EventHandler(this.btnEmployeesEdit_Click);
             // 
             // btnEmployeesExistingUpdate
             // 
@@ -443,6 +444,7 @@
             this.btnEmployeesExistingUpdate.Text = "Update";
             this.btnEmployeesExistingUpdate.UseVisualStyleBackColor = true;
             this.btnEmployeesExistingUpdate.Visible = false;
+            this.btnEmployeesExistingUpdate.Click += new System.EventHandler(this.btnEmployeesExistingUpdate_Click);
             // 
             // btnEmployeesNewUpdate
             // 

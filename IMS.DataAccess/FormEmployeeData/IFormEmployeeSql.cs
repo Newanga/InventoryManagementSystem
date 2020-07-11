@@ -6,7 +6,8 @@ namespace IMS.DataAccess.FormEmployee
 {
     public interface IFormEmployeeSql
     {
-        void CreateNewEmployee(AllEmployeeDetailsModel data);
+        void CreateNewEmployee(EmployeeDetailsNewModel data);
         List<EmployeeDataGridVM> GetAllEmployeesFromDatabase();
+        void UpdateExistingEmployee(EmployeeDetailsUpdateModel data);
     }
 }
