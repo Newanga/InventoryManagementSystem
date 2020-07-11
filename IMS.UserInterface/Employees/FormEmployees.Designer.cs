@@ -56,6 +56,7 @@
             this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateOfBirth = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,7 +64,6 @@
             this.AccountState = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LeaveDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmployeeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateOfBirth = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AccountId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEmployeesAdd = new System.Windows.Forms.Button();
@@ -299,11 +299,13 @@
             // 
             // dGVEmployees
             // 
+            this.dGVEmployees.AllowUserToDeleteRows = false;
             this.dGVEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVEmployees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FirstName,
             this.LastName,
             this.Username,
+            this.DateOfBirth,
             this.Email,
             this.Password,
             this.StartDate,
@@ -311,78 +313,105 @@
             this.AccountState,
             this.LeaveDate,
             this.EmployeeId,
-            this.DateOfBirth,
             this.Address,
             this.AccountId});
             this.dGVEmployees.Location = new System.Drawing.Point(43, 246);
             this.dGVEmployees.Name = "dGVEmployees";
+            this.dGVEmployees.ReadOnly = true;
             this.dGVEmployees.Size = new System.Drawing.Size(937, 150);
             this.dGVEmployees.TabIndex = 4;
+            this.dGVEmployees.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVEmployees_CellDoubleClick);
             // 
             // FirstName
             // 
+            this.FirstName.DataPropertyName = "FirstName";
             this.FirstName.HeaderText = "FirstName";
             this.FirstName.Name = "FirstName";
+            this.FirstName.ReadOnly = true;
             // 
             // LastName
             // 
+            this.LastName.DataPropertyName = "LastName";
             this.LastName.HeaderText = "LastName";
             this.LastName.Name = "LastName";
+            this.LastName.ReadOnly = true;
             // 
             // Username
             // 
+            this.Username.DataPropertyName = "Username";
             this.Username.HeaderText = "Username";
             this.Username.Name = "Username";
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            // 
-            // Password
-            // 
-            this.Password.HeaderText = "Password";
-            this.Password.Name = "Password";
-            // 
-            // StartDate
-            // 
-            this.StartDate.HeaderText = "StartDate";
-            this.StartDate.Name = "StartDate";
-            // 
-            // Role
-            // 
-            this.Role.HeaderText = "Role";
-            this.Role.Name = "Role";
-            // 
-            // AccountState
-            // 
-            this.AccountState.HeaderText = "AccountState";
-            this.AccountState.Name = "AccountState";
-            // 
-            // LeaveDate
-            // 
-            this.LeaveDate.HeaderText = "LeaveDate";
-            this.LeaveDate.Name = "LeaveDate";
-            // 
-            // EmployeeId
-            // 
-            this.EmployeeId.HeaderText = "EmployeeId";
-            this.EmployeeId.Name = "EmployeeId";
+            this.Username.ReadOnly = true;
             // 
             // DateOfBirth
             // 
+            this.DateOfBirth.DataPropertyName = "DateOfBirth";
             this.DateOfBirth.HeaderText = "DateOfBirth";
             this.DateOfBirth.Name = "DateOfBirth";
+            this.DateOfBirth.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "EmailAddress";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            // 
+            // Password
+            // 
+            this.Password.DataPropertyName = "Password";
+            this.Password.HeaderText = "Password";
+            this.Password.Name = "Password";
+            this.Password.ReadOnly = true;
+            // 
+            // StartDate
+            // 
+            this.StartDate.DataPropertyName = "StartDate";
+            this.StartDate.HeaderText = "StartDate";
+            this.StartDate.Name = "StartDate";
+            this.StartDate.ReadOnly = true;
+            // 
+            // Role
+            // 
+            this.Role.DataPropertyName = "Role";
+            this.Role.HeaderText = "Role";
+            this.Role.Name = "Role";
+            this.Role.ReadOnly = true;
+            // 
+            // AccountState
+            // 
+            this.AccountState.DataPropertyName = "AccountState";
+            this.AccountState.HeaderText = "AccountState";
+            this.AccountState.Name = "AccountState";
+            this.AccountState.ReadOnly = true;
+            // 
+            // LeaveDate
+            // 
+            this.LeaveDate.DataPropertyName = "LeaveDate";
+            this.LeaveDate.HeaderText = "LeaveDate";
+            this.LeaveDate.Name = "LeaveDate";
+            this.LeaveDate.ReadOnly = true;
+            // 
+            // EmployeeId
+            // 
+            this.EmployeeId.DataPropertyName = "EmployeeId";
+            this.EmployeeId.HeaderText = "EmployeeId";
+            this.EmployeeId.Name = "EmployeeId";
+            this.EmployeeId.ReadOnly = true;
             // 
             // Address
             // 
+            this.Address.DataPropertyName = "Address";
             this.Address.HeaderText = "Address";
             this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
             // 
             // AccountId
             // 
+            this.AccountId.DataPropertyName = "AccountId";
             this.AccountId.HeaderText = "AccountId";
             this.AccountId.Name = "AccountId";
+            this.AccountId.ReadOnly = true;
             // 
             // btnEmployeesAdd
             // 
@@ -396,6 +425,7 @@
             // 
             // btnEmployeesEdit
             // 
+            this.btnEmployeesEdit.Enabled = false;
             this.btnEmployeesEdit.Location = new System.Drawing.Point(886, 76);
             this.btnEmployeesEdit.Name = "btnEmployeesEdit";
             this.btnEmployeesEdit.Size = new System.Drawing.Size(94, 23);
@@ -405,15 +435,18 @@
             // 
             // btnEmployeesExistingUpdate
             // 
+            this.btnEmployeesExistingUpdate.Enabled = false;
             this.btnEmployeesExistingUpdate.Location = new System.Drawing.Point(886, 145);
             this.btnEmployeesExistingUpdate.Name = "btnEmployeesExistingUpdate";
             this.btnEmployeesExistingUpdate.Size = new System.Drawing.Size(94, 23);
             this.btnEmployeesExistingUpdate.TabIndex = 5;
             this.btnEmployeesExistingUpdate.Text = "Update";
             this.btnEmployeesExistingUpdate.UseVisualStyleBackColor = true;
+            this.btnEmployeesExistingUpdate.Visible = false;
             // 
             // btnEmployeesNewUpdate
             // 
+            this.btnEmployeesNewUpdate.Enabled = false;
             this.btnEmployeesNewUpdate.Location = new System.Drawing.Point(886, 110);
             this.btnEmployeesNewUpdate.Name = "btnEmployeesNewUpdate";
             this.btnEmployeesNewUpdate.Size = new System.Drawing.Size(94, 23);
@@ -424,12 +457,14 @@
             // 
             // btnEmployeesReset
             // 
+            this.btnEmployeesReset.Enabled = false;
             this.btnEmployeesReset.Location = new System.Drawing.Point(886, 172);
             this.btnEmployeesReset.Name = "btnEmployeesReset";
             this.btnEmployeesReset.Size = new System.Drawing.Size(94, 23);
             this.btnEmployeesReset.TabIndex = 5;
             this.btnEmployeesReset.Text = "Reset";
             this.btnEmployeesReset.UseVisualStyleBackColor = true;
+            this.btnEmployeesReset.Click += new System.EventHandler(this.btnEmployeesReset_Click);
             // 
             // lblLeaveDate
             // 
@@ -538,6 +573,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Username;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateOfBirth;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Password;
         private System.Windows.Forms.DataGridViewTextBoxColumn StartDate;
@@ -545,7 +581,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn AccountState;
         private System.Windows.Forms.DataGridViewTextBoxColumn LeaveDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DateOfBirth;
         private System.Windows.Forms.DataGridViewTextBoxColumn Address;
         private System.Windows.Forms.DataGridViewTextBoxColumn AccountId;
     }

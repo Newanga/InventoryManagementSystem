@@ -1,4 +1,5 @@
-﻿using IMS.Core.Models;
+﻿
+using IMS.Core.Models;
 using IMS.Core.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -50,10 +51,20 @@ namespace IMS.DataAccess.FormEmployee
 
         public List<EmployeeDataGridVM> GetAllEmployeesFromDatabase()
         {
-            string sql = @"select e.Id as EmployeeId,e.FirstName,e.LastName,
-                            e.DateOfBirth,e.Address,e.StartDate,e.LeaveDate,
-                            a.Id as AccountId,a.EmailAddress,a.Username,
-                            a.Password,ast.State as AccountState,r.Name as Role
+            string sql = @"select 
+                            e.FirstName,
+                            e.LastName,
+                            a.Username,
+                            e.DateOfBirth,
+                            a.EmailAddress,
+                            a.Password,
+                            e.StartDate,
+                            r.Name as Role,
+                            ast.State as AccountState,  
+                            e.LeaveDate,
+                            e.Address,
+                            e.Id as EmployeeId,
+                            a.Id as AccountId
                             from dbo.Employee as e
                             inner join dbo.Account as a
                             on e.AccountId=a.Id
