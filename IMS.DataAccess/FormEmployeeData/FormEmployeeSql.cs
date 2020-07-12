@@ -73,33 +73,17 @@ namespace IMS.DataAccess.FormEmployee
                             inner join dbo.Roles as r
                             on a.RoleId=r.Id;";
 
-            return _db.LoadData<EmployeeDataGridVM, dynamic>(sql,new { });
+            return _db.LoadData<EmployeeDataGridVM, dynamic>(sql, new { });
 
-            
+
 
         }
 
         public void UpdateExistingEmployee(EmployeeDetailsUpdateModel data)
         {
-            string sql = @"Update dbo.Employee Set 
-                            FirstName=@FirstName, LastName=@LastName,
-                            DateOfBirth=@DateOfBirth, Address=@Address,
-                            StartDate=@StartDate, LeaveDate=@LeaveDate, AccountId=@AccountId 
-                            where Id=@Id;";
 
-            _db.SaveData(sql, new {
-                FirstName = data.Employee.FirstName,
-                LastName=data.Employee.LastName,
-                DateOfBirth=data.Employee.DateOfBirth,
-                Address=data.Employee.Address,
-                StartDate=data.Employee.StartDate,
-                LeaveDate=data.Employee.LeaveDate,
-                AccountId=data.Employee.AccountId,
-                Id=data.Employee.EmployeeId
-            
-            });
-
-            sql = @"Update dbo.Account set 
+            string sql = @"Update dbo.Account 
+                            set 
                             EmailAddress=@EmailAddress,
                             Username=@Username,
                             Password=@Password,
@@ -109,13 +93,37 @@ namespace IMS.DataAccess.FormEmployee
 
             _db.SaveData(sql, new
             {
-                EmailAddress=data.Account.EmailAddress,
-                Username=data.Account.Username,
-                Password=data.Account.Password,
-                AccountStateId=data.Account.Id,
-                RoleId=data.Account.RoleId,
-                Id=data.Account.Id
+                EmailAddress = data.Account.EmailAddress,
+                Username = data.Account.Username,
+                Password = data.Account.Password,
+                AccountStateId = data.Account.AccountStateId,
+                RoleId = data.Account.RoleId,
+                Id = data.Account.Id
             });
+
+            sql = @"Update dbo.Employee 
+                    Set 
+                    FirstName=@FirstName, 
+                    LastName=@LastName,
+                    DateOfBirth=@DateOfBirth,
+                    Address=@Address,
+                    StartDate=@StartDate, 
+                    LeaveDate=@LeaveDate, 
+                    AccountId=@AccountId 
+                    where Id=@Id;";
+
+            _db.SaveData(sql, new
+            {
+                FirstName = data.Employee.FirstName,
+                LastName = data.Employee.LastName,
+                DateOfBirth = data.Employee.DateOfBirth,
+                Address = data.Employee.Address,
+                StartDate = data.Employee.StartDate,
+                LeaveDate = data.Employee.LeaveDate,
+                AccountId = data.Employee.AccountId,
+                Id = data.Employee.EmployeeId
+            });
+
         }
     }
 }

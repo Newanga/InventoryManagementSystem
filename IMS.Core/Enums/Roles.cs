@@ -9,7 +9,7 @@ namespace IMS.Core.Enums
     public enum Roles
     {
         Admin=1,
-        StoreManager=2,
-        storekeeper=3
+        StockManager=2,
+        Stockkeeper=3
     }
 }
