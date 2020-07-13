@@ -10,7 +10,7 @@ namespace IMS.Core.Models
     {
         public DateTime? StartDate { get; set; }
 
-        public DateTime? LeaveDate { get; set; }
+        public string LeaveDate { get; set; }
         public int AccountId { get; set; }
     }
 }

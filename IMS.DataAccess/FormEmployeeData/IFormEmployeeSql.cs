@@ -2,7 +2,7 @@
 using IMS.Core.ViewModels;
 using System.Collections.Generic;
 
-namespace IMS.DataAccess.FormEmployee
+namespace IMS.DataAccess.FormEmployeeData
 {
     public interface IFormEmployeeSql
     {

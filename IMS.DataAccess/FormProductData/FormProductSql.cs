@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IMS.DataAccess.FormProduct
+namespace IMS.DataAccess.FormProductData
 {
     public class FormProductSql : IFormProductSql
     {

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IMS.DataAccess.FormEmployee
+namespace IMS.DataAccess.FormEmployeeData
 {
     public class FormEmployeeSql : IFormEmployeeSql
     {
@@ -105,7 +105,7 @@ namespace IMS.DataAccess.FormEmployee
                     Set 
                     FirstName=@FirstName, 
                     LastName=@LastName,
-                    DateOfBirth=@DateOfBirth,
+                    DateOfBirth= @DateOfBirth,
                     Address=@Address,
                     StartDate=@StartDate, 
                     LeaveDate=@LeaveDate, 
@@ -124,6 +124,20 @@ namespace IMS.DataAccess.FormEmployee
                 Id = data.Employee.EmployeeId
             });
 
+            sql = @"Update dbo.Employee 
+                    Set 
+                    DateOfBirth= @DateOfBirth,
+                    StartDate=@StartDate, 
+                    LeaveDate=@LeaveDate
+                    where Id=@Id;";
+
+            _db.SaveData(sql, new
+            {
+                DateOfBirth = data.Employee.DateOfBirth,
+                StartDate = data.Employee.StartDate,
+                LeaveDate = data.Employee.LeaveDate,
+                Id = data.Employee.EmployeeId
+            });
         }
     }
 }

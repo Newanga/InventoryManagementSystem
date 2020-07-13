@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IMS.DataAccess.FormSupplier
+namespace IMS.DataAccess.FormSupplierData
 {
     public class FormSupplierSql : IFormSupplierSql
     {

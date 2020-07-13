@@ -79,7 +79,7 @@ namespace IMS.UserInterface.Employees
                     Address = txtBxAdress.Text,
                     DateOfBirth = (dTPDOB.CustomFormat == " ") ? (DateTime?)null : dTPDOB.Value.Date,
                     StartDate = (dTPStartDate.CustomFormat == " ") ? (DateTime?)null : dTPStartDate.Value.Date,
-                    LeaveDate = (dTPLeaveDate.CustomFormat == " ") ? (DateTime?)null : dTPLeaveDate.Value.Date
+                    LeaveDate = (dTPLeaveDate.CustomFormat == " ") ? null : dTPLeaveDate.Value.Date.ToShortDateString()
                 }
             };
             bool validData = EmployeeInputDataValidator.ValidateAdd(data);
@@ -87,6 +87,9 @@ namespace IMS.UserInterface.Employees
             if (validData)
             {
                 _db.CreateNewEmployee(data);
+                dGVEmployees.DataSource = _db.GetAllEmployeesFromDatabase();
+                MessageBox.Show("New Employee Successfully", "Operation Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnEmployeesReset_Click(null, RoutedEventArgs.Empty);
             }
 
 
@@ -129,6 +132,7 @@ namespace IMS.UserInterface.Employees
         private void dTPLeaveDate_ValueChanged(object sender, EventArgs e)
         {
             dTPLeaveDate.CustomFormat = "dd-MM-yyyy";
+
         }
 
         private void dTPLeaveDate_KeyDown(object sender, KeyEventArgs e)
@@ -273,11 +277,12 @@ namespace IMS.UserInterface.Employees
 
         private void btnEmployeesExistingUpdate_Click(object sender, EventArgs e)
         {
+
             EmployeeDetailsUpdateModel data = new EmployeeDetailsUpdateModel
             {
                 Account = new AccountFullModel
                 {
-                    Id=int.Parse(txtBxAccountId.Text),
+                    Id = int.Parse(txtBxAccountId.Text),
                     EmailAddress = txtBxEmailAddress.Text,
                     Username = txtBxUsername.Text,
                     Password = txtBxPassword.Text,
@@ -291,13 +296,13 @@ namespace IMS.UserInterface.Employees
                     Address = txtBxAdress.Text,
                     DateOfBirth = (dTPDOB.CustomFormat == " ") ? (DateTime?)null : dTPDOB.Value.Date,
                     StartDate = (dTPStartDate.CustomFormat == " ") ? (DateTime?)null : dTPStartDate.Value.Date,
-                    LeaveDate = (dTPLeaveDate.CustomFormat == " ") ? (DateTime?)null : dTPLeaveDate.Value.Date
+                    LeaveDate = dTPLeaveDate.CustomFormat == " " ? (DateTime?)null : dTPLeaveDate.Value.Date,
                 }
             };
 
             bool validData = EmployeeInputDataValidator.ValidateUpdate(data);
 
-            if(validData)
+            if (validData)
             {
                 _db.UpdateExistingEmployee(data);
                 dGVEmployees.DataSource = _db.GetAllEmployeesFromDatabase();

@@ -2,7 +2,7 @@
 using IMS.Core.ViewModels;
 using System.Collections.Generic;
 
-namespace IMS.DataAccess.FormProduct
+namespace IMS.DataAccess.FormProductData
 {
     public interface IFormProductSql
     {

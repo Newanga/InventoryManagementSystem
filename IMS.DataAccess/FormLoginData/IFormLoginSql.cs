@@ -1,6 +1,6 @@
 ﻿using IMS.Core.Models;
 
-namespace IMS.DataAccess
+namespace IMS.FormLoginData
 {
     public interface IFormLoginSql
     {

@@ -281,7 +281,7 @@ namespace IMS.UserInterface.Employees
                 MessageBox.Show("Select a start date which is today or before.", "Invalid StartDate", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            else if(data.Employee.LeaveDate!=null && data.Employee.LeaveDate>DateTime.Now.Date)
+            else if (data.Employee.LeaveDate != null && data.Employee.LeaveDate > DateTime.Now.Date)
             {
                 MessageBox.Show("Select a leave date which is today or before.", "Invalid LeaveDate", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return true;

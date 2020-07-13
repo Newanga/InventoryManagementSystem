@@ -2,7 +2,7 @@
 using IMS.Core.ViewModels;
 using System.Collections.Generic;
 
-namespace IMS.DataAccess.FormSupplier
+namespace IMS.DataAccess.FormSupplierData
 {
     public interface IFormSupplierSql
     {

@@ -8,7 +8,7 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IMS.DataAccess
+namespace IMS.FormLoginData
 {
     public class FormLoginSql :IFormLoginSql
     {
