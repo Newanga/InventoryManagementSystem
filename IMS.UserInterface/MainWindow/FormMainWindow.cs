@@ -1,21 +1,14 @@
 ﻿using IMS.Common.Cache;
 using IMS.Core.Enums;
 using IMS.UserInterface.Category;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Microsoft.Extensions.DependencyInjection;
-using IMS.DataAccess.FormCategoryData;
-using IMS.UserInterface.Supplier;
-using IMS.UserInterface.Product;
 using IMS.UserInterface.Employees;
+using IMS.UserInterface.Product;
+using IMS.UserInterface.Profile;
+using IMS.UserInterface.Supplier;
+using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace IMS.UserInterface
 {
@@ -127,6 +120,11 @@ namespace IMS.UserInterface
         {
 
         }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(Program.ServiceProvider.GetService<FormProfile>());
+        }
         #endregion
 
         #region Minimize and Maximize borderless winform from taskbar
@@ -159,5 +157,7 @@ namespace IMS.UserInterface
 
         }
         #endregion
+
+       
     }
 }

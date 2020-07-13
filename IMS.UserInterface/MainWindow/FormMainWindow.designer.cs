@@ -255,6 +255,7 @@
             this.btnProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnProfile.TabIndex = 1;
             this.btnProfile.TabStop = false;
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // brnOrders
             // 

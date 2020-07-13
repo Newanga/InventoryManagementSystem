@@ -1,23 +1,20 @@
 ﻿using IMS.DataAccess;
 using IMS.DataAccess.FormCategoryData;
+using IMS.DataAccess.FormEmployeeData;
+using IMS.DataAccess.FormProductData;
+using IMS.DataAccess.FormProfileData;
+using IMS.DataAccess.FormSupplierData;
+using IMS.FormLoginData;
 using IMS.UserInterface.Category;
-using IMS.UserInterface.Supplier;
+using IMS.UserInterface.Employees;
+using IMS.UserInterface.Product;
 using IMS.UserInterface.SplashScreen;
+using IMS.UserInterface.Supplier;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using IMS.DataAccess.FormSupplier;
-using IMS.UserInterface.Product;
-using IMS.DataAccess.FormProduct;
-using IMS.UserInterface.Employees;
-using IMS.DataAccess.FormEmployee;
 
 namespace IMS.UserInterface
 {
@@ -43,6 +40,7 @@ namespace IMS.UserInterface
             services.AddTransient<IFormSupplierSql, FormSupplierSql>();
             services.AddTransient<IFormProductSql, FormProductSql>();
             services.AddTransient<IFormEmployeeSql,FormEmployeeSql >();
+            services.AddTransient<IFormProfileSql, FormProfileSql>();
 
             //Reading appsettings to get the configuration file
             var builder = new ConfigurationBuilder()
