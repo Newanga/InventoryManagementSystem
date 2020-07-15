@@ -1,7 +1,9 @@
-﻿namespace IMS.DataAccess.FormProfileData
+﻿using IMS.Core.ViewModels;
+
+namespace IMS.DataAccess.FormProfileData
 {
     public interface IFormProfileSql
     {
-        void GetProfileDetails();
+        ProfileVM GetProfileDetails();
     }
 }
