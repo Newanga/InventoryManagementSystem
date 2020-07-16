@@ -69,5 +69,8 @@
     <Build Include="dbo\Tables\ProductState.sql" />
     <Build Include="dbo\Tables\Supplier.sql" />
     <Build Include="dbo\Tables\SupplierState.sql" />
+    <Build Include="dbo\Tables\OrderItem.sql" />
+    <Build Include="dbo\Tables\Order.sql" />
+    <Build Include="dbo\Tables\OrderState.sql" />
   </ItemGroup>
 </Project>

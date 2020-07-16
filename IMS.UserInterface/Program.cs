@@ -8,6 +8,7 @@ using IMS.FormLoginData;
 using IMS.UserInterface.Category;
 using IMS.UserInterface.Employees;
 using IMS.UserInterface.Product;
+using IMS.UserInterface.Profile;
 using IMS.UserInterface.SplashScreen;
 using IMS.UserInterface.Supplier;
 using Microsoft.Extensions.Configuration;
@@ -33,6 +34,7 @@ namespace IMS.UserInterface
             services.AddSingleton<FormSupplier>();
             services.AddSingleton<FormProduct>();
             services.AddSingleton<FormEmployees>();
+            services.AddSingleton<FormProfile>();
 
             services.AddTransient<ISqlDataAccess, SqlDataAccess>();
             services.AddTransient<IFormLoginSql, FormLoginSql>();

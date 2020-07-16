@@ -1,15 +1,8 @@
 ﻿using IMS.Core.Enums;
 using IMS.Core.Models;
 using IMS.Core.ViewModels;
-using IMS.DataAccess.FormProduct;
+using IMS.DataAccess.FormProductData;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
 

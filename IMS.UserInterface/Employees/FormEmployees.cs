@@ -1,16 +1,7 @@
 ﻿using IMS.Core.Enums;
 using IMS.Core.Models;
-using IMS.DataAccess.FormEmployee;
+using IMS.DataAccess.FormEmployeeData;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
 

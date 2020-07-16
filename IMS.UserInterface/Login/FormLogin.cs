@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Extensions.DependencyInjection;
 using IMS.Common.Cache;
+using IMS.FormLoginData;
 
 namespace IMS.UserInterface
 {

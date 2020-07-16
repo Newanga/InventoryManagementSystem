@@ -57,6 +57,8 @@
     <Compile Include="Models\IdLookUpModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\CategoryNewModel.cs" />
+    <Compile Include="Models\OrderItemModel.cs" />
+    <Compile Include="Models\OrderModel.cs" />
     <Compile Include="Models\ProductNewModel.cs" />
     <Compile Include="Models\SupplierName.cs" />
     <Compile Include="Models\SupplierNewModel.cs" />
@@ -67,6 +69,7 @@
     <Compile Include="ViewModels\EmployeeDataGridVM.cs" />
     <Compile Include="ViewModels\ProductDataGridVM.cs" />
     <Compile Include="ViewModels\ProductFormDropDownsVM.cs" />
+    <Compile Include="ViewModels\ProfileVM.cs" />
     <Compile Include="ViewModels\SupplierDataGridVM.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

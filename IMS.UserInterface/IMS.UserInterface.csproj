@@ -131,7 +131,19 @@
     <Compile Include="Employees\FormEmployees.Designer.cs">
       <DependentUpon>FormEmployees.cs</DependentUpon>
     </Compile>
+    <Compile Include="Order\FormOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\FormOrder.Designer.cs">
+      <DependentUpon>FormOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Product\ProductInputDataValidator.cs" />
+    <Compile Include="Profile\FormProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profile\FormProfile.Designer.cs">
+      <DependentUpon>FormProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Supplier\FormSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Employees\FormEmployees.resx">
       <DependentUpon>FormEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profile\FormProfile.resx">
+      <DependentUpon>FormProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Supplier\FormSupplier.resx">
       <DependentUpon>FormSupplier.cs</DependentUpon>

@@ -71,8 +71,12 @@
     <Compile Include="FormEmployeeData\IFormEmployeeSql.cs" />
     <Compile Include="FormLoginData\FormLoginSql.cs" />
     <Compile Include="FormLoginData\IFormLoginSql.cs" />
+    <Compile Include="FormOrderData\FormOrderSql.cs" />
+    <Compile Include="FormOrderData\IFormOrderSql.cs" />
     <Compile Include="FormProductData\FormProductSql.cs" />
     <Compile Include="FormProductData\IFormProductSql.cs" />
+    <Compile Include="FormProfileData\FormProfileSql.cs" />
+    <Compile Include="FormProfileData\IFormProfileSql.cs" />
     <Compile Include="FormSupplierData\FormSupplierSql.cs" />
     <Compile Include="FormSupplierData\IFormSupplierSql.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
