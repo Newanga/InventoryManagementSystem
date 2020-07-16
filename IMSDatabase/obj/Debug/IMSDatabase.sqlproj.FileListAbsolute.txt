@@ -1,6 +1,0 @@
-C:\Users\Newanga\Desktop\InventoryManagementSystem\IMSDatabase\bin\Debug\IMSDatabase.dacpac
-C:\Users\Newanga\Desktop\InventoryManagementSystem\IMSDatabase\bin\Debug\IMSDatabase.dll
-C:\Users\Newanga\Desktop\InventoryManagementSystem\IMSDatabase\bin\Debug\IMSDatabase.pdb
-C:\Users\Newanga\Desktop\InventoryManagementSystem\IMSDatabase\obj\Debug\IMSDatabase.dll
-C:\Users\Newanga\Desktop\InventoryManagementSystem\IMSDatabase\obj\Debug\IMSDatabase.pdb
-C:\Users\Newanga\Desktop\InventoryManagementSystem\IMSDatabase\obj\Debug\IMSDatabase.sqlprojAssemblyReference.cache
