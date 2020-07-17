@@ -67,6 +67,8 @@
     <Compile Include="Models\SupplierFullModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\EmployeeDataGridVM.cs" />
+    <Compile Include="ViewModels\OrderDataGridVM.cs" />
+    <Compile Include="ViewModels\OrderItemsDataGridVM.cs" />
     <Compile Include="ViewModels\ProductDataGridVM.cs" />
     <Compile Include="ViewModels\ProductFormDropDownsVM.cs" />
     <Compile Include="ViewModels\ProfileVM.cs" />

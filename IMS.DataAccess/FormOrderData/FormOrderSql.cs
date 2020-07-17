@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IMS.Core.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,13 @@ namespace IMS.DataAccess.FormOrderData
         {
             _db = db;
         }
+
+        //public OrderDataGridVM GetAllOrdersFromDatabase()
+        //{
+        //    string sql=@""
+
+
+        //}
 
     }
 }
