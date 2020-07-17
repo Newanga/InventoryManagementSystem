@@ -190,7 +190,7 @@ namespace IMS.UserInterface.Product
                 Description = txtBxProductDescription.Text,
                 Price=double.TryParse(txtBxPurchasePrice.Text,out double ValidPrice)?ValidPrice:(double?)null,
                 Warrenty=int.TryParse(txtBxProductWarrenty.Text,out int ValidWarrenty)? ValidWarrenty : (int?)null,
-                SupplierId = comboBxlProductSupplier.SelectedIndex + 1,
+                SupplierName = comboBxlProductSupplier.SelectedValue.ToString(),
                 CategoryId=comboBxlblProductCategory.SelectedIndex +1,
                 ProductStateId=comboBxProductState.SelectedIndex + 1
             };
@@ -215,7 +215,7 @@ namespace IMS.UserInterface.Product
                 Description = txtBxProductDescription.Text,
                 Price = double.TryParse(txtBxPurchasePrice.Text, out double ValidPrice) ? ValidPrice : (double?)null,
                 Warrenty = int.TryParse(txtBxProductWarrenty.Text, out int ValidWarrenty) ? ValidWarrenty : (int?)null,
-                SupplierId = comboBxlProductSupplier.SelectedIndex + 1,
+                SupplierName = comboBxlProductSupplier.SelectedValue.ToString(),
                 CategoryId = comboBxlblProductCategory.SelectedIndex + 1,
                 ProductStateId = comboBxProductState.SelectedIndex + 1
             };

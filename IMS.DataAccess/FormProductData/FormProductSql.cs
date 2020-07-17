@@ -41,7 +41,11 @@ namespace IMS.DataAccess.FormProductData
             string categorySql = @"Select Name from dbo.Category;";
             data.Categories = _db.LoadData<CategoryName, dynamic>(categorySql, new { });
 
-            string productSql = @"Select Name from dbo.Supplier;";
+            string productSql = @"select name
+                                    from dbo.Supplier as a
+                                    inner join dbo.SupplierState as ss
+                                    on a.SupplierStateId=ss.Id
+                                    where ss.State!='Deactive';";
             data.Suppliers = _db.LoadData<SupplierName, dynamic>(productSql, new { });
 
             return data;
@@ -50,14 +54,33 @@ namespace IMS.DataAccess.FormProductData
 
         public void CreateNewProduct(ProductNewModel data)
         {
-            string sql = "Insert into dbo.Product (Name,Description,Price,Warrenty,SupplierId,CategoryId,ProductStateId) values (@Name,@Description,@Price,@Warrenty,@SupplierId,@CategoryId,@ProductStateId);";
+            string sql = @"Select Id from dbo.supplier where Name=@Name;";
 
-            _db.SaveData(sql, data);
+            var id = _db.LoadData<IdLookUpModel, dynamic>(sql, new {Name=data.SupplierName }).First().Id;
+
+
+
+            sql = @"Insert into dbo.Product (Name,Description,Price,Warrenty,SupplierId,CategoryId,ProductStateId) 
+                                values (@Name,@Description,@Price,@Warrenty,@SupplierId,@CategoryId,@ProductStateId);";
+
+            _db.SaveData<dynamic>(sql,new {
+                Name = data.Name,
+                Description = data.Description,
+                Price = data.Price,
+                Warrenty = data.Warrenty,
+                SupplierId = id,
+                CategoryId = data.CategoryId,
+                ProductStateId = data.ProductStateId
+            } );
         }
 
         public void UpdateExistingProduct(ProductFullModel data)
         {
-            string sql =@"Update dbo.Product set
+            string sql = @"Select Id from dbo.supplier where Name=@Name;";
+
+            var id = _db.LoadData<IdLookUpModel, dynamic>(sql, new { Name = data.SupplierName }).First().Id;
+
+             sql =@"Update dbo.Product set
                             Name=@Name,
                             Description=@Description,
                             Price=@Price,
@@ -67,7 +90,16 @@ namespace IMS.DataAccess.FormProductData
                             ProductStateId=@ProductStateId 
                             where Id=@Id;";
 
-            _db.SaveData(sql, data);
+            _db.SaveData<dynamic>(sql,new {
+                Id=data.Id,
+                Name = data.Name,
+                Description=data.Description,
+                Price=data.Price,
+                Warrenty=data.Warrenty,
+                SupplierId=id,
+                CategoryId=data.CategoryId,
+                ProductStateId=data.ProductStateId
+            });
         }
 
 

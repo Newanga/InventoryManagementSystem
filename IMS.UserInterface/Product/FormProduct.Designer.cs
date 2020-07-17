@@ -230,6 +230,7 @@
             this.ProductId.DataPropertyName = "Id";
             this.ProductId.HeaderText = "Id";
             this.ProductId.Name = "ProductId";
+            this.ProductId.ReadOnly = true;
             // 
             // ProductName
             // 
@@ -237,6 +238,7 @@
             this.ProductName.DataPropertyName = "Name";
             this.ProductName.HeaderText = "Name";
             this.ProductName.Name = "ProductName";
+            this.ProductName.ReadOnly = true;
             // 
             // ProductDescription
             // 
@@ -244,6 +246,7 @@
             this.ProductDescription.DataPropertyName = "Description";
             this.ProductDescription.HeaderText = "Description";
             this.ProductDescription.Name = "ProductDescription";
+            this.ProductDescription.ReadOnly = true;
             // 
             // ProductPrice
             // 
@@ -251,6 +254,7 @@
             this.ProductPrice.DataPropertyName = "Price";
             this.ProductPrice.HeaderText = "Price";
             this.ProductPrice.Name = "ProductPrice";
+            this.ProductPrice.ReadOnly = true;
             // 
             // ProductWarrenty
             // 
@@ -258,6 +262,7 @@
             this.ProductWarrenty.DataPropertyName = "Warrenty";
             this.ProductWarrenty.HeaderText = "Warrenty";
             this.ProductWarrenty.Name = "ProductWarrenty";
+            this.ProductWarrenty.ReadOnly = true;
             // 
             // ProductSupplierName
             // 
@@ -265,6 +270,7 @@
             this.ProductSupplierName.DataPropertyName = "SupplierName";
             this.ProductSupplierName.HeaderText = "SupplierName";
             this.ProductSupplierName.Name = "ProductSupplierName";
+            this.ProductSupplierName.ReadOnly = true;
             // 
             // ProductCategoryName
             // 
@@ -272,6 +278,7 @@
             this.ProductCategoryName.DataPropertyName = "CategoryName";
             this.ProductCategoryName.HeaderText = "CategoryName";
             this.ProductCategoryName.Name = "ProductCategoryName";
+            this.ProductCategoryName.ReadOnly = true;
             // 
             // ProductState
             // 
@@ -279,6 +286,7 @@
             this.ProductState.DataPropertyName = "ProductState";
             this.ProductState.HeaderText = "State";
             this.ProductState.Name = "ProductState";
+            this.ProductState.ReadOnly = true;
             // 
             // btnProductAdd
             // 
@@ -313,7 +321,7 @@
             // 
             // btnProductExistingUpdate
             // 
-            this.btnProductExistingUpdate.Location = new System.Drawing.Point(752, 181);
+            this.btnProductExistingUpdate.Location = new System.Drawing.Point(801, 210);
             this.btnProductExistingUpdate.Name = "btnProductExistingUpdate";
             this.btnProductExistingUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnProductExistingUpdate.TabIndex = 4;

@@ -18,7 +18,7 @@ namespace IMS.Core.Models
 
         public int? Warrenty { get; set; }
 
-        public int SupplierId { get; set; }
+        public string SupplierName { get; set; }
 
         public int CategoryId { get; set; }
 
