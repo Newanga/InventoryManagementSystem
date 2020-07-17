@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[OrderState]
 (
-	[Id] INT NOT NULL PRIMARY KEY, 
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
     [State] NVARCHAR(20) NOT NULL
 )
