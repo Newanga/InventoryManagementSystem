@@ -12,9 +12,9 @@ namespace IMS.Core.Models
 
         public int SupplierId { get; set; }
 
-        public DateTime PlaceDate { get; set; }
+        public DateTime? PlaceDate { get; set; }
 
-        public DateTime DeliveryDate { get; set; }
+        public DateTime? DeliveryDate { get; set; }
 
         public string SpecialNotes { get; set; }
 

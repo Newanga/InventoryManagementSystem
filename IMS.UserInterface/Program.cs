@@ -1,12 +1,14 @@
 ﻿using IMS.DataAccess;
 using IMS.DataAccess.FormCategoryData;
 using IMS.DataAccess.FormEmployeeData;
+using IMS.DataAccess.FormOrderData;
 using IMS.DataAccess.FormProductData;
 using IMS.DataAccess.FormProfileData;
 using IMS.DataAccess.FormSupplierData;
 using IMS.FormLoginData;
 using IMS.UserInterface.Category;
 using IMS.UserInterface.Employees;
+using IMS.UserInterface.Order;
 using IMS.UserInterface.Product;
 using IMS.UserInterface.Profile;
 using IMS.UserInterface.SplashScreen;
@@ -35,6 +37,7 @@ namespace IMS.UserInterface
             services.AddSingleton<FormProduct>();
             services.AddSingleton<FormEmployees>();
             services.AddSingleton<FormProfile>();
+            services.AddSingleton<FormOrder>();
 
             services.AddTransient<ISqlDataAccess, SqlDataAccess>();
             services.AddTransient<IFormLoginSql, FormLoginSql>();
@@ -43,6 +46,7 @@ namespace IMS.UserInterface
             services.AddTransient<IFormProductSql, FormProductSql>();
             services.AddTransient<IFormEmployeeSql,FormEmployeeSql >();
             services.AddTransient<IFormProfileSql, FormProfileSql>();
+            services.AddTransient<IFormOrderSql, FormOrderSql>();
 
             //Reading appsettings to get the configuration file
             var builder = new ConfigurationBuilder()

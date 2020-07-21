@@ -11,9 +11,9 @@ namespace IMS.Core.Models.Order
     {
         public string SupplierName { get; set; }
 
-        public DateTime PlaceDate { get; set; }
+        public DateTime? PlaceDate { get; set; }
 
-        public DateTime DeliveryDate { get; set; }
+        public DateTime? DeliveryDate { get; set; }
 
         public string SpecialNotes { get; set; }
 

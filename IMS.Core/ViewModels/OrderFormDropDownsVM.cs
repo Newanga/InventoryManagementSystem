@@ -11,7 +11,7 @@ namespace IMS.Core.ViewModels
     {
         public List<SupplierName> Suppliers { get; set; }
 
-        public List<SupplierProductsModel> Products { get; set; }
+        public List<SupplierProductsPriceModel> Products { get; set; }
 
 
     }

@@ -2,6 +2,7 @@
 using IMS.Core.Enums;
 using IMS.UserInterface.Category;
 using IMS.UserInterface.Employees;
+using IMS.UserInterface.Order;
 using IMS.UserInterface.Product;
 using IMS.UserInterface.Profile;
 using IMS.UserInterface.Supplier;
@@ -113,8 +114,9 @@ namespace IMS.UserInterface
 
         private void BtnOrders_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(Program.ServiceProvider.GetService<FormOrder>());
         }
+    
 
         private void BtnInventory_Click(object sender, EventArgs e)
         {
