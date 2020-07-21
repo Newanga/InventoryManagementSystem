@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace IMS.Core.Models
 {
-    public class SupplierProductsModel
+    public class SupplierProductsPriceModel
     {
         public int Id { get; set; }
 
         public string Name { get; set; }
+
+        public double Price { get; set; }
     }
 }
