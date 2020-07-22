@@ -137,10 +137,15 @@ namespace IMS.UserInterface.Order
 
             //when product list is empty
             if (orderFormDropDowns.Products.Count == 0)
-            {
+            {           
                 btnOrderItemAdd.Enabled = false;
+
+                comboBxOrderItemName.DropDownStyle = ComboBoxStyle.Simple;
                 comboBxOrderItemName.Enabled = false;
+
                 txtBxOrderItemQuantity.Enabled = false;
+                txtBxOrderItemQuantity.BorderStyle = BorderStyle.None;
+                txtBxOrderItemQuantity.BorderStyle = BorderStyle.Fixed3D;
             }
 
         }
@@ -182,6 +187,31 @@ namespace IMS.UserInterface.Order
 
             txtBxOrderItemPrice.Enabled = false;
             btnOrderItemAdd.Enabled = false;
+            btnOrderItemEdit.Enabled = true;
+            btnOrderItemRemove.Enabled = true;
+
+        }
+
+        private void btnOrderItemRemove_Click(object sender, EventArgs e)
+        {
+            var removingOrderItemId = ((SupplierProductsPriceModel)comboBxOrderItemName.SelectedItem).Id;
+
+            //remove the above item from the order item datagrid datsource
+            var obj = newOrder.Items.Where(i => i.ProductId == removingOrderItemId).First();
+            newOrder.Items.Remove(obj);
+
+            btnOrderItemEdit.Enabled = false;
+            btnOrderItemRemove.Enabled = false;
+
+            comboBxOrderItemName.Enabled = true;
+            comboBxOrderItemName.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            txtBxOrderItemQuantity.Text = string.Empty;
+            txtBxOrderItemQuantity.Enabled = true;
+
+            PopulateOrderItemDataGrid();
+
+            btnOrderItemAdd.Enabled = true;
 
         }
     }

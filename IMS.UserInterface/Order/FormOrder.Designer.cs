@@ -60,6 +60,8 @@
             this.txtBxOrderItemPrice = new System.Windows.Forms.TextBox();
             this.btnOrderNew = new System.Windows.Forms.Button();
             this.btnOrderItemAdd = new System.Windows.Forms.Button();
+            this.btnOrderItemEdit = new System.Windows.Forms.Button();
+            this.btnOrderItemRemove = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVOrderItems)).BeginInit();
             this.SuspendLayout();
@@ -350,11 +352,34 @@
             this.btnOrderItemAdd.UseVisualStyleBackColor = true;
             this.btnOrderItemAdd.Click += new System.EventHandler(this.btnOrderItemAdd_Click);
             // 
+            // btnOrderItemEdit
+            // 
+            this.btnOrderItemEdit.Enabled = false;
+            this.btnOrderItemEdit.Location = new System.Drawing.Point(717, 165);
+            this.btnOrderItemEdit.Name = "btnOrderItemEdit";
+            this.btnOrderItemEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnOrderItemEdit.TabIndex = 7;
+            this.btnOrderItemEdit.Text = "Edit";
+            this.btnOrderItemEdit.UseVisualStyleBackColor = true;
+            // 
+            // btnOrderItemRemove
+            // 
+            this.btnOrderItemRemove.Enabled = false;
+            this.btnOrderItemRemove.Location = new System.Drawing.Point(817, 165);
+            this.btnOrderItemRemove.Name = "btnOrderItemRemove";
+            this.btnOrderItemRemove.Size = new System.Drawing.Size(75, 23);
+            this.btnOrderItemRemove.TabIndex = 7;
+            this.btnOrderItemRemove.Text = "Remove";
+            this.btnOrderItemRemove.UseVisualStyleBackColor = true;
+            this.btnOrderItemRemove.Click += new System.EventHandler(this.btnOrderItemRemove_Click);
+            // 
             // FormOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1018, 445);
+            this.Controls.Add(this.btnOrderItemRemove);
+            this.Controls.Add(this.btnOrderItemEdit);
             this.Controls.Add(this.btnOrderItemAdd);
             this.Controls.Add(this.btnOrderNew);
             this.Controls.Add(this.dTPDeliveryDate);
@@ -421,5 +446,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn OrderItemId;
+        private System.Windows.Forms.Button btnOrderItemEdit;
+        private System.Windows.Forms.Button btnOrderItemRemove;
     }
 }
