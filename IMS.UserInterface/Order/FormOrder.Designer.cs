@@ -62,6 +62,8 @@
             this.btnOrderItemAdd = new System.Windows.Forms.Button();
             this.btnOrderItemEdit = new System.Windows.Forms.Button();
             this.btnOrderItemRemove = new System.Windows.Forms.Button();
+            this.btnOrderItemUpdate = new System.Windows.Forms.Button();
+            this.btnOrderItemCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVOrderItems)).BeginInit();
             this.SuspendLayout();
@@ -329,7 +331,6 @@
             this.txtBxOrderItemPrice.Name = "txtBxOrderItemPrice";
             this.txtBxOrderItemPrice.Size = new System.Drawing.Size(100, 20);
             this.txtBxOrderItemPrice.TabIndex = 2;
-            this.txtBxOrderItemPrice.Text = "-";
             // 
             // btnOrderNew
             // 
@@ -373,11 +374,34 @@
             this.btnOrderItemRemove.UseVisualStyleBackColor = true;
             this.btnOrderItemRemove.Click += new System.EventHandler(this.btnOrderItemRemove_Click);
             // 
+            // btnOrderItemUpdate
+            // 
+            this.btnOrderItemUpdate.Enabled = false;
+            this.btnOrderItemUpdate.Location = new System.Drawing.Point(817, 137);
+            this.btnOrderItemUpdate.Name = "btnOrderItemUpdate";
+            this.btnOrderItemUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnOrderItemUpdate.TabIndex = 8;
+            this.btnOrderItemUpdate.Text = "Update";
+            this.btnOrderItemUpdate.UseVisualStyleBackColor = true;
+            // 
+            // btnOrderItemCancel
+            // 
+            this.btnOrderItemCancel.Enabled = false;
+            this.btnOrderItemCancel.Location = new System.Drawing.Point(935, 165);
+            this.btnOrderItemCancel.Name = "btnOrderItemCancel";
+            this.btnOrderItemCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnOrderItemCancel.TabIndex = 9;
+            this.btnOrderItemCancel.Text = "Cancel";
+            this.btnOrderItemCancel.UseVisualStyleBackColor = true;
+            this.btnOrderItemCancel.Click += new System.EventHandler(this.btnOrderItemCancel_Click);
+            // 
             // FormOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1018, 445);
+            this.Controls.Add(this.btnOrderItemCancel);
+            this.Controls.Add(this.btnOrderItemUpdate);
             this.Controls.Add(this.btnOrderItemRemove);
             this.Controls.Add(this.btnOrderItemEdit);
             this.Controls.Add(this.btnOrderItemAdd);
@@ -448,5 +472,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn OrderItemId;
         private System.Windows.Forms.Button btnOrderItemEdit;
         private System.Windows.Forms.Button btnOrderItemRemove;
+        private System.Windows.Forms.Button btnOrderItemUpdate;
+        private System.Windows.Forms.Button btnOrderItemCancel;
     }
 }
