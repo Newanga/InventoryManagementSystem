@@ -138,6 +138,7 @@
             // 
             // dGVCategory
             // 
+            this.dGVCategory.AllowUserToAddRows = false;
             this.dGVCategory.AllowUserToDeleteRows = false;
             this.dGVCategory.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dGVCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;

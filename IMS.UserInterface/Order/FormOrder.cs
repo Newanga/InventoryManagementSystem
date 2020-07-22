@@ -118,6 +118,8 @@ namespace IMS.UserInterface.Order
 
         private void btnOrderItemAdd_Click(object sender, EventArgs e)
         {
+
+
             var addedItem = ((SupplierProductsPriceModel)comboBxOrderItemName.SelectedItem);
             NewOrderItemModel item = new NewOrderItemModel
             {
@@ -126,6 +128,11 @@ namespace IMS.UserInterface.Order
                 Price = addedItem.Price,
                 Quantity = int.TryParse(txtBxOrderItemQuantity.Text, out int ValidQuantity) ? ValidQuantity : (int?)null
             };
+
+            bool isValid = QuantityValidator.validate(item.Quantity);
+
+            if (isValid == false)
+                return;
 
 
 
@@ -146,7 +153,7 @@ namespace IMS.UserInterface.Order
 
             //when product list is empty
             if (orderFormDropDowns.Products.Count == 0)
-            {           
+            {
                 btnOrderItemAdd.Enabled = false;
 
                 comboBxOrderItemName.DropDownStyle = ComboBoxStyle.Simple;
@@ -157,16 +164,19 @@ namespace IMS.UserInterface.Order
                 txtBxOrderItemQuantity.BorderStyle = BorderStyle.Fixed3D;
             }
 
+            if (dGVOrderItems.Rows.Count > 0)
+                comboBxSupplier.Enabled = false;
+
         }
 
         private void PopulateOrderItemDataGrid()
         {
             dGVOrderItems.DataSource = newOrder.Items;
-            dGVOrderItems.Update();
             dGVOrderItems.Refresh();
+            dGVOrderItems.Update();
         }
 
-  
+
 
         private void dGVOrderItems_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -177,7 +187,7 @@ namespace IMS.UserInterface.Order
             var selectedRowItem = (NewOrderItemModel)dGVOrderItems.CurrentRow.DataBoundItem;
 
 
-            SupplierProductsPriceModel  OrderItemView= new SupplierProductsPriceModel
+            SupplierProductsPriceModel OrderItemView = new SupplierProductsPriceModel
             {
                 Id = selectedRowItem.ProductId,
                 Name = selectedRowItem.ProductName,
@@ -234,40 +244,137 @@ namespace IMS.UserInterface.Order
             btnOrderItemAdd.Enabled = true;
             btnOrderItemCancel.Enabled = false;
 
+            if (dGVOrderItems.Rows.Count == 0)
+                comboBxSupplier.Enabled = true;
+
+
+
         }
 
         private void btnOrderItemCancel_Click(object sender, EventArgs e)
         {
-            if(btnOrderItemEdit.Enabled==true)
+            var currentProductId = ((SupplierProductsPriceModel)comboBxOrderItemName.SelectedItem).Id;
+            var product = orderFormDropDowns.Products.Where(p => p.Id == currentProductId).First();
+            orderFormDropDowns.Products.Remove(product);
+            txtBxOrderItemQuantity.Text = string.Empty;
+            txtBxOrderItemPrice.Text = string.Empty;
+
+
+
+            if (btnOrderItemEdit.Enabled == true)
             {
-                var currentProductId = ((SupplierProductsPriceModel)comboBxOrderItemName.SelectedItem).Id;
-                var product = orderFormDropDowns.Products.Where(p => p.Id == currentProductId).First();
-                orderFormDropDowns.Products.Remove(product);
-                txtBxOrderItemQuantity.Text = string.Empty;
-                txtBxOrderItemPrice.Text = string.Empty;
-                btnOrderItemEdit.Enabled = false;
+                btnOrderItemRemove.Visible = true;
                 btnOrderItemRemove.Enabled = false;
-                btnOrderItemCancel.Enabled = false;
+                btnOrderItemRemove.BringToFront();
+                btnOrderItemUpdate.Visible = false;
+                btnOrderItemUpdate.Enabled = false;
+                btnOrderItemUpdate.SendToBack();
 
-                if (orderFormDropDowns.Products.Count == 0)
-                    return;
+            }
 
-                PopulateOrderItemsCombobox();
-                comboBxOrderItemName_SelectedValueChanged(null, RoutedEventArgs.Empty);
+            if (btnOrderItemUpdate.Enabled == true)
+            {
+                btnOrderItemRemove.Visible = true;
+                btnOrderItemRemove.Enabled = false;
+                btnOrderItemRemove.SendToBack();
+                btnOrderItemUpdate.Visible = false;
+                btnOrderItemUpdate.Enabled = false;
+                btnOrderItemUpdate.BringToFront();
+            }
 
-                comboBxOrderItemName.Enabled = true;
-                comboBxOrderItemName.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            btnOrderItemEdit.Enabled = false;
+            btnOrderItemRemove.Enabled = false;
+            btnOrderItemCancel.Enabled = false;
+            btnOrderItemUpdate.Enabled = false;
+
+       
+
+            if (orderFormDropDowns.Products.Count == 0)
+            {
+                txtBxOrderItemQuantity.Enabled = false;
+                return;
+            }
 
 
-                txtBxOrderItemQuantity.Enabled = true;
+            PopulateOrderItemsCombobox();
+            comboBxOrderItemName_SelectedValueChanged(null, RoutedEventArgs.Empty);
 
-                PopulateOrderItemDataGrid();
+            comboBxOrderItemName.Enabled = true;
+            comboBxOrderItemName.DropDownStyle = ComboBoxStyle.DropDownList;
 
-                btnOrderItemAdd.Enabled = true;
+            txtBxOrderItemQuantity.Enabled = true;
+            txtBxOrderItemQuantity.BorderStyle = BorderStyle.None;
+            txtBxOrderItemQuantity.BorderStyle = BorderStyle.Fixed3D;
 
-             
+            PopulateOrderItemDataGrid();
 
+            btnOrderItemAdd.Enabled = true;
+
+
+
+        }
+
+        private void btnOrderItemEdit_Click(object sender, EventArgs e)
+        {
+            btnOrderItemRemove.Visible = false;
+            btnOrderItemRemove.Enabled = false;
+            txtBxOrderItemQuantity.Enabled = true;
+            txtBxOrderItemQuantity.Text = string.Empty;
+            btnOrderItemUpdate.Visible = true;
+            btnOrderItemUpdate.Enabled = true;
+            btnOrderItemCancel.Enabled = true;
+            btnOrderItemEdit.Enabled = false;
+
+
+
+
+            btnOrderItemRemove.Visible = false;
+            btnOrderItemRemove.Enabled = false;
+            btnOrderItemRemove.SendToBack();
+            btnOrderItemUpdate.Visible = true;
+            btnOrderItemUpdate.Enabled = true;
+            btnOrderItemUpdate.BringToFront();
+
+
+        }
+
+        private void btnOrderItemUpdate_Click(object sender, EventArgs e)
+        {
+            var addedItem = ((SupplierProductsPriceModel)comboBxOrderItemName.SelectedItem);
+
+            var productId = addedItem.Id;
+            var quantity = int.TryParse(txtBxOrderItemQuantity.Text, out int ValidQuantity) ? ValidQuantity : (int?)null;
+
+
+            bool isValid = QuantityValidator.validate(quantity);
+            if (isValid == false)
+                return;
+
+            //search for above item in the datagrid datasource list and update the new quantity value.
+            var itemInlist = newOrder.Items.Where(i => i.ProductId == productId).First();
+            itemInlist.Quantity = quantity;
+
+            MessageBox.Show("The order Item Quantity was updated Successfully", "Quantity Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            btnOrderItemCancel_Click(null, RoutedEventArgs.Empty);
+
+        }
+
+        private void txtBxOrderItemQuantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '.' )
+            {
+                MessageBox.Show("Please enter only numbers.", "Invalid Character", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Handled = true;
+            }
+            else if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                MessageBox.Show("Please enter only numbers.", "Invalid Character", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Handled = true;
             }
         }
     }
 }
+
+

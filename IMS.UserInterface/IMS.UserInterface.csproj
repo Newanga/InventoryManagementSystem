@@ -137,6 +137,7 @@
     <Compile Include="Order\FormOrder.Designer.cs">
       <DependentUpon>FormOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Order\QuantityValidator.cs" />
     <Compile Include="Product\ProductInputDataValidator.cs" />
     <Compile Include="Profile\FormProfile.cs">
       <SubType>Form</SubType>

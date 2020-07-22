@@ -70,6 +70,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -120,6 +121,7 @@
             // 
             // dGVOrderItems
             // 
+            this.dGVOrderItems.AllowUserToAddRows = false;
             this.dGVOrderItems.AllowUserToDeleteRows = false;
             this.dGVOrderItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVOrderItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -237,7 +239,6 @@
             // dTPPlaceDate
             // 
             this.dTPPlaceDate.CustomFormat = "\" \"";
-            this.dTPPlaceDate.Enabled = false;
             this.dTPPlaceDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dTPPlaceDate.Location = new System.Drawing.Point(408, 53);
             this.dTPPlaceDate.Name = "dTPPlaceDate";
@@ -314,6 +315,7 @@
             this.txtBxOrderItemQuantity.Name = "txtBxOrderItemQuantity";
             this.txtBxOrderItemQuantity.Size = new System.Drawing.Size(100, 20);
             this.txtBxOrderItemQuantity.TabIndex = 2;
+            this.txtBxOrderItemQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBxOrderItemQuantity_KeyPress);
             // 
             // lblProductPrice
             // 
@@ -362,6 +364,7 @@
             this.btnOrderItemEdit.TabIndex = 7;
             this.btnOrderItemEdit.Text = "Edit";
             this.btnOrderItemEdit.UseVisualStyleBackColor = true;
+            this.btnOrderItemEdit.Click += new System.EventHandler(this.btnOrderItemEdit_Click);
             // 
             // btnOrderItemRemove
             // 
@@ -377,12 +380,14 @@
             // btnOrderItemUpdate
             // 
             this.btnOrderItemUpdate.Enabled = false;
-            this.btnOrderItemUpdate.Location = new System.Drawing.Point(817, 137);
+            this.btnOrderItemUpdate.Location = new System.Drawing.Point(817, 165);
             this.btnOrderItemUpdate.Name = "btnOrderItemUpdate";
             this.btnOrderItemUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnOrderItemUpdate.TabIndex = 8;
             this.btnOrderItemUpdate.Text = "Update";
             this.btnOrderItemUpdate.UseVisualStyleBackColor = true;
+            this.btnOrderItemUpdate.Visible = false;
+            this.btnOrderItemUpdate.Click += new System.EventHandler(this.btnOrderItemUpdate_Click);
             // 
             // btnOrderItemCancel
             // 
@@ -400,9 +405,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1018, 445);
-            this.Controls.Add(this.btnOrderItemCancel);
-            this.Controls.Add(this.btnOrderItemUpdate);
             this.Controls.Add(this.btnOrderItemRemove);
+            this.Controls.Add(this.btnOrderItemCancel);
             this.Controls.Add(this.btnOrderItemEdit);
             this.Controls.Add(this.btnOrderItemAdd);
             this.Controls.Add(this.btnOrderNew);
@@ -426,6 +430,7 @@
             this.Controls.Add(this.lblOrderId);
             this.Controls.Add(this.dGVOrderItems);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnOrderItemUpdate);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormOrder";
             this.Text = "FormOrder";
