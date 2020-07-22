@@ -12,7 +12,7 @@ namespace IMS.Core.Models
 
         public int? Quantity { get; set; }
 
-        public double? Price { get; set; }
+        public double Price { get; set; }
 
         public int ProductId { get; set; }
     }

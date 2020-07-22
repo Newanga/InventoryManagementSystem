@@ -152,5 +152,37 @@ namespace IMS.UserInterface.Order
             dGVOrderItems.Refresh();
         }
 
+  
+
+        private void dGVOrderItems_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Item double clicked and selected in the orderItems datagrid
+            var selectedRowItem = (NewOrderItemModel)dGVOrderItems.CurrentRow.DataBoundItem;
+
+
+            SupplierProductsPriceModel  OrderItemView= new SupplierProductsPriceModel
+            {
+                Id = selectedRowItem.ProductId,
+                Name = selectedRowItem.ProductName,
+                Price = selectedRowItem.Price
+            };
+
+            //Add select item to the combobox to view
+            orderFormDropDowns.Products.Add(OrderItemView);
+            //set the selected item to the above item
+            comboBxOrderItemName.SelectedItem = OrderItemView;
+
+            comboBxOrderItemName.Enabled = false;
+            comboBxOrderItemName.DropDownStyle = ComboBoxStyle.Simple;
+
+            //convert (int)? ------> (int)
+            int itemQuantity = (int)selectedRowItem.Quantity;
+            txtBxOrderItemQuantity.Text = itemQuantity.ToString();
+            txtBxOrderItemQuantity.Enabled = false;
+
+            txtBxOrderItemPrice.Enabled = false;
+            btnOrderItemAdd.Enabled = false;
+
+        }
     }
 }

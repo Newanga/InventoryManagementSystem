@@ -36,6 +36,10 @@
             this.DeliveryDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SpecialNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dGVOrderItems = new System.Windows.Forms.DataGridView();
+            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderItemId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblOrderId = new System.Windows.Forms.Label();
             this.txtBxOrderId = new System.Windows.Forms.TextBox();
             this.lblSpecialNote = new System.Windows.Forms.Label();
@@ -56,10 +60,6 @@
             this.txtBxOrderItemPrice = new System.Windows.Forms.TextBox();
             this.btnOrderNew = new System.Windows.Forms.Button();
             this.btnOrderItemAdd = new System.Windows.Forms.Button();
-            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OrderItemId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVOrderItems)).BeginInit();
             this.SuspendLayout();
@@ -128,6 +128,37 @@
             this.dGVOrderItems.ReadOnly = true;
             this.dGVOrderItems.Size = new System.Drawing.Size(408, 192);
             this.dGVOrderItems.TabIndex = 0;
+            this.dGVOrderItems.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVOrderItems_CellDoubleClick);
+            // 
+            // ProductName
+            // 
+            this.ProductName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ProductName.DataPropertyName = "ProductName";
+            this.ProductName.HeaderText = "ProductName";
+            this.ProductName.Name = "ProductName";
+            this.ProductName.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            this.Quantity.DataPropertyName = "Quantity";
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            // 
+            // Price
+            // 
+            this.Price.DataPropertyName = "Price";
+            this.Price.HeaderText = "Price";
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            // 
+            // OrderItemId
+            // 
+            this.OrderItemId.DataPropertyName = "ProductId";
+            this.OrderItemId.HeaderText = "Id";
+            this.OrderItemId.Name = "OrderItemId";
+            this.OrderItemId.ReadOnly = true;
+            this.OrderItemId.Visible = false;
             // 
             // lblOrderId
             // 
@@ -318,36 +349,6 @@
             this.btnOrderItemAdd.Text = "Add";
             this.btnOrderItemAdd.UseVisualStyleBackColor = true;
             this.btnOrderItemAdd.Click += new System.EventHandler(this.btnOrderItemAdd_Click);
-            // 
-            // ProductName
-            // 
-            this.ProductName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ProductName.DataPropertyName = "ProductName";
-            this.ProductName.HeaderText = "ProductName";
-            this.ProductName.Name = "ProductName";
-            this.ProductName.ReadOnly = true;
-            // 
-            // Quantity
-            // 
-            this.Quantity.DataPropertyName = "Quantity";
-            this.Quantity.HeaderText = "Quantity";
-            this.Quantity.Name = "Quantity";
-            this.Quantity.ReadOnly = true;
-            // 
-            // Price
-            // 
-            this.Price.DataPropertyName = "Price";
-            this.Price.HeaderText = "Price";
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
-            // 
-            // OrderItemId
-            // 
-            this.OrderItemId.DataPropertyName = "ProductId";
-            this.OrderItemId.HeaderText = "Id";
-            this.OrderItemId.Name = "OrderItemId";
-            this.OrderItemId.ReadOnly = true;
-            this.OrderItemId.Visible = false;
             // 
             // FormOrder
             // 
