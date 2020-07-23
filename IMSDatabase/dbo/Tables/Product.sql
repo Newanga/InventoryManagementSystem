@@ -3,7 +3,7 @@
 	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
     [Name] NVARCHAR(500) NOT NULL, 
     [Description] NVARCHAR(2000) NOT NULL, 
-    [Price] MONEY NOT NULL, 
+    [Price] DECIMAL(18, 2) NOT NULL, 
     [Warrenty] INT NOT NULL, 
     [SupplierId] INT NOT NULL, 
     [CategoryId] INT NOT NULL, 

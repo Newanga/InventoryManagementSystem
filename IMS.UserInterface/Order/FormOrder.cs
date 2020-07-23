@@ -35,8 +35,11 @@ namespace IMS.UserInterface.Order
             PopulateSupplierComboBox();
             PopulateOrderStateComboBox();
             comboBxSupplier.Enabled = true;
-            btnOrderNewCreate.Enabled = false;
- 
+            btnNewOrderCreate.Enabled = false;
+            btnNewOrderUpdate.Enabled = true;
+            btnOrderNewCancel.Enabled = true;
+            
+
         }
 
         private void LoadSuppliersFromDatabase()
@@ -200,7 +203,14 @@ namespace IMS.UserInterface.Order
                 dTPPlaceDate.Enabled = true;
                 comboBxOrderState.Enabled = true;
                 comboBxOrderState.Enabled = true;
-                btnOrderNewCancel.Enabled = true;
+
+                btnNewOrderUpdate.Enabled = true;
+                btnNewOrderUpdate.Visible = true;
+                btnNewOrderUpdate.BringToFront();
+
+                btnExistingOrderUpdate.Enabled = false;
+                btnExistingOrderUpdate.Visible = false;
+                btnExistingOrderUpdate.SendToBack();
             }
               
 
@@ -393,9 +403,9 @@ namespace IMS.UserInterface.Order
 
         #endregion
 
-        private void btnOrderNewCancel_Click(object sender, EventArgs e)
+        private void btnNewOrderCancel_Click(object sender, EventArgs e)
         {
-            if(btnOrderNewCreate.Enabled==false)
+            if(btnNewOrderCreate.Enabled==false)
             {
                 orderFormDropDowns.Products.Clear();
                 comboBxOrderItemName.DataSource = null;
@@ -420,6 +430,8 @@ namespace IMS.UserInterface.Order
                 btnOrderItemUpdate.Enabled = false;
                 btnOrderItemUpdate.SendToBack();
 
+                btnNewOrderUpdate.Enabled = false;
+
                 txtBxOrderItemQuantity.Enabled = false;
                 txtBxOrderItemQuantity.Text = string.Empty;
 
@@ -437,7 +449,40 @@ namespace IMS.UserInterface.Order
                 dTPDeliveryDate.Enabled = false;
             }
 
-            btnOrderNewCreate.Enabled = true;
+            btnNewOrderCreate.Enabled = true;
+
+
+            btnNewOrderUpdate.Enabled = false;
+            btnNewOrderUpdate.Visible = true;
+            btnNewOrderUpdate.BringToFront();
+
+            btnExistingOrderUpdate.Enabled = false;
+            btnExistingOrderUpdate.Visible = false;
+            btnExistingOrderUpdate.SendToBack();
+
+            btnOrderNewCancel.Enabled = false;
+        }
+
+        private void btnNewOrderUpdate_Click(object sender, EventArgs e)
+        {
+            newOrder.SupplierName = ((SupplierName)comboBxSupplier.SelectedItem).Name;
+            newOrder.SpecialNotes = txtBxSpecialNote.Text;
+            newOrder.PlaceDate = dTPPlaceDate.Value.Date;
+            newOrder.OrderStateId = comboBxOrderState.SelectedIndex + 1;
+            newOrder.DeliveryDate = null;
+            newOrder.PlaceDate = (dTPPlaceDate.CustomFormat == " ") ? (DateTime?)null : dTPPlaceDate.Value.Date;
+
+            bool dataValid = OrderInputDataValidator.ValidateAdd(newOrder);
+
+            if(dataValid)
+            {
+                _db.CreateNewOrder(newOrder);
+                MessageBox.Show("New Order created Successfully", "Operation Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnNewOrderCancel_Click(null, RoutedEventArgs.Empty);
+            }
+
+
+
         }
     }
 }

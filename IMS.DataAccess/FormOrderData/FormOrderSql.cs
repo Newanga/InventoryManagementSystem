@@ -49,5 +49,47 @@ namespace IMS.DataAccess.FormOrderData
 
             return products;
         }
+
+        public void CreateNewOrder(NewFullOrderModel newOrder)
+        {
+            string sql = @"Select Id from dbo.supplier where Name=@Name;";
+
+            var supplierId = _db.LoadData<IdLookUpModel, dynamic>(sql, new { Name = newOrder.SupplierName }).First().Id;
+
+
+            sql=@"Insert into dbo.Orders 
+                  (PlaceDate,DeliveryDate,SpecialNotes,OrderStateId,SupplierId)
+                  Values 
+                  (@PlaceDate,@DeliveryDate,@SpecialNotes,@OrderStateId,@SupplierId);";
+
+            _db.SaveData<dynamic>(sql, new {
+                PlaceDate=newOrder.PlaceDate,
+                DeliveryDate=newOrder.DeliveryDate,
+                SpecialNotes=newOrder.SpecialNotes,
+                OrderStateId=newOrder.OrderStateId,
+                SupplierId=supplierId
+            });
+
+            sql= @"select Id from dbo.Orders where SupplierId=@SupplierId and PlaceDate=@PlaceDate;";
+
+            var orderId = _db.LoadData<IdLookUpModel, dynamic>(sql, new { SupplierId = supplierId, PlaceDate= newOrder.PlaceDate }).First().Id;
+
+            foreach (var item in newOrder.Items)
+            {
+
+                sql = @"Insert into dbo.OrderItem
+                    (OrderId,ProductId,Quantity,Price)
+                    values
+                    (@OrderId,@ProductId,@Quantity,@Price);";
+
+                _db.SaveData<dynamic>(sql, new
+                {
+                    OrderId = orderId,
+                    ProductId=item.ProductId,
+                    Quantity=item.Quantity,
+                    Price=item.Price
+                });
+            }
+        }
     }
 }
