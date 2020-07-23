@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dGVOrders = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PlaceDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,60 +64,69 @@
             this.btnOrderItemRemove = new System.Windows.Forms.Button();
             this.btnOrderItemUpdate = new System.Windows.Forms.Button();
             this.btnOrderItemCancel = new System.Windows.Forms.Button();
-            this.btnOrderNewCancel = new System.Windows.Forms.Button();
+            this.btnNewOrderCancel = new System.Windows.Forms.Button();
             this.btnNewOrderUpdate = new System.Windows.Forms.Button();
             this.btnExistingOrderUpdate = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnExistingOrderEdit = new System.Windows.Forms.Button();
+            this.btnExistingOrderCancel = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVOrderItems)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dGVOrders
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dGVOrders.AllowUserToAddRows = false;
+            this.dGVOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVOrders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.Supplier,
             this.PlaceDate,
             this.OrderState,
             this.DeliveryDate,
             this.SpecialNotes});
-            this.dataGridView1.Location = new System.Drawing.Point(35, 220);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(505, 192);
-            this.dataGridView1.TabIndex = 0;
+            this.dGVOrders.Location = new System.Drawing.Point(35, 220);
+            this.dGVOrders.Name = "dGVOrders";
+            this.dGVOrders.Size = new System.Drawing.Size(505, 192);
+            this.dGVOrders.TabIndex = 0;
+            this.dGVOrders.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVOrders_CellDoubleClick);
             // 
             // Id
             // 
+            this.Id.DataPropertyName = "Id";
             this.Id.HeaderText = "Id";
             this.Id.Name = "Id";
             // 
             // Supplier
             // 
+            this.Supplier.DataPropertyName = "SupplierName";
             this.Supplier.HeaderText = "Supplier";
             this.Supplier.Name = "Supplier";
             this.Supplier.ReadOnly = true;
             // 
             // PlaceDate
             // 
+            this.PlaceDate.DataPropertyName = "PlaceDate";
             this.PlaceDate.HeaderText = "PlaceDate";
             this.PlaceDate.Name = "PlaceDate";
             this.PlaceDate.ReadOnly = true;
             // 
             // OrderState
             // 
+            this.OrderState.DataPropertyName = "OrderState";
             this.OrderState.HeaderText = "State";
             this.OrderState.Name = "OrderState";
             this.OrderState.ReadOnly = true;
             // 
             // DeliveryDate
             // 
+            this.DeliveryDate.DataPropertyName = "DeliveryDate";
             this.DeliveryDate.HeaderText = "DeliveryDate";
             this.DeliveryDate.Name = "DeliveryDate";
             this.DeliveryDate.ReadOnly = true;
             // 
             // SpecialNotes
             // 
+            this.SpecialNotes.DataPropertyName = "SpecialNotes";
             this.SpecialNotes.HeaderText = "SpecialNotes";
             this.SpecialNotes.Name = "SpecialNotes";
             this.SpecialNotes.ReadOnly = true;
@@ -405,16 +414,16 @@
             this.btnOrderItemCancel.UseVisualStyleBackColor = true;
             this.btnOrderItemCancel.Click += new System.EventHandler(this.btnOrderItemCancel_Click);
             // 
-            // btnOrderNewCancel
+            // btnNewOrderCancel
             // 
-            this.btnOrderNewCancel.Enabled = false;
-            this.btnOrderNewCancel.Location = new System.Drawing.Point(352, 165);
-            this.btnOrderNewCancel.Name = "btnOrderNewCancel";
-            this.btnOrderNewCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnOrderNewCancel.TabIndex = 5;
-            this.btnOrderNewCancel.Text = "Cancel";
-            this.btnOrderNewCancel.UseVisualStyleBackColor = true;
-            this.btnOrderNewCancel.Click += new System.EventHandler(this.btnNewOrderCancel_Click);
+            this.btnNewOrderCancel.Enabled = false;
+            this.btnNewOrderCancel.Location = new System.Drawing.Point(351, 165);
+            this.btnNewOrderCancel.Name = "btnNewOrderCancel";
+            this.btnNewOrderCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnNewOrderCancel.TabIndex = 5;
+            this.btnNewOrderCancel.Text = "Cancel";
+            this.btnNewOrderCancel.UseVisualStyleBackColor = true;
+            this.btnNewOrderCancel.Click += new System.EventHandler(this.btnNewOrderCancel_Click);
             // 
             // btnNewOrderUpdate
             // 
@@ -430,25 +439,50 @@
             // btnExistingOrderUpdate
             // 
             this.btnExistingOrderUpdate.Enabled = false;
-            this.btnExistingOrderUpdate.Location = new System.Drawing.Point(254, 165);
+            this.btnExistingOrderUpdate.Location = new System.Drawing.Point(173, 165);
             this.btnExistingOrderUpdate.Name = "btnExistingOrderUpdate";
             this.btnExistingOrderUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnExistingOrderUpdate.TabIndex = 10;
             this.btnExistingOrderUpdate.Text = "Update";
             this.btnExistingOrderUpdate.UseVisualStyleBackColor = true;
+            this.btnExistingOrderUpdate.Click += new System.EventHandler(this.btnExistingOrderUpdate_Click);
+            // 
+            // btnExistingOrderEdit
+            // 
+            this.btnExistingOrderEdit.Enabled = false;
+            this.btnExistingOrderEdit.Location = new System.Drawing.Point(270, 165);
+            this.btnExistingOrderEdit.Name = "btnExistingOrderEdit";
+            this.btnExistingOrderEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnExistingOrderEdit.TabIndex = 11;
+            this.btnExistingOrderEdit.Text = "Edit";
+            this.btnExistingOrderEdit.UseVisualStyleBackColor = true;
+            this.btnExistingOrderEdit.Click += new System.EventHandler(this.btnExistingOrderEdit_Click);
+            // 
+            // btnExistingOrderCancel
+            // 
+            this.btnExistingOrderCancel.Enabled = false;
+            this.btnExistingOrderCancel.Location = new System.Drawing.Point(351, 165);
+            this.btnExistingOrderCancel.Name = "btnExistingOrderCancel";
+            this.btnExistingOrderCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnExistingOrderCancel.TabIndex = 5;
+            this.btnExistingOrderCancel.Text = "Cancel";
+            this.btnExistingOrderCancel.UseVisualStyleBackColor = true;
+            this.btnExistingOrderCancel.Click += new System.EventHandler(this.btnExistingOrderCancel_Click);
             // 
             // FormOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1018, 445);
+            this.Controls.Add(this.btnExistingOrderEdit);
             this.Controls.Add(this.btnExistingOrderUpdate);
             this.Controls.Add(this.btnNewOrderUpdate);
             this.Controls.Add(this.btnOrderItemRemove);
             this.Controls.Add(this.btnOrderItemCancel);
             this.Controls.Add(this.btnOrderItemEdit);
             this.Controls.Add(this.btnOrderItemAdd);
-            this.Controls.Add(this.btnOrderNewCancel);
+            this.Controls.Add(this.btnExistingOrderCancel);
+            this.Controls.Add(this.btnNewOrderCancel);
             this.Controls.Add(this.btnNewOrderCreate);
             this.Controls.Add(this.dTPDeliveryDate);
             this.Controls.Add(this.dTPPlaceDate);
@@ -469,12 +503,12 @@
             this.Controls.Add(this.lblSpecialNote);
             this.Controls.Add(this.lblOrderId);
             this.Controls.Add(this.dGVOrderItems);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dGVOrders);
             this.Controls.Add(this.btnOrderItemUpdate);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormOrder";
             this.Text = "FormOrder";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVOrders)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVOrderItems)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -483,7 +517,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dGVOrders;
         private System.Windows.Forms.DataGridView dGVOrderItems;
         private System.Windows.Forms.Label lblOrderId;
         private System.Windows.Forms.TextBox txtBxOrderId;
@@ -503,12 +537,6 @@
         private System.Windows.Forms.TextBox txtBxOrderItemQuantity;
         private System.Windows.Forms.Label lblProductPrice;
         private System.Windows.Forms.TextBox txtBxOrderItemPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Supplier;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PlaceDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OrderState;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DeliveryDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SpecialNotes;
         private System.Windows.Forms.Button btnNewOrderCreate;
         private System.Windows.Forms.Button btnOrderItemAdd;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
@@ -519,8 +547,16 @@
         private System.Windows.Forms.Button btnOrderItemRemove;
         private System.Windows.Forms.Button btnOrderItemUpdate;
         private System.Windows.Forms.Button btnOrderItemCancel;
-        private System.Windows.Forms.Button btnOrderNewCancel;
+        private System.Windows.Forms.Button btnNewOrderCancel;
         private System.Windows.Forms.Button btnNewOrderUpdate;
         private System.Windows.Forms.Button btnExistingOrderUpdate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Supplier;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PlaceDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrderState;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DeliveryDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SpecialNotes;
+        private System.Windows.Forms.Button btnExistingOrderEdit;
+        private System.Windows.Forms.Button btnExistingOrderCancel;
     }
 }

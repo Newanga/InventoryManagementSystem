@@ -10,15 +10,16 @@ namespace IMS.Core.Models
     {
         public int Id { get; set; }
 
-        public string Supplier { get; set; }
+        public string SupplierName { get; set; }
 
-        public DateTime? PlaceDate { get; set; }
+        public DateTime PlaceDate { get; set; }
+        public string OrderState { get; set; }
 
         public DateTime? DeliveryDate { get; set; }
 
         public string SpecialNotes { get; set; }
 
-        public string OrderState { get; set; }
+    
 
 
     }

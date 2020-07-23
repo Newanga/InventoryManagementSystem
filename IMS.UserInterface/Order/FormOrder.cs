@@ -20,26 +20,63 @@ namespace IMS.UserInterface.Order
     {
         private OrderFormDropDownsVM orderFormDropDowns = new OrderFormDropDownsVM();
         private NewOrderModel newOrder = new NewOrderModel();
+        private List<ExistingOrdersDataGridVM> existingOrders = new List<ExistingOrdersDataGridVM>();
+        private BindingList<OrderItemModel> existingOrderItems;
+        private UpdateOrderModel updateOrder = new UpdateOrderModel();
         private readonly IFormOrderSql _db;
 
         public FormOrder(IFormOrderSql db)
         {
             InitializeComponent();
             _db = db;
-           
+            LoadExistingOrdersFromDatabase();
+            PopulateOrdersDataGrid();
         }
 
         private void btnOrderNewCreate_Click(object sender, EventArgs e)
         {
+            txtBxOrderId.Clear();
             LoadSuppliersFromDatabase();
             PopulateSupplierComboBox();
             PopulateOrderStateComboBox();
             comboBxSupplier.Enabled = true;
+            comboBxSupplier.DropDownStyle = ComboBoxStyle.DropDownList;
             btnNewOrderCreate.Enabled = false;
-            btnNewOrderUpdate.Enabled = true;
-            btnOrderNewCancel.Enabled = true;
-            
+            btnExistingOrderEdit.Enabled = false;
 
+            btnNewOrderUpdate.Enabled = true;
+            btnNewOrderUpdate.Visible = true;
+            btnNewOrderUpdate.BringToFront();
+
+            btnExistingOrderUpdate.Enabled = false;
+            btnExistingOrderUpdate.Visible = false;
+            btnExistingOrderUpdate.SendToBack();
+
+            btnNewOrderCancel.Enabled = true;
+            btnNewOrderCancel.Visible = true;
+            btnNewOrderCancel.BringToFront();
+
+            btnExistingOrderCancel.Enabled = false;
+            btnExistingOrderCancel.Visible = false;
+            btnExistingOrderCancel.SendToBack();
+
+
+        }
+
+
+        private void LoadExistingOrdersFromDatabase()
+        {
+            existingOrders = _db.GetExistingOrdersFromDatabase();
+        }
+
+        private void LoadExistingOrderItemsOfOrderFromDatabase(int orderId)
+        {
+            existingOrderItems = new BindingList<OrderItemModel>(_db.GetExistingOrderItemsFromDatabase(orderId));
+        }
+
+        public void PopulateExistingOrderItemsInDataGrid()
+        {
+            dGVOrderItems.DataSource = existingOrderItems;
         }
 
         private void LoadSuppliersFromDatabase()
@@ -47,11 +84,19 @@ namespace IMS.UserInterface.Order
             orderFormDropDowns.Suppliers = _db.GetSupplierFromDatabase();
         }
 
+        private void PopulateOrdersDataGrid()
+        {
+            dGVOrders.DataSource = existingOrders;
+            dGVOrders.Refresh();
+            dGVOrders.Update();
+        }
+
         private void PopulateSupplierComboBox()
         {
             comboBxSupplier.DataSource = orderFormDropDowns.Suppliers;
             comboBxSupplier.DisplayMember = "Name";
             comboBxSupplier.ValueMember = "Name";
+            comboBxSupplier.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void PopulateOrderStateComboBox()
@@ -81,10 +126,6 @@ namespace IMS.UserInterface.Order
             btnOrderItemAdd.Enabled = true;
         }
 
-
-
-
-  
         private void PopulateOrderItemDataGrid()
         {
             dGVOrderItems.DataSource = newOrder.Items;
@@ -197,6 +238,7 @@ namespace IMS.UserInterface.Order
 
             if (dGVOrderItems.Rows.Count > 0)
             {
+                comboBxSupplier.DropDownStyle = ComboBoxStyle.DropDownList;
                 comboBxSupplier.Enabled = false;
                 txtBxOrderId.Enabled = false;
                 txtBxSpecialNote.Enabled = true;
@@ -416,6 +458,7 @@ namespace IMS.UserInterface.Order
                 newOrder.Items.Clear();
                 dGVOrderItems.Rows.Clear();
 
+                comboBxSupplier.DropDownStyle = ComboBoxStyle.DropDownList;
                 comboBxSupplier.Enabled = false;
                 comboBxOrderItemName.Enabled = false;
 
@@ -460,7 +503,13 @@ namespace IMS.UserInterface.Order
             btnExistingOrderUpdate.Visible = false;
             btnExistingOrderUpdate.SendToBack();
 
-            btnOrderNewCancel.Enabled = false;
+            btnNewOrderCancel.Enabled = false;
+            btnNewOrderCancel.Visible = true;
+            btnNewOrderCancel.BringToFront();
+
+            btnExistingOrderCancel.Enabled = false;
+            btnExistingOrderCancel.Visible = false;
+            btnExistingOrderCancel.SendToBack();
         }
 
         private void btnNewOrderUpdate_Click(object sender, EventArgs e)
@@ -480,6 +529,151 @@ namespace IMS.UserInterface.Order
                 MessageBox.Show("New Order created Successfully", "Operation Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnNewOrderCancel_Click(null, RoutedEventArgs.Empty);
             }
+
+
+
+        }
+
+        private void dGVOrders_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Check if a new order is been created 
+            if (btnNewOrderCreate.Enabled == false)
+                return;
+
+            if (e.RowIndex != -1)
+            {
+                DataGridViewRow dgvRow = dGVOrders.Rows[e.RowIndex];
+                txtBxOrderId.Text = dgvRow.Cells[0].Value.ToString();
+                txtBxSpecialNote.Text = dgvRow.Cells[5].Value.ToString();
+                dTPPlaceDate.Value = Convert.ToDateTime(dgvRow.Cells[2].Value);
+
+                comboBxOrderState.DataSource = Enum.GetValues(typeof(OrderState));
+                var text = dgvRow.Cells[3].Value.ToString();
+                //converting text to enum
+                Enum.TryParse(text, out OrderState state);
+                //converting enum to int
+                comboBxOrderState.SelectedIndex = (int)state - 1;
+
+                if (dgvRow.Cells[4].Value == null)
+                {
+                    dTPDeliveryDate.CustomFormat = " ";
+                }
+                else
+                {
+                    dTPDeliveryDate.Value = Convert.ToDateTime(dgvRow.Cells[4].Value);
+                }
+
+                comboBxSupplier.DropDownStyle = ComboBoxStyle.Simple;
+                comboBxSupplier.Text= dgvRow.Cells[1].Value.ToString();
+            }
+
+            btnExistingOrderEdit.Enabled = true;
+
+            btnNewOrderCancel.Enabled = false;
+            btnNewOrderCancel.Visible = false;
+            btnNewOrderCancel.SendToBack();
+
+            btnExistingOrderCancel.Enabled = true;
+            btnExistingOrderCancel.Visible = true;
+            btnExistingOrderCancel.BringToFront();
+
+            //Get the selected OrderId
+            var selectedOrderId = ((ExistingOrdersDataGridVM)dGVOrders.CurrentRow.DataBoundItem).Id;
+
+            LoadExistingOrderItemsOfOrderFromDatabase(selectedOrderId);
+            PopulateExistingOrderItemsInDataGrid();
+
+            btnNewOrderCreate.Enabled = false;
+        }
+
+        private void btnExistingOrderEdit_Click(object sender, EventArgs e)
+        {
+            btnNewOrderCreate.Enabled = false;
+            txtBxSpecialNote.Enabled = true;
+            dTPDeliveryDate.Enabled = true;
+            comboBxOrderState.Enabled = true;
+            btnExistingOrderEdit.Enabled = false;
+
+            btnNewOrderUpdate.Enabled = false;
+            btnNewOrderUpdate.Visible = false;
+            btnExistingOrderUpdate.SendToBack();
+
+            btnExistingOrderUpdate.Enabled = true;
+            btnExistingOrderUpdate.Visible = true;
+            btnExistingOrderUpdate.BringToFront();
+
+            btnExistingOrderCancel.Enabled = true;
+            btnExistingOrderCancel.Visible = true;
+            btnExistingOrderCancel.BringToFront();
+
+            btnNewOrderCancel.Enabled = false;
+            btnNewOrderCancel.Visible = false;
+            btnNewOrderCancel.SendToBack();
+
+
+
+        }
+
+        private void btnExistingOrderCancel_Click(object sender, EventArgs e)
+        {
+            txtBxOrderId.Clear();
+            txtBxOrderId.Enabled = false;
+
+            txtBxSpecialNote.Clear();
+            txtBxSpecialNote.Enabled = false;
+
+            comboBxOrderState.DataSource = null;
+
+            comboBxSupplier.Text = string.Empty;
+            comboBxSupplier.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            comboBxOrderState.Enabled = false;
+
+            existingOrderItems.Clear();
+            dGVOrderItems.Rows.Clear();
+
+            dTPDeliveryDate.Value = DateTime.Now;
+            dTPDeliveryDate.CustomFormat = " ";
+            dTPDeliveryDate.Enabled = false;
+
+            dTPPlaceDate.Value = DateTime.Now;
+            dTPPlaceDate.CustomFormat = " ";
+            dTPPlaceDate.Enabled = false;
+
+            btnExistingOrderUpdate.Enabled = false;
+            btnExistingOrderUpdate.Visible = false;
+            btnExistingOrderUpdate.SendToBack();
+
+            btnNewOrderUpdate.Enabled = false;
+            btnNewOrderUpdate.Visible = true;
+            btnNewOrderUpdate.BringToFront();
+
+
+            btnNewOrderCancel.Enabled = false;
+            btnNewOrderCancel.Visible = true;
+            btnNewOrderCancel.BringToFront();
+
+            btnExistingOrderCancel.Enabled = false;
+            btnExistingOrderCancel.Visible = false;
+            btnExistingOrderCancel.SendToBack();
+
+            btnExistingOrderEdit.Enabled = false;
+            btnNewOrderCreate.Enabled = true;
+
+        }
+
+        private void btnExistingOrderUpdate_Click(object sender, EventArgs e)
+        {
+            updateOrder.OrderId = int.Parse(txtBxOrderId.Text);
+            updateOrder.SpecialNotes = txtBxSpecialNote.Text;
+            updateOrder.OrderStateId = comboBxOrderState.SelectedIndex + 1;
+            updateOrder.DeliveryDate=(dTPDeliveryDate.CustomFormat == " ") ? (DateTime?)null : dTPDeliveryDate.Value.Date;
+
+            _db.UpdateExistingOrder(updateOrder);
+            MessageBox.Show(" Order Updated Successfully", "Operation Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            btnExistingOrderCancel_Click(null, RoutedEventArgs.Empty);
+            PopulateOrdersDataGrid();
+
 
 
 

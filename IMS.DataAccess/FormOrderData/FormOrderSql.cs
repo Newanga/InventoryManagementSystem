@@ -91,5 +91,53 @@ namespace IMS.DataAccess.FormOrderData
                 });
             }
         }
+
+        public List<ExistingOrdersDataGridVM> GetExistingOrdersFromDatabase()
+        {
+            string sql= @"select o.Id,s.Name as SupplierName,o.PlaceDate,os.State as OrderState,
+                            o.DeliveryDate, o.SpecialNotes
+                        from dbo.Orders as o
+                        inner join dbo.Supplier as s
+                        on o.SupplierId=s.Id
+                        inner join dbo.OrderState as os
+                        on o.OrderStateId=os.Id;";
+
+            List<ExistingOrdersDataGridVM> data = _db.LoadData<ExistingOrdersDataGridVM, dynamic>(sql, new { });
+
+            return data;
+        }
+
+        public List<OrderItemModel> GetExistingOrderItemsFromDatabase(int orderId)
+        {
+            string sql = @"select p.Id as ProductId, p.Name as ProductName,o.Quantity,o.Price
+                            from dbo.OrderItem as o
+                            inner join dbo.Product as p
+                            on o.ProductId=p.Id
+                            where o.OrderId=@OrderId;";
+
+            List<OrderItemModel>  data =_db.LoadData<OrderItemModel, dynamic>(sql, new { OrderId = orderId });
+
+            return data;
+        }
+
+
+        public void UpdateExistingOrder(UpdateOrderModel order)
+        {
+            string sql = @"UPDATE dbo.Orders set
+                            DeliveryDate=@DeliveryDate,
+                            SpecialNotes=@SpecialNotes,
+                            OrderStateId=@OrderStateId
+                            where Id=@OrderId;";
+
+            _db.SaveData<dynamic>(sql, new
+            {
+                DeliveryDate = order.DeliveryDate,
+                SpecialNotes = order.SpecialNotes,
+                OrderStateId = order.OrderStateId,
+                OrderId=order.OrderId
+            });
+
+
+        }
     }
 }

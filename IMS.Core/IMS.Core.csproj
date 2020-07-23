@@ -60,6 +60,7 @@
     <Compile Include="Models\Login\LoginModel.cs" />
     <Compile Include="Models\Order\NewOrderModel.cs" />
     <Compile Include="Models\Order\OrderItemModel.cs" />
+    <Compile Include="Models\Order\UpdateOrderModel.cs" />
     <Compile Include="ViewModels\ExistingOrdersDataGridVM.cs" />
     <Compile Include="Models\Order\SupplierProductModel.cs" />
     <Compile Include="Models\Product\ProductFullModel.cs" />
