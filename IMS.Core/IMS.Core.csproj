@@ -58,11 +58,9 @@
     <Compile Include="Models\Employee\PersonModel.cs" />
     <Compile Include="Models\IdLookUpModel.cs" />
     <Compile Include="Models\Login\LoginModel.cs" />
-    <Compile Include="Models\Order\NewFullOrderModel.cs" />
-    <Compile Include="Models\Order\NewOrderItemModel.cs" />
+    <Compile Include="Models\Order\NewOrderModel.cs" />
     <Compile Include="Models\Order\OrderItemModel.cs" />
-    <Compile Include="Models\Order\OrderItemNewModel.cs" />
-    <Compile Include="Models\Order\OrderModel.cs" />
+    <Compile Include="ViewModels\ExistingOrdersDataGridVM.cs" />
     <Compile Include="Models\Order\SupplierProductModel.cs" />
     <Compile Include="Models\Product\ProductFullModel.cs" />
     <Compile Include="Models\Product\ProductNewModel.cs" />
@@ -72,7 +70,6 @@
     <Compile Include="Models\User\CurrentUserDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\EmployeeDataGridVM.cs" />
-    <Compile Include="ViewModels\OrderDataGridVM.cs" />
     <Compile Include="ViewModels\OrderFormDropDownsVM.cs" />
     <Compile Include="ViewModels\OrderItemsDataGridVM.cs" />
     <Compile Include="ViewModels\ProductDataGridVM.cs" />

@@ -6,7 +6,7 @@ namespace IMS.DataAccess.FormOrderData
 {
     public interface IFormOrderSql
     {
-        void CreateNewOrder(NewFullOrderModel newOrder);
+        void CreateNewOrder(NewOrderModel newOrder);
         List<SupplierName> GetSupplierFromDatabase();
         List<SupplierProductsPriceModel> GetSupplierProductsFromDatabase(string supplierName);
     }

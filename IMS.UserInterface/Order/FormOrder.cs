@@ -19,7 +19,7 @@ namespace IMS.UserInterface.Order
     public partial class FormOrder : Form
     {
         private OrderFormDropDownsVM orderFormDropDowns = new OrderFormDropDownsVM();
-        private NewFullOrderModel newOrder = new NewFullOrderModel();
+        private NewOrderModel newOrder = new NewOrderModel();
         private readonly IFormOrderSql _db;
 
         public FormOrder(IFormOrderSql db)
@@ -114,7 +114,7 @@ namespace IMS.UserInterface.Order
                 return;
 
             //Item double clicked and selected in the orderItems datagrid
-            var selectedRowItem = (NewOrderItemModel)dGVOrderItems.CurrentRow.DataBoundItem;
+            var selectedRowItem = (OrderItemModel)dGVOrderItems.CurrentRow.DataBoundItem;
 
 
             SupplierProductsPriceModel OrderItemView = new SupplierProductsPriceModel
@@ -152,7 +152,7 @@ namespace IMS.UserInterface.Order
         private void btnOrderItemAdd_Click(object sender, EventArgs e)
         {
             var addedItem = ((SupplierProductsPriceModel)comboBxOrderItemName.SelectedItem);
-            NewOrderItemModel item = new NewOrderItemModel
+            OrderItemModel item = new OrderItemModel
             {
                 ProductId = addedItem.Id,
                 ProductName = addedItem.Name,

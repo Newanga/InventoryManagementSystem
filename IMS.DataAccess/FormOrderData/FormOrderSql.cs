@@ -50,7 +50,7 @@ namespace IMS.DataAccess.FormOrderData
             return products;
         }
 
-        public void CreateNewOrder(NewFullOrderModel newOrder)
+        public void CreateNewOrder(NewOrderModel newOrder)
         {
             string sql = @"Select Id from dbo.supplier where Name=@Name;";
 

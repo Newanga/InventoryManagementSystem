@@ -10,7 +10,7 @@ namespace IMS.UserInterface.Order
 {
     public static class OrderInputDataValidator
     {
-        public static bool ValidateAdd(NewFullOrderModel data)
+        public static bool ValidateAdd(NewOrderModel data)
         {
             if (!CheckOrderItems(data))
             {
@@ -27,7 +27,7 @@ namespace IMS.UserInterface.Order
 
         }
 
-        private static bool CheckDateValidity(NewFullOrderModel data)
+        private static bool CheckDateValidity(NewOrderModel data)
         {
             if (data.PlaceDate == null)
             {
@@ -40,7 +40,7 @@ namespace IMS.UserInterface.Order
             }
         }
 
-        private static bool CheckOrderItems(NewFullOrderModel data)
+        private static bool CheckOrderItems(NewOrderModel data)
         {
             if (data.Items.Count < 1)
             {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace IMS.Core.Models.Order
 {
-    public class NewFullOrderModel
+    public class NewOrderModel
     {
         public string SupplierName { get; set; }
 
@@ -19,6 +19,6 @@ namespace IMS.Core.Models.Order
 
         public int OrderStateId { get; set; }
 
-        public BindingList<NewOrderItemModel> Items  = new BindingList<NewOrderItemModel>();
+        public BindingList<OrderItemModel> Items  = new BindingList<OrderItemModel>();
     }
 }
