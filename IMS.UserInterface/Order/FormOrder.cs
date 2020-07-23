@@ -1,4 +1,5 @@
-﻿using IMS.Core.Models;
+﻿using IMS.Core.Enums;
+using IMS.Core.Models;
 using IMS.Core.Models.Order;
 using IMS.Core.ViewModels;
 using IMS.DataAccess.FormOrderData;
@@ -25,13 +26,17 @@ namespace IMS.UserInterface.Order
         {
             InitializeComponent();
             _db = db;
-            LoadSuppliersFromDatabase();
+           
         }
 
-        private void btnOrderNew_Click(object sender, EventArgs e)
+        private void btnOrderNewCreate_Click(object sender, EventArgs e)
         {
+            LoadSuppliersFromDatabase();
             PopulateSupplierComboBox();
+            PopulateOrderStateComboBox();
             comboBxSupplier.Enabled = true;
+            btnOrderNewCreate.Enabled = false;
+ 
         }
 
         private void LoadSuppliersFromDatabase()
@@ -46,8 +51,16 @@ namespace IMS.UserInterface.Order
             comboBxSupplier.ValueMember = "Name";
         }
 
+        private void PopulateOrderStateComboBox()
+        {
+            comboBxOrderState.DataSource = Enum.GetValues(typeof(OrderState));
+        }
+
         private void LoadSupplierProductsFromDatabase()
         {
+            if (orderFormDropDowns.Suppliers.Count == 0)
+                return;
+
             string supplierName = ((SupplierName)comboBxSupplier.SelectedItem).Name;
             var data = new BindingList<SupplierProductsPriceModel>(_db.GetSupplierProductsFromDatabase(supplierName));
             orderFormDropDowns.Products = data;
@@ -55,48 +68,6 @@ namespace IMS.UserInterface.Order
             PopulateOrderItemsCombobox();
         }
 
-        private void PopulateOrderItemsCombobox()
-        {
-            comboBxOrderItemName.DataSource = orderFormDropDowns.Products;
-            comboBxOrderItemName.DisplayMember = "Name";
-            comboBxOrderItemName.ValueMember = "Name";
-            comboBxOrderItemName.Refresh();
-            comboBxOrderItemName.Update();
-        }
-
-
-
-
-        #region UI/UX
-        private void dTPPlaceDate_ValueChanged(object sender, EventArgs e)
-        {
-            dTPPlaceDate.CustomFormat = "MM-dd-yyyy";
-        }
-
-        private void dTPPlaceDate_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Back || e.KeyCode == Keys.Delete || e.KeyCode == Keys.Escape)
-            {
-                dTPPlaceDate.CustomFormat = " ";
-            }
-
-        }
-
-        private void dTPDeliveryDate_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Back || e.KeyCode == Keys.Delete || e.KeyCode == Keys.Escape)
-            {
-                dTPDeliveryDate.CustomFormat = " ";
-            }
-        }
-
-        private void dTPDeliveryDate_ValueChanged(object sender, EventArgs e)
-        {
-            dTPDeliveryDate.CustomFormat = "MM-dd-yyyy";
-        }
-
-
-        #endregion
 
         private void comboBxSupplier_SelectedValueChanged(object sender, EventArgs e)
         {
@@ -107,6 +78,25 @@ namespace IMS.UserInterface.Order
             btnOrderItemAdd.Enabled = true;
         }
 
+
+
+
+  
+        private void PopulateOrderItemDataGrid()
+        {
+            dGVOrderItems.DataSource = newOrder.Items;
+            dGVOrderItems.Refresh();
+            dGVOrderItems.Update();
+        }
+
+        private void PopulateOrderItemsCombobox()
+        {
+            comboBxOrderItemName.DataSource = orderFormDropDowns.Products;
+            comboBxOrderItemName.DisplayMember = "Name";
+            comboBxOrderItemName.ValueMember = "Name";
+            comboBxOrderItemName.Refresh();
+            comboBxOrderItemName.Update();
+        }
         private void comboBxOrderItemName_SelectedValueChanged(object sender, EventArgs e)
         {
             if (orderFormDropDowns.Products.Count == 0)
@@ -115,11 +105,49 @@ namespace IMS.UserInterface.Order
             var selectedItem = ((SupplierProductsPriceModel)comboBxOrderItemName.SelectedItem);
             txtBxOrderItemPrice.Text = selectedItem.Price.ToString();
         }
+        private void dGVOrderItems_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (btnOrderItemEdit.Enabled == true)
+                return;
+
+            //Item double clicked and selected in the orderItems datagrid
+            var selectedRowItem = (NewOrderItemModel)dGVOrderItems.CurrentRow.DataBoundItem;
+
+
+            SupplierProductsPriceModel OrderItemView = new SupplierProductsPriceModel
+            {
+                Id = selectedRowItem.ProductId,
+                Name = selectedRowItem.ProductName,
+                Price = selectedRowItem.Price
+            };
+
+            //Add select item to the combobox to view
+            orderFormDropDowns.Products.Add(OrderItemView);
+
+            PopulateOrderItemsCombobox();
+            comboBxOrderItemName_SelectedValueChanged(null, RoutedEventArgs.Empty);
+
+            //set the selected item to the above item
+            comboBxOrderItemName.SelectedItem = OrderItemView;
+
+            comboBxOrderItemName.Enabled = false;
+            comboBxOrderItemName.DropDownStyle = ComboBoxStyle.Simple;
+
+            //convert (int)? ------> (int)
+            int itemQuantity = (int)selectedRowItem.Quantity;
+            txtBxOrderItemQuantity.Text = itemQuantity.ToString();
+            txtBxOrderItemQuantity.Enabled = false;
+
+            txtBxOrderItemPrice.Enabled = false;
+            btnOrderItemAdd.Enabled = false;
+            btnOrderItemEdit.Enabled = true;
+            btnOrderItemRemove.Enabled = true;
+            btnOrderItemCancel.Enabled = true;
+
+        }
 
         private void btnOrderItemAdd_Click(object sender, EventArgs e)
         {
-
-
             var addedItem = ((SupplierProductsPriceModel)comboBxOrderItemName.SelectedItem);
             NewOrderItemModel item = new NewOrderItemModel
             {
@@ -165,60 +193,18 @@ namespace IMS.UserInterface.Order
             }
 
             if (dGVOrderItems.Rows.Count > 0)
-                comboBxSupplier.Enabled = false;
-
-        }
-
-        private void PopulateOrderItemDataGrid()
-        {
-            dGVOrderItems.DataSource = newOrder.Items;
-            dGVOrderItems.Refresh();
-            dGVOrderItems.Update();
-        }
-
-
-
-        private void dGVOrderItems_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (btnOrderItemEdit.Enabled == true)
-                return;
-
-            //Item double clicked and selected in the orderItems datagrid
-            var selectedRowItem = (NewOrderItemModel)dGVOrderItems.CurrentRow.DataBoundItem;
-
-
-            SupplierProductsPriceModel OrderItemView = new SupplierProductsPriceModel
             {
-                Id = selectedRowItem.ProductId,
-                Name = selectedRowItem.ProductName,
-                Price = selectedRowItem.Price
-            };
-
-            //Add select item to the combobox to view
-            orderFormDropDowns.Products.Add(OrderItemView);
-
-            PopulateOrderItemsCombobox();
-            comboBxOrderItemName_SelectedValueChanged(null, RoutedEventArgs.Empty);
-
-            //set the selected item to the above item
-            comboBxOrderItemName.SelectedItem = OrderItemView;
-
-            comboBxOrderItemName.Enabled = false;
-            comboBxOrderItemName.DropDownStyle = ComboBoxStyle.Simple;
-
-            //convert (int)? ------> (int)
-            int itemQuantity = (int)selectedRowItem.Quantity;
-            txtBxOrderItemQuantity.Text = itemQuantity.ToString();
-            txtBxOrderItemQuantity.Enabled = false;
-
-            txtBxOrderItemPrice.Enabled = false;
-            btnOrderItemAdd.Enabled = false;
-            btnOrderItemEdit.Enabled = true;
-            btnOrderItemRemove.Enabled = true;
-            btnOrderItemCancel.Enabled = true;
+                comboBxSupplier.Enabled = false;
+                txtBxOrderId.Enabled = false;
+                txtBxSpecialNote.Enabled = true;
+                dTPPlaceDate.Enabled = true;
+                comboBxOrderState.Enabled = true;
+                comboBxOrderState.Enabled = true;
+                btnOrderNewCancel.Enabled = true;
+            }
+              
 
         }
-
         private void btnOrderItemRemove_Click(object sender, EventArgs e)
         {
             var removingOrderItemId = ((SupplierProductsPriceModel)comboBxOrderItemName.SelectedItem).Id;
@@ -373,6 +359,85 @@ namespace IMS.UserInterface.Order
                 MessageBox.Show("Please enter only numbers.", "Invalid Character", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 e.Handled = true;
             }
+        }
+  
+
+        #region UI/UX
+        private void dTPPlaceDate_ValueChanged(object sender, EventArgs e)
+        {
+            dTPPlaceDate.CustomFormat = "MM-dd-yyyy";
+        }
+
+        private void dTPPlaceDate_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Back || e.KeyCode == Keys.Delete || e.KeyCode == Keys.Escape)
+            {
+                dTPPlaceDate.CustomFormat = " ";
+            }
+
+        }
+
+        private void dTPDeliveryDate_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Back || e.KeyCode == Keys.Delete || e.KeyCode == Keys.Escape)
+            {
+                dTPDeliveryDate.CustomFormat = " ";
+            }
+        }
+
+        private void dTPDeliveryDate_ValueChanged(object sender, EventArgs e)
+        {
+            dTPDeliveryDate.CustomFormat = "MM-dd-yyyy";
+        }
+
+
+        #endregion
+
+        private void btnOrderNewCancel_Click(object sender, EventArgs e)
+        {
+            if(btnOrderNewCreate.Enabled==false)
+            {
+                orderFormDropDowns.Products.Clear();
+                comboBxOrderItemName.DataSource = null;
+
+                orderFormDropDowns.Suppliers.Clear();
+                comboBxSupplier.DataSource = null;
+
+                newOrder.Items.Clear();
+                dGVOrderItems.Rows.Clear();
+
+                comboBxSupplier.Enabled = false;
+                comboBxOrderItemName.Enabled = false;
+
+                btnOrderItemAdd.Enabled = false;
+                btnOrderItemEdit.Enabled = false;
+                btnOrderItemCancel.Enabled = false;
+
+                btnOrderItemRemove.Visible = true;
+                btnOrderItemRemove.Enabled = false;
+                btnOrderItemRemove.BringToFront();
+                btnOrderItemUpdate.Visible = false;
+                btnOrderItemUpdate.Enabled = false;
+                btnOrderItemUpdate.SendToBack();
+
+                txtBxOrderItemQuantity.Enabled = false;
+                txtBxOrderItemQuantity.Text = string.Empty;
+
+                txtBxOrderItemPrice.Enabled = false;
+                txtBxOrderItemPrice.Text = string.Empty;
+
+
+                txtBxSpecialNote.Text = string.Empty;
+                txtBxSpecialNote.Enabled = false;
+
+                comboBxOrderState.DataSource = null;
+                comboBxOrderState.Enabled = false;
+
+                dTPPlaceDate.Enabled = false;
+                dTPDeliveryDate.Enabled = false;
+            }
+
+            btnOrderNewCreate.Enabled = true;
         }
     }
 }

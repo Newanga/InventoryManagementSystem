@@ -14,6 +14,6 @@ namespace IMS.Core.ViewModels
 
         public BindingList<SupplierProductsPriceModel> Products { get; set; }
 
-
     }
+
 }

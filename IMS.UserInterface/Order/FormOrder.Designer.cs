@@ -58,12 +58,13 @@
             this.txtBxOrderItemQuantity = new System.Windows.Forms.TextBox();
             this.lblProductPrice = new System.Windows.Forms.Label();
             this.txtBxOrderItemPrice = new System.Windows.Forms.TextBox();
-            this.btnOrderNew = new System.Windows.Forms.Button();
+            this.btnOrderNewCreate = new System.Windows.Forms.Button();
             this.btnOrderItemAdd = new System.Windows.Forms.Button();
             this.btnOrderItemEdit = new System.Windows.Forms.Button();
             this.btnOrderItemRemove = new System.Windows.Forms.Button();
             this.btnOrderItemUpdate = new System.Windows.Forms.Button();
             this.btnOrderItemCancel = new System.Windows.Forms.Button();
+            this.btnOrderNewCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVOrderItems)).BeginInit();
             this.SuspendLayout();
@@ -211,6 +212,7 @@
             // 
             // comboBxOrderState
             // 
+            this.comboBxOrderState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBxOrderState.Enabled = false;
             this.comboBxOrderState.FormattingEnabled = true;
             this.comboBxOrderState.Location = new System.Drawing.Point(408, 111);
@@ -239,6 +241,7 @@
             // dTPPlaceDate
             // 
             this.dTPPlaceDate.CustomFormat = "\" \"";
+            this.dTPPlaceDate.Enabled = false;
             this.dTPPlaceDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dTPPlaceDate.Location = new System.Drawing.Point(408, 53);
             this.dTPPlaceDate.Name = "dTPPlaceDate";
@@ -334,15 +337,15 @@
             this.txtBxOrderItemPrice.Size = new System.Drawing.Size(100, 20);
             this.txtBxOrderItemPrice.TabIndex = 2;
             // 
-            // btnOrderNew
+            // btnOrderNewCreate
             // 
-            this.btnOrderNew.Location = new System.Drawing.Point(79, 165);
-            this.btnOrderNew.Name = "btnOrderNew";
-            this.btnOrderNew.Size = new System.Drawing.Size(75, 23);
-            this.btnOrderNew.TabIndex = 5;
-            this.btnOrderNew.Text = "Create";
-            this.btnOrderNew.UseVisualStyleBackColor = true;
-            this.btnOrderNew.Click += new System.EventHandler(this.btnOrderNew_Click);
+            this.btnOrderNewCreate.Location = new System.Drawing.Point(79, 165);
+            this.btnOrderNewCreate.Name = "btnOrderNewCreate";
+            this.btnOrderNewCreate.Size = new System.Drawing.Size(75, 23);
+            this.btnOrderNewCreate.TabIndex = 5;
+            this.btnOrderNewCreate.Text = "Create";
+            this.btnOrderNewCreate.UseVisualStyleBackColor = true;
+            this.btnOrderNewCreate.Click += new System.EventHandler(this.btnOrderNewCreate_Click);
             // 
             // btnOrderItemAdd
             // 
@@ -400,6 +403,17 @@
             this.btnOrderItemCancel.UseVisualStyleBackColor = true;
             this.btnOrderItemCancel.Click += new System.EventHandler(this.btnOrderItemCancel_Click);
             // 
+            // btnOrderNewCancel
+            // 
+            this.btnOrderNewCancel.Enabled = false;
+            this.btnOrderNewCancel.Location = new System.Drawing.Point(173, 165);
+            this.btnOrderNewCancel.Name = "btnOrderNewCancel";
+            this.btnOrderNewCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnOrderNewCancel.TabIndex = 5;
+            this.btnOrderNewCancel.Text = "Cancel";
+            this.btnOrderNewCancel.UseVisualStyleBackColor = true;
+            this.btnOrderNewCancel.Click += new System.EventHandler(this.btnOrderNewCancel_Click);
+            // 
             // FormOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -409,7 +423,8 @@
             this.Controls.Add(this.btnOrderItemCancel);
             this.Controls.Add(this.btnOrderItemEdit);
             this.Controls.Add(this.btnOrderItemAdd);
-            this.Controls.Add(this.btnOrderNew);
+            this.Controls.Add(this.btnOrderNewCancel);
+            this.Controls.Add(this.btnOrderNewCreate);
             this.Controls.Add(this.dTPDeliveryDate);
             this.Controls.Add(this.dTPPlaceDate);
             this.Controls.Add(this.comboBxOrderItemName);
@@ -469,7 +484,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn OrderState;
         private System.Windows.Forms.DataGridViewTextBoxColumn DeliveryDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn SpecialNotes;
-        private System.Windows.Forms.Button btnOrderNew;
+        private System.Windows.Forms.Button btnOrderNewCreate;
         private System.Windows.Forms.Button btnOrderItemAdd;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
@@ -479,5 +494,6 @@
         private System.Windows.Forms.Button btnOrderItemRemove;
         private System.Windows.Forms.Button btnOrderItemUpdate;
         private System.Windows.Forms.Button btnOrderItemCancel;
+        private System.Windows.Forms.Button btnOrderNewCancel;
     }
 }
