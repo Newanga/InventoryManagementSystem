@@ -71,6 +71,8 @@
     <Compile Include="FormEmployeeData\IFormEmployeeSql.cs" />
     <Compile Include="FormLoginData\FormLoginSql.cs" />
     <Compile Include="FormLoginData\IFormLoginSql.cs" />
+    <Compile Include="FormMainWindowData\FormMainWindowSql.cs" />
+    <Compile Include="FormMainWindowData\IFormMainWindowSql.cs" />
     <Compile Include="FormOrderData\FormOrderSql.cs" />
     <Compile Include="FormOrderData\IFormOrderSql.cs" />
     <Compile Include="FormProductData\FormProductSql.cs" />

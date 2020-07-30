@@ -1,6 +1,7 @@
 ﻿using IMS.DataAccess;
 using IMS.DataAccess.FormCategoryData;
 using IMS.DataAccess.FormEmployeeData;
+using IMS.DataAccess.FormMainWindowData;
 using IMS.DataAccess.FormOrderData;
 using IMS.DataAccess.FormProductData;
 using IMS.DataAccess.FormProfileData;
@@ -46,6 +47,7 @@ namespace IMS.UserInterface
             services.AddTransient<FormProfile>();
             services.AddTransient<FormOrder>();
 
+            services.AddTransient<IFormMainWindowSql, FormMainWindowSql>();
             services.AddTransient<ISqlDataAccess, SqlDataAccess>();
             services.AddTransient<IFormLoginSql, FormLoginSql>();
             services.AddTransient<IFormCategorySql, FormCategorySql>();

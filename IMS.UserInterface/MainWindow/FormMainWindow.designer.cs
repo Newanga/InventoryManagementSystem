@@ -112,7 +112,6 @@
             this.btnClose.TabIndex = 1;
             this.btnClose.TabStop = false;
             this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
-
             // 
             // btnRestore
             // 

@@ -1,5 +1,6 @@
 ﻿using IMS.Common.Cache;
 using IMS.Core.Enums;
+using IMS.DataAccess.FormMainWindowData;
 using IMS.UserInterface.Category;
 using IMS.UserInterface.Employees;
 using IMS.UserInterface.Order;
@@ -15,19 +16,22 @@ namespace IMS.UserInterface
 {
     public partial class FormMainWindow : Form
     {
+        private readonly IFormMainWindowSql _db;
 
-        public FormMainWindow()
+        public FormMainWindow(IFormMainWindowSql db)
         {
             InitializeComponent();
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             lblRole.Text = ((Roles)Cache.RoleId).ToString();
             lblFirstName.Text = Cache.FirstName;
             lblEmail.Text = Cache.EmailAddress;
+            _db = db;
         }
 
         #region UI/UX Improvemnet Events
         private void BtnClose_Click(object sender, EventArgs e)
         {
+            _db.UpdateUserLogOut(Cache.EmailAddress);
             clearCache();
             this.Close();
         }
@@ -170,8 +174,9 @@ namespace IMS.UserInterface
             SendMessage(this.Handle, 0x112, 0xf012, 0);
 
         }
+
         #endregion
 
-
+   
     }
 }

@@ -1,4 +1,5 @@
 ﻿using IMS.Common.Cache;
+using IMS.Core.Enums;
 using IMS.Core.Models;
 using IMS.DataAccess;
 using System;
@@ -36,10 +37,21 @@ namespace IMS.FormLoginData
 
             AccountFullModel account = _db.LoadData<AccountFullModel, dynamic>(sql, new { Username = login.Username, Password = login.Password }).FirstOrDefault();
 
-            if (account != null)
-                return true;
-            else 
+            if (account == null)
                 return false;
+            else
+            {
+                Enum.TryParse("Online", out AccountState state);
+                int AccountStateId = (int)state;
+
+                sql = @"update dbo.Account
+                        set AccountStateId=@AccountStateId
+                        where Username=@Username;";
+
+                _db.SaveData<dynamic>(sql, new { AccountStateId = AccountStateId, Username = account.Username });
+
+                return true;
+            }
         }
 
 
