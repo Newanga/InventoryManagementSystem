@@ -129,7 +129,7 @@
             this.lblFormHeading.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblFormHeading.AutoSize = true;
             this.lblFormHeading.ForeColor = System.Drawing.Color.Black;
-            this.lblFormHeading.Location = new System.Drawing.Point(402, 9);
+            this.lblFormHeading.Location = new System.Drawing.Point(478, 9);
             this.lblFormHeading.Name = "lblFormHeading";
             this.lblFormHeading.Size = new System.Drawing.Size(45, 13);
             this.lblFormHeading.TabIndex = 5;
@@ -138,7 +138,7 @@
             // txtBxSupplierId
             // 
             this.txtBxSupplierId.Enabled = false;
-            this.txtBxSupplierId.Location = new System.Drawing.Point(151, 58);
+            this.txtBxSupplierId.Location = new System.Drawing.Point(227, 59);
             this.txtBxSupplierId.Name = "txtBxSupplierId";
             this.txtBxSupplierId.Size = new System.Drawing.Size(199, 20);
             this.txtBxSupplierId.TabIndex = 18;
@@ -146,7 +146,7 @@
             // lblSupplierId
             // 
             this.lblSupplierId.AutoSize = true;
-            this.lblSupplierId.Location = new System.Drawing.Point(46, 61);
+            this.lblSupplierId.Location = new System.Drawing.Point(122, 62);
             this.lblSupplierId.Name = "lblSupplierId";
             this.lblSupplierId.Size = new System.Drawing.Size(57, 13);
             this.lblSupplierId.TabIndex = 19;
@@ -156,7 +156,7 @@
             // 
             this.txtBxSupplierName.BackColor = System.Drawing.SystemColors.Window;
             this.txtBxSupplierName.Enabled = false;
-            this.txtBxSupplierName.Location = new System.Drawing.Point(151, 93);
+            this.txtBxSupplierName.Location = new System.Drawing.Point(227, 94);
             this.txtBxSupplierName.Name = "txtBxSupplierName";
             this.txtBxSupplierName.Size = new System.Drawing.Size(199, 20);
             this.txtBxSupplierName.TabIndex = 25;
@@ -164,7 +164,7 @@
             // lblSupplierName
             // 
             this.lblSupplierName.AutoSize = true;
-            this.lblSupplierName.Location = new System.Drawing.Point(46, 96);
+            this.lblSupplierName.Location = new System.Drawing.Point(122, 97);
             this.lblSupplierName.Name = "lblSupplierName";
             this.lblSupplierName.Size = new System.Drawing.Size(76, 13);
             this.lblSupplierName.TabIndex = 19;
@@ -173,7 +173,7 @@
             // lblSupplierDescription
             // 
             this.lblSupplierDescription.AutoSize = true;
-            this.lblSupplierDescription.Location = new System.Drawing.Point(46, 143);
+            this.lblSupplierDescription.Location = new System.Drawing.Point(122, 144);
             this.lblSupplierDescription.Name = "lblSupplierDescription";
             this.lblSupplierDescription.Size = new System.Drawing.Size(101, 13);
             this.lblSupplierDescription.TabIndex = 19;
@@ -182,7 +182,7 @@
             // txtBxSupplierphoneNo
             // 
             this.txtBxSupplierphoneNo.Enabled = false;
-            this.txtBxSupplierphoneNo.Location = new System.Drawing.Point(523, 61);
+            this.txtBxSupplierphoneNo.Location = new System.Drawing.Point(693, 62);
             this.txtBxSupplierphoneNo.Name = "txtBxSupplierphoneNo";
             this.txtBxSupplierphoneNo.Size = new System.Drawing.Size(199, 20);
             this.txtBxSupplierphoneNo.TabIndex = 18;
@@ -190,7 +190,7 @@
             // lblSupplierPhoneNo
             // 
             this.lblSupplierPhoneNo.AutoSize = true;
-            this.lblSupplierPhoneNo.Location = new System.Drawing.Point(418, 64);
+            this.lblSupplierPhoneNo.Location = new System.Drawing.Point(588, 65);
             this.lblSupplierPhoneNo.Name = "lblSupplierPhoneNo";
             this.lblSupplierPhoneNo.Size = new System.Drawing.Size(93, 13);
             this.lblSupplierPhoneNo.TabIndex = 19;
@@ -199,7 +199,7 @@
             // txtBxSupplierAddress
             // 
             this.txtBxSupplierAddress.Enabled = false;
-            this.txtBxSupplierAddress.Location = new System.Drawing.Point(523, 96);
+            this.txtBxSupplierAddress.Location = new System.Drawing.Point(693, 97);
             this.txtBxSupplierAddress.Name = "txtBxSupplierAddress";
             this.txtBxSupplierAddress.Size = new System.Drawing.Size(199, 20);
             this.txtBxSupplierAddress.TabIndex = 18;
@@ -207,7 +207,7 @@
             // lblSupplierAddress
             // 
             this.lblSupplierAddress.AutoSize = true;
-            this.lblSupplierAddress.Location = new System.Drawing.Point(418, 99);
+            this.lblSupplierAddress.Location = new System.Drawing.Point(588, 100);
             this.lblSupplierAddress.Name = "lblSupplierAddress";
             this.lblSupplierAddress.Size = new System.Drawing.Size(86, 13);
             this.lblSupplierAddress.TabIndex = 19;
@@ -216,7 +216,7 @@
             // lblSupplierState
             // 
             this.lblSupplierState.AutoSize = true;
-            this.lblSupplierState.Location = new System.Drawing.Point(418, 146);
+            this.lblSupplierState.Location = new System.Drawing.Point(588, 147);
             this.lblSupplierState.Name = "lblSupplierState";
             this.lblSupplierState.Size = new System.Drawing.Size(73, 13);
             this.lblSupplierState.TabIndex = 19;
@@ -227,14 +227,14 @@
             this.combobxSupplierState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combobxSupplierState.Enabled = false;
             this.combobxSupplierState.FormattingEnabled = true;
-            this.combobxSupplierState.Location = new System.Drawing.Point(523, 138);
+            this.combobxSupplierState.Location = new System.Drawing.Point(693, 139);
             this.combobxSupplierState.Name = "combobxSupplierState";
             this.combobxSupplierState.Size = new System.Drawing.Size(121, 21);
             this.combobxSupplierState.TabIndex = 20;
             // 
             // btnSupplierAdd
             // 
-            this.btnSupplierAdd.Location = new System.Drawing.Point(891, 30);
+            this.btnSupplierAdd.Location = new System.Drawing.Point(247, 178);
             this.btnSupplierAdd.Name = "btnSupplierAdd";
             this.btnSupplierAdd.Size = new System.Drawing.Size(75, 23);
             this.btnSupplierAdd.TabIndex = 21;
@@ -246,7 +246,7 @@
             // 
             this.btnSupplierEdit.AccessibleRole = System.Windows.Forms.AccessibleRole.OutlineButton;
             this.btnSupplierEdit.Enabled = false;
-            this.btnSupplierEdit.Location = new System.Drawing.Point(891, 86);
+            this.btnSupplierEdit.Location = new System.Drawing.Point(354, 178);
             this.btnSupplierEdit.Name = "btnSupplierEdit";
             this.btnSupplierEdit.Size = new System.Drawing.Size(75, 23);
             this.btnSupplierEdit.TabIndex = 21;
@@ -257,7 +257,7 @@
             // btnSupplierExistingUpdate
             // 
             this.btnSupplierExistingUpdate.Enabled = false;
-            this.btnSupplierExistingUpdate.Location = new System.Drawing.Point(771, 120);
+            this.btnSupplierExistingUpdate.Location = new System.Drawing.Point(465, 178);
             this.btnSupplierExistingUpdate.Name = "btnSupplierExistingUpdate";
             this.btnSupplierExistingUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnSupplierExistingUpdate.TabIndex = 21;
@@ -268,7 +268,7 @@
             // btnSupplierNewUpdate
             // 
             this.btnSupplierNewUpdate.Enabled = false;
-            this.btnSupplierNewUpdate.Location = new System.Drawing.Point(753, 163);
+            this.btnSupplierNewUpdate.Location = new System.Drawing.Point(465, 178);
             this.btnSupplierNewUpdate.Name = "btnSupplierNewUpdate";
             this.btnSupplierNewUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnSupplierNewUpdate.TabIndex = 21;
@@ -279,7 +279,7 @@
             // btnSupplierReset
             // 
             this.btnSupplierReset.Enabled = false;
-            this.btnSupplierReset.Location = new System.Drawing.Point(902, 163);
+            this.btnSupplierReset.Location = new System.Drawing.Point(599, 178);
             this.btnSupplierReset.Name = "btnSupplierReset";
             this.btnSupplierReset.Size = new System.Drawing.Size(75, 23);
             this.btnSupplierReset.TabIndex = 21;
@@ -290,7 +290,7 @@
             // txtBxSupplierDescription
             // 
             this.txtBxSupplierDescription.Enabled = false;
-            this.txtBxSupplierDescription.Location = new System.Drawing.Point(154, 138);
+            this.txtBxSupplierDescription.Location = new System.Drawing.Point(230, 139);
             this.txtBxSupplierDescription.Name = "txtBxSupplierDescription";
             this.txtBxSupplierDescription.Size = new System.Drawing.Size(196, 20);
             this.txtBxSupplierDescription.TabIndex = 22;
@@ -305,10 +305,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1034, 484);
+            this.Controls.Add(this.btnSupplierNewUpdate);
             this.Controls.Add(this.txtBxSupplierDescription);
             this.Controls.Add(this.btnSupplierReset);
-            this.Controls.Add(this.btnSupplierNewUpdate);
-            this.Controls.Add(this.btnSupplierExistingUpdate);
             this.Controls.Add(this.btnSupplierEdit);
             this.Controls.Add(this.btnSupplierAdd);
             this.Controls.Add(this.combobxSupplierState);
@@ -324,6 +323,7 @@
             this.Controls.Add(this.txtBxSupplierId);
             this.Controls.Add(this.dGVSupplier);
             this.Controls.Add(this.lblFormHeading);
+            this.Controls.Add(this.btnSupplierExistingUpdate);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormSupplier";
             this.Text = "FormSupplier";

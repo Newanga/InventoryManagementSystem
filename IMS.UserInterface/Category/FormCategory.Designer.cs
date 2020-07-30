@@ -184,7 +184,7 @@
             // 
             this.btnCategoryNewUpdate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCategoryNewUpdate.Enabled = false;
-            this.btnCategoryNewUpdate.Location = new System.Drawing.Point(893, 154);
+            this.btnCategoryNewUpdate.Location = new System.Drawing.Point(893, 133);
             this.btnCategoryNewUpdate.Name = "btnCategoryNewUpdate";
             this.btnCategoryNewUpdate.Size = new System.Drawing.Size(130, 23);
             this.btnCategoryNewUpdate.TabIndex = 3;
@@ -238,7 +238,6 @@
             this.Controls.Add(this.dGVCategory);
             this.Controls.Add(this.btnCategoryEdit);
             this.Controls.Add(this.btnCategoryReset);
-            this.Controls.Add(this.btnCategoryExistingUpdate);
             this.Controls.Add(this.btnCategoryAdd);
             this.Controls.Add(this.txtBxCategoryDescription);
             this.Controls.Add(this.txtBxCategoryName);
@@ -247,6 +246,7 @@
             this.Controls.Add(this.lblCategoryName);
             this.Controls.Add(this.lblCategoryId);
             this.Controls.Add(this.lblFormHeading);
+            this.Controls.Add(this.btnCategoryExistingUpdate);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

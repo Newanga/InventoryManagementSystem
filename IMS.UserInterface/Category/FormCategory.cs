@@ -43,8 +43,10 @@ namespace IMS.UserInterface.Category
             txtBxCategoryDescription.Enabled = true;
 
             btnCategoryExistingUpdate.Visible = false;
+            btnCategoryExistingUpdate.SendToBack();
             btnCategoryNewUpdate.Visible = true;
             btnCategoryNewUpdate.Enabled = true;
+            btnCategoryNewUpdate.BringToFront();
         }
 
         private void btnCategoryReset_Click(object sender, EventArgs e)
@@ -70,6 +72,9 @@ namespace IMS.UserInterface.Category
 
             btnCategoryExistingUpdate.Visible = false;
             btnCategoryNewUpdate.Visible = true;
+
+            btnCategoryNewUpdate.BringToFront();
+            btnCategoryExistingUpdate.SendToBack();
 
             btnCategoryAdd.Enabled = true;
             btnCategoryEdit.Enabled = false;
@@ -144,8 +149,10 @@ namespace IMS.UserInterface.Category
 
 
             btnCategoryNewUpdate.Visible = false;
+            btnCategoryNewUpdate.SendToBack();
             btnCategoryExistingUpdate.Visible = true;
             btnCategoryExistingUpdate.Enabled = true;
+            btnCategoryExistingUpdate.BringToFront();
         }
     }
 }

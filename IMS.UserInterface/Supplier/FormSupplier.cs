@@ -33,8 +33,10 @@ namespace IMS.UserInterface.Supplier
             combobxSupplierState.DataSource = Enum.GetValues(typeof(SupplierState));
 
             btnSupplierExistingUpdate.Visible = false;
+            btnSupplierExistingUpdate.SendToBack();
             btnSupplierNewUpdate.Visible = true;
             btnSupplierNewUpdate.Enabled = true;
+            btnSupplierNewUpdate.BringToFront();
         }
 
         private void PopulateDatagrid()
@@ -109,6 +111,9 @@ namespace IMS.UserInterface.Supplier
             btnSupplierExistingUpdate.Visible = false;
             btnSupplierNewUpdate.Visible = true;
 
+            btnSupplierExistingUpdate.SendToBack();
+            btnSupplierNewUpdate.BringToFront();
+
             btnSupplierAdd.Enabled = true;
             btnSupplierEdit.Enabled = false;
 
@@ -151,8 +156,10 @@ namespace IMS.UserInterface.Supplier
             txtBxSupplierphoneNo.Enabled = true;
 
             btnSupplierNewUpdate.Visible = false;
+            btnSupplierNewUpdate.SendToBack();
             btnSupplierExistingUpdate.Visible = true;
             btnSupplierExistingUpdate.Enabled = true;
+            btnSupplierExistingUpdate.BringToFront();
 
             combobxSupplierState.Enabled = true;
         }

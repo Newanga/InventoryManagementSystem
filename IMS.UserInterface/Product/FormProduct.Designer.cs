@@ -291,7 +291,7 @@
             // 
             // btnProductAdd
             // 
-            this.btnProductAdd.Location = new System.Drawing.Point(888, 25);
+            this.btnProductAdd.Location = new System.Drawing.Point(187, 198);
             this.btnProductAdd.Name = "btnProductAdd";
             this.btnProductAdd.Size = new System.Drawing.Size(75, 23);
             this.btnProductAdd.TabIndex = 4;
@@ -302,7 +302,7 @@
             // btnProductEdit
             // 
             this.btnProductEdit.Enabled = false;
-            this.btnProductEdit.Location = new System.Drawing.Point(888, 81);
+            this.btnProductEdit.Location = new System.Drawing.Point(313, 198);
             this.btnProductEdit.Name = "btnProductEdit";
             this.btnProductEdit.Size = new System.Drawing.Size(75, 23);
             this.btnProductEdit.TabIndex = 4;
@@ -312,7 +312,8 @@
             // 
             // btnProductNewUpdate
             // 
-            this.btnProductNewUpdate.Location = new System.Drawing.Point(752, 181);
+            this.btnProductNewUpdate.Enabled = false;
+            this.btnProductNewUpdate.Location = new System.Drawing.Point(437, 198);
             this.btnProductNewUpdate.Name = "btnProductNewUpdate";
             this.btnProductNewUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnProductNewUpdate.TabIndex = 4;
@@ -322,7 +323,8 @@
             // 
             // btnProductExistingUpdate
             // 
-            this.btnProductExistingUpdate.Location = new System.Drawing.Point(801, 210);
+            this.btnProductExistingUpdate.Enabled = false;
+            this.btnProductExistingUpdate.Location = new System.Drawing.Point(437, 198);
             this.btnProductExistingUpdate.Name = "btnProductExistingUpdate";
             this.btnProductExistingUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnProductExistingUpdate.TabIndex = 4;
@@ -332,7 +334,8 @@
             // 
             // btnProductReset
             // 
-            this.btnProductReset.Location = new System.Drawing.Point(921, 181);
+            this.btnProductReset.Enabled = false;
+            this.btnProductReset.Location = new System.Drawing.Point(549, 198);
             this.btnProductReset.Name = "btnProductReset";
             this.btnProductReset.Size = new System.Drawing.Size(75, 23);
             this.btnProductReset.TabIndex = 4;
@@ -345,9 +348,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1034, 484);
-            this.Controls.Add(this.btnProductReset);
-            this.Controls.Add(this.btnProductExistingUpdate);
             this.Controls.Add(this.btnProductNewUpdate);
+            this.Controls.Add(this.btnProductReset);
             this.Controls.Add(this.btnProductEdit);
             this.Controls.Add(this.btnProductAdd);
             this.Controls.Add(this.dGVProducts);
@@ -367,6 +369,7 @@
             this.Controls.Add(this.lblProductName);
             this.Controls.Add(this.lblPurchasePrice);
             this.Controls.Add(this.lblProductId);
+            this.Controls.Add(this.btnProductExistingUpdate);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormProduct";
             this.Text = "FormProduct";
