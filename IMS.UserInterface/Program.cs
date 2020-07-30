@@ -17,6 +17,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.IO;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace IMS.UserInterface
@@ -28,6 +29,12 @@ namespace IMS.UserInterface
         static void ConfigureServices()
         {
             var services = new ServiceCollection();
+
+            //Reading appsettings to get the configuration file
+            var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json");
+            IConfiguration config = builder.Build();
+            services.AddSingleton(config);
+
             services.AddSingleton<FormLogin>();
             services.AddSingleton<FormSplashScreen>();
             services.AddSingleton<FormMainWindow>();
@@ -44,26 +51,16 @@ namespace IMS.UserInterface
             services.AddTransient<IFormCategorySql, FormCategorySql>();
             services.AddTransient<IFormSupplierSql, FormSupplierSql>();
             services.AddTransient<IFormProductSql, FormProductSql>();
-            services.AddTransient<IFormEmployeeSql,FormEmployeeSql >();
+            services.AddTransient<IFormEmployeeSql, FormEmployeeSql>();
             services.AddTransient<IFormProfileSql, FormProfileSql>();
             services.AddTransient<IFormOrderSql, FormOrderSql>();
 
-            //Reading appsettings to get the configuration file
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json");
-
-            IConfiguration config = builder.Build();
-
-
-            services.AddSingleton(config);
-
             ServiceProvider = services.BuildServiceProvider();
 
-            //var FormLogin = ServiceProvider.GetService<FormLogin>();
-            //Application.Run(FormLogin);
-            var Form = ServiceProvider.GetService<FormMainWindow>();
-            Application.Run(Form);
+            var FormLogin = ServiceProvider.GetService<FormLogin>();
+            Application.Run(FormLogin);
+            //var Form = ServiceProvider.GetService<FormSplashScreen>();
+            //Application.Run(Form);
         }
 
 

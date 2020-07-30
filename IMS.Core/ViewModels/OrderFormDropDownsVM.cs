@@ -10,9 +10,9 @@ namespace IMS.Core.ViewModels
 {
     public class OrderFormDropDownsVM
     {
-        public List<SupplierName> Suppliers { get; set; }
+        public List<SupplierName> Suppliers { get; set; } = new List<SupplierName>();
 
-        public BindingList<SupplierProductsPriceModel> Products { get; set; }
+        public BindingList<SupplierProductsPriceModel> Products { get; set; } = new BindingList<SupplierProductsPriceModel>();
 
     }
 

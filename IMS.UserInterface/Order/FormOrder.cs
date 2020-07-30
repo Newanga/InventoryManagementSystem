@@ -35,6 +35,13 @@ namespace IMS.UserInterface.Order
 
         private void btnOrderNewCreate_Click(object sender, EventArgs e)
         {
+            if(orderFormDropDowns.Suppliers.Count==0)
+            {
+                MessageBox.Show("Please Add suppliers to Database before creating a Order.", "Suppliers unavailable", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnNewOrderCreate.Enabled = false;
+                return;
+            }
+         
             txtBxOrderId.Clear();
             LoadSuppliersFromDatabase();
             PopulateSupplierComboBox();

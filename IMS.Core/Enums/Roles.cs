@@ -10,6 +10,6 @@ namespace IMS.Core.Enums
     {
         Admin=1,
         StockManager=2,
-        Stockkeeper=3
+        StockKeeper=3
     }
 }
