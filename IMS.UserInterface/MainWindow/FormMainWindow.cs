@@ -28,7 +28,16 @@ namespace IMS.UserInterface
         #region UI/UX Improvemnet Events
         private void BtnClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            clearCache();
+            this.Close();
+        }
+
+        private void clearCache()
+        {
+            Cache.CurrentAccountId = null;
+            Cache.EmailAddress = null;
+            Cache.FirstName = null;
+            Cache.RoleId = null;
         }
 
         private void BtnMaximizer_Click(object sender, EventArgs e)
@@ -70,12 +79,15 @@ namespace IMS.UserInterface
 
         private void OpenChildForm(Form childForm)
         {
+            //prevent reloading same childform
+            if (currentChildForm != null && currentChildForm.ToString() == childForm.ToString())
+                return;
+
             //Close any active child forms
             if (currentChildForm != null)
-            {
                 currentChildForm.Close();
-            }
-          
+           
+
             //set new childform properties to fit the window
             currentChildForm = childForm;
             childForm.TopLevel = false;
@@ -116,7 +128,7 @@ namespace IMS.UserInterface
         {
             OpenChildForm(Program.ServiceProvider.GetService<FormOrder>());
         }
-    
+
 
         private void BtnInventory_Click(object sender, EventArgs e)
         {
@@ -160,6 +172,6 @@ namespace IMS.UserInterface
         }
         #endregion
 
-       
+
     }
 }

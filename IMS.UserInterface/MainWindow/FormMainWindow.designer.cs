@@ -112,6 +112,7 @@
             this.btnClose.TabIndex = 1;
             this.btnClose.TabStop = false;
             this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
+
             // 
             // btnRestore
             // 
@@ -419,7 +420,7 @@
         private System.Windows.Forms.Panel panelTitleBar;
         private System.Windows.Forms.PictureBox btnMaximizer;
         private System.Windows.Forms.PictureBox btnMinimize;
-        private System.Windows.Forms.PictureBox btnClose;
+        internal System.Windows.Forms.PictureBox btnClose;
         private System.Windows.Forms.PictureBox btnRestore;
         private System.Windows.Forms.Panel panelVerticalMenu;
         private System.Windows.Forms.Button btnEmployees;
