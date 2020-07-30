@@ -36,15 +36,15 @@ namespace IMS.UserInterface
             services.AddSingleton(config);
 
             services.AddSingleton<FormLogin>();
-            services.AddSingleton<FormSplashScreen>();
-            services.AddSingleton<FormMainWindow>();
+            services.AddTransient<FormSplashScreen>();
+            services.AddTransient<FormMainWindow>();
 
-            services.AddSingleton<FormCategory>();
-            services.AddSingleton<FormSupplier>();
-            services.AddSingleton<FormProduct>();
-            services.AddSingleton<FormEmployees>();
-            services.AddSingleton<FormProfile>();
-            services.AddSingleton<FormOrder>();
+            services.AddTransient<FormCategory>();
+            services.AddTransient<FormSupplier>();
+            services.AddTransient<FormProduct>();
+            services.AddTransient<FormEmployees>();
+            services.AddTransient<FormProfile>();
+            services.AddTransient<FormOrder>();
 
             services.AddTransient<ISqlDataAccess, SqlDataAccess>();
             services.AddTransient<IFormLoginSql, FormLoginSql>();
@@ -57,10 +57,10 @@ namespace IMS.UserInterface
 
             ServiceProvider = services.BuildServiceProvider();
 
-            var FormLogin = ServiceProvider.GetService<FormLogin>();
-            Application.Run(FormLogin);
-            //var Form = ServiceProvider.GetService<FormSplashScreen>();
-            //Application.Run(Form);
+            //var FormLogin = ServiceProvider.GetService<FormMainWindow>();
+            //Application.Run(FormLogin);
+            var Form = ServiceProvider.GetService<FormLogin>();
+            Application.Run(Form);
         }
 
 

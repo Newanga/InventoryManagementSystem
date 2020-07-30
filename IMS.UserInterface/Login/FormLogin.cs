@@ -157,15 +157,26 @@ namespace IMS.UserInterface
                 else
                 {
                     _db.CacheCurrentUserDetails(data.Username);
+                    var splash = Program.ServiceProvider.GetService<FormSplashScreen>();
                     this.Hide();
-                    var splash = Program.ServiceProvider.GetService<FormSplashScreen>();                  
                     splash.ShowDialog();
                     var main = Program.ServiceProvider.GetService<FormMainWindow>();
-                    main.ShowDialog();
+                    main.Show();
+                    main.FormClosed += LogOut;
 
                 }
             }
 
+        }
+
+        private void LogOut(object sender, FormClosedEventArgs e)
+        {
+            txtBxUsername.Clear();
+            txtBxUsername.Text = "UserName";
+            txtBxPassword.Clear();
+            txtBxPassword.UseSystemPasswordChar = false;
+            txtBxPassword.Text = "Password";
+            this.Show();
         }
 
        
