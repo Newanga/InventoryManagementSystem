@@ -22,7 +22,7 @@ namespace IMS.UserInterface.Category
             }
         }
 
-        public static bool NullOrWhiteSpace(CategoryNewModel data)
+        private static bool NullOrWhiteSpace(CategoryNewModel data)
         {
             if (string.IsNullOrWhiteSpace(data.Name) && string.IsNullOrWhiteSpace(data.Description))
             {
@@ -59,7 +59,7 @@ namespace IMS.UserInterface.Category
             }
         }
 
-        public static bool NullOrWhiteSpace(CategoryFullModel data)
+        private static bool NullOrWhiteSpace(CategoryFullModel data)
         {
             if (string.IsNullOrWhiteSpace(data.Name) && string.IsNullOrWhiteSpace(data.Description))
             {

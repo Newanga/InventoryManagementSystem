@@ -23,7 +23,7 @@ namespace IMS.UserInterface.Product
             }
         }
 
-        public static bool NullOrWhiteSpace(ProductNewModel data)
+        private static bool NullOrWhiteSpace(ProductNewModel data)
         {
             if (string.IsNullOrWhiteSpace(data.Name) ||
                 string.IsNullOrWhiteSpace(data.Description))
@@ -66,7 +66,7 @@ namespace IMS.UserInterface.Product
             }
         }
 
-        public static bool NullOrWhiteSpace(ProductFullModel data)
+        private static bool NullOrWhiteSpace(ProductFullModel data)
         {
             if (string.IsNullOrWhiteSpace(data.Name) ||
              string.IsNullOrWhiteSpace(data.Description))

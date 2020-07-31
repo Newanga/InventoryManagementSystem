@@ -31,7 +31,7 @@ namespace IMS.UserInterface.Employees
             }
         }
 
-        public static bool NullOrWhiteSpace(EmployeeDetailsNewModel data)
+        private static bool NullOrWhiteSpace(EmployeeDetailsNewModel data)
         {
             if (
                 string.IsNullOrWhiteSpace(data.Employee.FirstName) &&
@@ -93,7 +93,7 @@ namespace IMS.UserInterface.Employees
             }
         }
 
-        public static bool CheckDateValidity(EmployeeDetailsNewModel data)
+        private static bool CheckDateValidity(EmployeeDetailsNewModel data)
         {
             if (data.Employee.DateOfBirth == null && data.Employee.StartDate == null)
             {
@@ -127,7 +127,7 @@ namespace IMS.UserInterface.Employees
             }
         }
 
-        public static bool CheckAccountDetailsValidity(EmployeeDetailsNewModel data)
+        private static bool CheckAccountDetailsValidity(EmployeeDetailsNewModel data)
         {
             if(string.IsNullOrWhiteSpace(data.Account.Username) && string.IsNullOrWhiteSpace(data.Account.Password) && string.IsNullOrWhiteSpace(data.Account.EmailAddress))
             {
@@ -191,7 +191,7 @@ namespace IMS.UserInterface.Employees
             }
         }
 
-        public static bool NullOrWhiteSpace(EmployeeDetailsUpdateModel data)
+        private static bool NullOrWhiteSpace(EmployeeDetailsUpdateModel data)
         {
             if (
                 string.IsNullOrWhiteSpace(data.Employee.FirstName) &&
@@ -253,7 +253,7 @@ namespace IMS.UserInterface.Employees
             }
         }
 
-        public static bool CheckDateValidity(EmployeeDetailsUpdateModel data)
+        private static bool CheckDateValidity(EmployeeDetailsUpdateModel data)
         {
             if (data.Employee.DateOfBirth == null && data.Employee.StartDate == null)
             {
@@ -292,7 +292,7 @@ namespace IMS.UserInterface.Employees
             }
         }
 
-        public static bool CheckAccountDetailsValidity(EmployeeDetailsUpdateModel data)
+        private static bool CheckAccountDetailsValidity(EmployeeDetailsUpdateModel data)
         {
             if (string.IsNullOrWhiteSpace(data.Account.Username) && string.IsNullOrWhiteSpace(data.Account.Password) && string.IsNullOrWhiteSpace(data.Account.EmailAddress))
             {

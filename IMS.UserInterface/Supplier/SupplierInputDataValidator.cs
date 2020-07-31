@@ -22,7 +22,7 @@ namespace IMS.UserInterface.Supplier
             }
         }
 
-        public static bool NullOrWhiteSpace(SupplierModel data)
+        private static bool NullOrWhiteSpace(SupplierModel data)
         {
             if (
                 string.IsNullOrWhiteSpace(data.Name) ||
@@ -54,7 +54,7 @@ namespace IMS.UserInterface.Supplier
             }
         }
 
-        public static bool NullOrWhiteSpace(SupplierFullModel data)
+        private static bool NullOrWhiteSpace(SupplierFullModel data)
         {
             if (
                 string.IsNullOrWhiteSpace(data.Name) ||

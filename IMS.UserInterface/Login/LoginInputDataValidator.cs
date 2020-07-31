@@ -31,7 +31,7 @@ namespace IMS.UserInterface.Login
               
 
         }
-        public static bool DefaultData(LoginModel data)
+        private static bool DefaultData(LoginModel data)
         {
             if(data.Password=="Password" && data.Username=="UserName")
             {
@@ -54,7 +54,7 @@ namespace IMS.UserInterface.Login
             }
              
         }
-        public static bool NullOrWhiteSpace(LoginModel data)
+        private static bool NullOrWhiteSpace(LoginModel data)
         {
             if (string.IsNullOrWhiteSpace(data.Username) && string.IsNullOrWhiteSpace(data.Password))
             {
@@ -77,7 +77,7 @@ namespace IMS.UserInterface.Login
             }
         }
 
-        public static bool DataLength(LoginModel data)
+        private static bool DataLength(LoginModel data)
         {
             if (data.Password.Length < 6 && data.Username.Length < 6)
             {
