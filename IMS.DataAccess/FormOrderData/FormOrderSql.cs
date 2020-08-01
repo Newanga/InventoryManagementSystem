@@ -72,7 +72,7 @@ namespace IMS.DataAccess.FormOrderData
 
             sql= @"select Id from dbo.Orders where SupplierId=@SupplierId and PlaceDate=@PlaceDate;";
 
-            var orderId = _db.LoadData<IdLookUpModel, dynamic>(sql, new { SupplierId = supplierId, PlaceDate= newOrder.PlaceDate }).First().Id;
+            var orderId = _db.LoadData<IdLookUpModel, dynamic>(sql, new { SupplierId = supplierId, PlaceDate= newOrder.PlaceDate }).Last().Id;
 
             foreach (var item in newOrder.Items)
             {

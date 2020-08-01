@@ -99,7 +99,7 @@ namespace IMS.UserInterface
             this.txtBxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBxUsername.ForeColor = System.Drawing.Color.Gray;
             this.txtBxUsername.Location = new System.Drawing.Point(388, 81);
-            this.txtBxUsername.MaxLength = 15;
+            this.txtBxUsername.MaxLength = 20;
             this.txtBxUsername.Name = "txtBxUsername";
             this.txtBxUsername.Size = new System.Drawing.Size(423, 19);
             this.txtBxUsername.TabIndex = 1;

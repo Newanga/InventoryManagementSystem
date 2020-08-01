@@ -13,6 +13,6 @@ namespace IMS.Common.Cache
         public static string EmailAddress { get; set; }
         public static string FirstName { get; set; }
 
-        public static int? RoleId { get; set; }
+        public static int? RoleId { get; set; } = 1;
     }
 }

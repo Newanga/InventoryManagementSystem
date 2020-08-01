@@ -35,7 +35,6 @@
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.btnRestore = new System.Windows.Forms.PictureBox();
             this.panelVerticalMenu = new System.Windows.Forms.Panel();
-            this.btnBackUpReset = new System.Windows.Forms.Button();
             this.btnEmployees = new System.Windows.Forms.Button();
             this.panelUserInfo = new System.Windows.Forms.Panel();
             this.BtnMenuSlider = new System.Windows.Forms.PictureBox();
@@ -128,7 +127,6 @@
             // panelVerticalMenu
             // 
             this.panelVerticalMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.panelVerticalMenu.Controls.Add(this.btnBackUpReset);
             this.panelVerticalMenu.Controls.Add(this.btnEmployees);
             this.panelVerticalMenu.Controls.Add(this.panelUserInfo);
             this.panelVerticalMenu.Controls.Add(this.brnOrders);
@@ -142,26 +140,6 @@
             this.panelVerticalMenu.Name = "panelVerticalMenu";
             this.panelVerticalMenu.Size = new System.Drawing.Size(250, 523);
             this.panelVerticalMenu.TabIndex = 0;
-            // 
-            // btnBackUpReset
-            // 
-            this.btnBackUpReset.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
-            this.btnBackUpReset.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnBackUpReset.FlatAppearance.BorderSize = 0;
-            this.btnBackUpReset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnBackUpReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBackUpReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackUpReset.ForeColor = System.Drawing.Color.White;
-            this.btnBackUpReset.Image = global::IMS.UserInterface.Properties.Resources.BackupRestore;
-            this.btnBackUpReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBackUpReset.Location = new System.Drawing.Point(0, 449);
-            this.btnBackUpReset.Name = "btnBackUpReset";
-            this.btnBackUpReset.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnBackUpReset.Size = new System.Drawing.Size(250, 40);
-            this.btnBackUpReset.TabIndex = 3;
-            this.btnBackUpReset.Text = " Backup / Reset";
-            this.btnBackUpReset.UseVisualStyleBackColor = true;
-            this.btnBackUpReset.Click += new System.EventHandler(this.BtnEmployees_Click);
             // 
             // btnEmployees
             // 
@@ -436,7 +414,6 @@
         private System.Windows.Forms.Button btnSuppliers;
         private System.Windows.Forms.Button brnOrders;
         private System.Windows.Forms.Button btnInventory;
-        private System.Windows.Forms.Button btnBackUpReset;
         private System.Windows.Forms.Label lblEmail;
     }
 }

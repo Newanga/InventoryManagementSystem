@@ -1,6 +1,7 @@
 ﻿using IMS.DataAccess;
 using IMS.DataAccess.FormCategoryData;
 using IMS.DataAccess.FormEmployeeData;
+using IMS.DataAccess.FormInventoryData;
 using IMS.DataAccess.FormMainWindowData;
 using IMS.DataAccess.FormOrderData;
 using IMS.DataAccess.FormProductData;
@@ -9,6 +10,7 @@ using IMS.DataAccess.FormSupplierData;
 using IMS.FormLoginData;
 using IMS.UserInterface.Category;
 using IMS.UserInterface.Employees;
+using IMS.UserInterface.Inventory;
 using IMS.UserInterface.Order;
 using IMS.UserInterface.Product;
 using IMS.UserInterface.Profile;
@@ -18,7 +20,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.IO;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace IMS.UserInterface
@@ -46,6 +47,8 @@ namespace IMS.UserInterface
             services.AddTransient<FormEmployees>();
             services.AddTransient<FormProfile>();
             services.AddTransient<FormOrder>();
+            services.AddTransient<FormInventory>();
+
 
             services.AddTransient<IFormMainWindowSql, FormMainWindowSql>();
             services.AddTransient<ISqlDataAccess, SqlDataAccess>();
@@ -56,11 +59,14 @@ namespace IMS.UserInterface
             services.AddTransient<IFormEmployeeSql, FormEmployeeSql>();
             services.AddTransient<IFormProfileSql, FormProfileSql>();
             services.AddTransient<IFormOrderSql, FormOrderSql>();
+            services.AddTransient<IFormInventorySql, FormInventorySql>();
+
+
 
             ServiceProvider = services.BuildServiceProvider();
 
-            //var FormLogin = ServiceProvider.GetService<FormMainWindow>();
-            //Application.Run(FormLogin);
+            //var Form = ServiceProvider.GetService<FormMainWindow>();
+            //Application.Run(Form);
             var Form = ServiceProvider.GetService<FormLogin>();
             Application.Run(Form);
         }

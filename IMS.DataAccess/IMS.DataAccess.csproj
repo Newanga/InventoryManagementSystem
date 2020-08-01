@@ -69,6 +69,8 @@
     <Compile Include="FormCategoryData\IFormCategorySql.cs" />
     <Compile Include="FormEmployeeData\FormEmployeeSql.cs" />
     <Compile Include="FormEmployeeData\IFormEmployeeSql.cs" />
+    <Compile Include="FormInventoryData\FormInventorySql.cs" />
+    <Compile Include="FormInventoryData\IFormInventorySql.cs" />
     <Compile Include="FormLoginData\FormLoginSql.cs" />
     <Compile Include="FormLoginData\IFormLoginSql.cs" />
     <Compile Include="FormMainWindowData\FormMainWindowSql.cs" />

@@ -3,12 +3,15 @@ using IMS.Core.Enums;
 using IMS.DataAccess.FormMainWindowData;
 using IMS.UserInterface.Category;
 using IMS.UserInterface.Employees;
+using IMS.UserInterface.Inventory;
 using IMS.UserInterface.Order;
 using IMS.UserInterface.Product;
 using IMS.UserInterface.Profile;
 using IMS.UserInterface.Supplier;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Drawing;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -22,28 +25,18 @@ namespace IMS.UserInterface
         {
             InitializeComponent();
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-            lblRole.Text = ((Roles)Cache.RoleId).ToString();
-            lblFirstName.Text = Cache.FirstName;
-            lblEmail.Text = Cache.EmailAddress;
             _db = db;
+            Authorization();
+            SetCurrentUserDeatils();
         }
 
         #region UI/UX Improvemnet Events
         private void BtnClose_Click(object sender, EventArgs e)
         {
             _db.UpdateUserLogOut(Cache.EmailAddress);
-            clearCache();
+            ClearCache();
             this.Close();
         }
-
-        private void clearCache()
-        {
-            Cache.CurrentAccountId = null;
-            Cache.EmailAddress = null;
-            Cache.FirstName = null;
-            Cache.RoleId = null;
-        }
-
         private void BtnMaximizer_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
@@ -105,7 +98,7 @@ namespace IMS.UserInterface
 
         private void BtnDashboard_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void BtnSuppliers_Click(object sender, EventArgs e)
@@ -136,7 +129,7 @@ namespace IMS.UserInterface
 
         private void BtnInventory_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(Program.ServiceProvider.GetService<FormInventory>());
         }
 
         private void btnProfile_Click(object sender, EventArgs e)
@@ -177,6 +170,50 @@ namespace IMS.UserInterface
 
         #endregion
 
+
+        private void ClearCache()
+        {
+            Cache.CurrentAccountId = null;
+            Cache.EmailAddress = null;
+            Cache.FirstName = null;
+            Cache.RoleId = null;
+        }
+
+        private void SetCurrentUserDeatils()
+        {
+            lblRole.Text = ((Roles)Cache.RoleId).ToString();
+            lblFirstName.Text = Cache.FirstName;
+            lblEmail.Text = Cache.EmailAddress;
+        }
+
+        private void Authorization()
+        {
+            var role = ((Roles)Cache.RoleId);
+
+            if(role==Roles.Admin)
+            {
+                btnProfile.Enabled = true;
+                btnInventory.Enabled = true;
+                btnSuppliers.Enabled = true;
+                btnEmployees.Enabled = true;
+            }
+            if (role == Roles.StockManager)
+            {
+                btnProfile.Enabled = true;
+                btnInventory.Enabled = true;
+                btnSuppliers.Enabled = false;
+                btnEmployees.Enabled = false;
+            }
+            if (role == Roles.StockKeeper)
+            {
+                btnProfile.Enabled = true;
+                btnInventory.Enabled = true;
+                btnSuppliers.Enabled = false;
+                btnEmployees.Enabled = false;
+            }
+
+
+        }
    
     }
 }

@@ -34,16 +34,18 @@ namespace IMS.UserInterface.Order
         }
 
         private void btnOrderNewCreate_Click(object sender, EventArgs e)
-        {
-            if(orderFormDropDowns.Suppliers.Count==0)
+        {    
+         
+            txtBxOrderId.Clear();
+            LoadSuppliersFromDatabase();
+
+            if (orderFormDropDowns.Suppliers.Count == 0)
             {
                 MessageBox.Show("Please Add suppliers to Database before creating a Order.", "Suppliers unavailable", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnNewOrderCreate.Enabled = false;
                 return;
             }
-         
-            txtBxOrderId.Clear();
-            LoadSuppliersFromDatabase();
+
             PopulateSupplierComboBox();
             PopulateOrderStateComboBox();
             comboBxSupplier.Enabled = true;
@@ -94,8 +96,8 @@ namespace IMS.UserInterface.Order
         private void PopulateOrdersDataGrid()
         {
             dGVOrders.DataSource = existingOrders;
-            dGVOrders.Refresh();
             dGVOrders.Update();
+            dGVOrders.Refresh();
         }
 
         private void PopulateSupplierComboBox()
@@ -533,9 +535,13 @@ namespace IMS.UserInterface.Order
             if(dataValid)
             {
                 _db.CreateNewOrder(newOrder);
+                LoadExistingOrdersFromDatabase();
+                PopulateOrdersDataGrid();
                 MessageBox.Show("New Order created Successfully", "Operation Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnNewOrderCancel_Click(null, RoutedEventArgs.Empty);
+
             }
+
 
 
 
@@ -677,9 +683,11 @@ namespace IMS.UserInterface.Order
             updateOrder.DeliveryDate=(dTPDeliveryDate.CustomFormat == " ") ? (DateTime?)null : dTPDeliveryDate.Value.Date;
 
             _db.UpdateExistingOrder(updateOrder);
+            LoadExistingOrdersFromDatabase();
+            PopulateOrdersDataGrid();
             MessageBox.Show(" Order Updated Successfully", "Operation Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             btnExistingOrderCancel_Click(null, RoutedEventArgs.Empty);
-            PopulateOrdersDataGrid();
+
 
 
 
