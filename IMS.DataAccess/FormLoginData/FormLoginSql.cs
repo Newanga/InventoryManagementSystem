@@ -25,15 +25,14 @@ namespace IMS.FormLoginData
         public bool ValidateAccount(LoginModel login)
         {
 
-            string sql = @" Select *
-                            from dbo.Account 
-                            WHERE   
-                            Username = @Username COLLATE SQL_Latin1_General_CP1_CS_AS
-                            AND Password = @Password COLLATE SQL_Latin1_General_CP1_CS_AS
-                            AND Username = @Username 
-                            AND Password = @Password ";
-
-
+            string sql = @"Select a.Id
+                            from dbo.Account as a
+                            inner join dbo.AccountState as acs
+                            on a.AccountStateId=acs.Id
+                            where a.Username=@Username COLLATE SQL_Latin1_General_CP1_CS_AS
+                            and a.Password=@Password COLLATE SQL_Latin1_General_CP1_CS_AS
+                            and acs.State!='Disable' 
+                            and acs.State!='Block';";
 
             AccountFullModel account = _db.LoadData<AccountFullModel, dynamic>(sql, new { Username = login.Username, Password = login.Password }).FirstOrDefault();
 
