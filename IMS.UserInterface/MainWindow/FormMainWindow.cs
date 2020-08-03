@@ -196,6 +196,9 @@ namespace IMS.UserInterface
                 btnInventory.Enabled = true;
                 btnSuppliers.Enabled = true;
                 btnEmployees.Enabled = true;
+                btnCategories.Enabled = true;
+                btnOrders.Enabled = true;
+                btnProducts.Enabled = true;
             }
             if (role == Roles.StockManager)
             {
@@ -203,6 +206,9 @@ namespace IMS.UserInterface
                 btnInventory.Enabled = true;
                 btnSuppliers.Enabled = false;
                 btnEmployees.Enabled = false;
+                btnCategories.Enabled = true;
+                btnOrders.Enabled = true;
+                btnProducts.Enabled = false;
             }
             if (role == Roles.StockKeeper)
             {
@@ -210,10 +216,13 @@ namespace IMS.UserInterface
                 btnInventory.Enabled = true;
                 btnSuppliers.Enabled = false;
                 btnEmployees.Enabled = false;
+                btnCategories.Enabled = false;
+                btnOrders.Enabled = false;
+                btnProducts.Enabled = false;
             }
 
 
         }
-   
+
     }
 }

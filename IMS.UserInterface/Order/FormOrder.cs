@@ -160,6 +160,9 @@ namespace IMS.UserInterface.Order
         }
         private void dGVOrderItems_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            if(!(txtBxOrderId.Text==string.Empty))
+                return;      
+            
             if (btnOrderItemEdit.Enabled == true)
                 return;
 
@@ -251,7 +254,8 @@ namespace IMS.UserInterface.Order
                 comboBxSupplier.Enabled = false;
                 txtBxOrderId.Enabled = false;
                 txtBxSpecialNote.Enabled = true;
-                dTPPlaceDate.Enabled = true;
+                dTPPlaceDate.Enabled = false;
+                dTPPlaceDate.CustomFormat = "MM-dd-yyyy";
                 comboBxOrderState.Enabled = true;
                 comboBxOrderState.Enabled = true;
 
@@ -497,6 +501,8 @@ namespace IMS.UserInterface.Order
                 comboBxOrderState.DataSource = null;
                 comboBxOrderState.Enabled = false;
 
+                dTPPlaceDate.Value = DateTime.Now;
+                dTPPlaceDate.CustomFormat = " ";
                 dTPPlaceDate.Enabled = false;
                 dTPDeliveryDate.Enabled = false;
             }
@@ -693,6 +699,8 @@ namespace IMS.UserInterface.Order
 
 
         }
+
+      
     }
 }
 

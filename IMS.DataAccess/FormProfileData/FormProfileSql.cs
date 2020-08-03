@@ -38,11 +38,11 @@ namespace IMS.DataAccess.FormProfileData
                             where a.Id=@Id";
 
 
-            ProfileVM data=_db.LoadData<ProfileVM, dynamic>(sql, new { Id = Cache.CurrentAccountId }).First();
+            ProfileVM data = _db.LoadData<ProfileVM, dynamic>(sql, new { Id = Cache.CurrentAccountId }).First();
 
             return data;
 
-            
+
         }
     }
 }

@@ -49,143 +49,162 @@
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Location = new System.Drawing.Point(74, 105);
+            this.lblFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblFirstName.Location = new System.Drawing.Point(74, 69);
             this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(57, 13);
+            this.lblFirstName.Size = new System.Drawing.Size(81, 18);
             this.lblFirstName.TabIndex = 0;
             this.lblFirstName.Text = "First Name";
             // 
             // txtBxFirstName
             // 
             this.txtBxFirstName.Enabled = false;
-            this.txtBxFirstName.Location = new System.Drawing.Point(148, 101);
+            this.txtBxFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.txtBxFirstName.Location = new System.Drawing.Point(185, 69);
             this.txtBxFirstName.Name = "txtBxFirstName";
-            this.txtBxFirstName.Size = new System.Drawing.Size(146, 20);
+            this.txtBxFirstName.Size = new System.Drawing.Size(212, 24);
             this.txtBxFirstName.TabIndex = 1;
             // 
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(74, 130);
+            this.lblLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblLastName.Location = new System.Drawing.Point(80, 118);
             this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(54, 13);
+            this.lblLastName.Size = new System.Drawing.Size(75, 18);
             this.lblLastName.TabIndex = 0;
             this.lblLastName.Text = "last Name";
             // 
             // txtBxLastName
             // 
             this.txtBxLastName.Enabled = false;
-            this.txtBxLastName.Location = new System.Drawing.Point(148, 127);
+            this.txtBxLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.txtBxLastName.Location = new System.Drawing.Point(185, 115);
             this.txtBxLastName.Name = "txtBxLastName";
-            this.txtBxLastName.Size = new System.Drawing.Size(146, 20);
+            this.txtBxLastName.Size = new System.Drawing.Size(212, 24);
             this.txtBxLastName.TabIndex = 1;
             // 
             // lblDOB
             // 
             this.lblDOB.AutoSize = true;
-            this.lblDOB.Location = new System.Drawing.Point(74, 159);
+            this.lblDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblDOB.Location = new System.Drawing.Point(62, 160);
             this.lblDOB.Name = "lblDOB";
-            this.lblDOB.Size = new System.Drawing.Size(68, 13);
+            this.lblDOB.Size = new System.Drawing.Size(93, 18);
             this.lblDOB.TabIndex = 0;
             this.lblDOB.Text = "Date Of Birth";
             // 
             // txtBxDOB
             // 
             this.txtBxDOB.Enabled = false;
-            this.txtBxDOB.Location = new System.Drawing.Point(148, 156);
+            this.txtBxDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.txtBxDOB.Location = new System.Drawing.Point(185, 157);
             this.txtBxDOB.Name = "txtBxDOB";
-            this.txtBxDOB.Size = new System.Drawing.Size(146, 20);
+            this.txtBxDOB.Size = new System.Drawing.Size(212, 24);
             this.txtBxDOB.TabIndex = 1;
             // 
             // lblStartDate
             // 
             this.lblStartDate.AutoSize = true;
-            this.lblStartDate.Location = new System.Drawing.Point(74, 187);
+            this.lblStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblStartDate.Location = new System.Drawing.Point(81, 209);
             this.lblStartDate.Name = "lblStartDate";
-            this.lblStartDate.Size = new System.Drawing.Size(55, 13);
+            this.lblStartDate.Size = new System.Drawing.Size(74, 18);
             this.lblStartDate.TabIndex = 0;
             this.lblStartDate.Text = "Start Date";
             // 
             // txtBxStartDate
             // 
             this.txtBxStartDate.Enabled = false;
-            this.txtBxStartDate.Location = new System.Drawing.Point(148, 180);
+            this.txtBxStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.txtBxStartDate.Location = new System.Drawing.Point(185, 203);
             this.txtBxStartDate.Name = "txtBxStartDate";
-            this.txtBxStartDate.Size = new System.Drawing.Size(146, 20);
+            this.txtBxStartDate.Size = new System.Drawing.Size(212, 24);
             this.txtBxStartDate.TabIndex = 1;
             // 
             // lblRole
             // 
             this.lblRole.AutoSize = true;
-            this.lblRole.Location = new System.Drawing.Point(76, 211);
+            this.lblRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblRole.Location = new System.Drawing.Point(116, 250);
             this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(29, 13);
+            this.lblRole.Size = new System.Drawing.Size(39, 18);
             this.lblRole.TabIndex = 0;
             this.lblRole.Text = "Role";
             // 
             // txtBxRole
             // 
             this.txtBxRole.Enabled = false;
-            this.txtBxRole.Location = new System.Drawing.Point(148, 208);
+            this.txtBxRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.txtBxRole.Location = new System.Drawing.Point(185, 247);
             this.txtBxRole.Name = "txtBxRole";
-            this.txtBxRole.Size = new System.Drawing.Size(146, 20);
+            this.txtBxRole.Size = new System.Drawing.Size(212, 24);
             this.txtBxRole.TabIndex = 1;
             // 
             // lblEmailAddress
             // 
             this.lblEmailAddress.AutoSize = true;
-            this.lblEmailAddress.Location = new System.Drawing.Point(491, 134);
+            this.lblEmailAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblEmailAddress.Location = new System.Drawing.Point(490, 157);
             this.lblEmailAddress.Name = "lblEmailAddress";
-            this.lblEmailAddress.Size = new System.Drawing.Size(73, 13);
+            this.lblEmailAddress.Size = new System.Drawing.Size(103, 18);
             this.lblEmailAddress.TabIndex = 0;
             this.lblEmailAddress.Text = "Email Address";
             // 
             // txtBxEmailAddress
             // 
             this.txtBxEmailAddress.Enabled = false;
-            this.txtBxEmailAddress.Location = new System.Drawing.Point(563, 131);
+            this.txtBxEmailAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.txtBxEmailAddress.Location = new System.Drawing.Point(611, 151);
             this.txtBxEmailAddress.Name = "txtBxEmailAddress";
-            this.txtBxEmailAddress.Size = new System.Drawing.Size(146, 20);
+            this.txtBxEmailAddress.Size = new System.Drawing.Size(212, 24);
             this.txtBxEmailAddress.TabIndex = 1;
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(489, 162);
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblUsername.Location = new System.Drawing.Point(516, 206);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(55, 13);
+            this.lblUsername.Size = new System.Drawing.Size(77, 18);
             this.lblUsername.TabIndex = 0;
             this.lblUsername.Text = "Username";
             // 
             // txtBxUsername
             // 
             this.txtBxUsername.Enabled = false;
-            this.txtBxUsername.Location = new System.Drawing.Point(563, 159);
+            this.txtBxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.txtBxUsername.Location = new System.Drawing.Point(611, 206);
             this.txtBxUsername.Name = "txtBxUsername";
-            this.txtBxUsername.Size = new System.Drawing.Size(146, 20);
+            this.txtBxUsername.Size = new System.Drawing.Size(212, 24);
             this.txtBxUsername.TabIndex = 1;
             // 
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(76, 238);
+            this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblAddress.Location = new System.Drawing.Point(93, 289);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(45, 13);
+            this.lblAddress.Size = new System.Drawing.Size(62, 18);
             this.lblAddress.TabIndex = 0;
             this.lblAddress.Text = "Address";
             // 
             // txtBxAddress
             // 
             this.txtBxAddress.Enabled = false;
-            this.txtBxAddress.Location = new System.Drawing.Point(148, 235);
+            this.txtBxAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.txtBxAddress.Location = new System.Drawing.Point(185, 286);
+            this.txtBxAddress.Multiline = true;
             this.txtBxAddress.Name = "txtBxAddress";
-            this.txtBxAddress.Size = new System.Drawing.Size(146, 20);
+            this.txtBxAddress.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtBxAddress.Size = new System.Drawing.Size(212, 59);
             this.txtBxAddress.TabIndex = 1;
             // 
             // FormProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1018, 445);
             this.Controls.Add(this.txtBxUsername);
             this.Controls.Add(this.txtBxEmailAddress);

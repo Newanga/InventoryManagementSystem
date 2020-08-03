@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMainWindow));
             this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.btnMaximizer = new System.Windows.Forms.PictureBox();
             this.btnMinimize = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.PictureBox();
@@ -43,7 +44,7 @@
             this.lblFirstName = new System.Windows.Forms.Label();
             this.lblRole = new System.Windows.Forms.Label();
             this.btnProfile = new System.Windows.Forms.PictureBox();
-            this.brnOrders = new System.Windows.Forms.Button();
+            this.btnOrders = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.btnCategories = new System.Windows.Forms.Button();
@@ -64,7 +65,8 @@
             // 
             // panelTitleBar
             // 
-            this.panelTitleBar.BackColor = System.Drawing.Color.Gray;
+            this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(99)))), ((int)(((byte)(196)))));
+            this.panelTitleBar.Controls.Add(this.lblTitle);
             this.panelTitleBar.Controls.Add(this.btnMaximizer);
             this.panelTitleBar.Controls.Add(this.btnMinimize);
             this.panelTitleBar.Controls.Add(this.btnClose);
@@ -75,6 +77,18 @@
             this.panelTitleBar.Size = new System.Drawing.Size(1300, 30);
             this.panelTitleBar.TabIndex = 1;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelTitleBar_MouseDown);
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(616, 7);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(220, 20);
+            this.lblTitle.TabIndex = 5;
+            this.lblTitle.Text = "Inventory Managment System";
             // 
             // btnMaximizer
             // 
@@ -129,7 +143,7 @@
             this.panelVerticalMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.panelVerticalMenu.Controls.Add(this.btnEmployees);
             this.panelVerticalMenu.Controls.Add(this.panelUserInfo);
-            this.panelVerticalMenu.Controls.Add(this.brnOrders);
+            this.panelVerticalMenu.Controls.Add(this.btnOrders);
             this.panelVerticalMenu.Controls.Add(this.btnInventory);
             this.panelVerticalMenu.Controls.Add(this.btnDashboard);
             this.panelVerticalMenu.Controls.Add(this.btnCategories);
@@ -200,6 +214,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
+            this.lblEmail.ForeColor = System.Drawing.Color.White;
             this.lblEmail.Location = new System.Drawing.Point(90, 77);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(32, 13);
@@ -209,6 +224,7 @@
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
+            this.lblFirstName.ForeColor = System.Drawing.Color.White;
             this.lblFirstName.Location = new System.Drawing.Point(90, 55);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(57, 13);
@@ -218,6 +234,7 @@
             // lblRole
             // 
             this.lblRole.AutoSize = true;
+            this.lblRole.ForeColor = System.Drawing.Color.White;
             this.lblRole.Location = new System.Drawing.Point(90, 31);
             this.lblRole.Name = "lblRole";
             this.lblRole.Size = new System.Drawing.Size(29, 13);
@@ -235,25 +252,25 @@
             this.btnProfile.TabStop = false;
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
-            // brnOrders
+            // btnOrders
             // 
-            this.brnOrders.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.brnOrders.FlatAppearance.BorderSize = 0;
-            this.brnOrders.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.brnOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.brnOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.brnOrders.ForeColor = System.Drawing.Color.White;
-            this.brnOrders.Image = ((System.Drawing.Image)(resources.GetObject("brnOrders.Image")));
-            this.brnOrders.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.brnOrders.Location = new System.Drawing.Point(0, 219);
-            this.brnOrders.Name = "brnOrders";
-            this.brnOrders.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.brnOrders.Size = new System.Drawing.Size(250, 40);
-            this.brnOrders.TabIndex = 2;
-            this.brnOrders.Text = "                Orders";
-            this.brnOrders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.brnOrders.UseVisualStyleBackColor = true;
-            this.brnOrders.Click += new System.EventHandler(this.BtnOrders_Click);
+            this.btnOrders.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnOrders.FlatAppearance.BorderSize = 0;
+            this.btnOrders.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrders.ForeColor = System.Drawing.Color.White;
+            this.btnOrders.Image = ((System.Drawing.Image)(resources.GetObject("btnOrders.Image")));
+            this.btnOrders.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOrders.Location = new System.Drawing.Point(0, 219);
+            this.btnOrders.Name = "btnOrders";
+            this.btnOrders.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnOrders.Size = new System.Drawing.Size(250, 40);
+            this.btnOrders.TabIndex = 2;
+            this.btnOrders.Text = "                Orders";
+            this.btnOrders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOrders.UseVisualStyleBackColor = true;
+            this.btnOrders.Click += new System.EventHandler(this.BtnOrders_Click);
             // 
             // btnInventory
             // 
@@ -379,6 +396,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainWindowForm";
             this.panelTitleBar.ResumeLayout(false);
+            this.panelTitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
@@ -406,14 +424,15 @@
         private System.Windows.Forms.PictureBox btnMenuExpander;
         private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.Label lblRole;
-        private System.Windows.Forms.PictureBox btnProfile;
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Button btnCategories;
         private System.Windows.Forms.Button btnProducts;
         private System.Windows.Forms.Panel panelContainer;
         private System.Windows.Forms.Button btnSuppliers;
-        private System.Windows.Forms.Button brnOrders;
+        private System.Windows.Forms.Button btnOrders;
         private System.Windows.Forms.Button btnInventory;
         private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.PictureBox btnProfile;
     }
 }

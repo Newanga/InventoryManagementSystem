@@ -76,6 +76,9 @@
             // dGVOrders
             // 
             this.dGVOrders.AllowUserToAddRows = false;
+            this.dGVOrders.AllowUserToDeleteRows = false;
+            this.dGVOrders.AllowUserToResizeColumns = false;
+            this.dGVOrders.AllowUserToResizeRows = false;
             this.dGVOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVOrders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -86,6 +89,9 @@
             this.SpecialNotes});
             this.dGVOrders.Location = new System.Drawing.Point(35, 220);
             this.dGVOrders.Name = "dGVOrders";
+            this.dGVOrders.ReadOnly = true;
+            this.dGVOrders.RowHeadersVisible = false;
+            this.dGVOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGVOrders.Size = new System.Drawing.Size(505, 192);
             this.dGVOrders.TabIndex = 0;
             this.dGVOrders.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVOrders_CellDoubleClick);
@@ -95,6 +101,7 @@
             this.Id.DataPropertyName = "Id";
             this.Id.HeaderText = "Id";
             this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
             // 
             // Supplier
             // 
@@ -135,6 +142,8 @@
             // 
             this.dGVOrderItems.AllowUserToAddRows = false;
             this.dGVOrderItems.AllowUserToDeleteRows = false;
+            this.dGVOrderItems.AllowUserToResizeColumns = false;
+            this.dGVOrderItems.AllowUserToResizeRows = false;
             this.dGVOrderItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVOrderItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ProductName,
@@ -144,6 +153,8 @@
             this.dGVOrderItems.Location = new System.Drawing.Point(590, 220);
             this.dGVOrderItems.Name = "dGVOrderItems";
             this.dGVOrderItems.ReadOnly = true;
+            this.dGVOrderItems.RowHeadersVisible = false;
+            this.dGVOrderItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGVOrderItems.Size = new System.Drawing.Size(408, 192);
             this.dGVOrderItems.TabIndex = 0;
             this.dGVOrderItems.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVOrderItems_CellDoubleClick);
@@ -181,43 +192,48 @@
             // lblOrderId
             // 
             this.lblOrderId.AutoSize = true;
-            this.lblOrderId.Location = new System.Drawing.Point(76, 53);
+            this.lblOrderId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrderId.Location = new System.Drawing.Point(44, 33);
             this.lblOrderId.Name = "lblOrderId";
-            this.lblOrderId.Size = new System.Drawing.Size(45, 13);
+            this.lblOrderId.Size = new System.Drawing.Size(61, 18);
             this.lblOrderId.TabIndex = 1;
             this.lblOrderId.Text = "Order Id";
             // 
             // txtBxOrderId
             // 
             this.txtBxOrderId.Enabled = false;
-            this.txtBxOrderId.Location = new System.Drawing.Point(148, 50);
+            this.txtBxOrderId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBxOrderId.Location = new System.Drawing.Point(146, 32);
             this.txtBxOrderId.Name = "txtBxOrderId";
-            this.txtBxOrderId.Size = new System.Drawing.Size(100, 20);
+            this.txtBxOrderId.Size = new System.Drawing.Size(100, 22);
             this.txtBxOrderId.TabIndex = 2;
             // 
             // lblSpecialNote
             // 
             this.lblSpecialNote.AutoSize = true;
-            this.lblSpecialNote.Location = new System.Drawing.Point(53, 79);
+            this.lblSpecialNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSpecialNote.Location = new System.Drawing.Point(315, 104);
             this.lblSpecialNote.Name = "lblSpecialNote";
-            this.lblSpecialNote.Size = new System.Drawing.Size(68, 13);
+            this.lblSpecialNote.Size = new System.Drawing.Size(92, 18);
             this.lblSpecialNote.TabIndex = 1;
             this.lblSpecialNote.Text = "Special Note";
             // 
             // txtBxSpecialNote
             // 
             this.txtBxSpecialNote.Enabled = false;
-            this.txtBxSpecialNote.Location = new System.Drawing.Point(148, 79);
+            this.txtBxSpecialNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBxSpecialNote.Location = new System.Drawing.Point(419, 104);
             this.txtBxSpecialNote.Name = "txtBxSpecialNote";
-            this.txtBxSpecialNote.Size = new System.Drawing.Size(100, 20);
+            this.txtBxSpecialNote.Size = new System.Drawing.Size(128, 22);
             this.txtBxSpecialNote.TabIndex = 2;
             // 
             // lblOrderState
             // 
             this.lblOrderState.AutoSize = true;
-            this.lblOrderState.Location = new System.Drawing.Point(323, 111);
+            this.lblOrderState.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblOrderState.Location = new System.Drawing.Point(25, 103);
             this.lblOrderState.Name = "lblOrderState";
-            this.lblOrderState.Size = new System.Drawing.Size(61, 13);
+            this.lblOrderState.Size = new System.Drawing.Size(84, 18);
             this.lblOrderState.TabIndex = 1;
             this.lblOrderState.Text = "Order State";
             // 
@@ -225,27 +241,30 @@
             // 
             this.comboBxOrderState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBxOrderState.Enabled = false;
+            this.comboBxOrderState.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBxOrderState.FormattingEnabled = true;
-            this.comboBxOrderState.Location = new System.Drawing.Point(408, 111);
+            this.comboBxOrderState.Location = new System.Drawing.Point(146, 103);
             this.comboBxOrderState.Name = "comboBxOrderState";
-            this.comboBxOrderState.Size = new System.Drawing.Size(121, 21);
+            this.comboBxOrderState.Size = new System.Drawing.Size(121, 24);
             this.comboBxOrderState.TabIndex = 3;
             // 
             // lblPlaceDate
             // 
             this.lblPlaceDate.AutoSize = true;
-            this.lblPlaceDate.Location = new System.Drawing.Point(324, 53);
+            this.lblPlaceDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblPlaceDate.Location = new System.Drawing.Point(323, 29);
             this.lblPlaceDate.Name = "lblPlaceDate";
-            this.lblPlaceDate.Size = new System.Drawing.Size(60, 13);
+            this.lblPlaceDate.Size = new System.Drawing.Size(80, 18);
             this.lblPlaceDate.TabIndex = 1;
             this.lblPlaceDate.Text = "Place Date";
             // 
             // lblDeliveryDate
             // 
             this.lblDeliveryDate.AutoSize = true;
-            this.lblDeliveryDate.Location = new System.Drawing.Point(313, 78);
+            this.lblDeliveryDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblDeliveryDate.Location = new System.Drawing.Point(312, 68);
             this.lblDeliveryDate.Name = "lblDeliveryDate";
-            this.lblDeliveryDate.Size = new System.Drawing.Size(71, 13);
+            this.lblDeliveryDate.Size = new System.Drawing.Size(95, 18);
             this.lblDeliveryDate.TabIndex = 1;
             this.lblDeliveryDate.Text = "Delivery Date";
             // 
@@ -253,10 +272,11 @@
             // 
             this.dTPPlaceDate.CustomFormat = " ";
             this.dTPPlaceDate.Enabled = false;
+            this.dTPPlaceDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dTPPlaceDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dTPPlaceDate.Location = new System.Drawing.Point(408, 53);
+            this.dTPPlaceDate.Location = new System.Drawing.Point(419, 29);
             this.dTPPlaceDate.Name = "dTPPlaceDate";
-            this.dTPPlaceDate.Size = new System.Drawing.Size(121, 20);
+            this.dTPPlaceDate.Size = new System.Drawing.Size(121, 22);
             this.dTPPlaceDate.TabIndex = 4;
             this.dTPPlaceDate.ValueChanged += new System.EventHandler(this.dTPPlaceDate_ValueChanged);
             this.dTPPlaceDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dTPPlaceDate_KeyDown);
@@ -265,10 +285,11 @@
             // 
             this.dTPDeliveryDate.CustomFormat = " ";
             this.dTPDeliveryDate.Enabled = false;
+            this.dTPDeliveryDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dTPDeliveryDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dTPDeliveryDate.Location = new System.Drawing.Point(408, 78);
+            this.dTPDeliveryDate.Location = new System.Drawing.Point(419, 65);
             this.dTPDeliveryDate.Name = "dTPDeliveryDate";
-            this.dTPDeliveryDate.Size = new System.Drawing.Size(121, 20);
+            this.dTPDeliveryDate.Size = new System.Drawing.Size(121, 22);
             this.dTPDeliveryDate.TabIndex = 4;
             this.dTPDeliveryDate.ValueChanged += new System.EventHandler(this.dTPDeliveryDate_ValueChanged);
             this.dTPDeliveryDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dTPDeliveryDate_KeyDown);
@@ -276,9 +297,10 @@
             // lblSupplier
             // 
             this.lblSupplier.AutoSize = true;
-            this.lblSupplier.Location = new System.Drawing.Point(61, 111);
+            this.lblSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSupplier.Location = new System.Drawing.Point(44, 69);
             this.lblSupplier.Name = "lblSupplier";
-            this.lblSupplier.Size = new System.Drawing.Size(48, 13);
+            this.lblSupplier.Size = new System.Drawing.Size(65, 18);
             this.lblSupplier.TabIndex = 1;
             this.lblSupplier.Text = "Supplier ";
             // 
@@ -286,19 +308,21 @@
             // 
             this.comboBxSupplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBxSupplier.Enabled = false;
+            this.comboBxSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBxSupplier.FormattingEnabled = true;
-            this.comboBxSupplier.Location = new System.Drawing.Point(146, 111);
+            this.comboBxSupplier.Location = new System.Drawing.Point(146, 68);
             this.comboBxSupplier.Name = "comboBxSupplier";
-            this.comboBxSupplier.Size = new System.Drawing.Size(121, 21);
+            this.comboBxSupplier.Size = new System.Drawing.Size(102, 24);
             this.comboBxSupplier.TabIndex = 3;
             this.comboBxSupplier.SelectedValueChanged += new System.EventHandler(this.comboBxSupplier_SelectedValueChanged);
             // 
             // lblOrderItemName
             // 
             this.lblOrderItemName.AutoSize = true;
-            this.lblOrderItemName.Location = new System.Drawing.Point(747, 55);
+            this.lblOrderItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblOrderItemName.Location = new System.Drawing.Point(714, 32);
             this.lblOrderItemName.Name = "lblOrderItemName";
-            this.lblOrderItemName.Size = new System.Drawing.Size(35, 13);
+            this.lblOrderItemName.Size = new System.Drawing.Size(48, 18);
             this.lblOrderItemName.TabIndex = 1;
             this.lblOrderItemName.Text = "Name";
             // 
@@ -306,46 +330,51 @@
             // 
             this.comboBxOrderItemName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBxOrderItemName.Enabled = false;
+            this.comboBxOrderItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBxOrderItemName.FormattingEnabled = true;
-            this.comboBxOrderItemName.Location = new System.Drawing.Point(817, 52);
+            this.comboBxOrderItemName.Location = new System.Drawing.Point(803, 33);
             this.comboBxOrderItemName.Name = "comboBxOrderItemName";
-            this.comboBxOrderItemName.Size = new System.Drawing.Size(121, 21);
+            this.comboBxOrderItemName.Size = new System.Drawing.Size(121, 24);
             this.comboBxOrderItemName.TabIndex = 3;
             this.comboBxOrderItemName.SelectedValueChanged += new System.EventHandler(this.comboBxOrderItemName_SelectedValueChanged);
             // 
             // lblOrderItemQuantity
             // 
             this.lblOrderItemQuantity.AutoSize = true;
-            this.lblOrderItemQuantity.Location = new System.Drawing.Point(736, 87);
+            this.lblOrderItemQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblOrderItemQuantity.Location = new System.Drawing.Point(700, 69);
             this.lblOrderItemQuantity.Name = "lblOrderItemQuantity";
-            this.lblOrderItemQuantity.Size = new System.Drawing.Size(46, 13);
+            this.lblOrderItemQuantity.Size = new System.Drawing.Size(62, 18);
             this.lblOrderItemQuantity.TabIndex = 1;
             this.lblOrderItemQuantity.Text = "Quantity";
             // 
             // txtBxOrderItemQuantity
             // 
             this.txtBxOrderItemQuantity.Enabled = false;
-            this.txtBxOrderItemQuantity.Location = new System.Drawing.Point(817, 84);
+            this.txtBxOrderItemQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.txtBxOrderItemQuantity.Location = new System.Drawing.Point(803, 70);
             this.txtBxOrderItemQuantity.Name = "txtBxOrderItemQuantity";
-            this.txtBxOrderItemQuantity.Size = new System.Drawing.Size(100, 20);
+            this.txtBxOrderItemQuantity.Size = new System.Drawing.Size(121, 22);
             this.txtBxOrderItemQuantity.TabIndex = 2;
             this.txtBxOrderItemQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBxOrderItemQuantity_KeyPress);
             // 
             // lblProductPrice
             // 
             this.lblProductPrice.AutoSize = true;
-            this.lblProductPrice.Location = new System.Drawing.Point(747, 113);
+            this.lblProductPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblProductPrice.Location = new System.Drawing.Point(714, 105);
             this.lblProductPrice.Name = "lblProductPrice";
-            this.lblProductPrice.Size = new System.Drawing.Size(31, 13);
+            this.lblProductPrice.Size = new System.Drawing.Size(42, 18);
             this.lblProductPrice.TabIndex = 1;
             this.lblProductPrice.Text = "Price";
             // 
             // txtBxOrderItemPrice
             // 
             this.txtBxOrderItemPrice.Enabled = false;
-            this.txtBxOrderItemPrice.Location = new System.Drawing.Point(817, 110);
+            this.txtBxOrderItemPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F);
+            this.txtBxOrderItemPrice.Location = new System.Drawing.Point(803, 106);
             this.txtBxOrderItemPrice.Name = "txtBxOrderItemPrice";
-            this.txtBxOrderItemPrice.Size = new System.Drawing.Size(100, 20);
+            this.txtBxOrderItemPrice.Size = new System.Drawing.Size(121, 21);
             this.txtBxOrderItemPrice.TabIndex = 2;
             // 
             // btnNewOrderCreate
@@ -406,7 +435,7 @@
             // btnOrderItemCancel
             // 
             this.btnOrderItemCancel.Enabled = false;
-            this.btnOrderItemCancel.Location = new System.Drawing.Point(935, 165);
+            this.btnOrderItemCancel.Location = new System.Drawing.Point(908, 165);
             this.btnOrderItemCancel.Name = "btnOrderItemCancel";
             this.btnOrderItemCancel.Size = new System.Drawing.Size(75, 23);
             this.btnOrderItemCancel.TabIndex = 9;
@@ -417,7 +446,7 @@
             // btnNewOrderCancel
             // 
             this.btnNewOrderCancel.Enabled = false;
-            this.btnNewOrderCancel.Location = new System.Drawing.Point(351, 165);
+            this.btnNewOrderCancel.Location = new System.Drawing.Point(367, 165);
             this.btnNewOrderCancel.Name = "btnNewOrderCancel";
             this.btnNewOrderCancel.Size = new System.Drawing.Size(75, 23);
             this.btnNewOrderCancel.TabIndex = 5;
@@ -461,7 +490,7 @@
             // btnExistingOrderCancel
             // 
             this.btnExistingOrderCancel.Enabled = false;
-            this.btnExistingOrderCancel.Location = new System.Drawing.Point(351, 165);
+            this.btnExistingOrderCancel.Location = new System.Drawing.Point(367, 165);
             this.btnExistingOrderCancel.Name = "btnExistingOrderCancel";
             this.btnExistingOrderCancel.Size = new System.Drawing.Size(75, 23);
             this.btnExistingOrderCancel.TabIndex = 5;
@@ -473,6 +502,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1018, 445);
             this.Controls.Add(this.btnExistingOrderEdit);
             this.Controls.Add(this.btnExistingOrderUpdate);

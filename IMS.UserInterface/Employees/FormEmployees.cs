@@ -75,6 +75,7 @@ namespace IMS.UserInterface.Employees
             };
             bool validData = EmployeeInputDataValidator.ValidateAdd(data);
 
+
             if (validData)
             {
                 _db.CreateNewEmployee(data);
@@ -293,6 +294,7 @@ namespace IMS.UserInterface.Employees
 
             bool validData = EmployeeInputDataValidator.ValidateUpdate(data);
 
+
             if (validData)
             {
                 _db.UpdateExistingEmployee(data);
@@ -314,7 +316,7 @@ namespace IMS.UserInterface.Employees
             txtBxLastName.Enabled = true;
             txtBxEmailAddress.Enabled = true;
             txtBxAdress.Enabled = true;
-            txtBxUsername.Enabled = true;
+            txtBxUsername.Enabled = false;
             txtBxPassword.Enabled = true;
 
             dTPDOB.Enabled = true;
@@ -330,5 +332,7 @@ namespace IMS.UserInterface.Employees
             btnEmployeesNewUpdate.Enabled = false;
 
         }
+
+        
     }
 }
