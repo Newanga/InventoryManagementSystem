@@ -74,7 +74,7 @@ namespace IMS.DataAccess.FormInventoryData
                             on I.OrderItemId=OI.Id
                             where OI.OrderId=@OrderId;";
 
-            var alreadyAdded = _db.LoadData<IdLookUpModel, dynamic>(sql, new { OrderId = data.OrderId });
+            var alreadyAdded = _db.LoadData<IdLookUpModel, dynamic>(sql, new { OrderId = data.OrderId }).FirstOrDefault();
 
             if (alreadyAdded == null)
                 return false;
