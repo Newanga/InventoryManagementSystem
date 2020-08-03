@@ -24,11 +24,15 @@ namespace IMS.DataAccess.FormOrderData
 
         public List<SupplierName> GetSupplierFromDatabase()
         {
-            string sql= @"Select s.Name
+            string sql= @"Select Distinct(s.Name)
                             from dbo.Supplier as s
                             inner join dbo.SupplierState as ss
                             on s.SupplierStateId=ss.Id
-                            where ss.State='Active';";
+                            inner join dbo.Product as p
+                            on p.SupplierId=s.Id
+                            inner join dbo.ProductState as ps
+                            on p.ProductStateId=ps.Id
+                            where ss.State='Active' and ps.State!='Discontinued';";
 
             List<SupplierName> suppliers = _db.LoadData<SupplierName,dynamic>(sql,new { });
 
