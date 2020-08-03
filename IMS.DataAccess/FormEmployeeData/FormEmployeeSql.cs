@@ -18,6 +18,23 @@ namespace IMS.DataAccess.FormEmployeeData
             _db = db;
         }
 
+        public bool usernameTaken(string username)
+        {
+            string sql = @"select Id
+                            from dbo.Account
+                            where UserName = @Username;";
+
+            var id= _db.LoadData<IdLookUpModel, dynamic>(sql, new { @Username = username }).FirstOrDefault();
+
+            if (id == null)
+                return false;
+            else
+                return true;
+
+
+
+        }
+
         public void CreateNewEmployee(EmployeeDetailsNewModel data)
         {
             string sql = @"Insert into dbo.Account (EmailAddress,Username,Password,AccountStateId,RoleId)
