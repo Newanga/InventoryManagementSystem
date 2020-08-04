@@ -77,7 +77,7 @@
             // 
             this.dGVOrders.AllowUserToAddRows = false;
             this.dGVOrders.AllowUserToDeleteRows = false;
-            this.dGVOrders.AllowUserToResizeColumns = false;
+            this.dGVOrders.AllowUserToOrderColumns = true;
             this.dGVOrders.AllowUserToResizeRows = false;
             this.dGVOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVOrders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -98,10 +98,12 @@
             // 
             // Id
             // 
+            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Id.DataPropertyName = "Id";
             this.Id.HeaderText = "Id";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
+            this.Id.Width = 41;
             // 
             // Supplier
             // 
@@ -137,12 +139,13 @@
             this.SpecialNotes.HeaderText = "SpecialNotes";
             this.SpecialNotes.Name = "SpecialNotes";
             this.SpecialNotes.ReadOnly = true;
+            this.SpecialNotes.Width = 95;
             // 
             // dGVOrderItems
             // 
             this.dGVOrderItems.AllowUserToAddRows = false;
             this.dGVOrderItems.AllowUserToDeleteRows = false;
-            this.dGVOrderItems.AllowUserToResizeColumns = false;
+            this.dGVOrderItems.AllowUserToOrderColumns = true;
             this.dGVOrderItems.AllowUserToResizeRows = false;
             this.dGVOrderItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVOrderItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -161,11 +164,11 @@
             // 
             // ProductName
             // 
-            this.ProductName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ProductName.DataPropertyName = "ProductName";
             this.ProductName.HeaderText = "ProductName";
             this.ProductName.Name = "ProductName";
             this.ProductName.ReadOnly = true;
+            this.ProductName.Width = 249;
             // 
             // Quantity
             // 
@@ -180,6 +183,7 @@
             this.Price.HeaderText = "Price";
             this.Price.Name = "Price";
             this.Price.ReadOnly = true;
+            this.Price.Width = 56;
             // 
             // OrderItemId
             // 
@@ -574,10 +578,6 @@
         private System.Windows.Forms.TextBox txtBxOrderItemPrice;
         private System.Windows.Forms.Button btnNewOrderCreate;
         private System.Windows.Forms.Button btnOrderItemAdd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OrderItemId;
         private System.Windows.Forms.Button btnOrderItemEdit;
         private System.Windows.Forms.Button btnOrderItemRemove;
         private System.Windows.Forms.Button btnOrderItemUpdate;
@@ -585,13 +585,17 @@
         private System.Windows.Forms.Button btnNewOrderCancel;
         private System.Windows.Forms.Button btnNewOrderUpdate;
         private System.Windows.Forms.Button btnExistingOrderUpdate;
+        private System.Windows.Forms.Button btnExistingOrderEdit;
+        private System.Windows.Forms.Button btnExistingOrderCancel;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Supplier;
         private System.Windows.Forms.DataGridViewTextBoxColumn PlaceDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn OrderState;
         private System.Windows.Forms.DataGridViewTextBoxColumn DeliveryDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn SpecialNotes;
-        private System.Windows.Forms.Button btnExistingOrderEdit;
-        private System.Windows.Forms.Button btnExistingOrderCancel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrderItemId;
     }
 }

@@ -121,10 +121,11 @@
             // 
             this.dGVCategory.AllowUserToAddRows = false;
             this.dGVCategory.AllowUserToDeleteRows = false;
+            this.dGVCategory.AllowUserToOrderColumns = true;
             this.dGVCategory.AllowUserToResizeRows = false;
-            this.dGVCategory.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dGVCategory.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.dGVCategory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dGVCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dGVCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CategoryId,
             this.CategoryName,
@@ -133,7 +134,6 @@
             this.dGVCategory.Name = "dGVCategory";
             this.dGVCategory.ReadOnly = true;
             this.dGVCategory.RowHeadersVisible = false;
-            this.dGVCategory.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dGVCategory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGVCategory.Size = new System.Drawing.Size(978, 218);
             this.dGVCategory.TabIndex = 4;
@@ -141,7 +141,6 @@
             // 
             // CategoryId
             // 
-            this.CategoryId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.CategoryId.DataPropertyName = "Id";
             this.CategoryId.HeaderText = "CategoryId";
             this.CategoryId.Name = "CategoryId";
@@ -150,7 +149,6 @@
             // 
             // CategoryName
             // 
-            this.CategoryName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.CategoryName.DataPropertyName = "Name";
             this.CategoryName.HeaderText = "CategoryName";
             this.CategoryName.Name = "CategoryName";
@@ -159,11 +157,11 @@
             // 
             // CategoryDescription
             // 
-            this.CategoryDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.CategoryDescription.DataPropertyName = "Description";
             this.CategoryDescription.HeaderText = "CategoryDescription";
             this.CategoryDescription.Name = "CategoryDescription";
             this.CategoryDescription.ReadOnly = true;
+            this.CategoryDescription.Width = 127;
             // 
             // btnCategoryAdd
             // 
@@ -256,13 +254,13 @@
         private System.Windows.Forms.TextBox txtBxCategoryName;
         private System.Windows.Forms.TextBox txtBxCategoryDescription;
         private System.Windows.Forms.DataGridView dGVCategory;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CategoryId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CategoryName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CategoryDescription;
         private System.Windows.Forms.Button btnCategoryAdd;
         private System.Windows.Forms.Button btnCategoryEdit;
         private System.Windows.Forms.Button btnCategoryReset;
         private System.Windows.Forms.Button btnCategoryExistingUpdate;
         private System.Windows.Forms.Button btnCategoryNewUpdate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CategoryId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CategoryName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CategoryDescription;
     }
 }

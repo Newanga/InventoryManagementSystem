@@ -92,7 +92,7 @@
             this.txtBxEmployeeId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBxEmployeeId.Location = new System.Drawing.Point(143, 39);
             this.txtBxEmployeeId.Name = "txtBxEmployeeId";
-            this.txtBxEmployeeId.Size = new System.Drawing.Size(118, 22);
+            this.txtBxEmployeeId.Size = new System.Drawing.Size(134, 22);
             this.txtBxEmployeeId.TabIndex = 1;
             // 
             // txtBxFirstName
@@ -101,7 +101,7 @@
             this.txtBxFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtBxFirstName.Location = new System.Drawing.Point(142, 76);
             this.txtBxFirstName.Name = "txtBxFirstName";
-            this.txtBxFirstName.Size = new System.Drawing.Size(119, 22);
+            this.txtBxFirstName.Size = new System.Drawing.Size(135, 22);
             this.txtBxFirstName.TabIndex = 1;
             // 
             // lblFirstName
@@ -130,7 +130,7 @@
             this.txtBxLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtBxLastName.Location = new System.Drawing.Point(143, 110);
             this.txtBxLastName.Name = "txtBxLastName";
-            this.txtBxLastName.Size = new System.Drawing.Size(118, 22);
+            this.txtBxLastName.Size = new System.Drawing.Size(134, 22);
             this.txtBxLastName.TabIndex = 1;
             // 
             // lblDOB
@@ -175,7 +175,7 @@
             this.txtBxAdress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtBxAdress.Location = new System.Drawing.Point(430, 148);
             this.txtBxAdress.Name = "txtBxAdress";
-            this.txtBxAdress.Size = new System.Drawing.Size(139, 22);
+            this.txtBxAdress.Size = new System.Drawing.Size(186, 22);
             this.txtBxAdress.TabIndex = 1;
             // 
             // lblStartDate
@@ -240,7 +240,7 @@
             this.txtBxEmailAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtBxEmailAddress.Location = new System.Drawing.Point(143, 145);
             this.txtBxEmailAddress.Name = "txtBxEmailAddress";
-            this.txtBxEmailAddress.Size = new System.Drawing.Size(118, 22);
+            this.txtBxEmailAddress.Size = new System.Drawing.Size(134, 22);
             this.txtBxEmailAddress.TabIndex = 1;
             // 
             // lblUsername
@@ -325,7 +325,7 @@
             // 
             this.dGVEmployees.AllowUserToAddRows = false;
             this.dGVEmployees.AllowUserToDeleteRows = false;
-            this.dGVEmployees.AllowUserToResizeColumns = false;
+            this.dGVEmployees.AllowUserToOrderColumns = true;
             this.dGVEmployees.AllowUserToResizeRows = false;
             this.dGVEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVEmployees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -346,6 +346,7 @@
             this.dGVEmployees.Name = "dGVEmployees";
             this.dGVEmployees.ReadOnly = true;
             this.dGVEmployees.RowHeadersVisible = false;
+            this.dGVEmployees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGVEmployees.Size = new System.Drawing.Size(937, 158);
             this.dGVEmployees.TabIndex = 4;
             this.dGVEmployees.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVEmployees_CellDoubleClick);
@@ -440,6 +441,7 @@
             this.AccountId.HeaderText = "AccountId";
             this.AccountId.Name = "AccountId";
             this.AccountId.ReadOnly = true;
+            this.AccountId.Width = 81;
             // 
             // btnEmployeesAdd
             // 

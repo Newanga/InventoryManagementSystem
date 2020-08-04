@@ -107,7 +107,7 @@
             // 
             this.dGVInventory.AllowUserToAddRows = false;
             this.dGVInventory.AllowUserToDeleteRows = false;
-            this.dGVInventory.AllowUserToResizeColumns = false;
+            this.dGVInventory.AllowUserToOrderColumns = true;
             this.dGVInventory.AllowUserToResizeRows = false;
             this.dGVInventory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -129,43 +129,43 @@
             // 
             // ProductId
             // 
-            this.ProductId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ProductId.DataPropertyName = "InventoryId";
             this.ProductId.HeaderText = "Id";
             this.ProductId.Name = "ProductId";
             this.ProductId.ReadOnly = true;
+            this.ProductId.Width = 205;
             // 
             // SupplierName
             // 
-            this.SupplierName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.SupplierName.DataPropertyName = "SupplierName";
             this.SupplierName.HeaderText = "SupliierName";
             this.SupplierName.Name = "SupplierName";
             this.SupplierName.ReadOnly = true;
+            this.SupplierName.Width = 205;
             // 
             // ProductName
             // 
-            this.ProductName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ProductName.DataPropertyName = "ProductName";
             this.ProductName.HeaderText = "ProductName";
             this.ProductName.Name = "ProductName";
             this.ProductName.ReadOnly = true;
+            this.ProductName.Width = 204;
             // 
             // Available
             // 
-            this.Available.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Available.DataPropertyName = "Available";
             this.Available.HeaderText = "Available";
             this.Available.Name = "Available";
             this.Available.ReadOnly = true;
+            this.Available.Width = 205;
             // 
             // DateAdded
             // 
-            this.DateAdded.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.DateAdded.DataPropertyName = "DateAdded";
             this.DateAdded.HeaderText = "DateAdded";
             this.DateAdded.Name = "DateAdded";
             this.DateAdded.ReadOnly = true;
+            this.DateAdded.Width = 86;
             // 
             // comboBoxSupplier
             // 

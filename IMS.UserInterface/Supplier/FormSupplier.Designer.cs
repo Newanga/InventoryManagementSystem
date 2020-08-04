@@ -62,7 +62,7 @@
             // 
             this.dGVSupplier.AllowUserToAddRows = false;
             this.dGVSupplier.AllowUserToDeleteRows = false;
-            this.dGVSupplier.AllowUserToResizeColumns = false;
+            this.dGVSupplier.AllowUserToOrderColumns = true;
             this.dGVSupplier.AllowUserToResizeRows = false;
             this.dGVSupplier.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dGVSupplier.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -78,7 +78,6 @@
             this.dGVSupplier.Name = "dGVSupplier";
             this.dGVSupplier.ReadOnly = true;
             this.dGVSupplier.RowHeadersVisible = false;
-            this.dGVSupplier.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dGVSupplier.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGVSupplier.Size = new System.Drawing.Size(978, 218);
             this.dGVSupplier.TabIndex = 17;

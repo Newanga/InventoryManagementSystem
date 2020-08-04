@@ -235,8 +235,7 @@
             // dGVProducts
             // 
             this.dGVProducts.AllowUserToAddRows = false;
-            this.dGVProducts.AllowUserToDeleteRows = false;
-            this.dGVProducts.AllowUserToResizeColumns = false;
+            this.dGVProducts.AllowUserToOrderColumns = true;
             this.dGVProducts.AllowUserToResizeRows = false;
             this.dGVProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -259,67 +258,67 @@
             // 
             // ProductId
             // 
-            this.ProductId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ProductId.DataPropertyName = "Id";
             this.ProductId.HeaderText = "Id";
             this.ProductId.Name = "ProductId";
             this.ProductId.ReadOnly = true;
+            this.ProductId.Width = 117;
             // 
             // ProductName
             // 
-            this.ProductName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ProductName.DataPropertyName = "Name";
             this.ProductName.HeaderText = "Name";
             this.ProductName.Name = "ProductName";
             this.ProductName.ReadOnly = true;
+            this.ProductName.Width = 117;
             // 
             // ProductDescription
             // 
-            this.ProductDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ProductDescription.DataPropertyName = "Description";
             this.ProductDescription.HeaderText = "Description";
             this.ProductDescription.Name = "ProductDescription";
             this.ProductDescription.ReadOnly = true;
+            this.ProductDescription.Width = 117;
             // 
             // ProductPrice
             // 
-            this.ProductPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ProductPrice.DataPropertyName = "Price";
             this.ProductPrice.HeaderText = "Price";
             this.ProductPrice.Name = "ProductPrice";
             this.ProductPrice.ReadOnly = true;
+            this.ProductPrice.Width = 117;
             // 
             // ProductWarrenty
             // 
-            this.ProductWarrenty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ProductWarrenty.DataPropertyName = "Warrenty";
             this.ProductWarrenty.HeaderText = "Warrenty";
             this.ProductWarrenty.Name = "ProductWarrenty";
             this.ProductWarrenty.ReadOnly = true;
+            this.ProductWarrenty.Width = 116;
             // 
             // ProductSupplierName
             // 
-            this.ProductSupplierName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ProductSupplierName.DataPropertyName = "SupplierName";
             this.ProductSupplierName.HeaderText = "SupplierName";
             this.ProductSupplierName.Name = "ProductSupplierName";
             this.ProductSupplierName.ReadOnly = true;
+            this.ProductSupplierName.Width = 117;
             // 
             // ProductCategoryName
             // 
-            this.ProductCategoryName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ProductCategoryName.DataPropertyName = "CategoryName";
             this.ProductCategoryName.HeaderText = "CategoryName";
             this.ProductCategoryName.Name = "ProductCategoryName";
             this.ProductCategoryName.ReadOnly = true;
+            this.ProductCategoryName.Width = 117;
             // 
             // ProductState
             // 
-            this.ProductState.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ProductState.DataPropertyName = "ProductState";
             this.ProductState.HeaderText = "State";
             this.ProductState.Name = "ProductState";
             this.ProductState.ReadOnly = true;
+            this.ProductState.Width = 117;
             // 
             // btnProductAdd
             // 
@@ -431,6 +430,11 @@
         private System.Windows.Forms.ComboBox comboBxlProductSupplier;
         private System.Windows.Forms.ComboBox comboBxlblProductCategory;
         private System.Windows.Forms.DataGridView dGVProducts;
+        private System.Windows.Forms.Button btnProductAdd;
+        private System.Windows.Forms.Button btnProductEdit;
+        private System.Windows.Forms.Button btnProductNewUpdate;
+        private System.Windows.Forms.Button btnProductExistingUpdate;
+        private System.Windows.Forms.Button btnProductReset;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductDescription;
@@ -439,10 +443,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductSupplierName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductCategoryName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductState;
-        private System.Windows.Forms.Button btnProductAdd;
-        private System.Windows.Forms.Button btnProductEdit;
-        private System.Windows.Forms.Button btnProductNewUpdate;
-        private System.Windows.Forms.Button btnProductExistingUpdate;
-        private System.Windows.Forms.Button btnProductReset;
     }
 }
