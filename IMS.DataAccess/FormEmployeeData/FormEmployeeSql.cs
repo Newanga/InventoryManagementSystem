@@ -96,6 +96,26 @@ namespace IMS.DataAccess.FormEmployeeData
 
         }
 
+
+        public bool CheckForAdminLockOut()
+        {
+            string sql = @"select a.Id
+                            from dbo.Account as a
+                            inner join  dbo.Roles as r
+                            on a.RoleId=r.Id
+                            inner join dbo.AccountState as acs
+                            on a.AccountStateId=acs.Id
+                            where r.Name='Admin'
+                            and acs.State not in ('Disable','Block');";
+
+            var adminList = _db.LoadData<int, dynamic>(sql, new { });
+
+            if (adminList.Count == 1)
+                return true;
+            else
+                return false;   
+        }
+
         public void UpdateExistingEmployee(EmployeeDetailsUpdateModel data)
         {
 

@@ -2,6 +2,7 @@
 using IMS.Core.Models;
 using IMS.DataAccess.FormEmployeeData;
 using System;
+using System.Runtime.Remoting.Messaging;
 using System.Windows;
 using System.Windows.Forms;
 
@@ -48,7 +49,7 @@ namespace IMS.UserInterface.Employees
         private void PopulateComboBoxes()
         {
             comboBxRole.DataSource = Enum.GetValues(typeof(Roles));
-            comboBxAccountState.DataSource = Enum.GetValues(typeof(AccountState));
+            comboBxAccountState.DataSource = Enum.GetValues(typeof(AccountStates));
         }
 
         private void btnEmployeesNewUpdate_Click(object sender, EventArgs e)
@@ -166,9 +167,9 @@ namespace IMS.UserInterface.Employees
                 comboBxRole.SelectedIndex = (int)role - 1;
 
 
-                comboBxAccountState.DataSource = Enum.GetValues(typeof(AccountState));
+                comboBxAccountState.DataSource = Enum.GetValues(typeof(AccountStates));
                 var acStateTxt = dgvRow.Cells[8].Value.ToString();
-                Enum.TryParse(acStateTxt, out AccountState state);
+                Enum.TryParse(acStateTxt, out AccountStates state);
                 comboBxAccountState.SelectedIndex = (int)state - 1;
 
 
@@ -294,8 +295,16 @@ namespace IMS.UserInterface.Employees
 
             bool validData = EmployeeInputDataValidator.ValidateUpdate(data);
 
+            bool adminLockOut = PreventAdminlockOut(data.Account.RoleId, data.Account.AccountStateId);
 
-            if (validData)
+            if(adminLockOut)
+            {
+                MessageBox.Show("Please add another admin to system to disable the selected admin", "Operation failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            if(validData)
             {
                 _db.UpdateExistingEmployee(data);
                 dGVEmployees.DataSource = _db.GetAllEmployeesFromDatabase();
@@ -333,6 +342,19 @@ namespace IMS.UserInterface.Employees
 
         }
 
-        
+        private bool PreventAdminlockOut(int roleId,int accountStateId)
+        {
+            bool causeAdminLockOut=false;
+
+            if (roleId == (int)Roles.Admin && (accountStateId==(int)AccountStates.Block || accountStateId==(int)AccountStates.Disable))
+                causeAdminLockOut = _db.CheckForAdminLockOut();
+
+            if (causeAdminLockOut == true)
+                return true;
+            else
+                return false;
+        }
+
+
     }
 }

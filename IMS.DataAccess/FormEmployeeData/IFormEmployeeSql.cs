@@ -10,5 +10,7 @@ namespace IMS.DataAccess.FormEmployeeData
         List<EmployeeDataGridVM> GetAllEmployeesFromDatabase();
         void UpdateExistingEmployee(EmployeeDetailsUpdateModel data);
         bool usernameTaken(string username);
+
+        bool CheckForAdminLockOut();
     }
 }
