@@ -19,7 +19,7 @@ namespace IMS.Core.Models
 
         public string SupplierName { get; set; }
 
-        public int CategoryId { get; set; }
+        public string CategoryName { get; set; }
 
         public int ProductStateId { get; set; }
     }

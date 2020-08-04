@@ -191,7 +191,7 @@ namespace IMS.UserInterface.Product
                 Price=double.TryParse(txtBxPurchasePrice.Text,out double ValidPrice)?ValidPrice:(double?)null,
                 Warrenty=int.TryParse(txtBxProductWarrenty.Text,out int ValidWarrenty)? ValidWarrenty : (int?)null,
                 SupplierName = comboBxlProductSupplier.SelectedValue.ToString(),
-                CategoryId=comboBxlblProductCategory.SelectedIndex +1,
+                CategoryName=comboBxlblProductCategory.SelectedValue.ToString(),
                 ProductStateId=comboBxProductState.SelectedIndex + 1
             };
             bool validData = ProductInputDataValidator.ValidateAdd(data);
@@ -216,7 +216,7 @@ namespace IMS.UserInterface.Product
                 Price = double.TryParse(txtBxPurchasePrice.Text, out double ValidPrice) ? ValidPrice : (double?)null,
                 Warrenty = int.TryParse(txtBxProductWarrenty.Text, out int ValidWarrenty) ? ValidWarrenty : (int?)null,
                 SupplierName = comboBxlProductSupplier.SelectedValue.ToString(),
-                CategoryId = comboBxlblProductCategory.SelectedIndex + 1,
+                CategoryName = comboBxlblProductCategory.SelectedValue.ToString(),
                 ProductStateId = comboBxProductState.SelectedIndex + 1
             };
 

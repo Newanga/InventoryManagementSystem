@@ -56,7 +56,11 @@ namespace IMS.DataAccess.FormProductData
         {
             string sql = @"Select Id from dbo.supplier where Name=@Name;";
 
-            var id = _db.LoadData<IdLookUpModel, dynamic>(sql, new {Name=data.SupplierName }).First().Id;
+            var supplierId = _db.LoadData<IdLookUpModel, dynamic>(sql, new { Name = data.SupplierName }).First().Id;
+
+            sql = "select Id from dbo.Category where Name=@Name";
+
+            var categoryId = _db.LoadData<IdLookUpModel, dynamic>(sql, new { Name = data.CategoryName }).First().Id;
 
 
 
@@ -68,19 +72,26 @@ namespace IMS.DataAccess.FormProductData
                 Description = data.Description,
                 Price = data.Price,
                 Warrenty = data.Warrenty,
-                SupplierId = id,
-                CategoryId = data.CategoryId,
+                SupplierId = supplierId,
+                CategoryId = categoryId,
                 ProductStateId = data.ProductStateId
             } );
         }
 
         public void UpdateExistingProduct(ProductFullModel data)
         {
+
+
+
             string sql = @"Select Id from dbo.supplier where Name=@Name;";
 
-            var id = _db.LoadData<IdLookUpModel, dynamic>(sql, new { Name = data.SupplierName }).First().Id;
+            var supplierId = _db.LoadData<IdLookUpModel, dynamic>(sql, new { Name = data.SupplierName }).First().Id;
 
-             sql =@"Update dbo.Product set
+            sql = "select Id from dbo.Category where Name=@Name";
+
+            var categoryId = _db.LoadData<IdLookUpModel, dynamic>(sql, new { Name = data.CategoryName }).First().Id;
+
+            sql =@"Update dbo.Product set
                             Name=@Name,
                             Description=@Description,
                             Price=@Price,
@@ -96,8 +107,8 @@ namespace IMS.DataAccess.FormProductData
                 Description=data.Description,
                 Price=data.Price,
                 Warrenty=data.Warrenty,
-                SupplierId=id,
-                CategoryId=data.CategoryId,
+                SupplierId= supplierId,
+                CategoryId= categoryId,
                 ProductStateId=data.ProductStateId
             });
         }
