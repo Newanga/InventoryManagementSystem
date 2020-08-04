@@ -111,6 +111,7 @@
             this.dGVInventory.AllowUserToResizeRows = false;
             this.dGVInventory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dGVInventory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGVInventory.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dGVInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVInventory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -133,7 +134,6 @@
             this.ProductId.HeaderText = "Id";
             this.ProductId.Name = "ProductId";
             this.ProductId.ReadOnly = true;
-            this.ProductId.Width = 205;
             // 
             // SupplierName
             // 
@@ -141,7 +141,6 @@
             this.SupplierName.HeaderText = "SupliierName";
             this.SupplierName.Name = "SupplierName";
             this.SupplierName.ReadOnly = true;
-            this.SupplierName.Width = 205;
             // 
             // ProductName
             // 
@@ -149,7 +148,6 @@
             this.ProductName.HeaderText = "ProductName";
             this.ProductName.Name = "ProductName";
             this.ProductName.ReadOnly = true;
-            this.ProductName.Width = 204;
             // 
             // Available
             // 
@@ -157,7 +155,6 @@
             this.Available.HeaderText = "Available";
             this.Available.Name = "Available";
             this.Available.ReadOnly = true;
-            this.Available.Width = 205;
             // 
             // DateAdded
             // 
@@ -165,7 +162,6 @@
             this.DateAdded.HeaderText = "DateAdded";
             this.DateAdded.Name = "DateAdded";
             this.DateAdded.ReadOnly = true;
-            this.DateAdded.Width = 86;
             // 
             // comboBoxSupplier
             // 

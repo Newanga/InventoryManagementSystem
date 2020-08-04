@@ -36,14 +36,14 @@
             this.txtBxCategoryName = new System.Windows.Forms.TextBox();
             this.txtBxCategoryDescription = new System.Windows.Forms.TextBox();
             this.dGVCategory = new System.Windows.Forms.DataGridView();
-            this.CategoryId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CategoryDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCategoryAdd = new System.Windows.Forms.Button();
             this.btnCategoryEdit = new System.Windows.Forms.Button();
             this.btnCategoryReset = new System.Windows.Forms.Button();
             this.btnCategoryExistingUpdate = new System.Windows.Forms.Button();
             this.btnCategoryNewUpdate = new System.Windows.Forms.Button();
+            this.CategoryId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CategoryDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dGVCategory)).BeginInit();
             this.SuspendLayout();
             // 
@@ -124,6 +124,7 @@
             this.dGVCategory.AllowUserToOrderColumns = true;
             this.dGVCategory.AllowUserToResizeRows = false;
             this.dGVCategory.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.dGVCategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGVCategory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dGVCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -138,30 +139,6 @@
             this.dGVCategory.Size = new System.Drawing.Size(978, 218);
             this.dGVCategory.TabIndex = 4;
             this.dGVCategory.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVCategory_CellDoubleClick);
-            // 
-            // CategoryId
-            // 
-            this.CategoryId.DataPropertyName = "Id";
-            this.CategoryId.HeaderText = "CategoryId";
-            this.CategoryId.Name = "CategoryId";
-            this.CategoryId.ReadOnly = true;
-            this.CategoryId.Width = 83;
-            // 
-            // CategoryName
-            // 
-            this.CategoryName.DataPropertyName = "Name";
-            this.CategoryName.HeaderText = "CategoryName";
-            this.CategoryName.Name = "CategoryName";
-            this.CategoryName.ReadOnly = true;
-            this.CategoryName.Width = 102;
-            // 
-            // CategoryDescription
-            // 
-            this.CategoryDescription.DataPropertyName = "Description";
-            this.CategoryDescription.HeaderText = "CategoryDescription";
-            this.CategoryDescription.Name = "CategoryDescription";
-            this.CategoryDescription.ReadOnly = true;
-            this.CategoryDescription.Width = 127;
             // 
             // btnCategoryAdd
             // 
@@ -216,6 +193,27 @@
             this.btnCategoryNewUpdate.Text = "Update";
             this.btnCategoryNewUpdate.UseVisualStyleBackColor = true;
             this.btnCategoryNewUpdate.Click += new System.EventHandler(this.btnCategoryNewUpdate_Click);
+            // 
+            // CategoryId
+            // 
+            this.CategoryId.DataPropertyName = "Id";
+            this.CategoryId.HeaderText = "CategoryId";
+            this.CategoryId.Name = "CategoryId";
+            this.CategoryId.ReadOnly = true;
+            // 
+            // CategoryName
+            // 
+            this.CategoryName.DataPropertyName = "Name";
+            this.CategoryName.HeaderText = "CategoryName";
+            this.CategoryName.Name = "CategoryName";
+            this.CategoryName.ReadOnly = true;
+            // 
+            // CategoryDescription
+            // 
+            this.CategoryDescription.DataPropertyName = "Description";
+            this.CategoryDescription.HeaderText = "CategoryDescription";
+            this.CategoryDescription.Name = "CategoryDescription";
+            this.CategoryDescription.ReadOnly = true;
             // 
             // FormCategory
             // 
