@@ -129,7 +129,7 @@
             this.txtBxSupplierId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtBxSupplierId.Location = new System.Drawing.Point(227, 31);
             this.txtBxSupplierId.Name = "txtBxSupplierId";
-            this.txtBxSupplierId.Size = new System.Drawing.Size(199, 22);
+            this.txtBxSupplierId.Size = new System.Drawing.Size(256, 22);
             this.txtBxSupplierId.TabIndex = 18;
             // 
             // lblSupplierId
@@ -149,7 +149,7 @@
             this.txtBxSupplierName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtBxSupplierName.Location = new System.Drawing.Point(227, 71);
             this.txtBxSupplierName.Name = "txtBxSupplierName";
-            this.txtBxSupplierName.Size = new System.Drawing.Size(199, 22);
+            this.txtBxSupplierName.Size = new System.Drawing.Size(256, 22);
             this.txtBxSupplierName.TabIndex = 25;
             // 
             // lblSupplierName
@@ -166,7 +166,7 @@
             // 
             this.lblSupplierDescription.AutoSize = true;
             this.lblSupplierDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.lblSupplierDescription.Location = new System.Drawing.Point(32, 119);
+            this.lblSupplierDescription.Location = new System.Drawing.Point(32, 122);
             this.lblSupplierDescription.Name = "lblSupplierDescription";
             this.lblSupplierDescription.Size = new System.Drawing.Size(140, 18);
             this.lblSupplierDescription.TabIndex = 19;
@@ -290,9 +290,11 @@
             // 
             this.txtBxSupplierDescription.Enabled = false;
             this.txtBxSupplierDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.txtBxSupplierDescription.Location = new System.Drawing.Point(227, 119);
+            this.txtBxSupplierDescription.Location = new System.Drawing.Point(227, 106);
+            this.txtBxSupplierDescription.Multiline = true;
             this.txtBxSupplierDescription.Name = "txtBxSupplierDescription";
-            this.txtBxSupplierDescription.Size = new System.Drawing.Size(196, 22);
+            this.txtBxSupplierDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtBxSupplierDescription.Size = new System.Drawing.Size(256, 51);
             this.txtBxSupplierDescription.TabIndex = 22;
             // 
             // contextMenuStrip1

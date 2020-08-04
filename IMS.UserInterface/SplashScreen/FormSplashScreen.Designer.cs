@@ -66,25 +66,26 @@
             this.lblGreeting.AccessibleRole = System.Windows.Forms.AccessibleRole.SplitButton;
             this.lblGreeting.AutoSize = true;
             this.lblGreeting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.lblGreeting.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGreeting.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGreeting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.lblGreeting.Location = new System.Drawing.Point(347, 18);
+            this.lblGreeting.Location = new System.Drawing.Point(518, 9);
             this.lblGreeting.Name = "lblGreeting";
-            this.lblGreeting.Size = new System.Drawing.Size(126, 31);
+            this.lblGreeting.Size = new System.Drawing.Size(137, 33);
             this.lblGreeting.TabIndex = 2;
             this.lblGreeting.Text = "Welcome";
             // 
             // lblActiveUserFirstName
             // 
             this.lblActiveUserFirstName.AccessibleRole = System.Windows.Forms.AccessibleRole.SplitButton;
-            this.lblActiveUserFirstName.AutoSize = true;
-            this.lblActiveUserFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblActiveUserFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblActiveUserFirstName.ForeColor = System.Drawing.Color.Gray;
-            this.lblActiveUserFirstName.Location = new System.Drawing.Point(505, 50);
+            this.lblActiveUserFirstName.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblActiveUserFirstName.Location = new System.Drawing.Point(479, 60);
             this.lblActiveUserFirstName.Name = "lblActiveUserFirstName";
-            this.lblActiveUserFirstName.Size = new System.Drawing.Size(214, 25);
+            this.lblActiveUserFirstName.Size = new System.Drawing.Size(214, 34);
             this.lblActiveUserFirstName.TabIndex = 3;
             this.lblActiveUserFirstName.Text = "ActiveUserFirstName";
+            this.lblActiveUserFirstName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // timer1
             // 
@@ -106,7 +107,7 @@
             this.circularProgressBar1.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(35)))), ((int)(((byte)(49)))));
             this.circularProgressBar1.InnerMargin = 2;
             this.circularProgressBar1.InnerWidth = -1;
-            this.circularProgressBar1.Location = new System.Drawing.Point(493, 133);
+            this.circularProgressBar1.Location = new System.Drawing.Point(505, 134);
             this.circularProgressBar1.MarqueeAnimationSpeed = 2000;
             this.circularProgressBar1.Name = "circularProgressBar1";
             this.circularProgressBar1.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(44)))), ((int)(((byte)(66)))));
