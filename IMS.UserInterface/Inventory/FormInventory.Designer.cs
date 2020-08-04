@@ -95,14 +95,20 @@
             this.txtBxOrderId.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBxOrderId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtBxOrderId.Location = new System.Drawing.Point(463, 41);
+            this.txtBxOrderId.MaxLength = 4;
             this.txtBxOrderId.Name = "txtBxOrderId";
+            this.txtBxOrderId.ShortcutsEnabled = false;
             this.txtBxOrderId.Size = new System.Drawing.Size(125, 22);
             this.txtBxOrderId.TabIndex = 5;
+            this.txtBxOrderId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBxOrderId_KeyPress);
+            this.txtBxOrderId.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBxOrderId_KeyUp);
             // 
             // dGVInventory
             // 
             this.dGVInventory.AllowUserToAddRows = false;
             this.dGVInventory.AllowUserToDeleteRows = false;
+            this.dGVInventory.AllowUserToResizeColumns = false;
+            this.dGVInventory.AllowUserToResizeRows = false;
             this.dGVInventory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dGVInventory.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -117,6 +123,7 @@
             this.dGVInventory.Name = "dGVInventory";
             this.dGVInventory.ReadOnly = true;
             this.dGVInventory.RowHeadersVisible = false;
+            this.dGVInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGVInventory.Size = new System.Drawing.Size(908, 228);
             this.dGVInventory.TabIndex = 6;
             // 

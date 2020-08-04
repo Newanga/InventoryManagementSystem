@@ -62,6 +62,8 @@
             // 
             this.dGVSupplier.AllowUserToAddRows = false;
             this.dGVSupplier.AllowUserToDeleteRows = false;
+            this.dGVSupplier.AllowUserToResizeColumns = false;
+            this.dGVSupplier.AllowUserToResizeRows = false;
             this.dGVSupplier.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dGVSupplier.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGVSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -77,6 +79,7 @@
             this.dGVSupplier.ReadOnly = true;
             this.dGVSupplier.RowHeadersVisible = false;
             this.dGVSupplier.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.dGVSupplier.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGVSupplier.Size = new System.Drawing.Size(978, 218);
             this.dGVSupplier.TabIndex = 17;
             this.dGVSupplier.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVSupplier_CellDoubleClick);
@@ -129,6 +132,7 @@
             this.txtBxSupplierId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtBxSupplierId.Location = new System.Drawing.Point(227, 31);
             this.txtBxSupplierId.Name = "txtBxSupplierId";
+            this.txtBxSupplierId.ShortcutsEnabled = false;
             this.txtBxSupplierId.Size = new System.Drawing.Size(256, 22);
             this.txtBxSupplierId.TabIndex = 18;
             // 
@@ -148,6 +152,7 @@
             this.txtBxSupplierName.Enabled = false;
             this.txtBxSupplierName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtBxSupplierName.Location = new System.Drawing.Point(227, 71);
+            this.txtBxSupplierName.MaxLength = 490;
             this.txtBxSupplierName.Name = "txtBxSupplierName";
             this.txtBxSupplierName.Size = new System.Drawing.Size(256, 22);
             this.txtBxSupplierName.TabIndex = 25;
@@ -177,9 +182,12 @@
             this.txtBxSupplierphoneNo.Enabled = false;
             this.txtBxSupplierphoneNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtBxSupplierphoneNo.Location = new System.Drawing.Point(728, 32);
+            this.txtBxSupplierphoneNo.MaxLength = 11;
             this.txtBxSupplierphoneNo.Name = "txtBxSupplierphoneNo";
-            this.txtBxSupplierphoneNo.Size = new System.Drawing.Size(199, 22);
+            this.txtBxSupplierphoneNo.ShortcutsEnabled = false;
+            this.txtBxSupplierphoneNo.Size = new System.Drawing.Size(215, 22);
             this.txtBxSupplierphoneNo.TabIndex = 18;
+            this.txtBxSupplierphoneNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBxSupplierphoneNo_KeyPress);
             // 
             // lblSupplierPhoneNo
             // 
@@ -195,16 +203,19 @@
             // 
             this.txtBxSupplierAddress.Enabled = false;
             this.txtBxSupplierAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.txtBxSupplierAddress.Location = new System.Drawing.Point(728, 75);
+            this.txtBxSupplierAddress.Location = new System.Drawing.Point(728, 106);
+            this.txtBxSupplierAddress.MaxLength = 240;
+            this.txtBxSupplierAddress.Multiline = true;
             this.txtBxSupplierAddress.Name = "txtBxSupplierAddress";
-            this.txtBxSupplierAddress.Size = new System.Drawing.Size(199, 22);
+            this.txtBxSupplierAddress.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtBxSupplierAddress.Size = new System.Drawing.Size(215, 51);
             this.txtBxSupplierAddress.TabIndex = 18;
             // 
             // lblSupplierAddress
             // 
             this.lblSupplierAddress.AutoSize = true;
             this.lblSupplierAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.lblSupplierAddress.Location = new System.Drawing.Point(588, 75);
+            this.lblSupplierAddress.Location = new System.Drawing.Point(588, 122);
             this.lblSupplierAddress.Name = "lblSupplierAddress";
             this.lblSupplierAddress.Size = new System.Drawing.Size(119, 18);
             this.lblSupplierAddress.TabIndex = 19;
@@ -214,7 +225,7 @@
             // 
             this.lblSupplierState.AutoSize = true;
             this.lblSupplierState.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.lblSupplierState.Location = new System.Drawing.Point(608, 123);
+            this.lblSupplierState.Location = new System.Drawing.Point(608, 71);
             this.lblSupplierState.Name = "lblSupplierState";
             this.lblSupplierState.Size = new System.Drawing.Size(99, 18);
             this.lblSupplierState.TabIndex = 19;
@@ -226,9 +237,9 @@
             this.combobxSupplierState.Enabled = false;
             this.combobxSupplierState.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.combobxSupplierState.FormattingEnabled = true;
-            this.combobxSupplierState.Location = new System.Drawing.Point(728, 122);
+            this.combobxSupplierState.Location = new System.Drawing.Point(728, 71);
             this.combobxSupplierState.Name = "combobxSupplierState";
-            this.combobxSupplierState.Size = new System.Drawing.Size(199, 24);
+            this.combobxSupplierState.Size = new System.Drawing.Size(215, 24);
             this.combobxSupplierState.TabIndex = 20;
             // 
             // btnSupplierAdd
@@ -291,6 +302,7 @@
             this.txtBxSupplierDescription.Enabled = false;
             this.txtBxSupplierDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtBxSupplierDescription.Location = new System.Drawing.Point(227, 106);
+            this.txtBxSupplierDescription.MaxLength = 1990;
             this.txtBxSupplierDescription.Multiline = true;
             this.txtBxSupplierDescription.Name = "txtBxSupplierDescription";
             this.txtBxSupplierDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;

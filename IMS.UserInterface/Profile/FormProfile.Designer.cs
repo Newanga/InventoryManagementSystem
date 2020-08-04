@@ -48,6 +48,7 @@
             // 
             // lblFirstName
             // 
+            this.lblFirstName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblFirstName.AutoSize = true;
             this.lblFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblFirstName.Location = new System.Drawing.Point(74, 69);
@@ -58,6 +59,7 @@
             // 
             // txtBxFirstName
             // 
+            this.txtBxFirstName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBxFirstName.Enabled = false;
             this.txtBxFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.txtBxFirstName.Location = new System.Drawing.Point(185, 69);
@@ -67,6 +69,7 @@
             // 
             // lblLastName
             // 
+            this.lblLastName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblLastName.AutoSize = true;
             this.lblLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblLastName.Location = new System.Drawing.Point(80, 118);
@@ -77,6 +80,7 @@
             // 
             // txtBxLastName
             // 
+            this.txtBxLastName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBxLastName.Enabled = false;
             this.txtBxLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.txtBxLastName.Location = new System.Drawing.Point(185, 115);
@@ -86,6 +90,7 @@
             // 
             // lblDOB
             // 
+            this.lblDOB.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDOB.AutoSize = true;
             this.lblDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblDOB.Location = new System.Drawing.Point(62, 160);
@@ -96,6 +101,7 @@
             // 
             // txtBxDOB
             // 
+            this.txtBxDOB.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBxDOB.Enabled = false;
             this.txtBxDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.txtBxDOB.Location = new System.Drawing.Point(185, 157);
@@ -105,6 +111,7 @@
             // 
             // lblStartDate
             // 
+            this.lblStartDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblStartDate.AutoSize = true;
             this.lblStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblStartDate.Location = new System.Drawing.Point(81, 209);
@@ -115,6 +122,7 @@
             // 
             // txtBxStartDate
             // 
+            this.txtBxStartDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBxStartDate.Enabled = false;
             this.txtBxStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.txtBxStartDate.Location = new System.Drawing.Point(185, 203);
@@ -124,6 +132,7 @@
             // 
             // lblRole
             // 
+            this.lblRole.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblRole.AutoSize = true;
             this.lblRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblRole.Location = new System.Drawing.Point(116, 250);
@@ -134,6 +143,7 @@
             // 
             // txtBxRole
             // 
+            this.txtBxRole.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBxRole.Enabled = false;
             this.txtBxRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.txtBxRole.Location = new System.Drawing.Point(185, 247);
@@ -143,6 +153,7 @@
             // 
             // lblEmailAddress
             // 
+            this.lblEmailAddress.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblEmailAddress.AutoSize = true;
             this.lblEmailAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblEmailAddress.Location = new System.Drawing.Point(490, 157);
@@ -153,6 +164,7 @@
             // 
             // txtBxEmailAddress
             // 
+            this.txtBxEmailAddress.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBxEmailAddress.Enabled = false;
             this.txtBxEmailAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.txtBxEmailAddress.Location = new System.Drawing.Point(611, 151);
@@ -162,6 +174,7 @@
             // 
             // lblUsername
             // 
+            this.lblUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblUsername.Location = new System.Drawing.Point(516, 206);
@@ -172,6 +185,7 @@
             // 
             // txtBxUsername
             // 
+            this.txtBxUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBxUsername.Enabled = false;
             this.txtBxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.txtBxUsername.Location = new System.Drawing.Point(611, 206);
@@ -181,6 +195,7 @@
             // 
             // lblAddress
             // 
+            this.lblAddress.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblAddress.AutoSize = true;
             this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblAddress.Location = new System.Drawing.Point(93, 289);
@@ -191,6 +206,7 @@
             // 
             // txtBxAddress
             // 
+            this.txtBxAddress.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBxAddress.Enabled = false;
             this.txtBxAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.txtBxAddress.Location = new System.Drawing.Point(185, 286);

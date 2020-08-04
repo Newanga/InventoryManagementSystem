@@ -141,6 +141,7 @@
             this.Controls.Add(this.lblGreeting);
             this.Controls.Add(this.pnlLeftContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormSplashScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormSplashScreen";

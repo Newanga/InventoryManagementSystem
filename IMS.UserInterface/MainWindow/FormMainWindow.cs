@@ -27,7 +27,7 @@ namespace IMS.UserInterface
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             _db = db;
             Authorization();
-            SetCurrentUserDeatils();
+            SetCurrentUserDetails();
         }
 
         #region UI/UX Improvemnet Events
@@ -179,7 +179,7 @@ namespace IMS.UserInterface
             Cache.RoleId = null;
         }
 
-        private void SetCurrentUserDeatils()
+        private void SetCurrentUserDetails()
         {
             lblRole.Text = ((Roles)Cache.RoleId).ToString();
             lblFirstName.Text = Cache.FirstName;
@@ -192,6 +192,7 @@ namespace IMS.UserInterface
 
             if(role==Roles.Admin)
             {
+                btnDashboard.Enabled = true;
                 btnProfile.Enabled = true;
                 btnInventory.Enabled = true;
                 btnSuppliers.Enabled = true;
@@ -199,9 +200,11 @@ namespace IMS.UserInterface
                 btnCategories.Enabled = true;
                 btnOrders.Enabled = true;
                 btnProducts.Enabled = true;
+                btnProfile.Enabled = true;
             }
             if (role == Roles.StockManager)
             {
+                btnDashboard.Enabled = false;
                 btnProfile.Enabled = true;
                 btnInventory.Enabled = true;
                 btnSuppliers.Enabled = false;
@@ -209,9 +212,11 @@ namespace IMS.UserInterface
                 btnCategories.Enabled = true;
                 btnOrders.Enabled = true;
                 btnProducts.Enabled = false;
+                btnProfile.Enabled = true;
             }
             if (role == Roles.StockKeeper)
             {
+                btnDashboard.Enabled = false;
                 btnProfile.Enabled = true;
                 btnInventory.Enabled = true;
                 btnSuppliers.Enabled = false;
@@ -219,6 +224,7 @@ namespace IMS.UserInterface
                 btnCategories.Enabled = false;
                 btnOrders.Enabled = false;
                 btnProducts.Enabled = false;
+                btnProfile.Enabled = true;
             }
 
 

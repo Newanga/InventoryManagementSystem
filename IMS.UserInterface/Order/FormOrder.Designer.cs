@@ -223,8 +223,11 @@
             this.txtBxSpecialNote.Enabled = false;
             this.txtBxSpecialNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBxSpecialNote.Location = new System.Drawing.Point(419, 104);
+            this.txtBxSpecialNote.MaxLength = 1990;
+            this.txtBxSpecialNote.Multiline = true;
             this.txtBxSpecialNote.Name = "txtBxSpecialNote";
-            this.txtBxSpecialNote.Size = new System.Drawing.Size(128, 22);
+            this.txtBxSpecialNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtBxSpecialNote.Size = new System.Drawing.Size(144, 46);
             this.txtBxSpecialNote.TabIndex = 2;
             // 
             // lblOrderState
@@ -353,10 +356,12 @@
             this.txtBxOrderItemQuantity.Enabled = false;
             this.txtBxOrderItemQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtBxOrderItemQuantity.Location = new System.Drawing.Point(803, 70);
+            this.txtBxOrderItemQuantity.MaxLength = 2;
             this.txtBxOrderItemQuantity.Name = "txtBxOrderItemQuantity";
             this.txtBxOrderItemQuantity.Size = new System.Drawing.Size(121, 22);
             this.txtBxOrderItemQuantity.TabIndex = 2;
             this.txtBxOrderItemQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBxOrderItemQuantity_KeyPress);
+            this.txtBxOrderItemQuantity.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBxOrderItemQuantity_KeyUp);
             // 
             // lblProductPrice
             // 

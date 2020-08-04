@@ -45,7 +45,7 @@ namespace IMS.UserInterface.Product
 
         private void btnProductAdd_Click(object sender, EventArgs e)
         {
-            if(data.Suppliers.Count<1)
+            if (data.Suppliers.Count < 1)
             {
                 MessageBox.Show("Please Add suppliers to Database before adding a product.", "Supplier unavailable", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnProductReset_Click(null, RoutedEventArgs.Empty);
@@ -121,6 +121,77 @@ namespace IMS.UserInterface.Product
             btnProductReset.Enabled = false;
         }
 
+        private void btnProductEdit_Click(object sender, EventArgs e)
+        {
+            btnProductAdd.Enabled = false;
+            btnProductReset.Enabled = true;
+            btnProductEdit.Enabled = false;
+
+            txtBxProductName.Enabled = true;
+            txtBxProductDescription.Enabled = true;
+            txtBxProductWarrenty.Enabled = true;
+            txtBxPurchasePrice.Enabled = true;
+
+            btnProductNewUpdate.Visible = false;
+            btnProductExistingUpdate.Visible = true;
+            btnProductExistingUpdate.Enabled = true;
+
+            comboBxlblProductCategory.Enabled = true;
+            comboBxlProductSupplier.Enabled = true;
+            comboBxProductState.Enabled = true;
+
+
+        }
+
+        private void btnProductNewUpdate_Click(object sender, EventArgs e)
+        {
+            ProductNewModel data = new ProductNewModel
+            {
+                Name = txtBxProductName.Text,
+                Description = txtBxProductDescription.Text,
+                Price = double.TryParse(txtBxPurchasePrice.Text, out double ValidPrice) ? ValidPrice : (double?)null,
+                Warrenty = int.TryParse(txtBxProductWarrenty.Text, out int ValidWarrenty) ? ValidWarrenty : (int?)null,
+                SupplierName = comboBxlProductSupplier.SelectedValue.ToString(),
+                CategoryName = comboBxlblProductCategory.SelectedValue.ToString(),
+                ProductStateId = comboBxProductState.SelectedIndex + 1
+            };
+            bool validData = ProductInputDataValidator.ValidateAdd(data);
+
+            if (validData)
+            {
+                _db.CreateNewProduct(data);
+                dGVProducts.DataSource = _db.GetAllProductsFromDatabase();
+                MessageBox.Show("New Product Added to Database", "Operation Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnProductReset_Click(null, RoutedEventArgs.Empty);
+            }
+        }
+
+        private void btnProductExistingUpdate_Click(object sender, EventArgs e)
+        {
+
+            ProductFullModel data = new ProductFullModel
+            {
+                Id = int.Parse(txtBxProductId.Text),
+                Name = txtBxProductName.Text,
+                Description = txtBxProductDescription.Text,
+                Price = double.TryParse(txtBxPurchasePrice.Text, out double ValidPrice) ? ValidPrice : (double?)null,
+                Warrenty = int.TryParse(txtBxProductWarrenty.Text, out int ValidWarrenty) ? ValidWarrenty : (int?)null,
+                SupplierName = comboBxlProductSupplier.SelectedValue.ToString(),
+                CategoryName = comboBxlblProductCategory.SelectedValue.ToString(),
+                ProductStateId = comboBxProductState.SelectedIndex + 1
+            };
+
+            bool validData = ProductInputDataValidator.ValidateUpdate(data);
+
+            if (validData)
+            {
+                _db.UpdateExistingProduct(data);
+                dGVProducts.DataSource = _db.GetAllProductsFromDatabase();
+                MessageBox.Show("Product Updated Successfully!", "Operation Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnProductReset_Click(null, RoutedEventArgs.Empty);
+            }
+        }
+
         private void dGVProducts_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (btnProductAdd.Enabled == false)
@@ -160,77 +231,8 @@ namespace IMS.UserInterface.Product
             btnProductReset.Enabled = true;
         }
 
-        private void btnProductEdit_Click(object sender, EventArgs e)
-        {
-            btnProductAdd.Enabled = false;
-            btnProductReset.Enabled = true;
-            btnProductEdit.Enabled = false;
 
-            txtBxProductName.Enabled = true;
-            txtBxProductDescription.Enabled = true;
-            txtBxProductWarrenty.Enabled = true;
-            txtBxPurchasePrice.Enabled = true;
-
-            btnProductNewUpdate.Visible = false;
-            btnProductExistingUpdate.Visible = true;
-            btnProductExistingUpdate.Enabled = true;
-
-            comboBxlblProductCategory.Enabled = true;
-            comboBxlProductSupplier.Enabled = true;
-            comboBxProductState.Enabled = true;
-
-
-        }
-
-        private void btnProductNewUpdate_Click(object sender, EventArgs e)
-        {
-            ProductNewModel data = new ProductNewModel
-            {
-                Name = txtBxProductName.Text,
-                Description = txtBxProductDescription.Text,
-                Price=double.TryParse(txtBxPurchasePrice.Text,out double ValidPrice)?ValidPrice:(double?)null,
-                Warrenty=int.TryParse(txtBxProductWarrenty.Text,out int ValidWarrenty)? ValidWarrenty : (int?)null,
-                SupplierName = comboBxlProductSupplier.SelectedValue.ToString(),
-                CategoryName=comboBxlblProductCategory.SelectedValue.ToString(),
-                ProductStateId=comboBxProductState.SelectedIndex + 1
-            };
-            bool validData = ProductInputDataValidator.ValidateAdd(data);
-
-            if (validData)
-            {
-                _db.CreateNewProduct(data);
-                dGVProducts.DataSource = _db.GetAllProductsFromDatabase();
-                MessageBox.Show("New Product Added to Database", "Operation Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                btnProductReset_Click(null, RoutedEventArgs.Empty);
-            }
-        }
-
-        private void btnProductExistingUpdate_Click(object sender, EventArgs e)
-        {
-
-            ProductFullModel data = new ProductFullModel
-            {
-                Id=int.Parse(txtBxProductId.Text),
-                Name = txtBxProductName.Text,
-                Description = txtBxProductDescription.Text,
-                Price = double.TryParse(txtBxPurchasePrice.Text, out double ValidPrice) ? ValidPrice : (double?)null,
-                Warrenty = int.TryParse(txtBxProductWarrenty.Text, out int ValidWarrenty) ? ValidWarrenty : (int?)null,
-                SupplierName = comboBxlProductSupplier.SelectedValue.ToString(),
-                CategoryName = comboBxlblProductCategory.SelectedValue.ToString(),
-                ProductStateId = comboBxProductState.SelectedIndex + 1
-            };
-
-            bool validData = ProductInputDataValidator.ValidateUpdate(data);
-
-            if (validData)
-            {
-                _db.UpdateExistingProduct(data);
-                dGVProducts.DataSource = _db.GetAllProductsFromDatabase();
-                MessageBox.Show("Product Updated Successfully!", "Operation Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                btnProductReset_Click(null, RoutedEventArgs.Empty);
-            }
-        }
-
+        #region Data entry validation
 
         private void txtBxProductWarrenty_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -239,6 +241,8 @@ namespace IMS.UserInterface.Product
                 MessageBox.Show("Please enter only numbers.", "Invalid Character", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 e.Handled = true;
             }
+
+
         }
 
         private void txtBxPurchasePrice_KeyPress(object sender, KeyPressEventArgs e)
@@ -260,5 +264,45 @@ namespace IMS.UserInterface.Product
                 e.Handled = true;
             }
         }
+
+        private void txtBxProductWarrenty_KeyUp(object sender, KeyEventArgs e)
+        {
+
+            int number;
+
+            if (txtBxProductWarrenty.TextLength >= 1 && int.TryParse(txtBxProductWarrenty.Text, out number))
+            {
+                if (number == 0)
+                {
+                    MessageBox.Show("Minimum allowed is 1 months.", "Invalid Warrenty period", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    e.Handled = true;
+                    txtBxProductWarrenty.Clear();
+                }
+
+                if (number > 60)
+                {
+                    MessageBox.Show("Maximum allowed is 60 months.", "Invalid Warrenty period", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    e.Handled = true;
+                    txtBxProductWarrenty.Clear();
+                }
+            }
+        }
+
+        private void txtBxPurchasePrice_KeyUp(object sender, KeyEventArgs e)
+        {
+            int number;
+
+            if (txtBxPurchasePrice.TextLength == 1 && int.TryParse(txtBxPurchasePrice.Text, out number))
+            {
+                if (number == 0)
+                {
+                    MessageBox.Show("Please enter a correct purchase price.", "Invalid purchase Price", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    e.Handled = true;
+                    txtBxPurchasePrice.Clear();
+                }
+            }
+        }
+
+        #endregion
     }
 }

@@ -83,12 +83,35 @@ namespace IMS.UserInterface.Inventory
 
             _db.AddOrderItemsToInventory(data);
 
-            MessageBox.Show("New delivered Order added to inventory", "Operation Scuccessful", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show("New delivered Order added to inventory", "Operation Scuccessful", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LoadInventoryFromDatabase();
 
             txtBxOrderId.Clear();
         }
 
-      
+
+
+        #region Data entry Validation
+        private void txtBxOrderId_KeyPress(object sender, KeyPressEventArgs e)
+        {      
+             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                MessageBox.Show("Please enter only numbers.", "Invalid Character", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Handled = true;
+            }
+        }
+
+        private void txtBxOrderId_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txtBxOrderId.Text.Contains("."))
+            {
+                MessageBox.Show("Invalid Order Id", "Invalid Entry", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtBxOrderId.Clear();
+                e.Handled = true;
+
+            }
+        }
+
+        #endregion
     }
 }

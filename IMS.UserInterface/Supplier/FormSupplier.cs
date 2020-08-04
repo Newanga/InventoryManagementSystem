@@ -186,5 +186,14 @@ namespace IMS.UserInterface.Supplier
                 btnSupplierReset_Click(null, RoutedEventArgs.Empty);
             }
         }
+
+        private void txtBxSupplierphoneNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                MessageBox.Show("Please enter only numbers.", "Invalid Character", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Handled = true;
+            }
+        }
     }
 }

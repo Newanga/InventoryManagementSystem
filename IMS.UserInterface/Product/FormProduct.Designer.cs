@@ -65,7 +65,7 @@
             // 
             this.lblProductId.AutoSize = true;
             this.lblProductId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.lblProductId.Location = new System.Drawing.Point(73, 29);
+            this.lblProductId.Location = new System.Drawing.Point(132, 29);
             this.lblProductId.Name = "lblProductId";
             this.lblProductId.Size = new System.Drawing.Size(71, 18);
             this.lblProductId.TabIndex = 0;
@@ -85,7 +85,7 @@
             // 
             this.lblProductName.AutoSize = true;
             this.lblProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.lblProductName.Location = new System.Drawing.Point(73, 147);
+            this.lblProductName.Location = new System.Drawing.Point(132, 147);
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(104, 18);
             this.lblProductName.TabIndex = 0;
@@ -125,7 +125,7 @@
             // 
             this.lblProductSupplier.AutoSize = true;
             this.lblProductSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.lblProductSupplier.Location = new System.Drawing.Point(73, 63);
+            this.lblProductSupplier.Location = new System.Drawing.Point(132, 63);
             this.lblProductSupplier.Name = "lblProductSupplier";
             this.lblProductSupplier.Size = new System.Drawing.Size(117, 18);
             this.lblProductSupplier.TabIndex = 0;
@@ -135,7 +135,7 @@
             // 
             this.lblProductCategory.AutoSize = true;
             this.lblProductCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.lblProductCategory.Location = new System.Drawing.Point(73, 109);
+            this.lblProductCategory.Location = new System.Drawing.Point(132, 109);
             this.lblProductCategory.Name = "lblProductCategory";
             this.lblProductCategory.Size = new System.Drawing.Size(124, 18);
             this.lblProductCategory.TabIndex = 0;
@@ -145,9 +145,10 @@
             // 
             this.txtBxProductId.Enabled = false;
             this.txtBxProductId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.txtBxProductId.Location = new System.Drawing.Point(240, 28);
+            this.txtBxProductId.Location = new System.Drawing.Point(299, 28);
             this.txtBxProductId.Name = "txtBxProductId";
-            this.txtBxProductId.Size = new System.Drawing.Size(151, 22);
+            this.txtBxProductId.ShortcutsEnabled = false;
+            this.txtBxProductId.Size = new System.Drawing.Size(174, 22);
             this.txtBxProductId.TabIndex = 1;
             // 
             // txtBxPurchasePrice
@@ -155,18 +156,22 @@
             this.txtBxPurchasePrice.Enabled = false;
             this.txtBxPurchasePrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtBxPurchasePrice.Location = new System.Drawing.Point(727, 106);
+            this.txtBxPurchasePrice.MaxLength = 10;
             this.txtBxPurchasePrice.Name = "txtBxPurchasePrice";
+            this.txtBxPurchasePrice.ShortcutsEnabled = false;
             this.txtBxPurchasePrice.Size = new System.Drawing.Size(151, 22);
             this.txtBxPurchasePrice.TabIndex = 1;
             this.txtBxPurchasePrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBxPurchasePrice_KeyPress);
+            this.txtBxPurchasePrice.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBxPurchasePrice_KeyUp);
             // 
             // txtBxProductName
             // 
             this.txtBxProductName.Enabled = false;
             this.txtBxProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.txtBxProductName.Location = new System.Drawing.Point(240, 146);
+            this.txtBxProductName.Location = new System.Drawing.Point(299, 146);
+            this.txtBxProductName.MaxLength = 490;
             this.txtBxProductName.Name = "txtBxProductName";
-            this.txtBxProductName.Size = new System.Drawing.Size(151, 22);
+            this.txtBxProductName.Size = new System.Drawing.Size(174, 22);
             this.txtBxProductName.TabIndex = 1;
             // 
             // txtBxProductWarrenty
@@ -174,16 +179,20 @@
             this.txtBxProductWarrenty.Enabled = false;
             this.txtBxProductWarrenty.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtBxProductWarrenty.Location = new System.Drawing.Point(727, 28);
+            this.txtBxProductWarrenty.MaxLength = 2;
             this.txtBxProductWarrenty.Name = "txtBxProductWarrenty";
+            this.txtBxProductWarrenty.ShortcutsEnabled = false;
             this.txtBxProductWarrenty.Size = new System.Drawing.Size(151, 22);
             this.txtBxProductWarrenty.TabIndex = 1;
             this.txtBxProductWarrenty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBxProductWarrenty_KeyPress);
+            this.txtBxProductWarrenty.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBxProductWarrenty_KeyUp);
             // 
             // txtBxProductDescription
             // 
             this.txtBxProductDescription.Enabled = false;
             this.txtBxProductDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtBxProductDescription.Location = new System.Drawing.Point(727, 147);
+            this.txtBxProductDescription.MaxLength = 1990;
             this.txtBxProductDescription.Multiline = true;
             this.txtBxProductDescription.Name = "txtBxProductDescription";
             this.txtBxProductDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -207,9 +216,9 @@
             this.comboBxlProductSupplier.Enabled = false;
             this.comboBxlProductSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.comboBxlProductSupplier.FormattingEnabled = true;
-            this.comboBxlProductSupplier.Location = new System.Drawing.Point(240, 65);
+            this.comboBxlProductSupplier.Location = new System.Drawing.Point(299, 65);
             this.comboBxlProductSupplier.Name = "comboBxlProductSupplier";
-            this.comboBxlProductSupplier.Size = new System.Drawing.Size(151, 24);
+            this.comboBxlProductSupplier.Size = new System.Drawing.Size(174, 24);
             this.comboBxlProductSupplier.TabIndex = 2;
             // 
             // comboBxlblProductCategory
@@ -218,14 +227,17 @@
             this.comboBxlblProductCategory.Enabled = false;
             this.comboBxlblProductCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.comboBxlblProductCategory.FormattingEnabled = true;
-            this.comboBxlblProductCategory.Location = new System.Drawing.Point(240, 106);
+            this.comboBxlblProductCategory.Location = new System.Drawing.Point(299, 106);
             this.comboBxlblProductCategory.Name = "comboBxlblProductCategory";
-            this.comboBxlblProductCategory.Size = new System.Drawing.Size(151, 24);
+            this.comboBxlblProductCategory.Size = new System.Drawing.Size(174, 24);
             this.comboBxlblProductCategory.TabIndex = 2;
             // 
             // dGVProducts
             // 
             this.dGVProducts.AllowUserToAddRows = false;
+            this.dGVProducts.AllowUserToDeleteRows = false;
+            this.dGVProducts.AllowUserToResizeColumns = false;
+            this.dGVProducts.AllowUserToResizeRows = false;
             this.dGVProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ProductId,
@@ -240,6 +252,7 @@
             this.dGVProducts.Name = "dGVProducts";
             this.dGVProducts.ReadOnly = true;
             this.dGVProducts.RowHeadersVisible = false;
+            this.dGVProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGVProducts.Size = new System.Drawing.Size(938, 174);
             this.dGVProducts.TabIndex = 3;
             this.dGVProducts.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVProducts_CellDoubleClick);

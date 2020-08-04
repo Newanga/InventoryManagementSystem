@@ -98,6 +98,7 @@
             this.txtBxCategoryName.Enabled = false;
             this.txtBxCategoryName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.txtBxCategoryName.Location = new System.Drawing.Point(172, 110);
+            this.txtBxCategoryName.MaxLength = 190;
             this.txtBxCategoryName.Name = "txtBxCategoryName";
             this.txtBxCategoryName.Size = new System.Drawing.Size(230, 23);
             this.txtBxCategoryName.TabIndex = 2;
@@ -109,10 +110,11 @@
             this.txtBxCategoryDescription.Enabled = false;
             this.txtBxCategoryDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.txtBxCategoryDescription.Location = new System.Drawing.Point(593, 54);
+            this.txtBxCategoryDescription.MaxLength = 1990;
             this.txtBxCategoryDescription.Multiline = true;
             this.txtBxCategoryDescription.Name = "txtBxCategoryDescription";
             this.txtBxCategoryDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtBxCategoryDescription.Size = new System.Drawing.Size(339, 79);
+            this.txtBxCategoryDescription.Size = new System.Drawing.Size(370, 79);
             this.txtBxCategoryDescription.TabIndex = 2;
             // 
             // dGVCategory
