@@ -30,7 +30,7 @@ namespace IMS.UserInterface.Supplier
             txtBxSupplierphoneNo.Enabled = true;
 
             combobxSupplierState.Enabled = true;
-            combobxSupplierState.DataSource = Enum.GetValues(typeof(SupplierState));
+            combobxSupplierState.DataSource = Enum.GetValues(typeof(SupplierStates));
 
             btnSupplierExistingUpdate.Visible = false;
             btnSupplierExistingUpdate.SendToBack();
@@ -57,11 +57,11 @@ namespace IMS.UserInterface.Supplier
                 txtBxSupplierDescription.Text = dgvRow.Cells[2].Value.ToString();
                 txtBxSupplierphoneNo.Text = dgvRow.Cells[3].Value.ToString();
                 txtBxSupplierAddress.Text = dgvRow.Cells[4].Value.ToString();
-                combobxSupplierState.DataSource = Enum.GetValues(typeof(SupplierState));
+                combobxSupplierState.DataSource = Enum.GetValues(typeof(SupplierStates));
 
                 var text = dgvRow.Cells[5].Value.ToString();
                 //converting text to enum
-                Enum.TryParse(text, out SupplierState state);
+                Enum.TryParse(text, out SupplierStates state);
                 //converting enum to int
                 combobxSupplierState.SelectedIndex = (int)state-1;
             }

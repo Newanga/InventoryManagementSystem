@@ -88,7 +88,7 @@ namespace IMS.UserInterface.Order
 
         private void PopulateOrderStateComboBox()
         {
-            comboBxOrderState.DataSource = Enum.GetValues(typeof(OrderState));
+            comboBxOrderState.DataSource = Enum.GetValues(typeof(OrderStates));
         }
 
         private void comboBxSupplier_SelectedValueChanged(object sender, EventArgs e)
@@ -342,10 +342,10 @@ namespace IMS.UserInterface.Order
                 txtBxSpecialNote.Text = dgvRow.Cells[5].Value.ToString();
                 dTPPlaceDate.Value = Convert.ToDateTime(dgvRow.Cells[2].Value);
 
-                comboBxOrderState.DataSource = Enum.GetValues(typeof(OrderState));
+                comboBxOrderState.DataSource = Enum.GetValues(typeof(OrderStates));
                 var text = dgvRow.Cells[3].Value.ToString();
                 //converting text to enum
-                Enum.TryParse(text, out OrderState state);
+                Enum.TryParse(text, out OrderStates state);
                 //converting enum to int
                 comboBxOrderState.SelectedIndex = (int)state - 1;
 

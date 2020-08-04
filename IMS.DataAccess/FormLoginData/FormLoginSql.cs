@@ -40,7 +40,7 @@ namespace IMS.FormLoginData
                 return false;
             else
             {
-                Enum.TryParse("Online", out AccountState state);
+                Enum.TryParse("Online", out AccountStates state);
                 int AccountStateId = (int)state;
 
                 sql = @"update dbo.Account

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IMS.Core.Enums
 {
-    public enum OrderState
+    public enum OrderStates
     {
         Draft=1,
         Confirmed=2,

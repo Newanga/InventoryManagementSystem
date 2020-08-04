@@ -18,7 +18,7 @@ namespace IMS.DataAccess.FormMainWindowData
 
         public void UpdateUserLogOut(string emailAddress)
         {
-            Enum.TryParse("Offline", out AccountState state);
+            Enum.TryParse("Offline", out AccountStates state);
             int AccountStateId = (int)state;
 
             string sql = @"update dbo.Account

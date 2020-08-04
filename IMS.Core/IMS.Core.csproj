@@ -41,11 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enums\AccountState.cs" />
-    <Compile Include="Enums\OrderState.cs" />
-    <Compile Include="Enums\ProductState.cs" />
+    <Compile Include="Enums\AccountStates.cs" />
+    <Compile Include="Enums\OrderStates.cs" />
+    <Compile Include="Enums\ProductStates.cs" />
     <Compile Include="Enums\Roles.cs" />
-    <Compile Include="Enums\SupplierState.cs" />
+    <Compile Include="Enums\SupplierStates.cs" />
     <Compile Include="Models\Account\AccountFullModel.cs" />
     <Compile Include="Models\Account\AccountNewModel.cs" />
     <Compile Include="Models\Category\CategoryFullModel.cs" />

@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace IMS.Core.Enums
 {
-    public enum SupplierState
+    public enum ProductStates
     {
-        Active=1,
-        Deactive=2
+        Available=1,
+        OutOfStock=2,
+        Discontinued=3
     }
 }

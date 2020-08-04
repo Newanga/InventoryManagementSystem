@@ -31,7 +31,7 @@ namespace IMS.UserInterface.Product
             comboBxlProductSupplier.DataSource = data.Suppliers;
             comboBxlProductSupplier.DisplayMember = "Name";
             comboBxlProductSupplier.ValueMember = "Name";
-            comboBxProductState.DataSource = Enum.GetValues(typeof(ProductState));
+            comboBxProductState.DataSource = Enum.GetValues(typeof(ProductStates));
         }
 
         public void GetComboBoxDataInDatabase()
@@ -206,10 +206,10 @@ namespace IMS.UserInterface.Product
                 txtBxPurchasePrice.Text = dgvRow.Cells[3].Value.ToString();
                 txtBxProductWarrenty.Text = dgvRow.Cells[4].Value.ToString();
 
-                comboBxProductState.DataSource = Enum.GetValues(typeof(ProductState));
+                comboBxProductState.DataSource = Enum.GetValues(typeof(ProductStates));
                 var text = dgvRow.Cells[7].Value.ToString();
                 //converting text to enum
-                Enum.TryParse(text, out ProductState state);
+                Enum.TryParse(text, out ProductStates state);
                 //converting enum to int
                 comboBxProductState.SelectedIndex = (int)state - 1;
 

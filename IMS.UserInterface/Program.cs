@@ -35,6 +35,8 @@ namespace IMS.UserInterface
             //Reading appsettings to get the configuration file
             var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json");
             IConfiguration config = builder.Build();
+
+            //Adding classes and interfaces to DI Containners
             services.AddSingleton(config);
 
             services.AddSingleton<FormLogin>();
@@ -62,12 +64,11 @@ namespace IMS.UserInterface
             services.AddTransient<IFormInventorySql, FormInventorySql>();
 
 
-
             ServiceProvider = services.BuildServiceProvider();
 
-            //var Form = ServiceProvider.GetService<FormCategory>();
+            //var Form = ServiceProvider.GetService<FormSupplier>();
             //Application.Run(Form);
-            var Form = ServiceProvider.GetService<FormLogin>();
+            var Form = ServiceProvider.GetService<FormEmployees>();
             Application.Run(Form);
         }
 
