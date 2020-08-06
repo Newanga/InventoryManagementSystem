@@ -8,11 +8,11 @@ namespace IMS.Common.Cache
 {
     public static class Cache
     {
-        public static int? CurrentAccountId { get; set; } = 1;
+        public static int? CurrentAccountId { get; set; } 
 
         public static string EmailAddress { get; set; }
         public static string FirstName { get; set; }
 
-        public static int? RoleId { get; set; } = 1;
+        public static int? RoleId { get; set; }
     }
 }
