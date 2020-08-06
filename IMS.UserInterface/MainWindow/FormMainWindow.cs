@@ -96,10 +96,6 @@ namespace IMS.UserInterface
             childForm.Show();
         }
 
-        private void BtnDashboard_Click(object sender, EventArgs e)
-        {
-           
-        }
 
         private void BtnSuppliers_Click(object sender, EventArgs e)
         {
@@ -192,7 +188,6 @@ namespace IMS.UserInterface
 
             if(role==Roles.Admin)
             {
-                btnDashboard.Enabled = true;
                 btnProfile.Enabled = true;
                 btnInventory.Enabled = true;
                 btnSuppliers.Enabled = true;
@@ -204,7 +199,6 @@ namespace IMS.UserInterface
             }
             if (role == Roles.StockManager)
             {
-                btnDashboard.Enabled = false;
                 btnProfile.Enabled = true;
                 btnInventory.Enabled = true;
                 btnSuppliers.Enabled = false;
@@ -216,7 +210,6 @@ namespace IMS.UserInterface
             }
             if (role == Roles.StockKeeper)
             {
-                btnDashboard.Enabled = false;
                 btnProfile.Enabled = true;
                 btnInventory.Enabled = true;
                 btnSuppliers.Enabled = false;

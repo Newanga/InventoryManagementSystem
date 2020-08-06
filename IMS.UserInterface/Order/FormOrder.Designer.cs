@@ -29,17 +29,7 @@
         private void InitializeComponent()
         {
             this.dGVOrders = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PlaceDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OrderState = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DeliveryDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SpecialNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dGVOrderItems = new System.Windows.Forms.DataGridView();
-            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OrderItemId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblOrderId = new System.Windows.Forms.Label();
             this.txtBxOrderId = new System.Windows.Forms.TextBox();
             this.lblSpecialNote = new System.Windows.Forms.Label();
@@ -69,6 +59,16 @@
             this.btnExistingOrderUpdate = new System.Windows.Forms.Button();
             this.btnExistingOrderEdit = new System.Windows.Forms.Button();
             this.btnExistingOrderCancel = new System.Windows.Forms.Button();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PlaceDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderState = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DeliveryDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SpecialNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderItemId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dGVOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVOrderItems)).BeginInit();
             this.SuspendLayout();
@@ -79,6 +79,9 @@
             this.dGVOrders.AllowUserToDeleteRows = false;
             this.dGVOrders.AllowUserToOrderColumns = true;
             this.dGVOrders.AllowUserToResizeRows = false;
+            this.dGVOrders.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dGVOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVOrders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -96,57 +99,14 @@
             this.dGVOrders.TabIndex = 0;
             this.dGVOrders.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVOrders_CellDoubleClick);
             // 
-            // Id
-            // 
-            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Width = 41;
-            // 
-            // Supplier
-            // 
-            this.Supplier.DataPropertyName = "SupplierName";
-            this.Supplier.HeaderText = "Supplier";
-            this.Supplier.Name = "Supplier";
-            this.Supplier.ReadOnly = true;
-            // 
-            // PlaceDate
-            // 
-            this.PlaceDate.DataPropertyName = "PlaceDate";
-            this.PlaceDate.HeaderText = "PlaceDate";
-            this.PlaceDate.Name = "PlaceDate";
-            this.PlaceDate.ReadOnly = true;
-            // 
-            // OrderState
-            // 
-            this.OrderState.DataPropertyName = "OrderState";
-            this.OrderState.HeaderText = "State";
-            this.OrderState.Name = "OrderState";
-            this.OrderState.ReadOnly = true;
-            // 
-            // DeliveryDate
-            // 
-            this.DeliveryDate.DataPropertyName = "DeliveryDate";
-            this.DeliveryDate.HeaderText = "DeliveryDate";
-            this.DeliveryDate.Name = "DeliveryDate";
-            this.DeliveryDate.ReadOnly = true;
-            // 
-            // SpecialNotes
-            // 
-            this.SpecialNotes.DataPropertyName = "SpecialNotes";
-            this.SpecialNotes.HeaderText = "SpecialNotes";
-            this.SpecialNotes.Name = "SpecialNotes";
-            this.SpecialNotes.ReadOnly = true;
-            this.SpecialNotes.Width = 95;
-            // 
             // dGVOrderItems
             // 
             this.dGVOrderItems.AllowUserToAddRows = false;
             this.dGVOrderItems.AllowUserToDeleteRows = false;
             this.dGVOrderItems.AllowUserToOrderColumns = true;
             this.dGVOrderItems.AllowUserToResizeRows = false;
+            this.dGVOrderItems.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dGVOrderItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVOrderItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ProductName,
@@ -162,39 +122,9 @@
             this.dGVOrderItems.TabIndex = 0;
             this.dGVOrderItems.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVOrderItems_CellDoubleClick);
             // 
-            // ProductName
-            // 
-            this.ProductName.DataPropertyName = "ProductName";
-            this.ProductName.HeaderText = "ProductName";
-            this.ProductName.Name = "ProductName";
-            this.ProductName.ReadOnly = true;
-            this.ProductName.Width = 249;
-            // 
-            // Quantity
-            // 
-            this.Quantity.DataPropertyName = "Quantity";
-            this.Quantity.HeaderText = "Quantity";
-            this.Quantity.Name = "Quantity";
-            this.Quantity.ReadOnly = true;
-            // 
-            // Price
-            // 
-            this.Price.DataPropertyName = "Price";
-            this.Price.HeaderText = "Price";
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
-            this.Price.Width = 56;
-            // 
-            // OrderItemId
-            // 
-            this.OrderItemId.DataPropertyName = "ProductId";
-            this.OrderItemId.HeaderText = "Id";
-            this.OrderItemId.Name = "OrderItemId";
-            this.OrderItemId.ReadOnly = true;
-            this.OrderItemId.Visible = false;
-            // 
             // lblOrderId
             // 
+            this.lblOrderId.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblOrderId.AutoSize = true;
             this.lblOrderId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOrderId.Location = new System.Drawing.Point(44, 33);
@@ -205,6 +135,7 @@
             // 
             // txtBxOrderId
             // 
+            this.txtBxOrderId.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBxOrderId.Enabled = false;
             this.txtBxOrderId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBxOrderId.Location = new System.Drawing.Point(146, 32);
@@ -214,6 +145,7 @@
             // 
             // lblSpecialNote
             // 
+            this.lblSpecialNote.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblSpecialNote.AutoSize = true;
             this.lblSpecialNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSpecialNote.Location = new System.Drawing.Point(315, 104);
@@ -224,6 +156,7 @@
             // 
             // txtBxSpecialNote
             // 
+            this.txtBxSpecialNote.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBxSpecialNote.Enabled = false;
             this.txtBxSpecialNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBxSpecialNote.Location = new System.Drawing.Point(419, 104);
@@ -236,6 +169,7 @@
             // 
             // lblOrderState
             // 
+            this.lblOrderState.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblOrderState.AutoSize = true;
             this.lblOrderState.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblOrderState.Location = new System.Drawing.Point(25, 103);
@@ -246,6 +180,7 @@
             // 
             // comboBxOrderState
             // 
+            this.comboBxOrderState.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBxOrderState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBxOrderState.Enabled = false;
             this.comboBxOrderState.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -257,6 +192,7 @@
             // 
             // lblPlaceDate
             // 
+            this.lblPlaceDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblPlaceDate.AutoSize = true;
             this.lblPlaceDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblPlaceDate.Location = new System.Drawing.Point(323, 29);
@@ -267,6 +203,7 @@
             // 
             // lblDeliveryDate
             // 
+            this.lblDeliveryDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblDeliveryDate.AutoSize = true;
             this.lblDeliveryDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblDeliveryDate.Location = new System.Drawing.Point(312, 68);
@@ -277,6 +214,7 @@
             // 
             // dTPPlaceDate
             // 
+            this.dTPPlaceDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dTPPlaceDate.CustomFormat = " ";
             this.dTPPlaceDate.Enabled = false;
             this.dTPPlaceDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -290,6 +228,7 @@
             // 
             // dTPDeliveryDate
             // 
+            this.dTPDeliveryDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dTPDeliveryDate.CustomFormat = " ";
             this.dTPDeliveryDate.Enabled = false;
             this.dTPDeliveryDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -303,6 +242,7 @@
             // 
             // lblSupplier
             // 
+            this.lblSupplier.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblSupplier.AutoSize = true;
             this.lblSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSupplier.Location = new System.Drawing.Point(44, 69);
@@ -313,6 +253,7 @@
             // 
             // comboBxSupplier
             // 
+            this.comboBxSupplier.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBxSupplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBxSupplier.Enabled = false;
             this.comboBxSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -325,6 +266,7 @@
             // 
             // lblOrderItemName
             // 
+            this.lblOrderItemName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblOrderItemName.AutoSize = true;
             this.lblOrderItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblOrderItemName.Location = new System.Drawing.Point(714, 32);
@@ -335,6 +277,7 @@
             // 
             // comboBxOrderItemName
             // 
+            this.comboBxOrderItemName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBxOrderItemName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBxOrderItemName.Enabled = false;
             this.comboBxOrderItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -347,6 +290,7 @@
             // 
             // lblOrderItemQuantity
             // 
+            this.lblOrderItemQuantity.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblOrderItemQuantity.AutoSize = true;
             this.lblOrderItemQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblOrderItemQuantity.Location = new System.Drawing.Point(700, 69);
@@ -357,6 +301,7 @@
             // 
             // txtBxOrderItemQuantity
             // 
+            this.txtBxOrderItemQuantity.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBxOrderItemQuantity.Enabled = false;
             this.txtBxOrderItemQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtBxOrderItemQuantity.Location = new System.Drawing.Point(803, 70);
@@ -369,6 +314,7 @@
             // 
             // lblProductPrice
             // 
+            this.lblProductPrice.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblProductPrice.AutoSize = true;
             this.lblProductPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblProductPrice.Location = new System.Drawing.Point(714, 105);
@@ -379,6 +325,7 @@
             // 
             // txtBxOrderItemPrice
             // 
+            this.txtBxOrderItemPrice.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBxOrderItemPrice.Enabled = false;
             this.txtBxOrderItemPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F);
             this.txtBxOrderItemPrice.Location = new System.Drawing.Point(803, 106);
@@ -388,6 +335,7 @@
             // 
             // btnNewOrderCreate
             // 
+            this.btnNewOrderCreate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnNewOrderCreate.Location = new System.Drawing.Point(79, 165);
             this.btnNewOrderCreate.Name = "btnNewOrderCreate";
             this.btnNewOrderCreate.Size = new System.Drawing.Size(75, 23);
@@ -398,6 +346,7 @@
             // 
             // btnOrderItemAdd
             // 
+            this.btnOrderItemAdd.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnOrderItemAdd.Enabled = false;
             this.btnOrderItemAdd.Location = new System.Drawing.Point(621, 165);
             this.btnOrderItemAdd.Name = "btnOrderItemAdd";
@@ -409,6 +358,7 @@
             // 
             // btnOrderItemEdit
             // 
+            this.btnOrderItemEdit.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnOrderItemEdit.Enabled = false;
             this.btnOrderItemEdit.Location = new System.Drawing.Point(717, 165);
             this.btnOrderItemEdit.Name = "btnOrderItemEdit";
@@ -420,6 +370,7 @@
             // 
             // btnOrderItemRemove
             // 
+            this.btnOrderItemRemove.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnOrderItemRemove.Enabled = false;
             this.btnOrderItemRemove.Location = new System.Drawing.Point(817, 165);
             this.btnOrderItemRemove.Name = "btnOrderItemRemove";
@@ -431,6 +382,7 @@
             // 
             // btnOrderItemUpdate
             // 
+            this.btnOrderItemUpdate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnOrderItemUpdate.Enabled = false;
             this.btnOrderItemUpdate.Location = new System.Drawing.Point(817, 165);
             this.btnOrderItemUpdate.Name = "btnOrderItemUpdate";
@@ -443,6 +395,7 @@
             // 
             // btnOrderItemCancel
             // 
+            this.btnOrderItemCancel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnOrderItemCancel.Enabled = false;
             this.btnOrderItemCancel.Location = new System.Drawing.Point(908, 165);
             this.btnOrderItemCancel.Name = "btnOrderItemCancel";
@@ -454,6 +407,7 @@
             // 
             // btnNewOrderCancel
             // 
+            this.btnNewOrderCancel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnNewOrderCancel.Enabled = false;
             this.btnNewOrderCancel.Location = new System.Drawing.Point(367, 165);
             this.btnNewOrderCancel.Name = "btnNewOrderCancel";
@@ -465,6 +419,7 @@
             // 
             // btnNewOrderUpdate
             // 
+            this.btnNewOrderUpdate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnNewOrderUpdate.Enabled = false;
             this.btnNewOrderUpdate.Location = new System.Drawing.Point(173, 165);
             this.btnNewOrderUpdate.Name = "btnNewOrderUpdate";
@@ -476,6 +431,7 @@
             // 
             // btnExistingOrderUpdate
             // 
+            this.btnExistingOrderUpdate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnExistingOrderUpdate.Enabled = false;
             this.btnExistingOrderUpdate.Location = new System.Drawing.Point(173, 165);
             this.btnExistingOrderUpdate.Name = "btnExistingOrderUpdate";
@@ -487,6 +443,7 @@
             // 
             // btnExistingOrderEdit
             // 
+            this.btnExistingOrderEdit.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnExistingOrderEdit.Enabled = false;
             this.btnExistingOrderEdit.Location = new System.Drawing.Point(270, 165);
             this.btnExistingOrderEdit.Name = "btnExistingOrderEdit";
@@ -498,6 +455,7 @@
             // 
             // btnExistingOrderCancel
             // 
+            this.btnExistingOrderCancel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnExistingOrderCancel.Enabled = false;
             this.btnExistingOrderCancel.Location = new System.Drawing.Point(367, 165);
             this.btnExistingOrderCancel.Name = "btnExistingOrderCancel";
@@ -506,6 +464,87 @@
             this.btnExistingOrderCancel.Text = "Cancel";
             this.btnExistingOrderCancel.UseVisualStyleBackColor = true;
             this.btnExistingOrderCancel.Click += new System.EventHandler(this.btnExistingOrderCancel_Click);
+            // 
+            // Id
+            // 
+            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // Supplier
+            // 
+            this.Supplier.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Supplier.DataPropertyName = "SupplierName";
+            this.Supplier.HeaderText = "Supplier";
+            this.Supplier.Name = "Supplier";
+            this.Supplier.ReadOnly = true;
+            // 
+            // PlaceDate
+            // 
+            this.PlaceDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PlaceDate.DataPropertyName = "PlaceDate";
+            this.PlaceDate.HeaderText = "PlaceDate";
+            this.PlaceDate.Name = "PlaceDate";
+            this.PlaceDate.ReadOnly = true;
+            // 
+            // OrderState
+            // 
+            this.OrderState.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.OrderState.DataPropertyName = "OrderState";
+            this.OrderState.HeaderText = "State";
+            this.OrderState.Name = "OrderState";
+            this.OrderState.ReadOnly = true;
+            // 
+            // DeliveryDate
+            // 
+            this.DeliveryDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DeliveryDate.DataPropertyName = "DeliveryDate";
+            this.DeliveryDate.HeaderText = "DeliveryDate";
+            this.DeliveryDate.Name = "DeliveryDate";
+            this.DeliveryDate.ReadOnly = true;
+            // 
+            // SpecialNotes
+            // 
+            this.SpecialNotes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SpecialNotes.DataPropertyName = "SpecialNotes";
+            this.SpecialNotes.HeaderText = "SpecialNotes";
+            this.SpecialNotes.Name = "SpecialNotes";
+            this.SpecialNotes.ReadOnly = true;
+            // 
+            // ProductName
+            // 
+            this.ProductName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ProductName.DataPropertyName = "ProductName";
+            this.ProductName.HeaderText = "ProductName";
+            this.ProductName.Name = "ProductName";
+            this.ProductName.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            this.Quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Quantity.DataPropertyName = "Quantity";
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            // 
+            // Price
+            // 
+            this.Price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Price.DataPropertyName = "Price";
+            this.Price.HeaderText = "Price";
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            // 
+            // OrderItemId
+            // 
+            this.OrderItemId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.OrderItemId.DataPropertyName = "ProductId";
+            this.OrderItemId.HeaderText = "Id";
+            this.OrderItemId.Name = "OrderItemId";
+            this.OrderItemId.ReadOnly = true;
+            this.OrderItemId.Visible = false;
             // 
             // FormOrder
             // 

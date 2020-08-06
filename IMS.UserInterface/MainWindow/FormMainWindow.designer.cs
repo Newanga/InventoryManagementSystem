@@ -46,7 +46,6 @@
             this.btnProfile = new System.Windows.Forms.PictureBox();
             this.btnOrders = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
-            this.btnDashboard = new System.Windows.Forms.Button();
             this.btnCategories = new System.Windows.Forms.Button();
             this.btnSuppliers = new System.Windows.Forms.Button();
             this.btnProducts = new System.Windows.Forms.Button();
@@ -145,7 +144,6 @@
             this.panelVerticalMenu.Controls.Add(this.panelUserInfo);
             this.panelVerticalMenu.Controls.Add(this.btnOrders);
             this.panelVerticalMenu.Controls.Add(this.btnInventory);
-            this.panelVerticalMenu.Controls.Add(this.btnDashboard);
             this.panelVerticalMenu.Controls.Add(this.btnCategories);
             this.panelVerticalMenu.Controls.Add(this.btnSuppliers);
             this.panelVerticalMenu.Controls.Add(this.btnProducts);
@@ -165,7 +163,7 @@
             this.btnEmployees.ForeColor = System.Drawing.Color.White;
             this.btnEmployees.Image = global::IMS.UserInterface.Properties.Resources.Employees;
             this.btnEmployees.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmployees.Location = new System.Drawing.Point(0, 403);
+            this.btnEmployees.Location = new System.Drawing.Point(0, 380);
             this.btnEmployees.Name = "btnEmployees";
             this.btnEmployees.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnEmployees.Size = new System.Drawing.Size(250, 40);
@@ -262,7 +260,7 @@
             this.btnOrders.ForeColor = System.Drawing.Color.White;
             this.btnOrders.Image = ((System.Drawing.Image)(resources.GetObject("btnOrders.Image")));
             this.btnOrders.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOrders.Location = new System.Drawing.Point(0, 219);
+            this.btnOrders.Location = new System.Drawing.Point(0, 196);
             this.btnOrders.Name = "btnOrders";
             this.btnOrders.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnOrders.Size = new System.Drawing.Size(250, 40);
@@ -282,7 +280,7 @@
             this.btnInventory.ForeColor = System.Drawing.Color.White;
             this.btnInventory.Image = global::IMS.UserInterface.Properties.Resources.Inventory;
             this.btnInventory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInventory.Location = new System.Drawing.Point(0, 173);
+            this.btnInventory.Location = new System.Drawing.Point(0, 150);
             this.btnInventory.Name = "btnInventory";
             this.btnInventory.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnInventory.Size = new System.Drawing.Size(250, 40);
@@ -291,26 +289,6 @@
             this.btnInventory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInventory.UseVisualStyleBackColor = true;
             this.btnInventory.Click += new System.EventHandler(this.BtnInventory_Click);
-            // 
-            // btnDashboard
-            // 
-            this.btnDashboard.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnDashboard.FlatAppearance.BorderSize = 0;
-            this.btnDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDashboard.ForeColor = System.Drawing.Color.White;
-            this.btnDashboard.Image = global::IMS.UserInterface.Properties.Resources.Dashboard;
-            this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashboard.Location = new System.Drawing.Point(0, 128);
-            this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnDashboard.Size = new System.Drawing.Size(250, 40);
-            this.btnDashboard.TabIndex = 2;
-            this.btnDashboard.Text = "                DashBoard";
-            this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashboard.UseVisualStyleBackColor = true;
-            this.btnDashboard.Click += new System.EventHandler(this.BtnDashboard_Click);
             // 
             // btnCategories
             // 
@@ -322,7 +300,7 @@
             this.btnCategories.ForeColor = System.Drawing.Color.White;
             this.btnCategories.Image = global::IMS.UserInterface.Properties.Resources.Category;
             this.btnCategories.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCategories.Location = new System.Drawing.Point(3, 357);
+            this.btnCategories.Location = new System.Drawing.Point(3, 334);
             this.btnCategories.Name = "btnCategories";
             this.btnCategories.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnCategories.Size = new System.Drawing.Size(247, 40);
@@ -342,7 +320,7 @@
             this.btnSuppliers.ForeColor = System.Drawing.Color.White;
             this.btnSuppliers.Image = global::IMS.UserInterface.Properties.Resources.Supplier;
             this.btnSuppliers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuppliers.Location = new System.Drawing.Point(0, 311);
+            this.btnSuppliers.Location = new System.Drawing.Point(0, 288);
             this.btnSuppliers.Name = "btnSuppliers";
             this.btnSuppliers.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnSuppliers.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -363,7 +341,7 @@
             this.btnProducts.ForeColor = System.Drawing.Color.White;
             this.btnProducts.Image = ((System.Drawing.Image)(resources.GetObject("btnProducts.Image")));
             this.btnProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProducts.Location = new System.Drawing.Point(0, 265);
+            this.btnProducts.Location = new System.Drawing.Point(0, 242);
             this.btnProducts.Name = "btnProducts";
             this.btnProducts.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnProducts.Size = new System.Drawing.Size(250, 40);
@@ -424,7 +402,6 @@
         private System.Windows.Forms.PictureBox btnMenuExpander;
         private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.Label lblRole;
-        private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Button btnCategories;
         private System.Windows.Forms.Button btnProducts;
         private System.Windows.Forms.Panel panelContainer;

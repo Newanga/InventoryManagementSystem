@@ -112,6 +112,13 @@ namespace IMS.UserInterface.Inventory
             }
         }
 
+
         #endregion
+
+        private void btnInventoryReset_Click(object sender, EventArgs e)
+        {
+            txtBxOrderId.Clear();
+            comboBoxSupplier.Focus();
+        }
     }
 }

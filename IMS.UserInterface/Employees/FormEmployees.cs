@@ -76,6 +76,25 @@ namespace IMS.UserInterface.Employees
             };
             bool validData = EmployeeInputDataValidator.ValidateAdd(data);
 
+            if (!validData)
+                return;
+
+            bool emailExist = _db.EmailExist(data.Account.EmailAddress);
+
+
+            if (emailExist)
+            {
+                MessageBox.Show("A user with the email address already exist in the system.", "User already exist.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            bool usernameExist = _db.UsernameExist(data.Account.Username);
+
+            if(usernameExist)
+            {
+               MessageBox.Show("Please choose a different username for user.", "Username already taken.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             if (validData)
             {

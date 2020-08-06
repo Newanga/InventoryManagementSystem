@@ -66,8 +66,6 @@ namespace IMS.UserInterface
 
             ServiceProvider = services.BuildServiceProvider();
 
-            //var Form = ServiceProvider.GetService<FormSupplier>();
-            //Application.Run(Form);
             var Form = ServiceProvider.GetService<FormLogin>();
             Application.Run(Form);
         }

@@ -53,6 +53,13 @@
             this.comboBxAccountState = new System.Windows.Forms.ComboBox();
             this.comboBxRole = new System.Windows.Forms.ComboBox();
             this.dGVEmployees = new System.Windows.Forms.DataGridView();
+            this.btnEmployeesAdd = new System.Windows.Forms.Button();
+            this.btnEmployeesEdit = new System.Windows.Forms.Button();
+            this.btnEmployeesExistingUpdate = new System.Windows.Forms.Button();
+            this.btnEmployeesNewUpdate = new System.Windows.Forms.Button();
+            this.btnEmployeesReset = new System.Windows.Forms.Button();
+            this.lblLeaveDate = new System.Windows.Forms.Label();
+            this.dTPLeaveDate = new System.Windows.Forms.DateTimePicker();
             this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,18 +73,12 @@
             this.EmployeeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AccountId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEmployeesAdd = new System.Windows.Forms.Button();
-            this.btnEmployeesEdit = new System.Windows.Forms.Button();
-            this.btnEmployeesExistingUpdate = new System.Windows.Forms.Button();
-            this.btnEmployeesNewUpdate = new System.Windows.Forms.Button();
-            this.btnEmployeesReset = new System.Windows.Forms.Button();
-            this.lblLeaveDate = new System.Windows.Forms.Label();
-            this.dTPLeaveDate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dGVEmployees)).BeginInit();
             this.SuspendLayout();
             // 
             // lblEmployeeId
             // 
+            this.lblEmployeeId.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblEmployeeId.AutoSize = true;
             this.lblEmployeeId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmployeeId.Location = new System.Drawing.Point(40, 41);
@@ -88,6 +89,7 @@
             // 
             // txtBxEmployeeId
             // 
+            this.txtBxEmployeeId.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBxEmployeeId.Enabled = false;
             this.txtBxEmployeeId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBxEmployeeId.Location = new System.Drawing.Point(143, 39);
@@ -97,6 +99,7 @@
             // 
             // txtBxFirstName
             // 
+            this.txtBxFirstName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBxFirstName.Enabled = false;
             this.txtBxFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtBxFirstName.Location = new System.Drawing.Point(142, 76);
@@ -106,6 +109,7 @@
             // 
             // lblFirstName
             // 
+            this.lblFirstName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblFirstName.AutoSize = true;
             this.lblFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblFirstName.Location = new System.Drawing.Point(47, 77);
@@ -116,6 +120,7 @@
             // 
             // lblLastName
             // 
+            this.lblLastName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblLastName.AutoSize = true;
             this.lblLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblLastName.Location = new System.Drawing.Point(48, 111);
@@ -126,6 +131,7 @@
             // 
             // txtBxLastName
             // 
+            this.txtBxLastName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBxLastName.Enabled = false;
             this.txtBxLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtBxLastName.Location = new System.Drawing.Point(143, 110);
@@ -135,6 +141,7 @@
             // 
             // lblDOB
             // 
+            this.lblDOB.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblDOB.AutoSize = true;
             this.lblDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblDOB.Location = new System.Drawing.Point(317, 41);
@@ -145,6 +152,7 @@
             // 
             // dTPDOB
             // 
+            this.dTPDOB.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dTPDOB.CustomFormat = " ";
             this.dTPDOB.Enabled = false;
             this.dTPDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
@@ -161,6 +169,7 @@
             // 
             // lblAddress
             // 
+            this.lblAddress.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblAddress.AutoSize = true;
             this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblAddress.Location = new System.Drawing.Point(348, 149);
@@ -171,6 +180,7 @@
             // 
             // txtBxAdress
             // 
+            this.txtBxAdress.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBxAdress.Enabled = false;
             this.txtBxAdress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtBxAdress.Location = new System.Drawing.Point(430, 148);
@@ -180,6 +190,7 @@
             // 
             // lblStartDate
             // 
+            this.lblStartDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblStartDate.AutoSize = true;
             this.lblStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblStartDate.Location = new System.Drawing.Point(336, 81);
@@ -190,6 +201,7 @@
             // 
             // dTPStartDate
             // 
+            this.dTPStartDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dTPStartDate.Checked = false;
             this.dTPStartDate.CustomFormat = " ";
             this.dTPStartDate.Enabled = false;
@@ -207,6 +219,7 @@
             // 
             // lblAccountId
             // 
+            this.lblAccountId.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblAccountId.AutoSize = true;
             this.lblAccountId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblAccountId.Location = new System.Drawing.Point(682, 41);
@@ -217,6 +230,7 @@
             // 
             // txtBxAccountId
             // 
+            this.txtBxAccountId.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBxAccountId.Enabled = false;
             this.txtBxAccountId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtBxAccountId.Location = new System.Drawing.Point(778, 37);
@@ -226,6 +240,7 @@
             // 
             // lblEmailAddress
             // 
+            this.lblEmailAddress.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblEmailAddress.AutoSize = true;
             this.lblEmailAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblEmailAddress.Location = new System.Drawing.Point(83, 146);
@@ -236,6 +251,7 @@
             // 
             // txtBxEmailAddress
             // 
+            this.txtBxEmailAddress.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBxEmailAddress.Enabled = false;
             this.txtBxEmailAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtBxEmailAddress.Location = new System.Drawing.Point(143, 145);
@@ -245,6 +261,7 @@
             // 
             // lblUsername
             // 
+            this.lblUsername.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblUsername.Location = new System.Drawing.Point(686, 73);
@@ -255,6 +272,7 @@
             // 
             // txtBxUsername
             // 
+            this.txtBxUsername.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBxUsername.Enabled = false;
             this.txtBxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
             this.txtBxUsername.Location = new System.Drawing.Point(778, 68);
@@ -264,6 +282,7 @@
             // 
             // blPassword
             // 
+            this.blPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.blPassword.AutoSize = true;
             this.blPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.blPassword.Location = new System.Drawing.Point(688, 96);
@@ -274,6 +293,7 @@
             // 
             // txtBxPassword
             // 
+            this.txtBxPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBxPassword.Enabled = false;
             this.txtBxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtBxPassword.Location = new System.Drawing.Point(778, 95);
@@ -283,6 +303,7 @@
             // 
             // lblAccountState
             // 
+            this.lblAccountState.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblAccountState.AutoSize = true;
             this.lblAccountState.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblAccountState.Location = new System.Drawing.Point(666, 159);
@@ -293,6 +314,7 @@
             // 
             // lblRole
             // 
+            this.lblRole.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblRole.AutoSize = true;
             this.lblRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblRole.Location = new System.Drawing.Point(712, 128);
@@ -303,6 +325,7 @@
             // 
             // comboBxAccountState
             // 
+            this.comboBxAccountState.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBxAccountState.Enabled = false;
             this.comboBxAccountState.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.comboBxAccountState.FormattingEnabled = true;
@@ -313,6 +336,7 @@
             // 
             // comboBxRole
             // 
+            this.comboBxRole.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBxRole.Enabled = false;
             this.comboBxRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.comboBxRole.FormattingEnabled = true;
@@ -327,6 +351,9 @@
             this.dGVEmployees.AllowUserToDeleteRows = false;
             this.dGVEmployees.AllowUserToOrderColumns = true;
             this.dGVEmployees.AllowUserToResizeRows = false;
+            this.dGVEmployees.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dGVEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVEmployees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FirstName,
@@ -351,100 +378,9 @@
             this.dGVEmployees.TabIndex = 4;
             this.dGVEmployees.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVEmployees_CellDoubleClick);
             // 
-            // FirstName
-            // 
-            this.FirstName.DataPropertyName = "FirstName";
-            this.FirstName.HeaderText = "FirstName";
-            this.FirstName.Name = "FirstName";
-            this.FirstName.ReadOnly = true;
-            // 
-            // LastName
-            // 
-            this.LastName.DataPropertyName = "LastName";
-            this.LastName.HeaderText = "LastName";
-            this.LastName.Name = "LastName";
-            this.LastName.ReadOnly = true;
-            // 
-            // Username
-            // 
-            this.Username.DataPropertyName = "Username";
-            this.Username.HeaderText = "Username";
-            this.Username.Name = "Username";
-            this.Username.ReadOnly = true;
-            // 
-            // DateOfBirth
-            // 
-            this.DateOfBirth.DataPropertyName = "DateOfBirth";
-            this.DateOfBirth.HeaderText = "DateOfBirth";
-            this.DateOfBirth.Name = "DateOfBirth";
-            this.DateOfBirth.ReadOnly = true;
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "EmailAddress";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            // 
-            // Password
-            // 
-            this.Password.DataPropertyName = "Password";
-            this.Password.HeaderText = "Password";
-            this.Password.Name = "Password";
-            this.Password.ReadOnly = true;
-            // 
-            // StartDate
-            // 
-            this.StartDate.DataPropertyName = "StartDate";
-            this.StartDate.HeaderText = "StartDate";
-            this.StartDate.Name = "StartDate";
-            this.StartDate.ReadOnly = true;
-            // 
-            // Role
-            // 
-            this.Role.DataPropertyName = "Role";
-            this.Role.HeaderText = "Role";
-            this.Role.Name = "Role";
-            this.Role.ReadOnly = true;
-            // 
-            // AccountState
-            // 
-            this.AccountState.DataPropertyName = "AccountState";
-            this.AccountState.HeaderText = "AccountState";
-            this.AccountState.Name = "AccountState";
-            this.AccountState.ReadOnly = true;
-            // 
-            // LeaveDate
-            // 
-            this.LeaveDate.DataPropertyName = "LeaveDate";
-            this.LeaveDate.HeaderText = "LeaveDate";
-            this.LeaveDate.Name = "LeaveDate";
-            this.LeaveDate.ReadOnly = true;
-            // 
-            // EmployeeId
-            // 
-            this.EmployeeId.DataPropertyName = "EmployeeId";
-            this.EmployeeId.HeaderText = "EmployeeId";
-            this.EmployeeId.Name = "EmployeeId";
-            this.EmployeeId.ReadOnly = true;
-            // 
-            // Address
-            // 
-            this.Address.DataPropertyName = "Address";
-            this.Address.HeaderText = "Address";
-            this.Address.Name = "Address";
-            this.Address.ReadOnly = true;
-            // 
-            // AccountId
-            // 
-            this.AccountId.DataPropertyName = "AccountId";
-            this.AccountId.HeaderText = "AccountId";
-            this.AccountId.Name = "AccountId";
-            this.AccountId.ReadOnly = true;
-            this.AccountId.Width = 81;
-            // 
             // btnEmployeesAdd
             // 
+            this.btnEmployeesAdd.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnEmployeesAdd.Location = new System.Drawing.Point(203, 204);
             this.btnEmployeesAdd.Name = "btnEmployeesAdd";
             this.btnEmployeesAdd.Size = new System.Drawing.Size(94, 23);
@@ -455,6 +391,7 @@
             // 
             // btnEmployeesEdit
             // 
+            this.btnEmployeesEdit.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnEmployeesEdit.Enabled = false;
             this.btnEmployeesEdit.Location = new System.Drawing.Point(364, 204);
             this.btnEmployeesEdit.Name = "btnEmployeesEdit";
@@ -466,6 +403,7 @@
             // 
             // btnEmployeesExistingUpdate
             // 
+            this.btnEmployeesExistingUpdate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnEmployeesExistingUpdate.Enabled = false;
             this.btnEmployeesExistingUpdate.Location = new System.Drawing.Point(522, 204);
             this.btnEmployeesExistingUpdate.Name = "btnEmployeesExistingUpdate";
@@ -478,6 +416,7 @@
             // 
             // btnEmployeesNewUpdate
             // 
+            this.btnEmployeesNewUpdate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnEmployeesNewUpdate.Enabled = false;
             this.btnEmployeesNewUpdate.Location = new System.Drawing.Point(522, 204);
             this.btnEmployeesNewUpdate.Name = "btnEmployeesNewUpdate";
@@ -489,6 +428,7 @@
             // 
             // btnEmployeesReset
             // 
+            this.btnEmployeesReset.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnEmployeesReset.Enabled = false;
             this.btnEmployeesReset.Location = new System.Drawing.Point(685, 204);
             this.btnEmployeesReset.Name = "btnEmployeesReset";
@@ -500,6 +440,7 @@
             // 
             // lblLeaveDate
             // 
+            this.lblLeaveDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblLeaveDate.AutoSize = true;
             this.lblLeaveDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblLeaveDate.Location = new System.Drawing.Point(328, 114);
@@ -510,6 +451,7 @@
             // 
             // dTPLeaveDate
             // 
+            this.dTPLeaveDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dTPLeaveDate.CustomFormat = " ";
             this.dTPLeaveDate.Enabled = false;
             this.dTPLeaveDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
@@ -523,6 +465,110 @@
             this.dTPLeaveDate.Value = new System.DateTime(2020, 7, 7, 0, 0, 0, 0);
             this.dTPLeaveDate.ValueChanged += new System.EventHandler(this.dTPLeaveDate_ValueChanged);
             this.dTPLeaveDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dTPLeaveDate_KeyDown);
+            // 
+            // FirstName
+            // 
+            this.FirstName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.FirstName.DataPropertyName = "FirstName";
+            this.FirstName.HeaderText = "FirstName";
+            this.FirstName.Name = "FirstName";
+            this.FirstName.ReadOnly = true;
+            // 
+            // LastName
+            // 
+            this.LastName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.LastName.DataPropertyName = "LastName";
+            this.LastName.HeaderText = "LastName";
+            this.LastName.Name = "LastName";
+            this.LastName.ReadOnly = true;
+            // 
+            // Username
+            // 
+            this.Username.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Username.DataPropertyName = "Username";
+            this.Username.HeaderText = "Username";
+            this.Username.Name = "Username";
+            this.Username.ReadOnly = true;
+            // 
+            // DateOfBirth
+            // 
+            this.DateOfBirth.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DateOfBirth.DataPropertyName = "DateOfBirth";
+            this.DateOfBirth.HeaderText = "DateOfBirth";
+            this.DateOfBirth.Name = "DateOfBirth";
+            this.DateOfBirth.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Email.DataPropertyName = "EmailAddress";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            // 
+            // Password
+            // 
+            this.Password.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Password.DataPropertyName = "Password";
+            this.Password.HeaderText = "Password";
+            this.Password.Name = "Password";
+            this.Password.ReadOnly = true;
+            // 
+            // StartDate
+            // 
+            this.StartDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.StartDate.DataPropertyName = "StartDate";
+            this.StartDate.HeaderText = "StartDate";
+            this.StartDate.Name = "StartDate";
+            this.StartDate.ReadOnly = true;
+            // 
+            // Role
+            // 
+            this.Role.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Role.DataPropertyName = "Role";
+            this.Role.HeaderText = "Role";
+            this.Role.Name = "Role";
+            this.Role.ReadOnly = true;
+            // 
+            // AccountState
+            // 
+            this.AccountState.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.AccountState.DataPropertyName = "AccountState";
+            this.AccountState.HeaderText = "AccountState";
+            this.AccountState.Name = "AccountState";
+            this.AccountState.ReadOnly = true;
+            // 
+            // LeaveDate
+            // 
+            this.LeaveDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.LeaveDate.DataPropertyName = "LeaveDate";
+            this.LeaveDate.HeaderText = "LeaveDate";
+            this.LeaveDate.Name = "LeaveDate";
+            this.LeaveDate.ReadOnly = true;
+            // 
+            // EmployeeId
+            // 
+            this.EmployeeId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.EmployeeId.DataPropertyName = "EmployeeId";
+            this.EmployeeId.HeaderText = "EmployeeId";
+            this.EmployeeId.Name = "EmployeeId";
+            this.EmployeeId.ReadOnly = true;
+            // 
+            // Address
+            // 
+            this.Address.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Address.DataPropertyName = "Address";
+            this.Address.HeaderText = "Address";
+            this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
+            // 
+            // AccountId
+            // 
+            this.AccountId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.AccountId.DataPropertyName = "AccountId";
+            this.AccountId.HeaderText = "AccountId";
+            this.AccountId.Name = "AccountId";
+            this.AccountId.ReadOnly = true;
             // 
             // FormEmployees
             // 

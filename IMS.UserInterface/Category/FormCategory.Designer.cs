@@ -49,7 +49,7 @@
             // 
             // lblCategoryId
             // 
-            this.lblCategoryId.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCategoryId.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblCategoryId.AutoSize = true;
             this.lblCategoryId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategoryId.Location = new System.Drawing.Point(69, 58);
@@ -60,7 +60,7 @@
             // 
             // lblCategoryName
             // 
-            this.lblCategoryName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCategoryName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblCategoryName.AutoSize = true;
             this.lblCategoryName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategoryName.Location = new System.Drawing.Point(40, 113);
@@ -71,7 +71,7 @@
             // 
             // lblCategoryDescription
             // 
-            this.lblCategoryDescription.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCategoryDescription.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblCategoryDescription.AutoSize = true;
             this.lblCategoryDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.75F);
             this.lblCategoryDescription.Location = new System.Drawing.Point(430, 85);
@@ -82,7 +82,7 @@
             // 
             // txtBxCategoryId
             // 
-            this.txtBxCategoryId.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtBxCategoryId.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBxCategoryId.BackColor = System.Drawing.Color.White;
             this.txtBxCategoryId.Enabled = false;
             this.txtBxCategoryId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -93,7 +93,7 @@
             // 
             // txtBxCategoryName
             // 
-            this.txtBxCategoryName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtBxCategoryName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBxCategoryName.BackColor = System.Drawing.Color.White;
             this.txtBxCategoryName.Enabled = false;
             this.txtBxCategoryName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
@@ -105,7 +105,7 @@
             // 
             // txtBxCategoryDescription
             // 
-            this.txtBxCategoryDescription.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtBxCategoryDescription.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBxCategoryDescription.BackColor = System.Drawing.Color.White;
             this.txtBxCategoryDescription.Enabled = false;
             this.txtBxCategoryDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
@@ -123,7 +123,9 @@
             this.dGVCategory.AllowUserToDeleteRows = false;
             this.dGVCategory.AllowUserToOrderColumns = true;
             this.dGVCategory.AllowUserToResizeRows = false;
-            this.dGVCategory.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.dGVCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dGVCategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGVCategory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dGVCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -142,6 +144,7 @@
             // 
             // btnCategoryAdd
             // 
+            this.btnCategoryAdd.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnCategoryAdd.Location = new System.Drawing.Point(157, 180);
             this.btnCategoryAdd.Name = "btnCategoryAdd";
             this.btnCategoryAdd.Size = new System.Drawing.Size(130, 23);
@@ -152,6 +155,7 @@
             // 
             // btnCategoryEdit
             // 
+            this.btnCategoryEdit.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnCategoryEdit.Enabled = false;
             this.btnCategoryEdit.Location = new System.Drawing.Point(357, 180);
             this.btnCategoryEdit.Name = "btnCategoryEdit";
@@ -163,6 +167,7 @@
             // 
             // btnCategoryReset
             // 
+            this.btnCategoryReset.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnCategoryReset.Enabled = false;
             this.btnCategoryReset.Location = new System.Drawing.Point(721, 180);
             this.btnCategoryReset.Name = "btnCategoryReset";
@@ -174,6 +179,7 @@
             // 
             // btnCategoryExistingUpdate
             // 
+            this.btnCategoryExistingUpdate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnCategoryExistingUpdate.Enabled = false;
             this.btnCategoryExistingUpdate.Location = new System.Drawing.Point(556, 180);
             this.btnCategoryExistingUpdate.Name = "btnCategoryExistingUpdate";
@@ -185,6 +191,7 @@
             // 
             // btnCategoryNewUpdate
             // 
+            this.btnCategoryNewUpdate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnCategoryNewUpdate.Enabled = false;
             this.btnCategoryNewUpdate.Location = new System.Drawing.Point(556, 180);
             this.btnCategoryNewUpdate.Name = "btnCategoryNewUpdate";
@@ -196,24 +203,30 @@
             // 
             // CategoryId
             // 
+            this.CategoryId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.CategoryId.DataPropertyName = "Id";
             this.CategoryId.HeaderText = "CategoryId";
             this.CategoryId.Name = "CategoryId";
             this.CategoryId.ReadOnly = true;
+            this.CategoryId.Width = 83;
             // 
             // CategoryName
             // 
+            this.CategoryName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.CategoryName.DataPropertyName = "Name";
             this.CategoryName.HeaderText = "CategoryName";
             this.CategoryName.Name = "CategoryName";
             this.CategoryName.ReadOnly = true;
+            this.CategoryName.Width = 102;
             // 
             // CategoryDescription
             // 
+            this.CategoryDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.CategoryDescription.DataPropertyName = "Description";
             this.CategoryDescription.HeaderText = "CategoryDescription";
             this.CategoryDescription.Name = "CategoryDescription";
             this.CategoryDescription.ReadOnly = true;
+            this.CategoryDescription.Width = 127;
             // 
             // FormCategory
             // 

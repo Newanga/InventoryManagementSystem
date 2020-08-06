@@ -31,12 +31,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dGVSupplier = new System.Windows.Forms.DataGridView();
-            this.SupplierId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SupplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SupplierDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SupplierPhoneNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SupplierAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SupplierState = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtBxSupplierId = new System.Windows.Forms.TextBox();
             this.lblSupplierId = new System.Windows.Forms.Label();
             this.txtBxSupplierName = new System.Windows.Forms.TextBox();
@@ -55,6 +49,12 @@
             this.btnSupplierReset = new System.Windows.Forms.Button();
             this.txtBxSupplierDescription = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.SupplierId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SupplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SupplierDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SupplierPhoneNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SupplierAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SupplierState = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dGVSupplier)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +64,9 @@
             this.dGVSupplier.AllowUserToDeleteRows = false;
             this.dGVSupplier.AllowUserToOrderColumns = true;
             this.dGVSupplier.AllowUserToResizeRows = false;
-            this.dGVSupplier.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dGVSupplier.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dGVSupplier.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGVSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVSupplier.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -83,50 +85,9 @@
             this.dGVSupplier.TabIndex = 17;
             this.dGVSupplier.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVSupplier_CellDoubleClick);
             // 
-            // SupplierId
-            // 
-            this.SupplierId.DataPropertyName = "Id";
-            this.SupplierId.HeaderText = "Id";
-            this.SupplierId.Name = "SupplierId";
-            this.SupplierId.ReadOnly = true;
-            // 
-            // SupplierName
-            // 
-            this.SupplierName.DataPropertyName = "Name";
-            this.SupplierName.HeaderText = "Name";
-            this.SupplierName.Name = "SupplierName";
-            this.SupplierName.ReadOnly = true;
-            // 
-            // SupplierDescription
-            // 
-            this.SupplierDescription.DataPropertyName = "Description";
-            this.SupplierDescription.HeaderText = "Description";
-            this.SupplierDescription.Name = "SupplierDescription";
-            this.SupplierDescription.ReadOnly = true;
-            // 
-            // SupplierPhoneNo
-            // 
-            this.SupplierPhoneNo.DataPropertyName = "PhoneNumber";
-            this.SupplierPhoneNo.HeaderText = "PhoneNo";
-            this.SupplierPhoneNo.Name = "SupplierPhoneNo";
-            this.SupplierPhoneNo.ReadOnly = true;
-            // 
-            // SupplierAddress
-            // 
-            this.SupplierAddress.DataPropertyName = "Address";
-            this.SupplierAddress.HeaderText = "Address";
-            this.SupplierAddress.Name = "SupplierAddress";
-            this.SupplierAddress.ReadOnly = true;
-            // 
-            // SupplierState
-            // 
-            this.SupplierState.DataPropertyName = "State";
-            this.SupplierState.HeaderText = "State";
-            this.SupplierState.Name = "SupplierState";
-            this.SupplierState.ReadOnly = true;
-            // 
             // txtBxSupplierId
             // 
+            this.txtBxSupplierId.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBxSupplierId.Enabled = false;
             this.txtBxSupplierId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtBxSupplierId.Location = new System.Drawing.Point(227, 31);
@@ -137,6 +98,7 @@
             // 
             // lblSupplierId
             // 
+            this.lblSupplierId.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblSupplierId.AutoSize = true;
             this.lblSupplierId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblSupplierId.Location = new System.Drawing.Point(96, 31);
@@ -147,6 +109,7 @@
             // 
             // txtBxSupplierName
             // 
+            this.txtBxSupplierName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBxSupplierName.BackColor = System.Drawing.SystemColors.Window;
             this.txtBxSupplierName.Enabled = false;
             this.txtBxSupplierName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
@@ -158,6 +121,7 @@
             // 
             // lblSupplierName
             // 
+            this.lblSupplierName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblSupplierName.AutoSize = true;
             this.lblSupplierName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblSupplierName.Location = new System.Drawing.Point(67, 71);
@@ -168,6 +132,7 @@
             // 
             // lblSupplierDescription
             // 
+            this.lblSupplierDescription.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblSupplierDescription.AutoSize = true;
             this.lblSupplierDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblSupplierDescription.Location = new System.Drawing.Point(32, 122);
@@ -178,10 +143,11 @@
             // 
             // txtBxSupplierphoneNo
             // 
+            this.txtBxSupplierphoneNo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBxSupplierphoneNo.Enabled = false;
             this.txtBxSupplierphoneNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtBxSupplierphoneNo.Location = new System.Drawing.Point(728, 32);
-            this.txtBxSupplierphoneNo.MaxLength = 11;
+            this.txtBxSupplierphoneNo.MaxLength = 10;
             this.txtBxSupplierphoneNo.Name = "txtBxSupplierphoneNo";
             this.txtBxSupplierphoneNo.ShortcutsEnabled = false;
             this.txtBxSupplierphoneNo.Size = new System.Drawing.Size(215, 22);
@@ -190,6 +156,7 @@
             // 
             // lblSupplierPhoneNo
             // 
+            this.lblSupplierPhoneNo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblSupplierPhoneNo.AutoSize = true;
             this.lblSupplierPhoneNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblSupplierPhoneNo.Location = new System.Drawing.Point(579, 32);
@@ -200,6 +167,7 @@
             // 
             // txtBxSupplierAddress
             // 
+            this.txtBxSupplierAddress.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBxSupplierAddress.Enabled = false;
             this.txtBxSupplierAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtBxSupplierAddress.Location = new System.Drawing.Point(728, 106);
@@ -212,6 +180,7 @@
             // 
             // lblSupplierAddress
             // 
+            this.lblSupplierAddress.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblSupplierAddress.AutoSize = true;
             this.lblSupplierAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblSupplierAddress.Location = new System.Drawing.Point(588, 122);
@@ -222,6 +191,7 @@
             // 
             // lblSupplierState
             // 
+            this.lblSupplierState.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblSupplierState.AutoSize = true;
             this.lblSupplierState.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblSupplierState.Location = new System.Drawing.Point(608, 71);
@@ -232,6 +202,7 @@
             // 
             // combobxSupplierState
             // 
+            this.combobxSupplierState.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.combobxSupplierState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combobxSupplierState.Enabled = false;
             this.combobxSupplierState.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
@@ -243,6 +214,7 @@
             // 
             // btnSupplierAdd
             // 
+            this.btnSupplierAdd.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnSupplierAdd.Location = new System.Drawing.Point(280, 176);
             this.btnSupplierAdd.Name = "btnSupplierAdd";
             this.btnSupplierAdd.Size = new System.Drawing.Size(75, 23);
@@ -254,6 +226,7 @@
             // btnSupplierEdit
             // 
             this.btnSupplierEdit.AccessibleRole = System.Windows.Forms.AccessibleRole.OutlineButton;
+            this.btnSupplierEdit.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnSupplierEdit.Enabled = false;
             this.btnSupplierEdit.Location = new System.Drawing.Point(398, 176);
             this.btnSupplierEdit.Name = "btnSupplierEdit";
@@ -265,6 +238,7 @@
             // 
             // btnSupplierExistingUpdate
             // 
+            this.btnSupplierExistingUpdate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnSupplierExistingUpdate.Enabled = false;
             this.btnSupplierExistingUpdate.Location = new System.Drawing.Point(515, 176);
             this.btnSupplierExistingUpdate.Name = "btnSupplierExistingUpdate";
@@ -276,6 +250,7 @@
             // 
             // btnSupplierNewUpdate
             // 
+            this.btnSupplierNewUpdate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnSupplierNewUpdate.Enabled = false;
             this.btnSupplierNewUpdate.Location = new System.Drawing.Point(515, 176);
             this.btnSupplierNewUpdate.Name = "btnSupplierNewUpdate";
@@ -287,6 +262,7 @@
             // 
             // btnSupplierReset
             // 
+            this.btnSupplierReset.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnSupplierReset.Enabled = false;
             this.btnSupplierReset.Location = new System.Drawing.Point(632, 176);
             this.btnSupplierReset.Name = "btnSupplierReset";
@@ -298,6 +274,7 @@
             // 
             // txtBxSupplierDescription
             // 
+            this.txtBxSupplierDescription.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBxSupplierDescription.Enabled = false;
             this.txtBxSupplierDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtBxSupplierDescription.Location = new System.Drawing.Point(227, 106);
@@ -312,6 +289,60 @@
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // SupplierId
+            // 
+            this.SupplierId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.SupplierId.DataPropertyName = "Id";
+            this.SupplierId.HeaderText = "Id";
+            this.SupplierId.Name = "SupplierId";
+            this.SupplierId.ReadOnly = true;
+            this.SupplierId.Width = 41;
+            // 
+            // SupplierName
+            // 
+            this.SupplierName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.SupplierName.DataPropertyName = "Name";
+            this.SupplierName.HeaderText = "Name";
+            this.SupplierName.Name = "SupplierName";
+            this.SupplierName.ReadOnly = true;
+            this.SupplierName.Width = 60;
+            // 
+            // SupplierDescription
+            // 
+            this.SupplierDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.SupplierDescription.DataPropertyName = "Description";
+            this.SupplierDescription.HeaderText = "Description";
+            this.SupplierDescription.Name = "SupplierDescription";
+            this.SupplierDescription.ReadOnly = true;
+            this.SupplierDescription.Width = 85;
+            // 
+            // SupplierPhoneNo
+            // 
+            this.SupplierPhoneNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.SupplierPhoneNo.DataPropertyName = "PhoneNumber";
+            this.SupplierPhoneNo.HeaderText = "PhoneNo";
+            this.SupplierPhoneNo.Name = "SupplierPhoneNo";
+            this.SupplierPhoneNo.ReadOnly = true;
+            this.SupplierPhoneNo.Width = 77;
+            // 
+            // SupplierAddress
+            // 
+            this.SupplierAddress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.SupplierAddress.DataPropertyName = "Address";
+            this.SupplierAddress.HeaderText = "Address";
+            this.SupplierAddress.Name = "SupplierAddress";
+            this.SupplierAddress.ReadOnly = true;
+            this.SupplierAddress.Width = 70;
+            // 
+            // SupplierState
+            // 
+            this.SupplierState.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.SupplierState.DataPropertyName = "State";
+            this.SupplierState.HeaderText = "State";
+            this.SupplierState.Name = "SupplierState";
+            this.SupplierState.ReadOnly = true;
+            this.SupplierState.Width = 57;
             // 
             // FormSupplier
             // 

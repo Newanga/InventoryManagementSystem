@@ -34,20 +34,20 @@
             this.dTPDateAdded = new System.Windows.Forms.DateTimePicker();
             this.txtBxOrderId = new System.Windows.Forms.TextBox();
             this.dGVInventory = new System.Windows.Forms.DataGridView();
+            this.comboBoxSupplier = new System.Windows.Forms.ComboBox();
+            this.btnInventoryAdd = new System.Windows.Forms.Button();
+            this.btnInventoryReset = new System.Windows.Forms.Button();
             this.ProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SupplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Available = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateAdded = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboBoxSupplier = new System.Windows.Forms.ComboBox();
-            this.btnInventoryAdd = new System.Windows.Forms.Button();
-            this.btnInventoryReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGVInventory)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDateAdded
             // 
-            this.lblDateAdded.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblDateAdded.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblDateAdded.AutoSize = true;
             this.lblDateAdded.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblDateAdded.Location = new System.Drawing.Point(624, 43);
@@ -58,7 +58,7 @@
             // 
             // lblSupplierName
             // 
-            this.lblSupplierName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSupplierName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblSupplierName.AutoSize = true;
             this.lblSupplierName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSupplierName.Location = new System.Drawing.Point(138, 42);
@@ -69,7 +69,7 @@
             // 
             // lblOrderId
             // 
-            this.lblOrderId.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblOrderId.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblOrderId.AutoSize = true;
             this.lblOrderId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblOrderId.Location = new System.Drawing.Point(377, 42);
@@ -80,7 +80,7 @@
             // 
             // dTPDateAdded
             // 
-            this.dTPDateAdded.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dTPDateAdded.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dTPDateAdded.CustomFormat = "MM-dd-yyyy";
             this.dTPDateAdded.Enabled = false;
             this.dTPDateAdded.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
@@ -92,7 +92,7 @@
             // 
             // txtBxOrderId
             // 
-            this.txtBxOrderId.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtBxOrderId.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBxOrderId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtBxOrderId.Location = new System.Drawing.Point(463, 41);
             this.txtBxOrderId.MaxLength = 4;
@@ -109,7 +109,8 @@
             this.dGVInventory.AllowUserToDeleteRows = false;
             this.dGVInventory.AllowUserToOrderColumns = true;
             this.dGVInventory.AllowUserToResizeRows = false;
-            this.dGVInventory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.dGVInventory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dGVInventory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGVInventory.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -128,44 +129,9 @@
             this.dGVInventory.Size = new System.Drawing.Size(908, 228);
             this.dGVInventory.TabIndex = 6;
             // 
-            // ProductId
-            // 
-            this.ProductId.DataPropertyName = "InventoryId";
-            this.ProductId.HeaderText = "Id";
-            this.ProductId.Name = "ProductId";
-            this.ProductId.ReadOnly = true;
-            // 
-            // SupplierName
-            // 
-            this.SupplierName.DataPropertyName = "SupplierName";
-            this.SupplierName.HeaderText = "SupliierName";
-            this.SupplierName.Name = "SupplierName";
-            this.SupplierName.ReadOnly = true;
-            // 
-            // ProductName
-            // 
-            this.ProductName.DataPropertyName = "ProductName";
-            this.ProductName.HeaderText = "ProductName";
-            this.ProductName.Name = "ProductName";
-            this.ProductName.ReadOnly = true;
-            // 
-            // Available
-            // 
-            this.Available.DataPropertyName = "Available";
-            this.Available.HeaderText = "Available";
-            this.Available.Name = "Available";
-            this.Available.ReadOnly = true;
-            // 
-            // DateAdded
-            // 
-            this.DateAdded.DataPropertyName = "DateAdded";
-            this.DateAdded.HeaderText = "DateAdded";
-            this.DateAdded.Name = "DateAdded";
-            this.DateAdded.ReadOnly = true;
-            // 
             // comboBoxSupplier
             // 
-            this.comboBoxSupplier.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBoxSupplier.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBoxSupplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.comboBoxSupplier.FormattingEnabled = true;
@@ -176,7 +142,7 @@
             // 
             // btnInventoryAdd
             // 
-            this.btnInventoryAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnInventoryAdd.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnInventoryAdd.Location = new System.Drawing.Point(401, 87);
             this.btnInventoryAdd.Name = "btnInventoryAdd";
             this.btnInventoryAdd.Size = new System.Drawing.Size(75, 23);
@@ -187,13 +153,54 @@
             // 
             // btnInventoryReset
             // 
-            this.btnInventoryReset.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnInventoryReset.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnInventoryReset.Location = new System.Drawing.Point(501, 88);
             this.btnInventoryReset.Name = "btnInventoryReset";
             this.btnInventoryReset.Size = new System.Drawing.Size(75, 23);
             this.btnInventoryReset.TabIndex = 7;
             this.btnInventoryReset.Text = "Reset";
             this.btnInventoryReset.UseVisualStyleBackColor = true;
+            this.btnInventoryReset.Click += new System.EventHandler(this.btnInventoryReset_Click);
+            // 
+            // ProductId
+            // 
+            this.ProductId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ProductId.DataPropertyName = "InventoryId";
+            this.ProductId.HeaderText = "Id";
+            this.ProductId.Name = "ProductId";
+            this.ProductId.ReadOnly = true;
+            // 
+            // SupplierName
+            // 
+            this.SupplierName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SupplierName.DataPropertyName = "SupplierName";
+            this.SupplierName.HeaderText = "SupliierName";
+            this.SupplierName.Name = "SupplierName";
+            this.SupplierName.ReadOnly = true;
+            // 
+            // ProductName
+            // 
+            this.ProductName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ProductName.DataPropertyName = "ProductName";
+            this.ProductName.HeaderText = "ProductName";
+            this.ProductName.Name = "ProductName";
+            this.ProductName.ReadOnly = true;
+            // 
+            // Available
+            // 
+            this.Available.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Available.DataPropertyName = "Available";
+            this.Available.HeaderText = "Available";
+            this.Available.Name = "Available";
+            this.Available.ReadOnly = true;
+            // 
+            // DateAdded
+            // 
+            this.DateAdded.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DateAdded.DataPropertyName = "DateAdded";
+            this.DateAdded.HeaderText = "DateAdded";
+            this.DateAdded.Name = "DateAdded";
+            this.DateAdded.ReadOnly = true;
             // 
             // FormInventory
             // 
