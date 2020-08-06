@@ -9,8 +9,9 @@ namespace IMS.DataAccess.FormEmployeeData
         void CreateNewEmployee(EmployeeDetailsNewModel data);
         List<EmployeeDataGridVM> GetAllEmployeesFromDatabase();
         void UpdateExistingEmployee(EmployeeDetailsUpdateModel data);
-        bool usernameTaken(string username);
+        bool UsernameExist(string username);
 
         bool CheckForAdminLockOut();
+        bool EmailExist(string emailAddress);
     }
 }

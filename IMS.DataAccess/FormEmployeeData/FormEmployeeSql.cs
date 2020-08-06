@@ -18,11 +18,11 @@ namespace IMS.DataAccess.FormEmployeeData
             _db = db;
         }
 
-        public bool usernameTaken(string username)
+        public bool UsernameExist(string username)
         {
             string sql = @"select Id
                             from dbo.Account
-                            where UserName = @Username;";
+                            where UserName = @Username COLLATE SQL_Latin1_General_CP1_CS_AS;";
 
             var id= _db.LoadData<IdLookUpModel, dynamic>(sql, new { @Username = username }).FirstOrDefault();
 
@@ -32,6 +32,21 @@ namespace IMS.DataAccess.FormEmployeeData
                 return true;
 
 
+
+        }
+
+        public bool EmailExist(string emailAddress)
+        {
+            string sql = @"select EmailAddress
+                            from dbo.Account
+                            where EmailAddress = @EmailAddress COLLATE SQL_Latin1_General_CP1_CS_AS;";
+
+            var id = _db.LoadData<IdLookUpModel, dynamic>(sql, new { @EmailAddress = emailAddress }).FirstOrDefault();
+
+            if (id == null)
+                return false;
+            else
+                return true;
 
         }
 
@@ -71,9 +86,9 @@ namespace IMS.DataAccess.FormEmployeeData
             string sql = @"select 
                             e.FirstName,
                             e.LastName,
-                            a.Username,
+                            a.Username ,
                             e.DateOfBirth,
-                            a.EmailAddress,
+                            a.EmailAddress ,
                             a.Password,
                             e.StartDate,
                             r.Name as Role,
@@ -176,5 +191,7 @@ namespace IMS.DataAccess.FormEmployeeData
                 Id = data.Employee.EmployeeId
             });
         }
+
+
     }
 }

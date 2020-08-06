@@ -56,7 +56,7 @@ namespace IMS.FormLoginData
 
         public void CacheCurrentUserDetails(string userName)
         {
-            string sql = @"select a.Id as CurrentAccountId,a.EmailAddress,e.FirstName,a.RoleId
+            string sql = @"select a.Id as CurrentAccountId,a.EmailAddress ,e.FirstName,a.RoleId
                         from dbo.employee as e
                         inner join dbo.Account as a
                         on e.AccountId=a.Id
