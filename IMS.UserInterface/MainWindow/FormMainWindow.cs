@@ -41,7 +41,10 @@ namespace IMS.UserInterface
         {
             this.WindowState = FormWindowState.Maximized;
             btnRestore.Visible = true;
+            btnRestore.BringToFront();
             btnMaximizer.Visible = false;
+            btnMaximizer.SendToBack();
+
         }
 
         private void BtnMinimize_Click(object sender, EventArgs e)
@@ -53,7 +56,9 @@ namespace IMS.UserInterface
         {
             this.WindowState = FormWindowState.Normal;
             btnRestore.Visible = false;
+            btnRestore.SendToBack();
             btnMaximizer.Visible = true;
+            btnMaximizer.BringToFront();
         }
 
         private void BtnMenuExpander_Click(object sender, EventArgs e)

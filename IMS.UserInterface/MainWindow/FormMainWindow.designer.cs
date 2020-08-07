@@ -65,8 +65,8 @@
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(99)))), ((int)(((byte)(196)))));
-            this.panelTitleBar.Controls.Add(this.lblTitle);
             this.panelTitleBar.Controls.Add(this.btnMaximizer);
+            this.panelTitleBar.Controls.Add(this.lblTitle);
             this.panelTitleBar.Controls.Add(this.btnMinimize);
             this.panelTitleBar.Controls.Add(this.btnClose);
             this.panelTitleBar.Controls.Add(this.btnRestore);
@@ -93,7 +93,7 @@
             // 
             this.btnMaximizer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMaximizer.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximizer.Image")));
-            this.btnMaximizer.Location = new System.Drawing.Point(1241, 2);
+            this.btnMaximizer.Location = new System.Drawing.Point(1241, 3);
             this.btnMaximizer.Name = "btnMaximizer";
             this.btnMaximizer.Size = new System.Drawing.Size(25, 25);
             this.btnMaximizer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

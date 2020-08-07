@@ -7,5 +7,6 @@ namespace IMS.FormLoginData
         bool ValidateAccount(LoginModel login);
 
         void CacheCurrentUserDetails(string userName);
+        bool CheckForDatabaseConnection();
     }
 }

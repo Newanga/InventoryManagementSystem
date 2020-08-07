@@ -15,6 +15,8 @@ using System.Windows.Forms;
 using Microsoft.Extensions.DependencyInjection;
 using IMS.Common.Cache;
 using IMS.FormLoginData;
+using Microsoft.Extensions.Configuration;
+using System.Data.SqlClient;
 
 namespace IMS.UserInterface
 {
@@ -22,11 +24,15 @@ namespace IMS.UserInterface
     {
 
         private readonly IFormLoginSql _db;
+        private readonly IConfiguration _config;
+
         public FormLogin(IFormLoginSql db)
         {
             InitializeComponent();
             this._db = db;
+            CheckForDatabaseConnection();
         }
+
 
         #region UX Improvement Events
 
@@ -179,6 +185,17 @@ namespace IMS.UserInterface
             this.Show();
         }
 
-       
+        private void CheckForDatabaseConnection()
+        {
+            var connExist=_db.CheckForDatabaseConnection();
+
+            if(connExist==false)
+            {
+                MessageBox.Show("Please check database connection and try again!","Database can not be found",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                Environment.Exit(0);
+            }
+        }
+
+
     }
 }

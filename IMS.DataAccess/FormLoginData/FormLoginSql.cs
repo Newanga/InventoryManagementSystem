@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace IMS.FormLoginData
 {
-    public class FormLoginSql :IFormLoginSql
+    public class FormLoginSql : IFormLoginSql
     {
         private readonly ISqlDataAccess _db;
 
@@ -72,7 +72,21 @@ namespace IMS.FormLoginData
 
         }
 
+        public bool CheckForDatabaseConnection()
+        {
+            string sql = @"SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Account';";
 
+            try
+            {
+                var connExist = _db.LoadData<List<string>, dynamic>(sql, new { });
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 
 

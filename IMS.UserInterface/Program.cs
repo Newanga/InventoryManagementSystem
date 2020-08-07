@@ -20,6 +20,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.IO;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace IMS.UserInterface
@@ -31,13 +32,27 @@ namespace IMS.UserInterface
         static void ConfigureServices()
         {
             var services = new ServiceCollection();
+            var builder= new ConfigurationBuilder();
 
-            //Reading appsettings to get the configuration file
-            var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json");
-            IConfiguration config = builder.Build();
+            try
+            {
+                //Reading appsettings to get the configuration file
+                builder .SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json");
+                IConfiguration config = builder.Build();
 
-            //Adding classes and interfaces to DI Containners
-            services.AddSingleton(config);
+                //Adding classes and interfaces to DI Containners
+                services.AddSingleton(config);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error in appsettings.json configuration", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //terminates the application
+                Environment.Exit(0);
+            }
+
+          
+
 
             services.AddSingleton<FormLogin>();
             services.AddTransient<FormSplashScreen>();
@@ -79,7 +94,6 @@ namespace IMS.UserInterface
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             ConfigureServices();
-            //Application.Run(new FormLogin());
         }
     }
 }
